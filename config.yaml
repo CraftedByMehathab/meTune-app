@@ -13,6 +13,11 @@ spike_jump_db: 25.0          # energy jump in one frame = click/static
 spike_rate_static: 20.0      # spikes/min → "static"; also fills in noise when the LLM hears none
 default_vote_confidence: 0.4 # cap when every vote is the all-defaults answer (neutral, no noise, no overlap)
 
+tone_source: ser                      # ser = fine-tuned speech-emotion model owns tone (DR-020, E16); llm = Gemini votes
+ser_model_path: .data/models/ser_e16.onnx   # 379 MB, not in git: eval/export_ser_onnx.py
+ser_top_fraction: 1.0                 # tuned on val calls (E16): mean over all speech windows
+ser_tau: 0.5                          # neutral unless 1 - p(neutral) >= tau (val-tuned; test F1 0.507)
+
 llm_model: gemini-3.5-flash-lite      # pinned; 2.5-flash-lite closed to new keys
 llm_prompt: v2                        # v1 labels-only · v2 describe-then-label · v3 v2 + judge the voice, not the words (DR-017)
 llm_votes: 3                          # odd count → no 1–1 tone ties; measured cost below

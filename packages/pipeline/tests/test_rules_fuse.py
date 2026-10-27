@@ -81,3 +81,38 @@ def test_dsp_counts_spikes():
     f = dsp_features(x, CFG)
     assert f["spikes_per_min"] > 40
     assert f["clip_pct"] == 0
+
+
+def ser(tone="upset", score=0.9):
+    return {"tone": tone, "emotional_score": score, "probs": {}, "windows": 5}
+
+
+def test_fuse_ser_owns_tone_and_fixes_contradicting_intensity():
+    llm_neutral = vote(emotional_tone="neutral", emotional_intensity="low")
+    r = fuse(FACTS, [llm_neutral] * 3, CFG, ser=ser("upset"))
+    assert (r.emotional_tone, r.emotional_intensity) == ("upset", "medium")    # not "upset, low"
+    r = fuse(FACTS, [vote()] * 3, CFG, ser=ser("frustrated"))
+    assert (r.emotional_tone, r.emotional_intensity) == ("frustrated", "high")  # LLM heard emotion: keep its
+    r = fuse(FACTS, [vote()] * 3, CFG, ser=ser("neutral", 0.2))
+    assert r.emotional_tone == "neutral"
+
+
+def test_fuse_ser_without_llm_and_confidence():
+    r = fuse(FACTS, [], CFG, ser=ser("satisfied", 0.95))
+    assert r.emotional_tone == "satisfied" and r.background_noise_present is False
+    sure, unsure = fuse(FACTS, [], CFG, ser=ser("upset", 0.98)), fuse(FACTS, [], CFG, ser=ser("upset", 0.52))
+    assert sure.confidence > unsure.confidence
+    assert fuse(FACTS, [], CFG).emotional_tone == "neutral"          # tone_source=llm path unchanged
+
+
+def test_ser_aggregate_and_missing_model():
+    import pytest
+    from metune_pipeline.schema import TONES
+    from metune_pipeline.ser import aggregate, ser_facts
+
+    calm, angry = np.eye(5)[TONES.index("neutral")], np.eye(5)[TONES.index("upset")]
+    assert aggregate([(3.0, calm), (1.0, angry)], 1.0)[TONES.index("upset")] == 0.25   # duration-weighted
+    assert aggregate([(3.0, calm), (1.0, angry)], 0.5)[TONES.index("upset")] == 1.0    # most emotional half
+    assert aggregate([], 1.0)[TONES.index("neutral")] == 1.0
+    with pytest.raises(FileNotFoundError):
+        ser_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"ser_model_path": "/nope.onnx"}))

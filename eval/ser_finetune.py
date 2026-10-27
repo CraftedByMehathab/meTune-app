@@ -30,7 +30,11 @@ from build_proxy import SRC, TONE_OF, Builder
 from metune_pipeline.decode import decode
 from metune_pipeline.schema import TONES
 from sklearn.metrics import confusion_matrix, f1_score
-from transformers import AutoFeatureExtractor, AutoModelForAudioClassification, get_linear_schedule_with_warmup
+from transformers import (
+    AutoFeatureExtractor,
+    AutoModelForAudioClassification,
+    get_linear_schedule_with_warmup,
+)
 
 ROOT = Path(".data/proxy/ser_ft")
 RUNS = Path("eval/runs")

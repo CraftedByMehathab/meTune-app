@@ -6,9 +6,11 @@ meTune analyzes call audio and returns, for each clip:
 - **background noise**: whether it's present, its type and its severity
 - **audio quality**, **speaker overlap** and **long silence**
 
-It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, and an audio LLM (Gemini Flash-Lite) for tone and noise. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.00135**.
+It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, a fine-tuned speech-emotion model (wav2vec2, ONNX, runs locally on CPU) for tone, and an audio LLM (Gemini Flash-Lite) for noise and overlap. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.0024** on the trial calls (the speech-emotion model adds no API cost).
 
-Design notes and decisions live in the meTune Obsidian vault (DR-001 → DR-012).
+Design notes and decisions live in the meTune Obsidian vault (DR-001 → DR-020; experiments in the Experiment Log).
+
+**Speech-emotion model:** `config.yaml` has `tone_source: ser`, which needs `.data/models/ser_e16.onnx` (379 MB, not in git). Build it with `uv run --group ser python eval/export_ser_onnx.py --model <fine-tuned model dir>` (training: `eval/ser_finetune.py`), or set `tone_source: llm` to use Gemini's tone instead.
 
 ## Repo layout
 ```
@@ -29,12 +31,12 @@ cp .env.example .env
 make hash-password          # paste into ADMIN_PASSWORD_HASH (single quotes); add GEMINI_API_KEY
 make dev                    # Postgres in Docker + api :8000 + client :5173
 ```
-Open http://localhost:5173, log in, and upload a ZIP or folder. Without `GEMINI_API_KEY`, results come from the DSP baseline.
+Open http://localhost:5173, log in, and upload a ZIP or folder. Without `GEMINI_API_KEY`, tone still comes from the speech-emotion model; noise and overlap fall back to the DSP baseline.
 
 ## CLI (no web app)
 ```bash
 make run DIR=../meTune/data/trial      # → results.csv  (name,result_json)
-uv run metune run <folder> --no-llm    # DSP baseline only
+uv run metune run <folder> --no-llm    # no API calls: speech-emotion tone + DSP baseline
 ```
 
 ## Commands
@@ -54,7 +56,7 @@ Upload a **ZIP** or a **folder** of audio files: wav, mp3, ogg/opus, m4a, flac o
 One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**.
 
 ## Known limitations (trial)
-- **Tone:** the current prompt predicts `neutral` for all 3 trial calls. Prompt work must be validated on proxy sets, not on the scored calls.
+- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a fine-tuned speech-emotion model: test macro F1 **0.51** on held-out proxy calls (Gemini alone 0.06). It reads the voice only, was trained on acted speech (CREMA-D), and still calls ~3/8 neutral calls emotional. Intensity is not predicted by it (LLM's, or `medium`).
 - **Overlap:** comes from the LLM only; there is no dedicated overlap detector yet.
 - **Audio quality:** the DSP rule uses clipping only.
 - **Confidence:** vote agreement only; not calibrated (DR-009).

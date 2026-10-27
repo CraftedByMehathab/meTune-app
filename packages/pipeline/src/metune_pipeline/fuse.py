@@ -13,9 +13,12 @@ def majority(votes: list[dict], key: str):
     return Counter(v[key] for v in votes).most_common(1)[0]
 
 
-def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = False) -> Result:
+def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = False,
+         ser: dict | None = None) -> Result:
+    """`ser` (tone_source=ser): the speech-emotion model owns tone, also without any LLM votes."""
     if not votes:
-        return baseline(facts, cfg, confidence=0.2 if degraded else 0.3)
+        base = baseline(facts, cfg, confidence=0.2 if degraded else 0.3)
+        return Result(**_apply_ser(base.model_dump(), ser, facts, llm_emotional=False)) if ser else base
     rules = rule_fields(facts, cfg)
     out = {k: majority(votes, k)[0] for k in LLM_MAJORITY}
     types = [v["background_noise_type"] for v in votes
@@ -46,7 +49,21 @@ def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = F
     # votes that all fall back to the defaults agree trivially; that agreement is not evidence
     if all(_is_default(v) for v in votes):
         out["confidence"] = min(out["confidence"], cfg.default_vote_confidence)
+    if ser:
+        out = _apply_ser(out, ser, facts, llm_emotional=out["emotional_tone"] != "neutral")
     return Result(**out)
+
+
+def _apply_ser(out: dict, ser: dict, facts: dict, llm_emotional: bool) -> dict:
+    out = {**out, "emotional_tone": ser["tone"]}
+    # The SER score does not separate low/medium/high (E16 val calls), so intensity stays the LLM's unless
+    # that would contradict the tone (LLM heard neutral → its "low"); then the most common label, medium.
+    if ser["tone"] != "neutral" and not llm_emotional:
+        out["emotional_intensity"] = "medium"
+    # confidence: distance from the neutral/emotional boundary, scaled down for little speech (uncalibrated)
+    certainty = max(ser["emotional_score"], 1 - ser["emotional_score"])
+    out["confidence"] = round(0.35 + 0.6 * certainty * min(1.0, facts["speech_ratio"] / 0.3), 2)
+    return out
 
 
 def _is_default(v: dict) -> bool:

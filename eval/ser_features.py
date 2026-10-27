@@ -12,40 +12,15 @@ import json
 import time
 from pathlib import Path
 
-import numpy as np
 import torch
 from metune_pipeline.config import load_config
 from metune_pipeline.decode import decode
-from metune_pipeline.vad import speech_probs
+from metune_pipeline.ser import speech_windows  # shared with the shipped pipeline
 from transformers import AutoFeatureExtractor, AutoModelForAudioClassification
 
 ROOT = Path(".data/proxy")
 SR = 16000
-MAX_S, MIN_S = 4.0, 1.0
 
-
-def speech_windows(x: np.ndarray, threshold: float) -> list[tuple[int, int]]:
-    """Contiguous VAD speech runs (bridging pauses < 0.3 s), split into ≤ 4 s windows, ≥ 1 s kept."""
-    probs, step = speech_probs(x, SR)
-    hop = int(step * SR)
-    mask = probs > threshold
-    runs, start, quiet = [], None, 0
-    for i, s in enumerate(list(mask) + [False] * 20):
-        if s:
-            start = i if start is None else start
-            quiet = 0
-        elif start is not None:
-            quiet += 1
-            if quiet * step >= 0.3:
-                runs.append((start * hop, (i - quiet + 1) * hop))
-                start, quiet = None, 0
-    out = []
-    for a, b in runs:
-        for s in range(a, b, int(MAX_S * SR)):
-            e = min(b, s + int(MAX_S * SR))
-            if e - s >= MIN_S * SR:
-                out.append((s, e))
-    return out
 
 
 def main() -> None:

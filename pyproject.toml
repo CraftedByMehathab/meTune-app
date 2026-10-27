@@ -30,6 +30,7 @@ ser = [
     "ipykernel",            # "meTune SER" Jupyter kernel for notebooks/03_finetuning_walkthrough.ipynb
     "matplotlib",
     "pandas",
+    "onnx",                 # export_ser_onnx.py (export + int8 quantization); runtime needs onnxruntime only
 ]
 
 [tool.pytest.ini_options]

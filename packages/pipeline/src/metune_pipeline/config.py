@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+from typing import Literal
 
 import yaml
 from pydantic import BaseModel
@@ -19,6 +20,11 @@ class PipelineConfig(BaseModel):
     spike_jump_db: float = 25.0
     spike_rate_static: float = 20.0
     default_vote_confidence: float = 0.4
+
+    tone_source: Literal["llm", "ser"] = "llm"
+    ser_model_path: str = ".data/models/ser_e16.onnx"
+    ser_top_fraction: float = 1.0
+    ser_tau: float = 0.5
 
     llm_model: str = "gemini-3.5-flash-lite"
     llm_prompt: str = "v2"

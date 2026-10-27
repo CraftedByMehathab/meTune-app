@@ -57,7 +57,7 @@ def main() -> None:
 
     test_names = sorted(y["test"])
     llm = llm_tones("test")
-    e12 = json.loads(Path(sorted(glob.glob("eval/runs/*_E12-wav2vec2-base-superb-er/summary.json"))[-1]).read_text())
+    e12 = json.loads(Path(max(glob.glob("eval/runs/*_E12-wav2vec2-base-superb-er/summary.json"))).read_text())
     preds = {s: predict(s, top, tau) for s in ("val", "test")}
     out = {"name": a.name, "model": a.model, "when": datetime.now().isoformat(timespec="seconds"),
            "tuned_on": "val (actors 1036–1045)", "params": {"top_fraction": top, "tau_emotional": tau},

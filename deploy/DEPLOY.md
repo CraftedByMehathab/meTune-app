@@ -42,6 +42,13 @@ openssl rand -hex 32   # → SESSION_SECRET
 ```
 Generate `ADMIN_PASSWORD_HASH` on your laptop with `make hash-password`, and paste it into `.env` in **single quotes**. Then set `DOMAIN`, `REGISTRY=ghcr.io/<github-user>`, `ADMIN_USER` and `GEMINI_API_KEY` (paid tier).
 
+**Speech-emotion model** (`tone_source: ser`, DR-020): the 379 MB ONNX file is not in git or the image; compose mounts `/opt/metune/models` read-only. Copy it once (and again whenever it is re-exported):
+```bash
+ssh deploy@<vm> mkdir -p /opt/metune/models
+scp .data/models/ser_e16.onnx deploy@<vm>:/opt/metune/models/      # from the app repo, after eval/export_ser_onnx.py
+```
+Without it every file fails with `SER model not found` — by design, so tone never silently falls back to the LLM's always-neutral answer.
+
 If the GHCR packages are private, log in once: `echo <PAT with read:packages> | docker login ghcr.io -u <github-user> --password-stdin`
 
 ## 4. First deploy
