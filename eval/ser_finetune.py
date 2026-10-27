@@ -26,7 +26,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from build_proxy import SRC, TONE_OF, Builder
+from build_proxy import ESC_URL, SEVERITY_SNR, SRC, TONE_OF, Builder, fetch, loop_to, rms, synth_static
 from metune_pipeline.decode import decode
 from metune_pipeline.schema import TONES
 from sklearn.metrics import confusion_matrix, f1_score
@@ -41,17 +41,40 @@ RUNS = Path("eval/runs")
 SR = 16000
 MAX_S = 4.0
 SPLIT = {"train": range(1001, 1036), "val": range(1036, 1046)}
+NOISE_FOLDS = {1, 2, 3}            # ESC-50 folds of dev/val calls; test calls use 4–5
 
 
-def phone(name: str) -> Path:
+def phone(name: str, src: Path | None = None) -> Path:
     """Same channel as build_proxy.write_call (mono here: the model sees the mixed-down signal anyway)."""
     dst = ROOT / "phone" / f"{name}.ogg"
     if not dst.exists():
         dst.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(SRC / "crema" / f"{name}.wav"),
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src or SRC / "crema" / f"{name}.wav"),
                         "-af", "highpass=f=300,lowpass=f=3400,aresample=8000", "-ac", "1",
                         "-c:a", "libopus", "-b:a", "24k", str(dst)], check=True)
     return dst
+
+
+def load_noise(b: Builder) -> list[np.ndarray]:
+    """E17: ESC-50 background clips from folds 1–3 only (test calls use folds 4–5), phone channel applied
+    separately and mixed after it — close to (not identical with) the proxy, which mixes before the channel."""
+    rows = [r for r in b.esc if int(r["fold"]) in NOISE_FOLDS]
+    def one(r):
+        src = fetch(ESC_URL.format(r["filename"]), SRC / "esc50" / r["filename"])
+        return decode(phone(f"esc50_{Path(r['filename']).stem}", src), SR)
+    with ThreadPoolExecutor(8) as ex:
+        return list(ex.map(one, rows))
+
+
+def add_noise(x: np.ndarray, noise: list[np.ndarray], rng: random.Random) -> np.ndarray:
+    """Background at one of the proxy severities (20 / 10 / 3 dB SNR); ~1 in 8 is synthetic line static."""
+    if rng.random() < 0.125:
+        n = synth_static(len(x), np.random.default_rng(rng.randrange(2**32)))
+    else:
+        clip = rng.choice(noise)
+        n = np.roll(loop_to(clip, len(x)), rng.randrange(len(x)))
+    snr = rng.choice(list(SEVERITY_SNR.values()))
+    return (x + n * rms(x) / (rms(n) * 10 ** (snr / 20))).astype(np.float32)
 
 
 def load_split(b: Builder, actors: range) -> list[tuple[np.ndarray, int]]:
@@ -61,25 +84,31 @@ def load_split(b: Builder, actors: range) -> list[tuple[np.ndarray, int]]:
     return [(x[: int(MAX_S * SR)], y) for x, (_, y) in zip(audio, items)]
 
 
-def batches(data, size: int, train: bool, fe, rng: random.Random):
+def batches(data, size: int, train: bool, fe, rng: random.Random, noise=None, noise_p: float = 0.0,
+            mask: bool = False):
+    """Yields (model inputs, labels). `mask`: pass the attention mask (layer-norm models, e.g. hubert-large)."""
     order = list(range(len(data)))
     if train:
         rng.shuffle(order)
     for i in range(0, len(order), size):
         xs, ys = zip(*(data[j] for j in order[i:i + size]))
         if train:
+            if noise_p:
+                xs = [add_noise(x, noise, rng) if rng.random() < noise_p else x for x in xs]
             xs = [x * 10 ** (rng.uniform(-6, 6) / 20) for x in xs]
-        # wav2vec2-base uses group norm → zero padding without an attention mask, as the model card does
+        # group-norm models (wav2vec2-base) take zero padding without a mask, as their model card does;
+        # layer-norm models (hubert-large) need the mask or padding is treated as real silence
         feats = fe(list(xs), sampling_rate=SR, padding=True, return_tensors="pt")
-        yield feats["input_values"], torch.tensor(ys)
+        keys = ["input_values", "attention_mask"] if mask else ["input_values"]
+        yield {k: feats[k] for k in keys}, torch.tensor(ys)
 
 
-def evaluate(model, data, fe, device) -> dict:
+def evaluate(model, data, fe, device, mask: bool = False) -> dict:
     model.eval()
     preds, gold, loss = [], [], 0.0
     with torch.inference_mode():
-        for x, y in batches(data, 16, False, fe, None):
-            out = model(input_values=x.to(device), labels=y.to(device))
+        for x, y in batches(data, 16, False, fe, None, mask=mask):
+            out = model(**{k: v.to(device) for k, v in x.items()}, labels=y.to(device))
             loss += out.loss.item() * len(y)
             preds += out.logits.argmax(-1).cpu().tolist()
             gold += y.tolist()
@@ -105,6 +134,7 @@ def main() -> None:
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--lr", type=float, default=3e-5)
     ap.add_argument("--seed", type=int, default=13)
+    ap.add_argument("--noise-p", type=float, default=0.0, help="E17: share of train clips with background noise")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available()
                     else "mps" if torch.backends.mps.is_available() else "cpu")
     a = ap.parse_args()
@@ -114,6 +144,7 @@ def main() -> None:
     b = Builder(a.seed)
     t0 = time.perf_counter()
     train, val = load_split(b, SPLIT["train"]), load_split(b, SPLIT["val"])
+    noise = load_noise(b) if a.noise_p else None
     print(f"clips: train {len(train)}, val {len(val)} (phone channel, ≤{MAX_S:.0f}s) in {time.perf_counter() - t0:.0f}s",
           flush=True)
 
@@ -123,6 +154,7 @@ def main() -> None:
         ignore_mismatched_sizes=True,                         # 4-way IEMOCAP head → fresh 5-way head
         layerdrop=0.0)      # skipped layers break the head's weighted sum over all 13 layer outputs
     model.freeze_feature_encoder()                            # CNN front end stays as pre-trained
+    mask = model.config.feat_extract_norm == "layer"
     model.to(a.device)
 
     # Upset/neutral clips outnumber the rest ~2:1; weight the loss so rare tones count as much (macro F1).
@@ -136,19 +168,19 @@ def main() -> None:
 
     best, history = -1.0, []
     out_dir = ROOT / a.name / "model"
-    before = evaluate(model, val, fe, a.device)
+    before = evaluate(model, val, fe, a.device, mask)
     print(f"epoch 0 (fresh head, untrained)  val acc {before['accuracy']}  macro F1 {before['macro_f1']}", flush=True)
     for epoch in range(1, a.epochs + 1):
         model.train()
         t0, total, n = time.perf_counter(), 0.0, 0
-        for x, y in batches(train, a.batch, True, fe, rng):
-            logits = model(input_values=x.to(a.device)).logits
+        for x, y in batches(train, a.batch, True, fe, rng, noise, a.noise_p, mask):
+            logits = model(**{k: v.to(a.device) for k, v in x.items()}).logits
             loss = loss_fn(logits, y.to(a.device))
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step(); sched.step(); opt.zero_grad()
             total, n = total + loss.item() * len(y), n + len(y)
-        v = evaluate(model, val, fe, a.device)
+        v = evaluate(model, val, fe, a.device, mask)
         history.append({"epoch": epoch, "train_loss": round(total / n, 4), "val": v, "s": round(time.perf_counter() - t0)})
         mark = ""
         if v["macro_f1"] > best:
