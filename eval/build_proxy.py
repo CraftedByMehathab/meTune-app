@@ -216,9 +216,14 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=13)
     ap.add_argument("--channel", choices=["phone", "clean"], default="phone",
                     help="clean = same calls without the phone channel (E10 control) → {split}_clean/")
+    ap.add_argument("--val", action="store_true",
+                    help="build only a val split from actors 1036–1045 (held out from SER fine-tuning, E16)")
     a = ap.parse_args()
     b = Builder(a.seed)
     prefetch(b)
+    if a.val:
+        build_split(b, "val", list(range(1036, 1046)), {1, 2, 3}, a.per_tone, a.channel)
+        return
     # Same seed → same calls in both channels: the RNG is consumed by mixing only, never by encoding.
     build_split(b, "dev", list(range(1001, 1046)), {1, 2, 3}, a.per_tone, a.channel)
     build_split(b, "test", list(range(1046, 1092)), {4, 5}, a.per_tone, a.channel)
