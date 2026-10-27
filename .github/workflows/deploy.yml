@@ -1,0 +1,52 @@
+# Build both images → GHCR, then deploy that exact tag to the VM over SSH.
+# Secrets: VM_HOST, VM_USER, VM_SSH_KEY. Images are tagged with the git SHA (shown in the dashboard).
+name: deploy
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: tag
+        run: echo "tag=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: apps/api/Dockerfile
+          build-args: GIT_SHA=${{ steps.tag.outputs.tag }}
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/metune-api:${{ steps.tag.outputs.tag }}
+          cache-from: type=gha,scope=api
+          cache-to: type=gha,mode=max,scope=api
+      - uses: docker/build-push-action@v6
+        with:
+          context: apps/client
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/metune-client:${{ steps.tag.outputs.tag }}
+          cache-from: type=gha,scope=client
+          cache-to: type=gha,mode=max,scope=client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: /opt/metune/deploy.sh ${{ needs.build.outputs.tag }}

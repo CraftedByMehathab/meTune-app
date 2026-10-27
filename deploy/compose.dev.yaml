@@ -1,0 +1,20 @@
+# Local development: only Postgres in Docker; api + client run natively with reload (make dev)
+name: metune-dev
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: metune
+      POSTGRES_PASSWORD: metune
+      POSTGRES_DB: metune
+    ports: ["${DB_PORT:-5432}:5432"]   # DB_PORT=5433 make dev if 5432 is taken (match DATABASE_URL)
+    volumes:
+      - pg_dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U metune -d metune"]
+      interval: 2s
+      retries: 20
+
+volumes:
+  pg_dev: {}

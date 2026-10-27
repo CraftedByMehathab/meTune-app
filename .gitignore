@@ -1,0 +1,28 @@
+# secrets
+.env
+deploy/.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# node
+node_modules/
+apps/client/dist/
+
+# local data: call audio is confidential, never commit it
+.data/
+data/
+*.ogg
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.zip
+results*.csv
+
+.DS_Store
+*.tsbuildinfo

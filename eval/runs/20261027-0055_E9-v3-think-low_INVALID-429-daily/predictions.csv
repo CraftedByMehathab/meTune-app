@@ -1,0 +1,481 @@
+name,field,label,pred,match
+dev_001.ogg,emotional_tone,neutral,neutral,True
+dev_001.ogg,emotional_intensity,low,low,True
+dev_001.ogg,background_noise_present,False,False,True
+dev_001.ogg,background_noise_severity,none,none,True
+dev_001.ogg,audio_quality,clear,clear,True
+dev_001.ogg,speaker_overlap_present,False,False,True
+dev_001.ogg,long_silence_present,True,True,True
+dev_001.ogg,background_noise_type,,,
+dev_001.ogg,confidence,1.0,0.4,
+dev_001.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, neutral, and matter-of-fact tone. The speech is delivered at a moderate pace with clear articulation and stable projection. There are no background noises or speaker overlaps audible in the recording, and the audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote1,,"{""heard"": ""The customer speaks with a calm and even tone. There is no background noise or interference detected throughout the recording. The audio quality is clear and easy to understand without any overlap from other speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, clear, and neutral tone without any noticeable background noise. The speech has an even pace and moderate volume, suggesting a standard informational statement. There are no signs of emotional distress, frustration, or overlap from other speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,emotional_tone,frustrated,neutral,False
+dev_002.ogg,emotional_intensity,medium,low,False
+dev_002.ogg,background_noise_present,True,False,False
+dev_002.ogg,background_noise_severity,low,none,False
+dev_002.ogg,audio_quality,clear,clear,True
+dev_002.ogg,speaker_overlap_present,False,False,True
+dev_002.ogg,long_silence_present,False,False,True
+dev_002.ogg,background_noise_type,keyboard typing,,
+dev_002.ogg,confidence,1.0,0.4,
+dev_002.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, steady voice with a neutral tone and moderate pace. No background noise or speaker overlap is detected. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,vote1,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady pace and moderate volume. There is no background noise or interference present. The audio quality is completely clear with no distortion or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, steady voice without any noticeable strain or urgency. There is no background noise or speech overlap. The audio is clear and understandable."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,emotional_tone,satisfied,neutral,False
+dev_003.ogg,emotional_intensity,low,low,True
+dev_003.ogg,background_noise_present,True,True,True
+dev_003.ogg,background_noise_severity,medium,high,False
+dev_003.ogg,audio_quality,clear,clear,True
+dev_003.ogg,speaker_overlap_present,False,False,True
+dev_003.ogg,long_silence_present,True,True,True
+dev_003.ogg,background_noise_type,dog barking,dog barking,
+dev_003.ogg,confidence,1.0,0.77,
+dev_003.ogg,vote0,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The speech is relatively brief and matter-of-fact. Throughout the audio, loud dog barking is heard in the background."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote1,,"{""heard"": ""The customer speaks in a neutral tone with a moderate pace and calm voice. There is loud dog barking in the background throughout the call that interferes slightly with understanding. The audio quality is clear and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. There is a barking dog audible in the background throughout the recording. No other background noise or speaker overlap is present, and the audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_004.ogg,emotional_tone,distressed,neutral,False
+dev_004.ogg,emotional_intensity,medium,low,False
+dev_004.ogg,background_noise_present,True,True,True
+dev_004.ogg,background_noise_severity,medium,low,False
+dev_004.ogg,audio_quality,clear,clear,True
+dev_004.ogg,speaker_overlap_present,True,True,True
+dev_004.ogg,long_silence_present,False,False,True
+dev_004.ogg,background_noise_type,background chatter,room noise,
+dev_004.ogg,confidence,1.0,0.75,
+dev_004.ogg,vote0,,"{""heard"": ""The customer speaks in an even, matter-of-fact tone of voice while repeatedly declaring that it is eleven o'clock. There is some minor background room noise and occasional overlapping speech as the speaker repeats themselves. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""room noise"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_004.ogg,vote1,,"{""heard"": ""The customer speaks in an agitated, hurried, and somewhat annoyed tone, repeating 'it's 11 o'clock' urgently over overlapping voices. The speaker's voice has a high pitch and rapid pace. Background noise such as muffled static is present at a low level, and there is significant speaker overlap throughout."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_004.ogg,vote2,,"{""heard"": ""The customer speaks in an even, assertive tone, repeating that it is eleven o'clock. There is slight speaker overlap as multiple people are talking, but speech remains mostly understandable. The audio quality is clear with no background noise present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_005.ogg,emotional_tone,upset,neutral,False
+dev_005.ogg,emotional_intensity,medium,low,False
+dev_005.ogg,background_noise_present,False,False,True
+dev_005.ogg,background_noise_severity,none,none,True
+dev_005.ogg,audio_quality,clear,clear,True
+dev_005.ogg,speaker_overlap_present,True,False,False
+dev_005.ogg,long_silence_present,False,False,True
+dev_005.ogg,background_noise_type,,,
+dev_005.ogg,confidence,1.0,0.4,
+dev_005.ogg,vote0,,"{""heard"": ""The customer speaks in a calm and neutral tone. Her voice is clear with a steady pace and moderate volume. There is no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote1,,"{""heard"": ""The speaker sounds slightly tense and serious, delivering a statement about a need in a clear and steady voice. There are no background noises or interruptions. The overall acoustic quality is clean and straightforward."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The audio is clear with no background noise present and no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,emotional_tone,satisfied,neutral,False
+dev_006.ogg,emotional_intensity,low,low,True
+dev_006.ogg,background_noise_present,True,False,False
+dev_006.ogg,background_noise_severity,medium,none,False
+dev_006.ogg,audio_quality,clear,clear,True
+dev_006.ogg,speaker_overlap_present,True,False,False
+dev_006.ogg,long_silence_present,False,False,True
+dev_006.ogg,background_noise_type,static,,
+dev_006.ogg,confidence,1.0,0.4,
+dev_006.ogg,vote0,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The audio is clear with no background noise present and no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,vote1,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The audio quality is clear with no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with low emotional intensity. Their pace is moderate and their voice is clear. There is no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,emotional_tone,satisfied,neutral,False
+dev_007.ogg,emotional_intensity,medium,low,False
+dev_007.ogg,background_noise_present,True,True,True
+dev_007.ogg,background_noise_severity,medium,medium,True
+dev_007.ogg,audio_quality,clear,clear,True
+dev_007.ogg,speaker_overlap_present,False,False,True
+dev_007.ogg,long_silence_present,True,False,False
+dev_007.ogg,background_noise_type,keyboard typing,static,
+dev_007.ogg,confidence,1.0,0.79,
+dev_007.ogg,vote0,,"{""heard"": ""The speaker's voice is steady and matter-of-fact with a neutral tone and low intensity. There is no background noise or speaker overlap. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote1,,"{""heard"": ""The customer speaks with a clear, steady voice at a moderate pace, expressing statements without strong emotional coloring. There is some rhythmic tapping noise in the background, but it does not interfere with understanding."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""tapping"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote2,,"{""heard"": ""The speaker says several unrelated sentences in a neutral tone. There is clicking sound from typing throughout the audio. The audio quality is clear and there is no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,emotional_tone,upset,distressed,False
+dev_008.ogg,emotional_intensity,medium,high,False
+dev_008.ogg,background_noise_present,True,True,True
+dev_008.ogg,background_noise_severity,medium,high,False
+dev_008.ogg,audio_quality,clear,clear,True
+dev_008.ogg,speaker_overlap_present,False,False,True
+dev_008.ogg,long_silence_present,False,False,True
+dev_008.ogg,background_noise_type,baby crying,crying baby,
+dev_008.ogg,confidence,1.0,0.75,
+dev_008.ogg,vote0,,"{""heard"": ""The audio features a crying baby in the background throughout the entire recording. The speaker sounds distressed, with a high pitch, trembling voice, and crying sounds. There is no speaker overlap present. The audio quality is clear."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""crying baby"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,vote1,,"{""heard"": ""The audio is extremely poor in quality, featuring very muffled and distorted sounds with a loud crying infant in the background throughout the recording. Due to the high noise severity and severe impairment, the customer's speech cannot be clearly understood. The baby's crying dominates the entire duration of the clip."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""severely_impaired"", ""speaker_overlap_present"": false}",
+dev_008.ogg,vote2,,"{""heard"": ""The audio features a crying baby throughout. A woman speaks in a calm, clear tone while addressing the situation. There is no speaker overlap and no background noise other than the crying infant."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""crying baby"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,emotional_tone,neutral,neutral,True
+dev_009.ogg,emotional_intensity,low,low,True
+dev_009.ogg,background_noise_present,True,False,False
+dev_009.ogg,background_noise_severity,high,none,False
+dev_009.ogg,audio_quality,clear,clear,True
+dev_009.ogg,speaker_overlap_present,False,False,True
+dev_009.ogg,long_silence_present,False,False,True
+dev_009.ogg,background_noise_type,static,,
+dev_009.ogg,confidence,1.0,0.4,
+dev_009.ogg,vote0,,"{""heard"": ""The customer speaks with a calm and even tone, stating that they are on their way to the meeting. Their voice has a steady pitch and pace without any signs of emotional coloring. There is no background noise or speaker overlap present during their turn."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,vote1,,"{""heard"": ""The customer speaks with a calm and measured tone, stating they are on their way to a meeting. The speech is clear with normal pacing and no audible background noise or emotional distress. The audio quality is clean and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,vote2,,"{""heard"": ""The speaker's voice is calm and measured with a steady pace and neutral pitch. There is no background noise present in the recording. The overall audio quality is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,emotional_tone,neutral,neutral,True
+dev_010.ogg,emotional_intensity,low,low,True
+dev_010.ogg,background_noise_present,True,False,False
+dev_010.ogg,background_noise_severity,medium,none,False
+dev_010.ogg,audio_quality,clear,clear,True
+dev_010.ogg,speaker_overlap_present,True,False,False
+dev_010.ogg,long_silence_present,False,False,True
+dev_010.ogg,background_noise_type,keyboard typing,,
+dev_010.ogg,confidence,1.0,0.4,
+dev_010.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, neutral, and matter-of-fact tone. The pace is even and moderate without any signs of emotional stress or agitation. There is no noticeable background noise and the audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote1,,"{""heard"": ""The speaker delivers neutral statements about appointments and the time with a calm, even tone. The pace is steady and moderate, without any signs of stress, urgency, or frustration. There are no background noises or speaker overlaps present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady pace and clear enunciation. There are brief pauses between utterances. No background noise or speaker overlap is detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,emotional_tone,neutral,neutral,True
+dev_011.ogg,emotional_intensity,low,low,True
+dev_011.ogg,background_noise_present,True,True,True
+dev_011.ogg,background_noise_severity,medium,low,False
+dev_011.ogg,audio_quality,clear,clear,True
+dev_011.ogg,speaker_overlap_present,True,False,False
+dev_011.ogg,long_silence_present,False,False,True
+dev_011.ogg,background_noise_type,dog barking,dog barking,
+dev_011.ogg,confidence,1.0,0.95,
+dev_011.ogg,vote0,,"{""heard"": ""The customer speaks in a neutral tone with low emotional intensity. There is a dog barking in the background occasionally. The audio quality is clear, and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote1,,"{""heard"": ""The speaker talks in a calm, neutral tone with steady pacing and a clear voice. There is some low-level dog barking in the background throughout the recording. The overall audio quality is clear and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady pace and moderate volume. There is barking noise audible in the background throughout the recording. No overlapping speech is detected, and the overall audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,emotional_tone,distressed,neutral,False
+dev_012.ogg,emotional_intensity,medium,low,False
+dev_012.ogg,background_noise_present,True,False,False
+dev_012.ogg,background_noise_severity,low,none,False
+dev_012.ogg,audio_quality,clear,clear,True
+dev_012.ogg,speaker_overlap_present,False,False,True
+dev_012.ogg,long_silence_present,False,False,True
+dev_012.ogg,background_noise_type,background chatter,,
+dev_012.ogg,confidence,1.0,0.4,
+dev_012.ogg,vote0,,"{""heard"": ""The customer speaks with a calm and measured tone, stating the time and mentioning a doctor's appointment. The audio is clear and there is no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,vote1,,"{""heard"": ""The customer speaks in a calm and casual tone, stating it is 11 o'clock. Their voice has a normal pitch and a steady, unhurried pace without any emotional distress. There is no background noise or speaker overlap present in the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,vote2,,"{""heard"": ""The customer speaks in a calm, neutral tone, mentioning that it is eleven o'clock and that they have a doctor's appointment. The speech is clear and steady with no signs of frustration or stress. There are no background noises or speaker overlaps audible in the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,emotional_tone,upset,neutral,False
+dev_013.ogg,emotional_intensity,medium,low,False
+dev_013.ogg,background_noise_present,False,True,False
+dev_013.ogg,background_noise_severity,none,medium,False
+dev_013.ogg,audio_quality,clear,clear,True
+dev_013.ogg,speaker_overlap_present,False,False,True
+dev_013.ogg,long_silence_present,False,False,True
+dev_013.ogg,background_noise_type,,static,
+dev_013.ogg,confidence,1.0,0.4,
+dev_013.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady and even pace. There are no notable fluctuations in pitch or volume. The audio is clear and free of background noise or speaker overlaps."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote1,,"{""heard"": ""The customer speaks in a clear, measured tone with a steady pace and neutral pitch. There is no background noise or speech overlap. The acoustic quality is high and devoid of distortion."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote2,,"{""heard"": ""The speaker delivers the request in a calm and measured tone with a steady pace and neutral pitch. There is no background noise or interference present throughout the utterance. The audio quality is clear and the speech flows naturally without any overlap or hesitation."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,emotional_tone,upset,neutral,False
+dev_014.ogg,emotional_intensity,low,low,True
+dev_014.ogg,background_noise_present,True,True,True
+dev_014.ogg,background_noise_severity,high,medium,False
+dev_014.ogg,audio_quality,clear,clear,True
+dev_014.ogg,speaker_overlap_present,True,False,False
+dev_014.ogg,long_silence_present,False,False,True
+dev_014.ogg,background_noise_type,appliance hum,engine noise,
+dev_014.ogg,confidence,1.0,0.63,
+dev_014.ogg,vote0,,"{""heard"": ""The customer speaks in a flat, neutral tone without much variation in pitch or pace. There is a loud background noise present throughout the recording resembling engine or fan sounds. The audio quality is slightly impaired due to the background noise."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""engine noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote1,,"{""heard"": ""The customer speaks with a calm and measured pace, stating that it is 11 o'clock. Their voice has a neutral tone with low emotional intensity. There is noticeable background engine noise throughout the audio."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""engine noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote2,,"{""heard"": ""The speaker's voice is calm and measured with a neutral pitch and steady pace. The audio contains background noise which is consistent and noticeable throughout the recording. There are no signs of speaker overlap or emotional distress."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""humming noise"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,emotional_tone,distressed,neutral,False
+dev_015.ogg,emotional_intensity,medium,medium,True
+dev_015.ogg,background_noise_present,True,True,True
+dev_015.ogg,background_noise_severity,medium,low,False
+dev_015.ogg,audio_quality,clear,clear,True
+dev_015.ogg,speaker_overlap_present,False,False,True
+dev_015.ogg,long_silence_present,False,True,False
+dev_015.ogg,background_noise_type,appliance hum,road noise and static,
+dev_015.ogg,confidence,1.0,0.57,
+dev_015.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_015.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_015.ogg,vote2,,"{""heard"": ""The customer speaks with a neutral tone and medium intensity. There is background noise present, which includes road noise and static. The audio quality is clear, and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""road noise and static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,emotional_tone,distressed,distressed,True
+dev_016.ogg,emotional_intensity,medium,high,False
+dev_016.ogg,background_noise_present,True,True,True
+dev_016.ogg,background_noise_severity,medium,low,False
+dev_016.ogg,audio_quality,clear,clear,True
+dev_016.ogg,speaker_overlap_present,False,False,True
+dev_016.ogg,long_silence_present,False,False,True
+dev_016.ogg,background_noise_type,baby crying,crying and screaming,
+dev_016.ogg,confidence,1.0,0.95,
+dev_016.ogg,vote0,,"{""heard"": ""The customer sounds extremely distressed and upset, speaking with a crying and trembling voice and heavy sobbing in the background. Their voice is high-pitched, strained, and filled with panic. There is no significant background noise present, and the audio quality is clear."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote1,,"{""heard"": ""The customer speaks with a distressed and crying tone, sounding highly overwhelmed. There is loud crying and screaming audible in the background throughout the recording. The speaker sounds like they are in a state of high emotional intensity."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""crying and screaming"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote2,,"{""heard"": ""The audio features a crying baby in the background throughout the recording. The customer speaks with a strained and upset voice, expressing distress over the situation. There is some background noise present from the crying infant, but the speech remains clear despite the emotional delivery."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""crying baby"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_017.ogg,emotional_tone,frustrated,neutral,False
+dev_017.ogg,emotional_intensity,medium,medium,True
+dev_017.ogg,background_noise_present,True,True,True
+dev_017.ogg,background_noise_severity,high,medium,False
+dev_017.ogg,audio_quality,clear,clear,True
+dev_017.ogg,speaker_overlap_present,False,True,False
+dev_017.ogg,long_silence_present,False,False,True
+dev_017.ogg,background_noise_type,background chatter,crowd chatter,
+dev_017.ogg,confidence,1.0,0.75,
+dev_017.ogg,vote0,,"{""heard"": ""Multiple speakers are talking over each other in an echoey, chaotic environment, repeatedly shouting the time as eleven o'clock with high energy and overlap. The customer's voice is loud and fast-paced, though the primary emotion remains neutral as they join the chorus. There is heavy background chatter and crowd noise throughout the recording, leading to low audio quality and frequent speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""crowd chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote1,,"{""heard"": ""Multiple people are shouting and talking loudly in the background, repeating the phrase \""11 o'clock\"". The customer's voice is raised and tense with an agitated and frustrated tone. There is significant overlapping speech and shouting throughout the recording."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""chatter and shouting"", ""background_noise_severity"": ""high"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote2,,"{""heard"": ""Multiple speakers are overlapping and chanting \""It's eleven o'clock\"" in a repetitive and loud manner. The customer's voice is raised and energetic, fitting the rhythmic shouting with the group. There is background noise of crowd chatter and murmuring throughout the clip. The audio quality is clear despite the overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""crowd chatter"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_018.ogg,emotional_tone,neutral,neutral,True
+dev_018.ogg,emotional_intensity,low,low,True
+dev_018.ogg,background_noise_present,True,True,True
+dev_018.ogg,background_noise_severity,high,medium,False
+dev_018.ogg,audio_quality,clear,clear,True
+dev_018.ogg,speaker_overlap_present,False,False,True
+dev_018.ogg,long_silence_present,False,False,True
+dev_018.ogg,background_noise_type,road noise,ambulance siren,
+dev_018.ogg,confidence,1.0,0.95,
+dev_018.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_018.ogg,vote1,,"{""heard"": ""The speaker's voice is calm and steady, delivering short statements at a measured pace. There is an ambulance siren wailing loudly in the background throughout the recording. No overlapping voices are present, and the overall audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""ambulance siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_018.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_019.ogg,emotional_tone,upset,neutral,False
+dev_019.ogg,emotional_intensity,medium,low,False
+dev_019.ogg,background_noise_present,False,False,True
+dev_019.ogg,background_noise_severity,none,none,True
+dev_019.ogg,audio_quality,clear,clear,True
+dev_019.ogg,speaker_overlap_present,True,False,False
+dev_019.ogg,long_silence_present,False,False,True
+dev_019.ogg,background_noise_type,,,
+dev_019.ogg,confidence,1.0,0.4,
+dev_019.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady pace and moderate volume. There is no background noise present in the recording. The audio quality is clear, and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_019.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_020.ogg,emotional_tone,distressed,neutral,False
+dev_020.ogg,emotional_intensity,low,low,True
+dev_020.ogg,background_noise_present,True,True,True
+dev_020.ogg,background_noise_severity,low,medium,False
+dev_020.ogg,audio_quality,clear,clear,True
+dev_020.ogg,speaker_overlap_present,False,False,True
+dev_020.ogg,long_silence_present,False,False,True
+dev_020.ogg,background_noise_type,dog barking,static,
+dev_020.ogg,confidence,1.0,0.4,
+dev_020.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_020.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_020.ogg,vote2,,"{""heard"": ""The speaker sounds slightly tense and serious, speaking at a moderate pace without background noise or speaker overlap. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_021.ogg,emotional_tone,upset,neutral,False
+dev_021.ogg,emotional_intensity,medium,medium,True
+dev_021.ogg,background_noise_present,True,False,False
+dev_021.ogg,background_noise_severity,high,none,False
+dev_021.ogg,audio_quality,clear,clear,True
+dev_021.ogg,speaker_overlap_present,True,False,False
+dev_021.ogg,long_silence_present,False,False,True
+dev_021.ogg,background_noise_type,static,,
+dev_021.ogg,confidence,1.0,0.2,
+dev_021.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_021.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_021.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_022.ogg,emotional_tone,frustrated,neutral,False
+dev_022.ogg,emotional_intensity,low,medium,False
+dev_022.ogg,background_noise_present,False,False,True
+dev_022.ogg,background_noise_severity,none,none,True
+dev_022.ogg,audio_quality,clear,clear,True
+dev_022.ogg,speaker_overlap_present,False,False,True
+dev_022.ogg,long_silence_present,False,False,True
+dev_022.ogg,background_noise_type,,,
+dev_022.ogg,confidence,1.0,0.2,
+dev_022.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_022.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_022.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_023.ogg,emotional_tone,frustrated,neutral,False
+dev_023.ogg,emotional_intensity,low,medium,False
+dev_023.ogg,background_noise_present,True,False,False
+dev_023.ogg,background_noise_severity,low,none,False
+dev_023.ogg,audio_quality,clear,clear,True
+dev_023.ogg,speaker_overlap_present,True,False,False
+dev_023.ogg,long_silence_present,False,False,True
+dev_023.ogg,background_noise_type,baby crying,,
+dev_023.ogg,confidence,1.0,0.2,
+dev_023.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_023.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_023.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_024.ogg,emotional_tone,upset,neutral,False
+dev_024.ogg,emotional_intensity,medium,medium,True
+dev_024.ogg,background_noise_present,True,False,False
+dev_024.ogg,background_noise_severity,low,none,False
+dev_024.ogg,audio_quality,clear,clear,True
+dev_024.ogg,speaker_overlap_present,False,False,True
+dev_024.ogg,long_silence_present,False,False,True
+dev_024.ogg,background_noise_type,baby crying,,
+dev_024.ogg,confidence,1.0,0.2,
+dev_024.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_024.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_024.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_025.ogg,emotional_tone,satisfied,neutral,False
+dev_025.ogg,emotional_intensity,medium,medium,True
+dev_025.ogg,background_noise_present,True,False,False
+dev_025.ogg,background_noise_severity,low,none,False
+dev_025.ogg,audio_quality,clear,clear,True
+dev_025.ogg,speaker_overlap_present,False,False,True
+dev_025.ogg,long_silence_present,False,False,True
+dev_025.ogg,background_noise_type,baby crying,,
+dev_025.ogg,confidence,1.0,0.2,
+dev_025.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_025.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_025.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_026.ogg,emotional_tone,neutral,neutral,True
+dev_026.ogg,emotional_intensity,low,medium,False
+dev_026.ogg,background_noise_present,True,False,False
+dev_026.ogg,background_noise_severity,low,none,False
+dev_026.ogg,audio_quality,clear,clear,True
+dev_026.ogg,speaker_overlap_present,False,False,True
+dev_026.ogg,long_silence_present,False,False,True
+dev_026.ogg,background_noise_type,keyboard typing,,
+dev_026.ogg,confidence,1.0,0.2,
+dev_026.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_026.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_026.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_027.ogg,emotional_tone,distressed,neutral,False
+dev_027.ogg,emotional_intensity,medium,medium,True
+dev_027.ogg,background_noise_present,True,False,False
+dev_027.ogg,background_noise_severity,medium,none,False
+dev_027.ogg,audio_quality,clear,clear,True
+dev_027.ogg,speaker_overlap_present,False,False,True
+dev_027.ogg,long_silence_present,False,False,True
+dev_027.ogg,background_noise_type,keyboard typing,,
+dev_027.ogg,confidence,1.0,0.2,
+dev_027.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_027.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_027.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_028.ogg,emotional_tone,frustrated,neutral,False
+dev_028.ogg,emotional_intensity,low,medium,False
+dev_028.ogg,background_noise_present,False,False,True
+dev_028.ogg,background_noise_severity,none,none,True
+dev_028.ogg,audio_quality,clear,clear,True
+dev_028.ogg,speaker_overlap_present,False,False,True
+dev_028.ogg,long_silence_present,False,False,True
+dev_028.ogg,background_noise_type,,,
+dev_028.ogg,confidence,1.0,0.2,
+dev_028.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_028.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_028.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_029.ogg,emotional_tone,neutral,neutral,True
+dev_029.ogg,emotional_intensity,low,medium,False
+dev_029.ogg,background_noise_present,True,False,False
+dev_029.ogg,background_noise_severity,medium,none,False
+dev_029.ogg,audio_quality,clear,clear,True
+dev_029.ogg,speaker_overlap_present,False,False,True
+dev_029.ogg,long_silence_present,False,False,True
+dev_029.ogg,background_noise_type,dog barking,,
+dev_029.ogg,confidence,1.0,0.2,
+dev_029.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_029.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_029.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_030.ogg,emotional_tone,upset,neutral,False
+dev_030.ogg,emotional_intensity,high,medium,False
+dev_030.ogg,background_noise_present,True,True,True
+dev_030.ogg,background_noise_severity,low,medium,False
+dev_030.ogg,audio_quality,clear,clear,True
+dev_030.ogg,speaker_overlap_present,False,False,True
+dev_030.ogg,long_silence_present,False,False,True
+dev_030.ogg,background_noise_type,dog barking,static,
+dev_030.ogg,confidence,1.0,0.2,
+dev_030.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_030.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_030.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_031.ogg,emotional_tone,frustrated,neutral,False
+dev_031.ogg,emotional_intensity,medium,medium,True
+dev_031.ogg,background_noise_present,True,False,False
+dev_031.ogg,background_noise_severity,high,none,False
+dev_031.ogg,audio_quality,clear,clear,True
+dev_031.ogg,speaker_overlap_present,True,False,False
+dev_031.ogg,long_silence_present,False,False,True
+dev_031.ogg,background_noise_type,keyboard typing,,
+dev_031.ogg,confidence,1.0,0.2,
+dev_031.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_031.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_031.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_032.ogg,emotional_tone,neutral,neutral,True
+dev_032.ogg,emotional_intensity,low,medium,False
+dev_032.ogg,background_noise_present,True,False,False
+dev_032.ogg,background_noise_severity,low,none,False
+dev_032.ogg,audio_quality,clear,clear,True
+dev_032.ogg,speaker_overlap_present,True,False,False
+dev_032.ogg,long_silence_present,False,False,True
+dev_032.ogg,background_noise_type,dog barking,,
+dev_032.ogg,confidence,1.0,0.2,
+dev_032.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_032.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_032.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_033.ogg,emotional_tone,satisfied,neutral,False
+dev_033.ogg,emotional_intensity,medium,medium,True
+dev_033.ogg,background_noise_present,True,False,False
+dev_033.ogg,background_noise_severity,low,none,False
+dev_033.ogg,audio_quality,clear,clear,True
+dev_033.ogg,speaker_overlap_present,True,False,False
+dev_033.ogg,long_silence_present,False,False,True
+dev_033.ogg,background_noise_type,road noise,,
+dev_033.ogg,confidence,1.0,0.2,
+dev_033.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_033.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_033.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_034.ogg,emotional_tone,distressed,neutral,False
+dev_034.ogg,emotional_intensity,low,medium,False
+dev_034.ogg,background_noise_present,False,False,True
+dev_034.ogg,background_noise_severity,none,none,True
+dev_034.ogg,audio_quality,clear,clear,True
+dev_034.ogg,speaker_overlap_present,False,False,True
+dev_034.ogg,long_silence_present,False,False,True
+dev_034.ogg,background_noise_type,,,
+dev_034.ogg,confidence,1.0,0.2,
+dev_034.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_034.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_034.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_035.ogg,emotional_tone,distressed,neutral,False
+dev_035.ogg,emotional_intensity,medium,medium,True
+dev_035.ogg,background_noise_present,False,False,True
+dev_035.ogg,background_noise_severity,none,none,True
+dev_035.ogg,audio_quality,clear,clear,True
+dev_035.ogg,speaker_overlap_present,False,False,True
+dev_035.ogg,long_silence_present,False,False,True
+dev_035.ogg,background_noise_type,,,
+dev_035.ogg,confidence,1.0,0.2,
+dev_035.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_035.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_035.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_036.ogg,emotional_tone,satisfied,neutral,False
+dev_036.ogg,emotional_intensity,medium,medium,True
+dev_036.ogg,background_noise_present,False,False,True
+dev_036.ogg,background_noise_severity,none,none,True
+dev_036.ogg,audio_quality,clear,clear,True
+dev_036.ogg,speaker_overlap_present,True,False,False
+dev_036.ogg,long_silence_present,False,False,True
+dev_036.ogg,background_noise_type,,,
+dev_036.ogg,confidence,1.0,0.2,
+dev_036.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_036.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_036.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_037.ogg,emotional_tone,satisfied,neutral,False
+dev_037.ogg,emotional_intensity,medium,medium,True
+dev_037.ogg,background_noise_present,False,True,False
+dev_037.ogg,background_noise_severity,none,medium,False
+dev_037.ogg,audio_quality,clear,clear,True
+dev_037.ogg,speaker_overlap_present,False,False,True
+dev_037.ogg,long_silence_present,False,False,True
+dev_037.ogg,background_noise_type,,static,
+dev_037.ogg,confidence,1.0,0.2,
+dev_037.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_037.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_037.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_038.ogg,emotional_tone,satisfied,neutral,False
+dev_038.ogg,emotional_intensity,medium,medium,True
+dev_038.ogg,background_noise_present,False,False,True
+dev_038.ogg,background_noise_severity,none,none,True
+dev_038.ogg,audio_quality,clear,clear,True
+dev_038.ogg,speaker_overlap_present,False,False,True
+dev_038.ogg,long_silence_present,True,True,True
+dev_038.ogg,background_noise_type,,,
+dev_038.ogg,confidence,1.0,0.2,
+dev_038.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_038.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_038.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_039.ogg,emotional_tone,frustrated,neutral,False
+dev_039.ogg,emotional_intensity,medium,medium,True
+dev_039.ogg,background_noise_present,True,False,False
+dev_039.ogg,background_noise_severity,low,none,False
+dev_039.ogg,audio_quality,clear,clear,True
+dev_039.ogg,speaker_overlap_present,False,False,True
+dev_039.ogg,long_silence_present,False,False,True
+dev_039.ogg,background_noise_type,road noise,,
+dev_039.ogg,confidence,1.0,0.2,
+dev_039.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_039.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_039.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_040.ogg,emotional_tone,frustrated,neutral,False
+dev_040.ogg,emotional_intensity,medium,medium,True
+dev_040.ogg,background_noise_present,True,False,False
+dev_040.ogg,background_noise_severity,high,none,False
+dev_040.ogg,audio_quality,clear,clear,True
+dev_040.ogg,speaker_overlap_present,False,False,True
+dev_040.ogg,long_silence_present,False,False,True
+dev_040.ogg,background_noise_type,appliance hum,,
+dev_040.ogg,confidence,1.0,0.2,
+dev_040.ogg,vote0,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_040.ogg,vote1,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",
+dev_040.ogg,vote2,,"{""error"": ""429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 500, model: gemini-3.5-flash-lite, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api""}",

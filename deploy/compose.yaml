@@ -1,0 +1,61 @@
+# Production stack: Caddy (TLS + routing) → client (static SPA) + api (FastAPI + worker) → Postgres
+# Run from deploy/: docker compose --env-file .env up -d
+name: metune
+
+services:
+  caddy:
+    image: caddy:2.8
+    restart: unless-stopped
+    ports: ["80:80", "443:443", "443:443/udp"]
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in deploy/.env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [client, api]
+    mem_limit: 128m
+
+  client:
+    image: ${REGISTRY:-metune}/metune-client:${IMAGE_TAG:-latest}
+    build: { context: ../apps/client }
+    restart: unless-stopped
+    mem_limit: 64m
+
+  api:
+    image: ${REGISTRY:-metune}/metune-api:${IMAGE_TAG:-latest}
+    build:
+      context: ..
+      dockerfile: apps/api/Dockerfile
+      args: { GIT_SHA: "${IMAGE_TAG:-dev}" }
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://metune:${PG_PASSWORD}@db:5432/metune
+      COOKIE_SECURE: "true"
+    volumes:
+      - uploads:/data/uploads
+    depends_on:
+      db: { condition: service_healthy }
+    mem_limit: 2g
+
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: metune
+      POSTGRES_PASSWORD: ${PG_PASSWORD:?set PG_PASSWORD in deploy/.env}
+      POSTGRES_DB: metune
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U metune -d metune"]
+      interval: 5s
+      retries: 10
+    mem_limit: 512m
+
+volumes:
+  caddy_data: {}
+  caddy_config: {}
+  uploads: {}
+  pg_data: {}

@@ -1,0 +1,31 @@
+name,field,label,pred,match
+dev_001.ogg,emotional_tone,neutral,neutral,True
+dev_001.ogg,emotional_intensity,low,low,True
+dev_001.ogg,background_noise_present,False,False,True
+dev_001.ogg,background_noise_severity,none,none,True
+dev_001.ogg,audio_quality,clear,clear,True
+dev_001.ogg,speaker_overlap_present,False,False,True
+dev_001.ogg,long_silence_present,True,True,True
+dev_001.ogg,background_noise_type,,,
+dev_001.ogg,confidence,1.0,0.4,
+dev_001.ogg,vote0,,"{""heard"": ""The customer's voice sounds steady and clear. There are no noticeable changes in pitch, pace, or loudness. The customer speaks in short, clear sentences."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,emotional_tone,frustrated,neutral,False
+dev_002.ogg,emotional_intensity,medium,low,False
+dev_002.ogg,background_noise_present,True,False,False
+dev_002.ogg,background_noise_severity,low,none,False
+dev_002.ogg,audio_quality,clear,clear,True
+dev_002.ogg,speaker_overlap_present,False,False,True
+dev_002.ogg,long_silence_present,False,False,True
+dev_002.ogg,background_noise_type,keyboard typing,,
+dev_002.ogg,confidence,1.0,0.4,
+dev_002.ogg,vote0,,"{""heard"": ""The customer's voice sounds steady and clear. There are no noticeable pitch or loudness changes. The word choice is straightforward. There are no overlapping voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,emotional_tone,satisfied,neutral,False
+dev_003.ogg,emotional_intensity,low,low,True
+dev_003.ogg,background_noise_present,True,True,True
+dev_003.ogg,background_noise_severity,medium,low,False
+dev_003.ogg,audio_quality,clear,clear,True
+dev_003.ogg,speaker_overlap_present,False,False,True
+dev_003.ogg,long_silence_present,True,True,True
+dev_003.ogg,background_noise_type,dog barking,animal sound,
+dev_003.ogg,confidence,1.0,0.77,
+dev_003.ogg,vote0,,"{""heard"": ""The customer's voice sounds steady and clear. There are no noticeable changes in pitch, pace, or loudness. The customer speaks in short sentences. The dog barks in the background throughout the call."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal sound"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",

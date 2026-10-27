@@ -1,0 +1,13 @@
+.git
+.venv
+**/__pycache__
+**/.pytest_cache
+**/node_modules
+apps/client/dist
+.data
+data
+.env
+deploy/.env
+*.ogg
+*.wav
+*.zip

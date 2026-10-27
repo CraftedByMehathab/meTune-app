@@ -1,0 +1,481 @@
+name,field,label,pred,match
+test_001.ogg,emotional_tone,distressed,neutral,False
+test_001.ogg,emotional_intensity,low,low,True
+test_001.ogg,background_noise_present,True,False,False
+test_001.ogg,background_noise_severity,low,none,False
+test_001.ogg,audio_quality,clear,clear,True
+test_001.ogg,speaker_overlap_present,True,False,False
+test_001.ogg,long_silence_present,True,True,True
+test_001.ogg,background_noise_type,static,,
+test_001.ogg,confidence,1.0,0.4,
+test_001.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_001.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_001.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_002.ogg,emotional_tone,frustrated,neutral,False
+test_002.ogg,emotional_intensity,medium,low,False
+test_002.ogg,background_noise_present,False,False,True
+test_002.ogg,background_noise_severity,none,none,True
+test_002.ogg,audio_quality,clear,clear,True
+test_002.ogg,speaker_overlap_present,False,False,True
+test_002.ogg,long_silence_present,False,False,True
+test_002.ogg,background_noise_type,,,
+test_002.ogg,confidence,1.0,0.4,
+test_002.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_002.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_002.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_003.ogg,emotional_tone,frustrated,neutral,False
+test_003.ogg,emotional_intensity,medium,low,False
+test_003.ogg,background_noise_present,True,False,False
+test_003.ogg,background_noise_severity,low,none,False
+test_003.ogg,audio_quality,clear,clear,True
+test_003.ogg,speaker_overlap_present,True,False,False
+test_003.ogg,long_silence_present,False,False,True
+test_003.ogg,background_noise_type,road noise,,
+test_003.ogg,confidence,1.0,0.4,
+test_003.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_003.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_003.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_004.ogg,emotional_tone,upset,neutral,False
+test_004.ogg,emotional_intensity,medium,low,False
+test_004.ogg,background_noise_present,True,False,False
+test_004.ogg,background_noise_severity,medium,none,False
+test_004.ogg,audio_quality,clear,clear,True
+test_004.ogg,speaker_overlap_present,False,True,False
+test_004.ogg,long_silence_present,False,False,True
+test_004.ogg,background_noise_type,background chatter,,
+test_004.ogg,confidence,1.0,0.95,
+test_004.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+test_004.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+test_004.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_005.ogg,emotional_tone,satisfied,neutral,False
+test_005.ogg,emotional_intensity,medium,low,False
+test_005.ogg,background_noise_present,False,False,True
+test_005.ogg,background_noise_severity,none,none,True
+test_005.ogg,audio_quality,clear,clear,True
+test_005.ogg,speaker_overlap_present,True,False,False
+test_005.ogg,long_silence_present,False,False,True
+test_005.ogg,background_noise_type,,,
+test_005.ogg,confidence,1.0,0.4,
+test_005.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_005.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_005.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_006.ogg,emotional_tone,satisfied,neutral,False
+test_006.ogg,emotional_intensity,medium,low,False
+test_006.ogg,background_noise_present,False,False,True
+test_006.ogg,background_noise_severity,none,none,True
+test_006.ogg,audio_quality,clear,clear,True
+test_006.ogg,speaker_overlap_present,True,False,False
+test_006.ogg,long_silence_present,False,False,True
+test_006.ogg,background_noise_type,,,
+test_006.ogg,confidence,1.0,0.4,
+test_006.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_006.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_006.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_007.ogg,emotional_tone,frustrated,neutral,False
+test_007.ogg,emotional_intensity,low,low,True
+test_007.ogg,background_noise_present,True,True,True
+test_007.ogg,background_noise_severity,medium,medium,True
+test_007.ogg,audio_quality,clear,clear,True
+test_007.ogg,speaker_overlap_present,False,False,True
+test_007.ogg,long_silence_present,False,False,True
+test_007.ogg,background_noise_type,dog barking,animal,
+test_007.ogg,confidence,1.0,0.95,
+test_007.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_007.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_007.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_008.ogg,emotional_tone,distressed,neutral,False
+test_008.ogg,emotional_intensity,medium,low,False
+test_008.ogg,background_noise_present,True,False,False
+test_008.ogg,background_noise_severity,medium,none,False
+test_008.ogg,audio_quality,clear,clear,True
+test_008.ogg,speaker_overlap_present,False,False,True
+test_008.ogg,long_silence_present,False,False,True
+test_008.ogg,background_noise_type,background chatter,,
+test_008.ogg,confidence,1.0,0.4,
+test_008.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_008.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_008.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_009.ogg,emotional_tone,frustrated,neutral,False
+test_009.ogg,emotional_intensity,low,low,True
+test_009.ogg,background_noise_present,True,False,False
+test_009.ogg,background_noise_severity,high,none,False
+test_009.ogg,audio_quality,clear,clear,True
+test_009.ogg,speaker_overlap_present,False,False,True
+test_009.ogg,long_silence_present,False,False,True
+test_009.ogg,background_noise_type,appliance hum,,
+test_009.ogg,confidence,1.0,0.4,
+test_009.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_009.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_009.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_010.ogg,emotional_tone,neutral,neutral,True
+test_010.ogg,emotional_intensity,low,low,True
+test_010.ogg,background_noise_present,False,False,True
+test_010.ogg,background_noise_severity,none,none,True
+test_010.ogg,audio_quality,clear,clear,True
+test_010.ogg,speaker_overlap_present,False,False,True
+test_010.ogg,long_silence_present,False,False,True
+test_010.ogg,background_noise_type,,,
+test_010.ogg,confidence,1.0,0.4,
+test_010.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_010.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_010.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_011.ogg,emotional_tone,upset,neutral,False
+test_011.ogg,emotional_intensity,medium,low,False
+test_011.ogg,background_noise_present,True,True,True
+test_011.ogg,background_noise_severity,high,medium,False
+test_011.ogg,audio_quality,clear,clear,True
+test_011.ogg,speaker_overlap_present,False,False,True
+test_011.ogg,long_silence_present,False,False,True
+test_011.ogg,background_noise_type,dog barking,static,
+test_011.ogg,confidence,1.0,0.4,
+test_011.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_011.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_011.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_012.ogg,emotional_tone,upset,neutral,False
+test_012.ogg,emotional_intensity,low,low,True
+test_012.ogg,background_noise_present,False,True,False
+test_012.ogg,background_noise_severity,none,medium,False
+test_012.ogg,audio_quality,clear,clear,True
+test_012.ogg,speaker_overlap_present,True,False,False
+test_012.ogg,long_silence_present,False,False,True
+test_012.ogg,background_noise_type,,static,
+test_012.ogg,confidence,1.0,0.4,
+test_012.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_012.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_012.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_013.ogg,emotional_tone,distressed,neutral,False
+test_013.ogg,emotional_intensity,medium,low,False
+test_013.ogg,background_noise_present,True,False,False
+test_013.ogg,background_noise_severity,medium,none,False
+test_013.ogg,audio_quality,clear,clear,True
+test_013.ogg,speaker_overlap_present,False,False,True
+test_013.ogg,long_silence_present,False,False,True
+test_013.ogg,background_noise_type,dog barking,,
+test_013.ogg,confidence,1.0,0.4,
+test_013.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_013.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_013.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_014.ogg,emotional_tone,upset,neutral,False
+test_014.ogg,emotional_intensity,medium,low,False
+test_014.ogg,background_noise_present,True,False,False
+test_014.ogg,background_noise_severity,medium,none,False
+test_014.ogg,audio_quality,clear,clear,True
+test_014.ogg,speaker_overlap_present,False,False,True
+test_014.ogg,long_silence_present,True,True,True
+test_014.ogg,background_noise_type,road noise,,
+test_014.ogg,confidence,1.0,0.4,
+test_014.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_014.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_014.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_015.ogg,emotional_tone,distressed,neutral,False
+test_015.ogg,emotional_intensity,medium,low,False
+test_015.ogg,background_noise_present,True,False,False
+test_015.ogg,background_noise_severity,medium,none,False
+test_015.ogg,audio_quality,clear,clear,True
+test_015.ogg,speaker_overlap_present,False,False,True
+test_015.ogg,long_silence_present,False,False,True
+test_015.ogg,background_noise_type,static,,
+test_015.ogg,confidence,1.0,0.4,
+test_015.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_015.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_015.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_016.ogg,emotional_tone,satisfied,neutral,False
+test_016.ogg,emotional_intensity,low,low,True
+test_016.ogg,background_noise_present,False,False,True
+test_016.ogg,background_noise_severity,none,none,True
+test_016.ogg,audio_quality,clear,clear,True
+test_016.ogg,speaker_overlap_present,False,False,True
+test_016.ogg,long_silence_present,True,True,True
+test_016.ogg,background_noise_type,,,
+test_016.ogg,confidence,1.0,0.4,
+test_016.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_016.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_016.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_017.ogg,emotional_tone,neutral,neutral,True
+test_017.ogg,emotional_intensity,low,low,True
+test_017.ogg,background_noise_present,False,True,False
+test_017.ogg,background_noise_severity,none,medium,False
+test_017.ogg,audio_quality,clear,clear,True
+test_017.ogg,speaker_overlap_present,False,False,True
+test_017.ogg,long_silence_present,False,False,True
+test_017.ogg,background_noise_type,,static,
+test_017.ogg,confidence,1.0,0.4,
+test_017.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_017.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_017.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_018.ogg,emotional_tone,satisfied,neutral,False
+test_018.ogg,emotional_intensity,medium,low,False
+test_018.ogg,background_noise_present,False,False,True
+test_018.ogg,background_noise_severity,none,none,True
+test_018.ogg,audio_quality,clear,clear,True
+test_018.ogg,speaker_overlap_present,True,False,False
+test_018.ogg,long_silence_present,False,False,True
+test_018.ogg,background_noise_type,,,
+test_018.ogg,confidence,1.0,0.4,
+test_018.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_018.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_018.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_019.ogg,emotional_tone,distressed,neutral,False
+test_019.ogg,emotional_intensity,medium,low,False
+test_019.ogg,background_noise_present,False,False,True
+test_019.ogg,background_noise_severity,none,none,True
+test_019.ogg,audio_quality,clear,clear,True
+test_019.ogg,speaker_overlap_present,False,False,True
+test_019.ogg,long_silence_present,False,False,True
+test_019.ogg,background_noise_type,,,
+test_019.ogg,confidence,1.0,0.4,
+test_019.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_019.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_019.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_020.ogg,emotional_tone,neutral,distressed,False
+test_020.ogg,emotional_intensity,low,high,False
+test_020.ogg,background_noise_present,True,True,True
+test_020.ogg,background_noise_severity,medium,high,False
+test_020.ogg,audio_quality,clear,clear,True
+test_020.ogg,speaker_overlap_present,False,False,True
+test_020.ogg,long_silence_present,True,True,True
+test_020.ogg,background_noise_type,baby crying,baby crying,
+test_020.ogg,confidence,1.0,0.95,
+test_020.ogg,vote0,,"{""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_020.ogg,vote1,,"{""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_020.ogg,vote2,,"{""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_021.ogg,emotional_tone,distressed,neutral,False
+test_021.ogg,emotional_intensity,medium,low,False
+test_021.ogg,background_noise_present,False,False,True
+test_021.ogg,background_noise_severity,none,none,True
+test_021.ogg,audio_quality,clear,clear,True
+test_021.ogg,speaker_overlap_present,False,False,True
+test_021.ogg,long_silence_present,False,False,True
+test_021.ogg,background_noise_type,,,
+test_021.ogg,confidence,1.0,0.4,
+test_021.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_021.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_021.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_022.ogg,emotional_tone,satisfied,neutral,False
+test_022.ogg,emotional_intensity,low,low,True
+test_022.ogg,background_noise_present,True,False,False
+test_022.ogg,background_noise_severity,high,none,False
+test_022.ogg,audio_quality,clear,clear,True
+test_022.ogg,speaker_overlap_present,False,False,True
+test_022.ogg,long_silence_present,False,False,True
+test_022.ogg,background_noise_type,static,,
+test_022.ogg,confidence,1.0,0.4,
+test_022.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_022.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_022.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_023.ogg,emotional_tone,neutral,neutral,True
+test_023.ogg,emotional_intensity,low,low,True
+test_023.ogg,background_noise_present,False,False,True
+test_023.ogg,background_noise_severity,none,none,True
+test_023.ogg,audio_quality,clear,clear,True
+test_023.ogg,speaker_overlap_present,False,False,True
+test_023.ogg,long_silence_present,True,True,True
+test_023.ogg,background_noise_type,,,
+test_023.ogg,confidence,1.0,0.4,
+test_023.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_023.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_023.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_024.ogg,emotional_tone,neutral,neutral,True
+test_024.ogg,emotional_intensity,low,low,True
+test_024.ogg,background_noise_present,True,False,False
+test_024.ogg,background_noise_severity,low,none,False
+test_024.ogg,audio_quality,clear,clear,True
+test_024.ogg,speaker_overlap_present,False,False,True
+test_024.ogg,long_silence_present,False,False,True
+test_024.ogg,background_noise_type,dog barking,,
+test_024.ogg,confidence,1.0,0.4,
+test_024.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_024.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_024.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_025.ogg,emotional_tone,frustrated,neutral,False
+test_025.ogg,emotional_intensity,low,low,True
+test_025.ogg,background_noise_present,True,False,False
+test_025.ogg,background_noise_severity,medium,none,False
+test_025.ogg,audio_quality,clear,clear,True
+test_025.ogg,speaker_overlap_present,False,False,True
+test_025.ogg,long_silence_present,False,False,True
+test_025.ogg,background_noise_type,keyboard typing,,
+test_025.ogg,confidence,1.0,0.4,
+test_025.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_025.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_025.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_026.ogg,emotional_tone,neutral,neutral,True
+test_026.ogg,emotional_intensity,low,low,True
+test_026.ogg,background_noise_present,False,False,True
+test_026.ogg,background_noise_severity,none,none,True
+test_026.ogg,audio_quality,clear,clear,True
+test_026.ogg,speaker_overlap_present,False,False,True
+test_026.ogg,long_silence_present,True,True,True
+test_026.ogg,background_noise_type,,,
+test_026.ogg,confidence,1.0,0.4,
+test_026.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_026.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_026.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_027.ogg,emotional_tone,satisfied,neutral,False
+test_027.ogg,emotional_intensity,medium,low,False
+test_027.ogg,background_noise_present,False,False,True
+test_027.ogg,background_noise_severity,none,none,True
+test_027.ogg,audio_quality,clear,clear,True
+test_027.ogg,speaker_overlap_present,True,False,False
+test_027.ogg,long_silence_present,False,False,True
+test_027.ogg,background_noise_type,,,
+test_027.ogg,confidence,1.0,0.4,
+test_027.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_027.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_027.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_028.ogg,emotional_tone,neutral,neutral,True
+test_028.ogg,emotional_intensity,low,low,True
+test_028.ogg,background_noise_present,False,False,True
+test_028.ogg,background_noise_severity,none,none,True
+test_028.ogg,audio_quality,clear,clear,True
+test_028.ogg,speaker_overlap_present,False,False,True
+test_028.ogg,long_silence_present,True,True,True
+test_028.ogg,background_noise_type,,,
+test_028.ogg,confidence,1.0,0.4,
+test_028.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_028.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_028.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_029.ogg,emotional_tone,upset,neutral,False
+test_029.ogg,emotional_intensity,medium,low,False
+test_029.ogg,background_noise_present,False,True,False
+test_029.ogg,background_noise_severity,none,medium,False
+test_029.ogg,audio_quality,clear,clear,True
+test_029.ogg,speaker_overlap_present,False,False,True
+test_029.ogg,long_silence_present,False,False,True
+test_029.ogg,background_noise_type,,static,
+test_029.ogg,confidence,1.0,0.4,
+test_029.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_029.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_029.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_030.ogg,emotional_tone,upset,neutral,False
+test_030.ogg,emotional_intensity,medium,low,False
+test_030.ogg,background_noise_present,False,True,False
+test_030.ogg,background_noise_severity,none,medium,False
+test_030.ogg,audio_quality,clear,clear,True
+test_030.ogg,speaker_overlap_present,False,False,True
+test_030.ogg,long_silence_present,False,False,True
+test_030.ogg,background_noise_type,,static,
+test_030.ogg,confidence,1.0,0.4,
+test_030.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_030.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_030.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_031.ogg,emotional_tone,upset,neutral,False
+test_031.ogg,emotional_intensity,medium,low,False
+test_031.ogg,background_noise_present,False,True,False
+test_031.ogg,background_noise_severity,none,medium,False
+test_031.ogg,audio_quality,clear,clear,True
+test_031.ogg,speaker_overlap_present,False,False,True
+test_031.ogg,long_silence_present,False,False,True
+test_031.ogg,background_noise_type,,static,
+test_031.ogg,confidence,1.0,0.4,
+test_031.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_031.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_031.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_032.ogg,emotional_tone,frustrated,neutral,False
+test_032.ogg,emotional_intensity,low,low,True
+test_032.ogg,background_noise_present,False,False,True
+test_032.ogg,background_noise_severity,none,none,True
+test_032.ogg,audio_quality,clear,clear,True
+test_032.ogg,speaker_overlap_present,False,False,True
+test_032.ogg,long_silence_present,False,False,True
+test_032.ogg,background_noise_type,,,
+test_032.ogg,confidence,1.0,0.4,
+test_032.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_032.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_032.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_033.ogg,emotional_tone,frustrated,neutral,False
+test_033.ogg,emotional_intensity,low,low,True
+test_033.ogg,background_noise_present,True,False,False
+test_033.ogg,background_noise_severity,high,none,False
+test_033.ogg,audio_quality,clear,clear,True
+test_033.ogg,speaker_overlap_present,False,False,True
+test_033.ogg,long_silence_present,False,False,True
+test_033.ogg,background_noise_type,static,,
+test_033.ogg,confidence,1.0,0.4,
+test_033.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_033.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_033.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_034.ogg,emotional_tone,neutral,neutral,True
+test_034.ogg,emotional_intensity,low,low,True
+test_034.ogg,background_noise_present,True,False,False
+test_034.ogg,background_noise_severity,low,none,False
+test_034.ogg,audio_quality,clear,clear,True
+test_034.ogg,speaker_overlap_present,False,False,True
+test_034.ogg,long_silence_present,False,False,True
+test_034.ogg,background_noise_type,keyboard typing,,
+test_034.ogg,confidence,1.0,0.4,
+test_034.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_034.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_034.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_035.ogg,emotional_tone,satisfied,neutral,False
+test_035.ogg,emotional_intensity,medium,low,False
+test_035.ogg,background_noise_present,True,True,True
+test_035.ogg,background_noise_severity,medium,medium,True
+test_035.ogg,audio_quality,clear,clear,True
+test_035.ogg,speaker_overlap_present,False,False,True
+test_035.ogg,long_silence_present,False,False,True
+test_035.ogg,background_noise_type,dog barking,animal,
+test_035.ogg,confidence,1.0,0.95,
+test_035.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_035.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_035.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_036.ogg,emotional_tone,upset,neutral,False
+test_036.ogg,emotional_intensity,medium,low,False
+test_036.ogg,background_noise_present,False,False,True
+test_036.ogg,background_noise_severity,none,none,True
+test_036.ogg,audio_quality,clear,clear,True
+test_036.ogg,speaker_overlap_present,False,False,True
+test_036.ogg,long_silence_present,True,True,True
+test_036.ogg,background_noise_type,,,
+test_036.ogg,confidence,1.0,0.4,
+test_036.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_036.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_036.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_037.ogg,emotional_tone,frustrated,neutral,False
+test_037.ogg,emotional_intensity,medium,low,False
+test_037.ogg,background_noise_present,True,False,False
+test_037.ogg,background_noise_severity,high,none,False
+test_037.ogg,audio_quality,clear,clear,True
+test_037.ogg,speaker_overlap_present,False,False,True
+test_037.ogg,long_silence_present,True,True,True
+test_037.ogg,background_noise_type,road noise,,
+test_037.ogg,confidence,1.0,0.4,
+test_037.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_037.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_037.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_038.ogg,emotional_tone,distressed,neutral,False
+test_038.ogg,emotional_intensity,medium,low,False
+test_038.ogg,background_noise_present,True,False,False
+test_038.ogg,background_noise_severity,low,none,False
+test_038.ogg,audio_quality,clear,clear,True
+test_038.ogg,speaker_overlap_present,False,False,True
+test_038.ogg,long_silence_present,False,False,True
+test_038.ogg,background_noise_type,dog barking,,
+test_038.ogg,confidence,1.0,0.95,
+test_038.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_038.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_038.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_039.ogg,emotional_tone,satisfied,neutral,False
+test_039.ogg,emotional_intensity,low,low,True
+test_039.ogg,background_noise_present,False,False,True
+test_039.ogg,background_noise_severity,none,none,True
+test_039.ogg,audio_quality,clear,clear,True
+test_039.ogg,speaker_overlap_present,True,False,False
+test_039.ogg,long_silence_present,False,False,True
+test_039.ogg,background_noise_type,,,
+test_039.ogg,confidence,1.0,0.4,
+test_039.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_039.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_039.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_040.ogg,emotional_tone,distressed,neutral,False
+test_040.ogg,emotional_intensity,medium,low,False
+test_040.ogg,background_noise_present,False,True,False
+test_040.ogg,background_noise_severity,none,medium,False
+test_040.ogg,audio_quality,clear,clear,True
+test_040.ogg,speaker_overlap_present,False,False,True
+test_040.ogg,long_silence_present,False,False,True
+test_040.ogg,background_noise_type,,static,
+test_040.ogg,confidence,1.0,0.4,
+test_040.ogg,vote0,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_040.ogg,vote1,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+test_040.ogg,vote2,,"{""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",

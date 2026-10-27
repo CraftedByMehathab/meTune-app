@@ -1,0 +1,166 @@
+{
+  "name": "E11-v2-flash",
+  "split": "dev",
+  "n": 40,
+  "when": "2026-10-27T01:00:58",
+  "config_hash": "8be76609eee3",
+  "overrides": {
+    "llm_prompt": "v2",
+    "llm_model": "gemini-3.5-flash",
+    "price_per_1m": {
+      "audio_in": 1.5,
+      "text_in": 1.5,
+      "text_out": 9.0
+    }
+  },
+  "config": {
+    "sample_rate": 16000,
+    "frame_ms": 20,
+    "skip_start_s": 1.0,
+    "edge_ignore_s": 2.0,
+    "long_silence_s": 10.0,
+    "vad_threshold": 0.5,
+    "clip_pct_slight": 0.5,
+    "clip_pct_severe": 3.0,
+    "spike_jump_db": 25.0,
+    "spike_rate_static": 20.0,
+    "default_vote_confidence": 0.4,
+    "llm_model": "gemini-3.5-flash",
+    "llm_prompt": "v2",
+    "llm_votes": 3,
+    "llm_temperatures": [
+      0.0,
+      0.4,
+      0.7
+    ],
+    "llm_thinking_level": "minimal",
+    "llm_timeout_s": 120.0,
+    "llm_rpm": 300,
+    "llm_retries": 2,
+    "price_per_1m": {
+      "audio_in": 1.5,
+      "text_in": 1.5,
+      "text_out": 9.0
+    }
+  },
+  "accuracy": {
+    "emotional_tone": 0.2,
+    "emotional_intensity": 0.475,
+    "background_noise_present": 0.95,
+    "background_noise_severity": 0.425,
+    "audio_quality": 0.975,
+    "speaker_overlap_present": 0.6,
+    "long_silence_present": 0.95
+  },
+  "macro_f1": {
+    "emotional_tone": 0.073,
+    "emotional_intensity": 0.282,
+    "background_noise_present": 0.933,
+    "background_noise_severity": 0.383,
+    "audio_quality": 0.494,
+    "speaker_overlap_present": 0.467,
+    "long_silence_present": 0.861
+  },
+  "intensity_accuracy_non_neutral": 0.344,
+  "noise_present": {
+    "precision": 0.935,
+    "recall": 1.0,
+    "positives": 29
+  },
+  "overlap": {
+    "precision": 0.286,
+    "recall": 0.154,
+    "positives": 13
+  },
+  "all_default_answers": 9,
+  "confidence_mean_when_tone_right": 0.881,
+  "confidence_mean_when_tone_wrong": 0.764,
+  "tone_report": [
+    {
+      "label": "neutral",
+      "precision": 0.222,
+      "recall": 1.0,
+      "f1": 0.364,
+      "support": 8
+    },
+    {
+      "label": "satisfied",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "frustrated",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "upset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "distressed",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    }
+  ],
+  "tone_confusion": {
+    "labels": [
+      "neutral",
+      "satisfied",
+      "frustrated",
+      "upset",
+      "distressed"
+    ],
+    "matrix": [
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        7,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  "audio_min": 20.54,
+  "cost_usd": 0.35731,
+  "cost_per_min": 0.0174,
+  "llm_errors": 0,
+  "wall_s": 27.2
+}

@@ -1,0 +1,32 @@
+{$DOMAIN} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+
+	handle /api/* {
+		request_body {
+			max_size 2GB
+		}
+		reverse_proxy api:8000 {
+			transport http {
+				read_timeout 15m
+				write_timeout 15m
+			}
+		}
+	}
+
+	handle {
+		reverse_proxy client:80
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

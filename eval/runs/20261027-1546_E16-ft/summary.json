@@ -1,0 +1,573 @@
+{
+  "name": "E16-ft",
+  "when": "2026-10-27T15:46:07",
+  "base": "superb/wav2vec2-base-superb-er",
+  "args": {
+    "name": "E16-ft",
+    "base": "superb/wav2vec2-base-superb-er",
+    "epochs": 8,
+    "batch": 8,
+    "lr": 3e-05,
+    "seed": 13,
+    "device": "mps"
+  },
+  "clips": {
+    "train": 1107,
+    "val": 325
+  },
+  "class_weights": [
+    0.5609999895095825,
+    1.7300000190734863,
+    1.5269999504089355,
+    0.753000020980835,
+    1.5269999504089355
+  ],
+  "val_before_training": {
+    "loss": 1.6254,
+    "accuracy": 0.12,
+    "macro_f1": 0.069,
+    "recall": {
+      "neutral": 0.0,
+      "satisfied": 0.111,
+      "frustrated": 0.024,
+      "upset": 0.0,
+      "distressed": 0.63
+    },
+    "neutral_precision": null,
+    "confusion": [
+      [
+        0,
+        2,
+        2,
+        1,
+        112
+      ],
+      [
+        0,
+        4,
+        2,
+        2,
+        28
+      ],
+      [
+        0,
+        4,
+        1,
+        0,
+        37
+      ],
+      [
+        0,
+        31,
+        1,
+        0,
+        44
+      ],
+      [
+        0,
+        19,
+        1,
+        0,
+        34
+      ]
+    ]
+  },
+  "best_epoch": {
+    "epoch": 8,
+    "train_loss": 0.2948,
+    "val": {
+      "loss": 0.6231,
+      "accuracy": 0.831,
+      "macro_f1": 0.787,
+      "recall": {
+        "neutral": 0.923,
+        "satisfied": 0.611,
+        "frustrated": 0.786,
+        "upset": 0.908,
+        "distressed": 0.704
+      },
+      "neutral_precision": 0.973,
+      "confusion": [
+        [
+          108,
+          1,
+          4,
+          1,
+          3
+        ],
+        [
+          0,
+          22,
+          3,
+          9,
+          2
+        ],
+        [
+          2,
+          0,
+          33,
+          6,
+          1
+        ],
+        [
+          0,
+          3,
+          4,
+          69,
+          0
+        ],
+        [
+          1,
+          10,
+          0,
+          5,
+          38
+        ]
+      ]
+    },
+    "s": 153
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.5139,
+      "val": {
+        "loss": 1.2681,
+        "accuracy": 0.489,
+        "macro_f1": 0.378,
+        "recall": {
+          "neutral": 0.573,
+          "satisfied": 0.222,
+          "frustrated": 0.524,
+          "upset": 0.816,
+          "distressed": 0.0
+        },
+        "neutral_precision": 0.593,
+        "confusion": [
+          [
+            67,
+            0,
+            50,
+            0,
+            0
+          ],
+          [
+            10,
+            8,
+            1,
+            17,
+            0
+          ],
+          [
+            11,
+            2,
+            22,
+            7,
+            0
+          ],
+          [
+            8,
+            2,
+            4,
+            62,
+            0
+          ],
+          [
+            17,
+            9,
+            8,
+            20,
+            0
+          ]
+        ]
+      },
+      "s": 156
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.1979,
+      "val": {
+        "loss": 1.1128,
+        "accuracy": 0.563,
+        "macro_f1": 0.438,
+        "recall": {
+          "neutral": 0.718,
+          "satisfied": 0.639,
+          "frustrated": 0.286,
+          "upset": 0.842,
+          "distressed": 0.0
+        },
+        "neutral_precision": 0.8,
+        "confusion": [
+          [
+            84,
+            15,
+            14,
+            2,
+            2
+          ],
+          [
+            1,
+            23,
+            0,
+            12,
+            0
+          ],
+          [
+            13,
+            4,
+            12,
+            13,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            64,
+            0
+          ],
+          [
+            7,
+            35,
+            1,
+            11,
+            0
+          ]
+        ]
+      },
+      "s": 155
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.9867,
+      "val": {
+        "loss": 0.9041,
+        "accuracy": 0.671,
+        "macro_f1": 0.568,
+        "recall": {
+          "neutral": 0.949,
+          "satisfied": 0.389,
+          "frustrated": 0.333,
+          "upset": 0.803,
+          "distressed": 0.333
+        },
+        "neutral_precision": 0.725,
+        "confusion": [
+          [
+            111,
+            0,
+            5,
+            0,
+            1
+          ],
+          [
+            5,
+            14,
+            1,
+            8,
+            8
+          ],
+          [
+            18,
+            2,
+            14,
+            8,
+            0
+          ],
+          [
+            6,
+            5,
+            3,
+            61,
+            1
+          ],
+          [
+            13,
+            18,
+            0,
+            5,
+            18
+          ]
+        ]
+      },
+      "s": 160
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8422,
+      "val": {
+        "loss": 0.8611,
+        "accuracy": 0.671,
+        "macro_f1": 0.606,
+        "recall": {
+          "neutral": 0.744,
+          "satisfied": 0.583,
+          "frustrated": 0.786,
+          "upset": 0.842,
+          "distressed": 0.241
+        },
+        "neutral_precision": 0.916,
+        "confusion": [
+          [
+            87,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            4,
+            10,
+            1
+          ],
+          [
+            4,
+            0,
+            33,
+            5,
+            0
+          ],
+          [
+            0,
+            2,
+            10,
+            64,
+            0
+          ],
+          [
+            4,
+            21,
+            6,
+            10,
+            13
+          ]
+        ]
+      },
+      "s": 151
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6626,
+      "val": {
+        "loss": 0.8617,
+        "accuracy": 0.714,
+        "macro_f1": 0.596,
+        "recall": {
+          "neutral": 0.94,
+          "satisfied": 0.639,
+          "frustrated": 0.381,
+          "upset": 0.987,
+          "distressed": 0.148
+        },
+        "neutral_precision": 0.866,
+        "confusion": [
+          [
+            110,
+            3,
+            0,
+            4,
+            0
+          ],
+          [
+            1,
+            23,
+            0,
+            12,
+            0
+          ],
+          [
+            11,
+            0,
+            16,
+            14,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            75,
+            0
+          ],
+          [
+            4,
+            33,
+            0,
+            9,
+            8
+          ]
+        ]
+      },
+      "s": 147
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5236,
+      "val": {
+        "loss": 0.7435,
+        "accuracy": 0.8,
+        "macro_f1": 0.732,
+        "recall": {
+          "neutral": 0.966,
+          "satisfied": 0.528,
+          "frustrated": 0.5,
+          "upset": 1.0,
+          "distressed": 0.574
+        },
+        "neutral_precision": 0.919,
+        "confusion": [
+          [
+            113,
+            0,
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            19,
+            1,
+            13,
+            2
+          ],
+          [
+            7,
+            0,
+            21,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            76,
+            0
+          ],
+          [
+            2,
+            11,
+            1,
+            9,
+            31
+          ]
+        ]
+      },
+      "s": 152
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.36,
+      "val": {
+        "loss": 0.6582,
+        "accuracy": 0.825,
+        "macro_f1": 0.778,
+        "recall": {
+          "neutral": 0.932,
+          "satisfied": 0.639,
+          "frustrated": 0.81,
+          "upset": 0.908,
+          "distressed": 0.611
+        },
+        "neutral_precision": 0.965,
+        "confusion": [
+          [
+            109,
+            0,
+            4,
+            1,
+            3
+          ],
+          [
+            0,
+            23,
+            3,
+            9,
+            1
+          ],
+          [
+            2,
+            0,
+            34,
+            6,
+            0
+          ],
+          [
+            0,
+            3,
+            4,
+            69,
+            0
+          ],
+          [
+            2,
+            14,
+            0,
+            5,
+            33
+          ]
+        ]
+      },
+      "s": 151
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.2948,
+      "val": {
+        "loss": 0.6231,
+        "accuracy": 0.831,
+        "macro_f1": 0.787,
+        "recall": {
+          "neutral": 0.923,
+          "satisfied": 0.611,
+          "frustrated": 0.786,
+          "upset": 0.908,
+          "distressed": 0.704
+        },
+        "neutral_precision": 0.973,
+        "confusion": [
+          [
+            108,
+            1,
+            4,
+            1,
+            3
+          ],
+          [
+            0,
+            22,
+            3,
+            9,
+            2
+          ],
+          [
+            2,
+            0,
+            33,
+            6,
+            1
+          ],
+          [
+            0,
+            3,
+            4,
+            69,
+            0
+          ],
+          [
+            1,
+            10,
+            0,
+            5,
+            38
+          ]
+        ]
+      },
+      "s": 153
+    }
+  ],
+  "model_dir": ".data/proxy/ser_ft/E16-ft/model"
+}

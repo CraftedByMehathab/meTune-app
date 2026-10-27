@@ -1,0 +1,1137 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "meTune API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Login",
+        "operationId": "login_api_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Me"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Logout",
+        "operationId": "logout_api_auth_logout_post",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Me",
+        "operationId": "me_api_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Me"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/batches": {
+      "get": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "List Batches",
+        "operationId": "list_batches_api_batches_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/BatchSummary"
+                  },
+                  "type": "array",
+                  "title": "Response List Batches Api Batches Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "Create Batch",
+        "operationId": "create_batch_api_batches_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_create_batch_api_batches_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/batches/{batch_id}/start": {
+      "post": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "Start Batch",
+        "operationId": "start_batch_api_batches__batch_id__start_post",
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batch Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/batches/{batch_id}": {
+      "get": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "Get Batch",
+        "operationId": "get_batch_api_batches__batch_id__get",
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batch Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/batches/{batch_id}/files": {
+      "get": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "List Files",
+        "operationId": "list_files_api_batches__batch_id__files_get",
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batch Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileOut"
+                  },
+                  "title": "Response List Files Api Batches  Batch Id  Files Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/batches/{batch_id}/download": {
+      "get": {
+        "tags": [
+          "batches"
+        ],
+        "summary": "Download",
+        "operationId": "download_api_batches__batch_id__download_get",
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batch Id"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "csv",
+                "json"
+              ],
+              "type": "string",
+              "default": "csv",
+              "title": "Format"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/healthz": {
+      "get": {
+        "tags": [
+          "ops"
+        ],
+        "summary": "Healthz",
+        "operationId": "healthz_api_healthz_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Healthz Api Healthz Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BatchDetail": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "has_labels": {
+            "type": "boolean",
+            "title": "Has Labels"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/Counts"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "config_hash": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Config Hash"
+          },
+          "git_sha": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Git Sha"
+          },
+          "manifest": {
+            "$ref": "#/components/schemas/ManifestReport"
+          },
+          "totals": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Totals"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Metrics"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "created_at",
+          "finished_at",
+          "has_labels",
+          "counts",
+          "started_at",
+          "model_id",
+          "config_hash",
+          "git_sha",
+          "manifest",
+          "totals",
+          "metrics"
+        ],
+        "title": "BatchDetail"
+      },
+      "BatchSummary": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "has_labels": {
+            "type": "boolean",
+            "title": "Has Labels"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/Counts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "created_at",
+          "finished_at",
+          "has_labels",
+          "counts"
+        ],
+        "title": "BatchSummary"
+      },
+      "Body_create_batch_api_batches_post": {
+        "properties": {
+          "files": {
+            "items": {
+              "type": "string",
+              "contentMediaType": "application/octet-stream"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "One ZIP, or every file of a folder"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "files"
+        ],
+        "title": "Body_create_batch_api_batches_post"
+      },
+      "ClassScore": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "precision": {
+            "type": "number",
+            "title": "Precision"
+          },
+          "recall": {
+            "type": "number",
+            "title": "Recall"
+          },
+          "f1": {
+            "type": "number",
+            "title": "F1"
+          },
+          "support": {
+            "type": "integer",
+            "title": "Support"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "precision",
+          "recall",
+          "f1",
+          "support"
+        ],
+        "title": "ClassScore"
+      },
+      "Confusion": {
+        "properties": {
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "matrix": {
+            "items": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Matrix"
+          }
+        },
+        "type": "object",
+        "required": [
+          "labels",
+          "matrix"
+        ],
+        "title": "Confusion"
+      },
+      "Counts": {
+        "properties": {
+          "pending": {
+            "type": "integer",
+            "title": "Pending",
+            "default": 0
+          },
+          "queued": {
+            "type": "integer",
+            "title": "Queued",
+            "default": 0
+          },
+          "running": {
+            "type": "integer",
+            "title": "Running",
+            "default": 0
+          },
+          "done": {
+            "type": "integer",
+            "title": "Done",
+            "default": 0
+          },
+          "error": {
+            "type": "integer",
+            "title": "Error",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "Counts"
+      },
+      "FieldScore": {
+        "properties": {
+          "accuracy": {
+            "type": "number",
+            "title": "Accuracy"
+          },
+          "macro_f1": {
+            "type": "number",
+            "title": "Macro F1"
+          }
+        },
+        "type": "object",
+        "required": [
+          "accuracy",
+          "macro_f1"
+        ],
+        "title": "FieldScore"
+      },
+      "FileOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "latency_ms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latency Ms"
+          },
+          "cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cost Usd"
+          },
+          "degraded": {
+            "type": "boolean",
+            "title": "Degraded"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Result"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Result"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "error",
+          "attempts",
+          "duration_s",
+          "latency_ms",
+          "cost_usd",
+          "degraded",
+          "label",
+          "result"
+        ],
+        "title": "FileOut"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LoginIn": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "LoginIn"
+      },
+      "ManifestIssue": {
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning"
+            ],
+            "title": "Level"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "level",
+          "name",
+          "message"
+        ],
+        "title": "ManifestIssue"
+      },
+      "ManifestReport": {
+        "properties": {
+          "csv_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Csv Name"
+          },
+          "has_labels": {
+            "type": "boolean",
+            "title": "Has Labels",
+            "default": false
+          },
+          "matched": {
+            "type": "integer",
+            "title": "Matched",
+            "default": 0
+          },
+          "audio_without_row": {
+            "type": "integer",
+            "title": "Audio Without Row",
+            "default": 0
+          },
+          "row_without_audio": {
+            "type": "integer",
+            "title": "Row Without Audio",
+            "default": 0
+          },
+          "unsupported": {
+            "type": "integer",
+            "title": "Unsupported",
+            "default": 0
+          },
+          "bad_json": {
+            "type": "integer",
+            "title": "Bad Json",
+            "default": 0
+          },
+          "to_process": {
+            "type": "integer",
+            "title": "To Process",
+            "default": 0
+          },
+          "fatal": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fatal"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/components/schemas/ManifestIssue"
+            },
+            "type": "array",
+            "title": "Issues",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "ManifestReport"
+      },
+      "Me": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "title": "Me"
+      },
+      "Metrics": {
+        "properties": {
+          "n": {
+            "type": "integer",
+            "title": "N"
+          },
+          "per_field": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/FieldScore"
+            },
+            "type": "object",
+            "title": "Per Field"
+          },
+          "tone_report": {
+            "items": {
+              "$ref": "#/components/schemas/ClassScore"
+            },
+            "type": "array",
+            "title": "Tone Report"
+          },
+          "tone_confusion": {
+            "$ref": "#/components/schemas/Confusion"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n",
+          "per_field",
+          "tone_report",
+          "tone_confusion"
+        ],
+        "title": "Metrics"
+      },
+      "Result": {
+        "properties": {
+          "emotional_tone": {
+            "type": "string",
+            "enum": [
+              "neutral",
+              "satisfied",
+              "frustrated",
+              "upset",
+              "distressed"
+            ],
+            "title": "Emotional Tone"
+          },
+          "emotional_intensity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Emotional Intensity"
+          },
+          "background_noise_present": {
+            "type": "boolean",
+            "title": "Background Noise Present"
+          },
+          "background_noise_type": {
+            "type": "string",
+            "title": "Background Noise Type"
+          },
+          "background_noise_severity": {
+            "type": "string",
+            "enum": [
+              "none",
+              "low",
+              "medium",
+              "high"
+            ],
+            "title": "Background Noise Severity"
+          },
+          "audio_quality": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "slightly_impaired",
+              "severely_impaired"
+            ],
+            "title": "Audio Quality"
+          },
+          "speaker_overlap_present": {
+            "type": "boolean",
+            "title": "Speaker Overlap Present"
+          },
+          "long_silence_present": {
+            "type": "boolean",
+            "title": "Long Silence Present"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "emotional_tone",
+          "emotional_intensity",
+          "background_noise_present",
+          "background_noise_type",
+          "background_noise_severity",
+          "audio_quality",
+          "speaker_overlap_present",
+          "long_silence_present",
+          "confidence"
+        ],
+        "title": "Result"
+      },
+      "Totals": {
+        "properties": {
+          "audio_min": {
+            "type": "number",
+            "title": "Audio Min"
+          },
+          "cost_usd": {
+            "type": "number",
+            "title": "Cost Usd"
+          },
+          "cost_per_min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cost Per Min"
+          },
+          "latency_s_per_min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latency S Per Min"
+          },
+          "p50_latency_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P50 Latency S"
+          },
+          "p95_latency_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P95 Latency S"
+          }
+        },
+        "type": "object",
+        "required": [
+          "audio_min",
+          "cost_usd",
+          "cost_per_min",
+          "latency_s_per_min",
+          "p50_latency_s",
+          "p95_latency_s"
+        ],
+        "title": "Totals"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "name": "E15-qwen7b-v2",
+  "split": "dev",
+  "n": 40,
+  "when": "2026-10-27T16:00:50",
+  "model": "Qwen/Qwen2.5-Omni-7B",
+  "prompt": "v2",
+  "votes": 1,
+  "device": "mps",
+  "accuracy": {
+    "emotional_tone": 0.2,
+    "emotional_intensity": 0.4,
+    "background_noise_present": 0.4,
+    "background_noise_severity": 0.275,
+    "audio_quality": 1.0,
+    "speaker_overlap_present": 0.675,
+    "long_silence_present": 0.95
+  },
+  "macro_f1": {
+    "emotional_tone": 0.067,
+    "emotional_intensity": 0.19,
+    "background_noise_present": 0.398,
+    "background_noise_severity": 0.172,
+    "audio_quality": 1.0,
+    "speaker_overlap_present": 0.403,
+    "long_silence_present": 0.861
+  },
+  "intensity_accuracy_non_neutral": 0.25,
+  "noise_present": {
+    "precision": 0.778,
+    "recall": 0.241,
+    "positives": 29
+  },
+  "overlap": {
+    "precision": null,
+    "recall": 0.0,
+    "positives": 13
+  },
+  "all_default_answers": 31,
+  "tone_report": [
+    {
+      "label": "neutral",
+      "precision": 0.2,
+      "recall": 1.0,
+      "f1": 0.333,
+      "support": 8
+    },
+    {
+      "label": "satisfied",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "frustrated",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "upset",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    },
+    {
+      "label": "distressed",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 8
+    }
+  ],
+  "tone_confusion": {
+    "labels": [
+      "neutral",
+      "satisfied",
+      "frustrated",
+      "upset",
+      "distressed"
+    ],
+    "matrix": [
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "audio_min": 20.54,
+  "parse_errors": 0,
+  "gen_s_per_vote": 82.0,
+  "gen_s_per_audio_min": null
+}

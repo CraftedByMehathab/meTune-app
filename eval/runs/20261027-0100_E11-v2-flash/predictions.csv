@@ -1,0 +1,481 @@
+name,field,label,pred,match
+dev_001.ogg,emotional_tone,neutral,neutral,True
+dev_001.ogg,emotional_intensity,low,low,True
+dev_001.ogg,background_noise_present,False,False,True
+dev_001.ogg,background_noise_severity,none,none,True
+dev_001.ogg,audio_quality,clear,clear,True
+dev_001.ogg,speaker_overlap_present,False,False,True
+dev_001.ogg,long_silence_present,True,True,True
+dev_001.ogg,background_noise_type,,,
+dev_001.ogg,confidence,1.0,0.4,
+dev_001.ogg,vote0,,"{""heard"": ""A male speaker recites short, unrelated phrases with long pauses in between. His voice is calm, clear, and steady in pitch and pace. No background noise or speaker overlap is audible throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote1,,"{""heard"": ""A male speaker recites short, disconnected statements with long pauses in between. His voice is clear, steady, and monotone throughout the recording. There are no background noises or speaker overlaps present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote2,,"{""heard"": ""A male speaker recites short, disjointed sentences with a very calm, deliberate pace and stable vocal tone. The background is completely quiet with no ambient noise or interference. No other speakers are present, and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,emotional_tone,frustrated,neutral,False
+dev_002.ogg,emotional_intensity,medium,low,False
+dev_002.ogg,background_noise_present,True,True,True
+dev_002.ogg,background_noise_severity,low,medium,False
+dev_002.ogg,audio_quality,clear,clear,True
+dev_002.ogg,speaker_overlap_present,False,False,True
+dev_002.ogg,long_silence_present,False,False,True
+dev_002.ogg,background_noise_type,keyboard typing,keyboard typing,
+dev_002.ogg,confidence,1.0,0.95,
+dev_002.ogg,vote0,,"{""heard"": ""Multiple speakers are heard talking over each other in short fragments. A distinct background sound of continuous keyboard typing is present throughout the clip. The audio quality is clear and undistorted, but the speech is fragmented and overlapping."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""keyboard typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_002.ogg,vote1,,"{""heard"": ""Two people are heard speaking casually while loud keyboard typing sounds occur continuously in the background. A male speaker exclaims 'Eleven o'clock!' with elevated pitch and volume, but the overall conversation remains conversational and relaxed. The audio is clear and there is no overlapping speech between the speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,vote2,,"{""heard"": ""The audio features alternating voices speaking short phrases, accompanied by continuous, loud keyboard typing sounds in the background. A male speaker expresses slight surprise or emphasis on certain statements, but the overall tone remains calm. The female speaker speaks in a measured, even cadence."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""keyboard typing"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,emotional_tone,satisfied,neutral,False
+dev_003.ogg,emotional_intensity,low,low,True
+dev_003.ogg,background_noise_present,True,True,True
+dev_003.ogg,background_noise_severity,medium,medium,True
+dev_003.ogg,audio_quality,clear,clear,True
+dev_003.ogg,speaker_overlap_present,False,False,True
+dev_003.ogg,long_silence_present,True,True,True
+dev_003.ogg,background_noise_type,dog barking,dog barking,
+dev_003.ogg,confidence,1.0,0.77,
+dev_003.ogg,vote0,,"{""heard"": ""A male and a female speaker are conversing while a dog barks loudly in the background throughout the clip. Their speech is clear, calm, and deliberate without any signs of distress. There are no speaker overlaps or audio distortions present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote1,,"{""heard"": ""A male and female speaker are having a casual conversation, speaking in a calm and measured tone. A dog can be heard loudly barking continuously throughout the background of the audio. The speakers' voices remain clear, distinct, and free of emotional distress or tension."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote2,,"{""heard"": ""A male and female speaker are taking turns speaking in a calm, clear conversational manner. Throughout the entire recording, a dog can be heard barking repeatedly in the background. The speech quality is clear and there is no overlap between the speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_004.ogg,emotional_tone,distressed,frustrated,False
+dev_004.ogg,emotional_intensity,medium,medium,True
+dev_004.ogg,background_noise_present,True,True,True
+dev_004.ogg,background_noise_severity,medium,medium,True
+dev_004.ogg,audio_quality,clear,clear,True
+dev_004.ogg,speaker_overlap_present,True,True,True
+dev_004.ogg,long_silence_present,False,False,True
+dev_004.ogg,background_noise_type,background chatter,chatter,
+dev_004.ogg,confidence,1.0,0.75,
+dev_004.ogg,vote0,,"{""heard"": ""Multiple people are speaking simultaneously in a busy environment. A person repeatedly shouts that it is 11 o'clock over other background voices. The main speaker's voice is raised, insistent, and urgent as they talk about the slick surface and an airplane."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_004.ogg,vote1,,"{""heard"": ""Multiple people are speaking simultaneously in an indoor room with a notable reverberant echo. One speaker repeatedly exclaims that it is 11 o'clock while another talks about a meeting and a surface being slick. The speech is overlapping, loud, and insistent, accompanied by general ambient chatter."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""room chatter and echo"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_004.ogg,vote2,,"{""heard"": ""Multiple voices overlap throughout the clip as speaker audio repeats and cuts in and out. One voice excitedly mentions it is 11 o'clock while another speaker talks about a slick surface and an almost full airplane. The speech is hurried with noticeable acoustic room echo."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_005.ogg,emotional_tone,upset,neutral,False
+dev_005.ogg,emotional_intensity,medium,low,False
+dev_005.ogg,background_noise_present,False,False,True
+dev_005.ogg,background_noise_severity,none,none,True
+dev_005.ogg,audio_quality,clear,clear,True
+dev_005.ogg,speaker_overlap_present,True,False,False
+dev_005.ogg,long_silence_present,False,False,True
+dev_005.ogg,background_noise_type,,,
+dev_005.ogg,confidence,1.0,0.95,
+dev_005.ogg,vote0,,"{""heard"": ""A female voice repeats several short sentences like 'I would like a new alarm clock' and 'The airplane is almost full' with varying volumes and pitches. Some phrases are spoken in a calm, lowered voice, while others are shouted with high intensity. There are distinct pauses between phrases and no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote1,,"{""heard"": ""A female voice alternates between a quiet, flat tone and sudden louder, emphatic exclamations of phrases such as 'The airplane is almost full!' and 'I wonder what this is about!'. There are no background noises or speaker overlaps present in the recording. The overall speech is clear and distinct throughout."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote2,,"{""heard"": ""A female voice repeats several short statements such as 'I would like a new alarm clock' and 'The airplane is almost full', varying her volume from soft to loud shouts. Another lower female voice faintly overlaps in the background on a few takes. The recording environment is clean with no ambient noise or physical audio artifacts."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_006.ogg,emotional_tone,satisfied,neutral,False
+dev_006.ogg,emotional_intensity,low,low,True
+dev_006.ogg,background_noise_present,True,True,True
+dev_006.ogg,background_noise_severity,medium,low,False
+dev_006.ogg,audio_quality,clear,clear,True
+dev_006.ogg,speaker_overlap_present,True,False,False
+dev_006.ogg,long_silence_present,False,False,True
+dev_006.ogg,background_noise_type,static,"static, clicks",
+dev_006.ogg,confidence,1.0,0.95,
+dev_006.ogg,vote0,,"{""heard"": ""A male and female speaker are reciting short casual phrases, repeating and overlapping each other's lines slightly. Their voices sound calm, relaxed, and conversational in pitch and pace. Low static ambient hum and distinct metallic clicks or static pops are heard throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static, clicks"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_006.ogg,vote1,,"{""heard"": ""Multiple speakers are heard reciting short phrases like 'The airplane is almost full' and 'I wonder what this is about' in alternating turns. The voices are spoken at a normal pace and volume with a neutral delivery. The audio is crisp and free of background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,vote2,,"{""heard"": ""Two speakers are conversing in a calm, casual tone while reading or repeating sentences to each other. Their speech is clearly audible and spoken at a moderate, steady pace. There are quiet background clicks and light ambient noise, but no speech overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""clicking and ambient room noise"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,emotional_tone,satisfied,neutral,False
+dev_007.ogg,emotional_intensity,medium,low,False
+dev_007.ogg,background_noise_present,True,True,True
+dev_007.ogg,background_noise_severity,medium,low,False
+dev_007.ogg,audio_quality,clear,clear,True
+dev_007.ogg,speaker_overlap_present,False,False,True
+dev_007.ogg,long_silence_present,True,False,False
+dev_007.ogg,background_noise_type,keyboard typing,typing,
+dev_007.ogg,confidence,1.0,0.79,
+dev_007.ogg,vote0,,"{""heard"": ""A male and female speaker alternate reading simple test sentences back and forth. Throughout the entire recording, distinct fast keyboard typing clicks are loudly audible in the background. Both speakers speak clearly with a calm, deliberate tone and steady pace."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote1,,"{""heard"": ""Two speakers alternate short phrases, with a female voice speaking casually and a male voice making brief statements. Continuous fast keyboard typing clicking noise is prominent throughout the recording in the background. The speech is spoken with a neutral, calm cadence and normal pitch without speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote2,,"{""heard"": ""Two speakers take turns reading short sentences while consistent keyboard typing sound plays throughout the recording. The speakers maintain a calm, steady speech rate and neutral pitch. The audio is clear with no overlapping speech or distortion."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,emotional_tone,upset,neutral,False
+dev_008.ogg,emotional_intensity,medium,low,False
+dev_008.ogg,background_noise_present,True,True,True
+dev_008.ogg,background_noise_severity,medium,medium,True
+dev_008.ogg,audio_quality,clear,clear,True
+dev_008.ogg,speaker_overlap_present,False,True,False
+dev_008.ogg,long_silence_present,False,False,True
+dev_008.ogg,background_noise_type,baby crying,baby_crying,
+dev_008.ogg,confidence,1.0,0.75,
+dev_008.ogg,vote0,,"{""heard"": ""A female voice speaks loudly and rapidly with high pitch while a baby is continuously crying in the background. A secondary male voice can also be heard speaking quietly in the background. The background baby crying dominates the audio throughout the entire clip."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_008.ogg,vote1,,"{""heard"": ""A female voice speaks while a baby cries loudly and continuously throughout the clip. A male voice can also be heard speaking in the background. The female speaker's voice is heard at a normal volume and pace alongside the baby's distress."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_008.ogg,vote2,,"{""heard"": ""A woman's voice speaks with a consistent pitch and volume, expressing simple statements like asking for a new alarm clock and making comments about time and clothing. Simultaneously, an infant is heard crying loudly and distressed in the background throughout the recording. Another lower-pitched voice is also audible briefly speaking in the background."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""crying baby and background speech"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_009.ogg,emotional_tone,neutral,neutral,True
+dev_009.ogg,emotional_intensity,low,low,True
+dev_009.ogg,background_noise_present,True,True,True
+dev_009.ogg,background_noise_severity,high,medium,False
+dev_009.ogg,audio_quality,clear,clear,True
+dev_009.ogg,speaker_overlap_present,False,True,False
+dev_009.ogg,long_silence_present,False,False,True
+dev_009.ogg,background_noise_type,static,static and rustling,
+dev_009.ogg,confidence,1.0,0.95,
+dev_009.ogg,vote0,,"{""heard"": ""A male and female voice alternate speaking short, fragmented phrases in a soft, calm cadence. Constant static and heavy friction or rustling noise is audible in the background throughout the recording. The speakers maintain a quiet, steady tone without any obvious emotional escalation."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static and rustling"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,vote1,,"{""heard"": ""Two synthetic-sounding voices are heard speaking short, disconnected phrases back and forth. The background contains continuous static and distinct electronic click sounds throughout the recording. The speakers talk over each other in a couple of instances."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static, clicking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_009.ogg,vote2,,"{""heard"": ""Two voices are heard talking over each other in a series of short, disjointed fragments. A synthesized or distorted male voice and a female voice speak simultaneously, making the transcript difficult to follow. Heavy static, digital buzzing, and audio artifacts obscure the speech throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""high"", ""audio_quality"": ""severely_impaired"", ""speaker_overlap_present"": true}",
+dev_010.ogg,emotional_tone,neutral,neutral,True
+dev_010.ogg,emotional_intensity,low,low,True
+dev_010.ogg,background_noise_present,True,True,True
+dev_010.ogg,background_noise_severity,medium,low,False
+dev_010.ogg,audio_quality,clear,clear,True
+dev_010.ogg,speaker_overlap_present,True,False,False
+dev_010.ogg,long_silence_present,False,False,True
+dev_010.ogg,background_noise_type,keyboard typing,typing,
+dev_010.ogg,confidence,1.0,0.95,
+dev_010.ogg,vote0,,"{""heard"": ""A female voice speaks a series of short, disconnected statements with quiet pauses in between. Her vocal tone remains calm, steady, and matter-of-fact throughout the recording. Background clicking sounds, resembling keyboard typing, are faintly audible during several pauses."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote1,,"{""heard"": ""A female speaker reads short sentences aloud with a calm and deliberate cadence. Her tone remains consistently neutral and even throughout the recording. Background noises such as mouse clicking and quiet rustling are audible between her phrases."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""clicking, rustling"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote2,,"{""heard"": ""A female voice speaks in a calm, measured, and deliberate tone throughout the recording, making several unrelated statements. Strong keyboard typing noises are clearly audible in the background between and during speech phrases. The audio quality is clean and intelligible, with no overlapping speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,emotional_tone,neutral,neutral,True
+dev_011.ogg,emotional_intensity,low,low,True
+dev_011.ogg,background_noise_present,True,True,True
+dev_011.ogg,background_noise_severity,medium,low,False
+dev_011.ogg,audio_quality,clear,clear,True
+dev_011.ogg,speaker_overlap_present,True,False,False
+dev_011.ogg,long_silence_present,False,False,True
+dev_011.ogg,background_noise_type,dog barking,dog barking,
+dev_011.ogg,confidence,1.0,0.95,
+dev_011.ogg,vote0,,"{""heard"": ""A male speaker delivers several short phrases in a calm, steady cadence with a neutral tone. A dog is heard barking repeatedly in the background throughout the recording. The speech remains crisp and clear without any speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote1,,"{""heard"": ""A male speaker delivers several short, disjointed sentences in a calm, neutral tone of voice. Throughout the clip, a dog can be heard barking distinctly in the background at regular intervals. The audio is clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote2,,"{""heard"": ""A male speaker delivers several short sentences clearly and at a steady, calm pace. In the background, a dog can be heard barking distinctly at multiple points throughout the recording. The overall speech is clear with no overlap or technical interference."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,emotional_tone,distressed,neutral,False
+dev_012.ogg,emotional_intensity,medium,low,False
+dev_012.ogg,background_noise_present,True,True,True
+dev_012.ogg,background_noise_severity,low,medium,False
+dev_012.ogg,audio_quality,clear,clear,True
+dev_012.ogg,speaker_overlap_present,False,True,False
+dev_012.ogg,long_silence_present,False,False,True
+dev_012.ogg,background_noise_type,background chatter,background chatter,
+dev_012.ogg,confidence,1.0,0.95,
+dev_012.ogg,vote0,,"{""heard"": ""Multiple voices overlap in a chaotic background, speaking short disjointed phrases like 'It's 11 o'clock' and 'I think I have a doctor's appointment.' The primary male speaker has a calm, slightly confused cadence with neutral pitch. Moderate background chatter and ambient noise are audible throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""background chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_012.ogg,vote1,,"{""heard"": ""Multiple male and female voices are speaking over each other in a chaotic, overlapped manner, uttering fragments of unrelated sentences. The primary male voices speak with a low intensity, calm, and neutral cadence despite the overlapping chatter. Continuous ambient background chatter and room noise are audible throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""background chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_012.ogg,vote2,,"{""heard"": ""Multiple male and female voices overlap throughout the clip, reading out disjointed sentences like 'I think I have a doctor's appointment' and 'The airplane is almost full'. A noticeable chatter from background voices creates continuous speaker overlap and distraction. The primary speakers deliver their lines with a calm, deliberate, and neutral tone."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""background chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_013.ogg,emotional_tone,upset,neutral,False
+dev_013.ogg,emotional_intensity,medium,low,False
+dev_013.ogg,background_noise_present,False,True,False
+dev_013.ogg,background_noise_severity,none,medium,False
+dev_013.ogg,audio_quality,clear,clear,True
+dev_013.ogg,speaker_overlap_present,False,False,True
+dev_013.ogg,long_silence_present,False,False,True
+dev_013.ogg,background_noise_type,,static,
+dev_013.ogg,confidence,1.0,0.4,
+dev_013.ogg,vote0,,"{""heard"": ""Two female speakers alternate reading short sentences with brief pauses between them. The voice pitch remains consistent and neutral, spoken at a moderate, deliberate pace without emotional inflection. The audio is clear and quiet with no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote1,,"{""heard"": ""Multiple speaker voices alternate reading short unrelated phrases. The audio features two alternating female voices speaking clearly with natural pitch and pace. The recording is entirely free of background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote2,,"{""heard"": ""Two female voices alternate speaking short sentences back and forth. One speaker speaks in a smooth, calm manner, while the other speaks with a higher pitch and slightly erratic emphasis. There are no background noises or speaker overlaps present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,emotional_tone,upset,neutral,False
+dev_014.ogg,emotional_intensity,low,low,True
+dev_014.ogg,background_noise_present,True,True,True
+dev_014.ogg,background_noise_severity,high,medium,False
+dev_014.ogg,audio_quality,clear,clear,True
+dev_014.ogg,speaker_overlap_present,True,False,False
+dev_014.ogg,long_silence_present,False,False,True
+dev_014.ogg,background_noise_type,appliance hum,machinery_hum,
+dev_014.ogg,confidence,1.0,0.63,
+dev_014.ogg,vote0,,"{""heard"": ""A male voice speaks short observations about time and an airplane. Constant heavy machinery or hum-like mechanical noise dominates the background. The speech is spoken in a calm, matter-of-fact tone."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""machinery_hum"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote1,,"{""heard"": ""A male speaker speaks in a calm, neutral tone, making brief observations such as 'It's 11 o'clock' and 'The airplane is almost full.' Between his spoken remarks, there are loud mechanical white-noise blasts and muffled ambient sounds. No overlap or emotional escalation occurs in the speech."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""loud mechanical white noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote2,,"{""heard"": ""A male voice makes short statements like \""It's 11 o'clock\"" and \""The airplane is almost full.\"" The speaker speaks at a calm, deliberate pace with a steady, neutral pitch. Continuous loud machinery noise, similar to a vacuum or turbine, dominates the entire recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""machinery"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,emotional_tone,distressed,frustrated,False
+dev_015.ogg,emotional_intensity,medium,medium,True
+dev_015.ogg,background_noise_present,True,True,True
+dev_015.ogg,background_noise_severity,medium,high,False
+dev_015.ogg,audio_quality,clear,clear,True
+dev_015.ogg,speaker_overlap_present,False,True,False
+dev_015.ogg,long_silence_present,False,True,False
+dev_015.ogg,background_noise_type,appliance hum,machinery / vacuum noise,
+dev_015.ogg,confidence,1.0,0.5,
+dev_015.ogg,vote0,,"{""heard"": ""A speaker shouts loudly over a very noisy background, mentioning the time and an appointment. The voice sounds urgent and agitated with a high pitch. Heavy mechanical or vacuum-like background noise runs throughout the recording."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""machinery / vacuum noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,vote1,,"{""heard"": ""A female voice speaks with urgent, raised tones, shouting reminders like \""Don't forget a jacket!\"" and \""It's 11 o'clock!\"". Continuous loud static and white noise run throughout the recording, at times overpowering the speech. A second speaker's voice is heard softly underneath the loud ambient sound."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""static, white noise"", ""background_noise_severity"": ""high"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_015.ogg,vote2,,"{""heard"": ""A female voice speaks excitedly and loudly, shouting reminders and time updates like \""Don't forget a jacket!\"" and \""It's 11 o'clock!\"". Meanwhile, a second quieter voice can be heard murmuring in the background. Loud, continuous white noise, resembling a vacuum cleaner or hair dryer, dominates the recording throughout."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""appliance_noise"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_016.ogg,emotional_tone,distressed,neutral,False
+dev_016.ogg,emotional_intensity,medium,low,False
+dev_016.ogg,background_noise_present,True,True,True
+dev_016.ogg,background_noise_severity,medium,medium,True
+dev_016.ogg,audio_quality,clear,clear,True
+dev_016.ogg,speaker_overlap_present,False,False,True
+dev_016.ogg,long_silence_present,False,False,True
+dev_016.ogg,background_noise_type,baby crying,baby_crying,
+dev_016.ogg,confidence,1.0,0.95,
+dev_016.ogg,vote0,,"{""heard"": ""A male speaker says he is on his way to a meeting and mentions the surface is slick. Throughout the recording, a baby cries loudly in the background. The man's voice remains relatively calm and steady despite the crying."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote1,,"{""heard"": ""A male speaker says he is on his way to a meeting and mentions the surface is slick, speaking in a calm, steady tone. Throughout the clip, a baby or young child is crying loudly in the background. The male voice remains clear and unaffected by the ambient crying."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote2,,"{""heard"": ""A male speaker speaks in a calm, steady cadence stating that he is on his way to a meeting and remarking on the time. Throughout the recording, a baby is crying loudly in the background. The audio quality of the main speech remains clear without speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_017.ogg,emotional_tone,frustrated,upset,False
+dev_017.ogg,emotional_intensity,medium,high,False
+dev_017.ogg,background_noise_present,True,True,True
+dev_017.ogg,background_noise_severity,high,medium,False
+dev_017.ogg,audio_quality,clear,clear,True
+dev_017.ogg,speaker_overlap_present,False,True,False
+dev_017.ogg,long_silence_present,False,False,True
+dev_017.ogg,background_noise_type,background chatter,chatter,
+dev_017.ogg,confidence,1.0,0.75,
+dev_017.ogg,vote0,,"{""heard"": ""A male speaker is heard repeating 'It's 11 o'clock' continuously in an agitated and loud tone. Another female synthetic or recorded voice interrupts with automated messages about time and airplane seats. The background contains continuous chaotic chatter and overlapping voices throughout the clip."", ""emotional_tone"": ""upset"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote1,,"{""heard"": ""Multiple speaker layers are audible simultaneously, with a voice repeating the time \""11 o'clock\"" at high volume and elevated pitch while another voice speaks calmly over it. There is significant overlapping speech and chatter in the recording, making the words chaotic and layered. The overall environment sounds frantic due to the loud repeating voice."", ""emotional_tone"": ""upset"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""crowd chatter"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote2,,"{""heard"": ""A female voice speaks phrase prompts clearly, while multiple chaotic voices in the background repeatedly shout 'It's eleven o'clock!' with high energy. The main speaker's voice remains synthetic, calm, and steady throughout the clip. Heavy speaker overlap occurs between the main voice and the background shouting."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""crowd chatter and shouting"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_018.ogg,emotional_tone,neutral,neutral,True
+dev_018.ogg,emotional_intensity,low,low,True
+dev_018.ogg,background_noise_present,True,True,True
+dev_018.ogg,background_noise_severity,high,medium,False
+dev_018.ogg,audio_quality,clear,clear,True
+dev_018.ogg,speaker_overlap_present,False,False,True
+dev_018.ogg,long_silence_present,False,False,True
+dev_018.ogg,background_noise_type,road noise,siren,
+dev_018.ogg,confidence,1.0,0.95,
+dev_018.ogg,vote0,,"{""heard"": ""A male and a female voice alternate reading short, simple sentences. Sirens, car horns, and street noise play loudly in the background throughout the clip. Both speakers maintain a calm, flat tone with no noticeable vocal distress."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""sirens and traffic noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_018.ogg,vote1,,"{""heard"": ""Multiple speakers alternate reading short, disconnected sentences in a calm, matter-of-fact delivery. Loud emergency vehicle siren wails continuously throughout the audio track in the background. The voices maintain a smooth, steady pace with no emotional inflection."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_018.ogg,vote2,,"{""heard"": ""Multiple speakers read short disconnected sentences in a calm, flat manner. Throughout the audio, a prominent emergency siren wails repeatedly in the background. The speech remains clearly intelligible despite the background siren noise."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,emotional_tone,upset,neutral,False
+dev_019.ogg,emotional_intensity,medium,low,False
+dev_019.ogg,background_noise_present,False,False,True
+dev_019.ogg,background_noise_severity,none,none,True
+dev_019.ogg,audio_quality,clear,clear,True
+dev_019.ogg,speaker_overlap_present,True,False,False
+dev_019.ogg,long_silence_present,False,False,True
+dev_019.ogg,background_noise_type,,,
+dev_019.ogg,confidence,1.0,0.4,
+dev_019.ogg,vote0,,"{""heard"": ""The recording features two speakers taking turns reading short disconnected sentences in a clear room. A male voice speaks at a steady pace and neutral tone, while a female voice speaks with slightly elevated pitch and emphasis. No background noise or technical distortion is audible."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,vote1,,"{""heard"": ""A male and a female speaker take turns reading short sentences clearly. The female speaker's voice is expressive and expressive with normal pacing, while the male voice is calm and measured. The audio is clean without any background noise, speaker overlap, or audio distortion."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,vote2,,"{""heard"": ""Multiple speaker voices alternate rapidly, taking turns reading short unrelated sentences. The recordings sound exceptionally clear with no noticeable background noise or interference. Both speakers maintain a calm, steady cadence and neutral tone throughout."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,emotional_tone,distressed,neutral,False
+dev_020.ogg,emotional_intensity,low,low,True
+dev_020.ogg,background_noise_present,True,True,True
+dev_020.ogg,background_noise_severity,low,medium,False
+dev_020.ogg,audio_quality,clear,clear,True
+dev_020.ogg,speaker_overlap_present,False,False,True
+dev_020.ogg,long_silence_present,False,False,True
+dev_020.ogg,background_noise_type,dog barking,dog_barking,
+dev_020.ogg,confidence,1.0,0.95,
+dev_020.ogg,vote0,,"{""heard"": ""A male and a female speaker are alternating turns speaking in a calm, casual tone. Loud dog barking sounds can be heard repeatedly in the background throughout the recording. The speech is clear and measured with no overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,vote1,,"{""heard"": ""A male and female speaker are conversing in a calm tone. Dog barking sounds can be heard repeatedly in the background throughout the recording. The male speaker mentions a meeting and a doctor's appointment in a neutral pitch and steady pace."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,vote2,,"{""heard"": ""A male and female speaker are taking turns speaking in clear sentences. A dog barking in the background is faintly audible throughout the clip. Both speakers maintain a calm, steady vocal pace with no audible overlap or raised voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_021.ogg,emotional_tone,upset,frustrated,False
+dev_021.ogg,emotional_intensity,medium,low,False
+dev_021.ogg,background_noise_present,True,True,True
+dev_021.ogg,background_noise_severity,high,medium,False
+dev_021.ogg,audio_quality,clear,severely_impaired,False
+dev_021.ogg,speaker_overlap_present,True,True,True
+dev_021.ogg,long_silence_present,False,False,True
+dev_021.ogg,background_noise_type,static,"static, clicks",
+dev_021.ogg,confidence,1.0,0.75,
+dev_021.ogg,vote0,,"{""heard"": ""A male voice speaks softly asking for a new alarm clock, while a female voice talks over him loudly saying 'It's 11 o'clock!'. Heavy static and clicking noise persist throughout the recording. The male speaker's voice is low-pitched and calm, but the audio is muffled and overlapping."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static, clicks"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_021.ogg,vote1,,"{""heard"": ""Multiple voices are audible in a very low-quality, static-heavy recording. A female voice shouts 'It's 11 o'clock!' with high intensity and frustration while another speaker talks about wanting an alarm clock. Heavy static and clipping artifacts run throughout the entire recording, making speech difficult to hear."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""severely_impaired"", ""speaker_overlap_present"": true}",
+dev_021.ogg,vote2,,"{""heard"": ""A male and female voice are heard speaking back and forth about the time and an alarm clock. The audio is significantly degraded with static, crackles, and heavy audio artifacts throughout. The speakers talk over each other multiple times, with the female voice increasing in volume and pitch."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""static, crackles, and line noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""severely_impaired"", ""speaker_overlap_present"": true}",
+dev_022.ogg,emotional_tone,frustrated,neutral,False
+dev_022.ogg,emotional_intensity,low,low,True
+dev_022.ogg,background_noise_present,False,False,True
+dev_022.ogg,background_noise_severity,none,none,True
+dev_022.ogg,audio_quality,clear,clear,True
+dev_022.ogg,speaker_overlap_present,False,False,True
+dev_022.ogg,long_silence_present,False,False,True
+dev_022.ogg,background_noise_type,,,
+dev_022.ogg,confidence,1.0,0.4,
+dev_022.ogg,vote0,,"{""heard"": ""Multiple alternating voices of a male and a female speaking short sentences such as 'It's 11 o'clock' and 'The airplane is almost full'. The recording features severe clipping distortions on the male speaker's phrases. Both speakers maintain a very calm, flat, and neutral delivery throughout."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""severely_impaired"", ""speaker_overlap_present"": false}",
+dev_022.ogg,vote1,,"{""heard"": ""A female speaker and a male speaker alternate reading short isolated statements, such as 'It's 11 o'clock' and 'The airplane is almost full'. The speech is delivered in a steady, even tempo with no background sounds audible. Both voices remain clear and neutral throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_022.ogg,vote2,,"{""heard"": ""Multiple male and female voices take turns reciting short disjointed phrases such as 'It's 11 o'clock' and 'The airplane is almost full'. The speakers deliver their lines in a plain, even tone without any noticeable emotional inflection. The audio is exceptionally clean and free of background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,emotional_tone,frustrated,neutral,False
+dev_023.ogg,emotional_intensity,low,low,True
+dev_023.ogg,background_noise_present,True,True,True
+dev_023.ogg,background_noise_severity,low,medium,False
+dev_023.ogg,audio_quality,clear,clear,True
+dev_023.ogg,speaker_overlap_present,True,False,False
+dev_023.ogg,long_silence_present,False,False,True
+dev_023.ogg,background_noise_type,baby crying,baby crying,
+dev_023.ogg,confidence,1.0,0.95,
+dev_023.ogg,vote0,,"{""heard"": ""A female voice speaks a series of short, disconnected statements with a relatively calm and measured tone. Throughout the recording, a baby is heard crying intermittently in the background. The audio quality is clear, and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,vote1,,"{""heard"": ""A female voice speaks several short phrases with clear pauses in between. In the background, a baby or young child can be heard crying consistently throughout the recording. The speaker's tone remains calm and steady despite the crying in the environment."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,vote2,,"{""heard"": ""A female voice reads brief sentences with variable pacing, interspersed with a crying baby in the background. The background features noticeable baby wailing throughout the clip. There are no speaker overlaps or technical audio distortions."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""crying baby"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,emotional_tone,upset,neutral,False
+dev_024.ogg,emotional_intensity,medium,low,False
+dev_024.ogg,background_noise_present,True,True,True
+dev_024.ogg,background_noise_severity,low,medium,False
+dev_024.ogg,audio_quality,clear,clear,True
+dev_024.ogg,speaker_overlap_present,False,False,True
+dev_024.ogg,long_silence_present,False,False,True
+dev_024.ogg,background_noise_type,baby crying,baby_crying,
+dev_024.ogg,confidence,1.0,0.95,
+dev_024.ogg,vote0,,"{""heard"": ""A male speaker speaks in a calm, steady, and clear voice, reading simple phrases like 'The surface is slick' and 'It's 11 o'clock'. In the background, a young child or baby is continuously crying and vocalizing throughout the recording. The male speaker's tone remains completely neutral and unfazed despite the persistent crying noise."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""child crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,vote1,,"{""heard"": ""A male speaker recites various mismatched sentences with a neutral, steady cadence. Throughout the recording, a baby is crying loudly in the background. The speech remains clear despite the persistent background baby cries."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,vote2,,"{""heard"": ""A male voice speaks short phrases clearly in a neutral, steady tone. Throughout the recording, a baby is crying loudly in the background. The male voice continues speaking calmly despite the crying sounds."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby_crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,emotional_tone,satisfied,neutral,False
+dev_025.ogg,emotional_intensity,medium,low,False
+dev_025.ogg,background_noise_present,True,True,True
+dev_025.ogg,background_noise_severity,low,medium,False
+dev_025.ogg,audio_quality,clear,clear,True
+dev_025.ogg,speaker_overlap_present,False,False,True
+dev_025.ogg,long_silence_present,False,False,True
+dev_025.ogg,background_noise_type,baby crying,child crying,
+dev_025.ogg,confidence,1.0,0.95,
+dev_025.ogg,vote0,,"{""heard"": ""A male and female speaker are exchanging short sentences in a calm, clear tone. In the background, a child or infant is crying persistently throughout the recording. The overall speech is clear with no overlapping voices or audio distortion."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""child crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,vote1,,"{""heard"": ""A male speaker reads short statements with a calm, deliberate tone and steady pace. In between his statements, a child's crying sound is clearly audible in the background along with a female voice making quick remarks. The audio is crisp and intelligible with no voice overlap between the primary speaker and the female voice."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""child crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,vote2,,"{""heard"": ""A male speaker and a female speaker alternate turns reading short sentences. In the background, a baby can be heard crying intermittently throughout the recording. The overall speech is clear with calm, steady pacing from both speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,emotional_tone,neutral,neutral,True
+dev_026.ogg,emotional_intensity,low,low,True
+dev_026.ogg,background_noise_present,True,True,True
+dev_026.ogg,background_noise_severity,low,low,True
+dev_026.ogg,audio_quality,clear,clear,True
+dev_026.ogg,speaker_overlap_present,False,False,True
+dev_026.ogg,long_silence_present,False,False,True
+dev_026.ogg,background_noise_type,keyboard typing,typing,
+dev_026.ogg,confidence,1.0,0.95,
+dev_026.ogg,vote0,,"{""heard"": ""Two speakers take turns reading short practice sentences back and forth in clear, measured tones. Loud typing sounds are audible continuously throughout the background during the recording. Both speakers maintain a steady, calm demeanor with no overlapping speech."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,vote1,,"{""heard"": ""Two distinct voices alternate reciting short, unrelated example sentences. Both speakers maintain a completely calm, steady pitch and pace. Continuous quiet typing sound is audible in the background throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,vote2,,"{""heard"": ""Two speakers alternate reading short sentences clearly and calmly. The male voice has a steady pitch and slow pace, while the female voice speaks in a similar neutral tone. Loud keyboard typing clicks are audible in the background throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,emotional_tone,distressed,neutral,False
+dev_027.ogg,emotional_intensity,medium,low,False
+dev_027.ogg,background_noise_present,True,True,True
+dev_027.ogg,background_noise_severity,medium,low,False
+dev_027.ogg,audio_quality,clear,clear,True
+dev_027.ogg,speaker_overlap_present,False,False,True
+dev_027.ogg,long_silence_present,False,False,True
+dev_027.ogg,background_noise_type,keyboard typing,typing,
+dev_027.ogg,confidence,1.0,0.95,
+dev_027.ogg,vote0,,"{""heard"": ""A female voice speaks a series of short, disconnected statements with quiet pauses between them. Her tone is calm, steady, and neutral throughout the recording. Audible keyboard typing clicks are present in the background during several of her phrases. The audio remains clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,vote1,,"{""heard"": ""A female speaker reads short sentences with a soft, steady voice and neutral inflection. Between spoken phrases, distinct keyboard typing clicks are audible in the background. The audio quality remains clear throughout without any speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,vote2,,"{""heard"": ""A female voice speaks a sequence of short, unrelated phrases with brief pauses between them. Her speech is calm, slow, and delivered with a steady pitch. Distinct keyboard typing sounds are clearly audible in the background throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,emotional_tone,frustrated,neutral,False
+dev_028.ogg,emotional_intensity,low,low,True
+dev_028.ogg,background_noise_present,False,False,True
+dev_028.ogg,background_noise_severity,none,none,True
+dev_028.ogg,audio_quality,clear,clear,True
+dev_028.ogg,speaker_overlap_present,False,False,True
+dev_028.ogg,long_silence_present,False,False,True
+dev_028.ogg,background_noise_type,,,
+dev_028.ogg,confidence,1.0,0.4,
+dev_028.ogg,vote0,,"{""heard"": ""The audio features alternating dialogue between a female voice and a male voice speaking short phrases. The male voice speaks with an unusually deep, slow, and low-pitched pitch while the female voice speaks normally. The recording is clear with no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,vote1,,"{""heard"": ""The audio consists of alternating short phrases spoken by two speakers, one female and one male. Both speakers maintain a steady, calm pitch and a clear, measured pace throughout. There are no noticeable background noises or technical distortions, and the speakers do not overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,vote2,,"{""heard"": ""A female speaker and a male speaker alternate reading short sentences back and forth. Both voices sound clear and speak at a steady, calm pace with moderate volume. There are no background noises or audio distortions present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,emotional_tone,neutral,neutral,True
+dev_029.ogg,emotional_intensity,low,low,True
+dev_029.ogg,background_noise_present,True,True,True
+dev_029.ogg,background_noise_severity,medium,low,False
+dev_029.ogg,audio_quality,clear,clear,True
+dev_029.ogg,speaker_overlap_present,False,False,True
+dev_029.ogg,long_silence_present,False,False,True
+dev_029.ogg,background_noise_type,dog barking,dog barking,
+dev_029.ogg,confidence,1.0,0.95,
+dev_029.ogg,vote0,,"{""heard"": ""A woman reads aloud various short statements in a calm, steady tone of voice. Throughout the recording, a small dog barking is clearly audible in the background. The audio quality remains clear without speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,vote1,,"{""heard"": ""A female voice speaks a series of short phrases in a calm, steady manner with a moderate pace. Throughout the recording, a dog barking is repeatedly heard in the background. No speaker overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,vote2,,"{""heard"": ""A female voice speaks a series of short statements in a calm, steady, and measured pace. Her tone remains neutral and completely composed throughout the recording. Persistent dog barks can be heard loudly in the background at regular intervals. No speaker overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,emotional_tone,upset,neutral,False
+dev_030.ogg,emotional_intensity,high,low,False
+dev_030.ogg,background_noise_present,True,True,True
+dev_030.ogg,background_noise_severity,low,low,True
+dev_030.ogg,audio_quality,clear,clear,True
+dev_030.ogg,speaker_overlap_present,False,False,True
+dev_030.ogg,long_silence_present,False,False,True
+dev_030.ogg,background_noise_type,dog barking,dog_barking,
+dev_030.ogg,confidence,1.0,0.95,
+dev_030.ogg,vote0,,"{""heard"": ""A female voice and a male voice alternate reading short unrelated sentences. The male voice speaks with an emphatic tone, while the female voice sounds clear and neutral. Continuous dog barking is audible in the background throughout the entire recording. There is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,vote1,,"{""heard"": ""Two speakers alternate reading simple sentences in clear speech. Between and during many of the spoken phrases, dog barking sounds are distinctly audible. The speakers maintain a steady, calm demeanor throughout without any overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,vote2,,"{""heard"": ""A female voice and a male voice alternate reading unrelated short sentences back and forth. Throughout the entire recording, a dog can be heard barking repeatedly in the background. Both speakers maintain a calm, measured pitch and pace with clear audio quality."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_031.ogg,emotional_tone,frustrated,neutral,False
+dev_031.ogg,emotional_intensity,medium,low,False
+dev_031.ogg,background_noise_present,True,True,True
+dev_031.ogg,background_noise_severity,high,low,False
+dev_031.ogg,audio_quality,clear,clear,True
+dev_031.ogg,speaker_overlap_present,True,False,False
+dev_031.ogg,long_silence_present,False,False,True
+dev_031.ogg,background_noise_type,keyboard typing,typing,
+dev_031.ogg,confidence,1.0,0.95,
+dev_031.ogg,vote0,,"{""heard"": ""The audio contains multiple speakers conversing about a schedule in a casual setting. A female speaker mentions a doctor's appointment, followed by a male speaker confirming the time of 11 o'clock. Prominent keyboard typing sounds are audible in the background throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_031.ogg,vote1,,"{""heard"": ""Multiple speakers are heard talking about a doctor's appointment at 11 o'clock. Prominent keyboard typing sounds are audible throughout the clip. The speakers maintain a calm, conversational pace with a neutral pitch."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_031.ogg,vote2,,"{""heard"": ""A woman speaks quietly about a doctor's appointment, followed by a man speaking in a low, neutral tone mentioning an eleven o'clock appointment. Audible keyboard typing clicks can be heard clearly throughout the background while they speak. The speakers talk clearly without overlapping each other."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,emotional_tone,neutral,neutral,True
+dev_032.ogg,emotional_intensity,low,low,True
+dev_032.ogg,background_noise_present,True,True,True
+dev_032.ogg,background_noise_severity,low,low,True
+dev_032.ogg,audio_quality,clear,clear,True
+dev_032.ogg,speaker_overlap_present,True,False,False
+dev_032.ogg,long_silence_present,False,False,True
+dev_032.ogg,background_noise_type,dog barking,dog barking,
+dev_032.ogg,confidence,1.0,0.95,
+dev_032.ogg,vote0,,"{""heard"": ""A male and female speaker alternate reading simple sentences in a neutral tone. A dog bark is heard distinctly in the background at the beginning and end of the audio clip. The voice quality is clear and there is no overlap between the speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog_bark"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,vote1,,"{""heard"": ""A male and female speaker take turns reading short sentences in a calm, controlled manner. A dog barking can be clearly heard in the background during parts of the recording. The audio quality is clear and the speakers do not overlap at any point."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,vote2,,"{""heard"": ""A male and female speaker alternate reading simple sentences in a calm, clear tone. In the background, a dog barks distinctly several times throughout the audio clip. The voice quality is clear without any overlapping speech."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,emotional_tone,satisfied,neutral,False
+dev_033.ogg,emotional_intensity,medium,low,False
+dev_033.ogg,background_noise_present,True,True,True
+dev_033.ogg,background_noise_severity,low,medium,False
+dev_033.ogg,audio_quality,clear,clear,True
+dev_033.ogg,speaker_overlap_present,True,False,False
+dev_033.ogg,long_silence_present,False,False,True
+dev_033.ogg,background_noise_type,road noise,siren,
+dev_033.ogg,confidence,1.0,0.95,
+dev_033.ogg,vote0,,"{""heard"": ""Multiple speakers are heard repeating short phrases such as 'It's 11 o'clock' in a steady, measured pace. Siren-like alarm or emergency tones blare prominently in the background throughout the recording. The speech remains clear and neutral despite the background siren sounds, with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,vote1,,"{""heard"": ""A male speaker and a female speaker take turns repeating short phrases such as times and simple sentences. A high-pitched squeaking or whistling toy sound occurs periodically throughout the recording. The overall vocal tone of both speakers remains calm, clear, and neutral without emotional inflection."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""squeaking toy"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,vote2,,"{""heard"": ""A male and a female speaker are heard taking turns repeating simple phrases, including 'It's 11 o'clock'. A distinct siren sound blares in the background throughout the recording. The speakers maintain a steady, clear, and neutral tone of voice without any emotional escalation."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,emotional_tone,distressed,neutral,False
+dev_034.ogg,emotional_intensity,low,low,True
+dev_034.ogg,background_noise_present,False,False,True
+dev_034.ogg,background_noise_severity,none,none,True
+dev_034.ogg,audio_quality,clear,clear,True
+dev_034.ogg,speaker_overlap_present,False,False,True
+dev_034.ogg,long_silence_present,False,False,True
+dev_034.ogg,background_noise_type,,,
+dev_034.ogg,confidence,1.0,0.4,
+dev_034.ogg,vote0,,"{""heard"": ""A female speaker and a male speaker take turns reciting short phrases, such as 'I'm on my way to the meeting' and 'It's 11 o'clock'. Heavy breathing is heard between several of the spoken lines. The voice is calm and measured in delivery with no noticeable background noise or interference."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,vote1,,"{""heard"": ""A speaker is heard repeating phrases such as 'I'm on my way to the meeting' and 'That is exactly what happened' with varied intonations. The speech features heavy breathing and sighs between sentences. The recording quality is clear and free of background interference."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,vote2,,"{""heard"": ""Multiple speakers repeat short phrases such as 'I'm on my way to the meeting' and 'I think I have a doctor's appointment'. The recording consists of back-and-forth speech between a male and a female voice reading prompt lines. Heavy breathing and sighing are clearly audible between several of the spoken lines. The overall delivery is calm, measured, and spoken at a moderate, clear pace with no background audio."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,emotional_tone,distressed,neutral,False
+dev_035.ogg,emotional_intensity,medium,low,False
+dev_035.ogg,background_noise_present,False,False,True
+dev_035.ogg,background_noise_severity,none,none,True
+dev_035.ogg,audio_quality,clear,clear,True
+dev_035.ogg,speaker_overlap_present,False,False,True
+dev_035.ogg,long_silence_present,False,False,True
+dev_035.ogg,background_noise_type,,,
+dev_035.ogg,confidence,1.0,0.75,
+dev_035.ogg,vote0,,"{""heard"": ""A female voice and a male voice alternate short phrases, including 'Don't forget a jacket' and 'It's 11 o'clock!'. Both speakers deliver their lines with a calm, clear tone without significant emotion. There are no background noises or speaker overlaps present throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,vote1,,"{""heard"": ""A male speaker expresses various statements with heightened emotion and urgency, including shouting about the time. His voice is tense and raised significantly on certain phrases. The recording is clear without any background noise or overlapping speakers."", ""emotional_tone"": ""upset"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,vote2,,"{""heard"": ""A female speaker and a male speaker alternate reading various short sentences. The female voice is calm and neutral, while the male voice sounds noticeably more expressive and agitated on phrases like 'It's 11 o'clock!'. The recording is quiet with no background noise or overlap, and the audio quality remains clear throughout."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,emotional_tone,satisfied,neutral,False
+dev_036.ogg,emotional_intensity,medium,low,False
+dev_036.ogg,background_noise_present,False,False,True
+dev_036.ogg,background_noise_severity,none,none,True
+dev_036.ogg,audio_quality,clear,clear,True
+dev_036.ogg,speaker_overlap_present,True,False,False
+dev_036.ogg,long_silence_present,False,False,True
+dev_036.ogg,background_noise_type,,,
+dev_036.ogg,confidence,1.0,0.95,
+dev_036.ogg,vote0,,"{""heard"": ""A male speaker repeats several short phrases back-to-back, first in a quiet neutral voice and then in a higher pitched, excited cadence. The recording has noticeable background room room ambiance with a subtle hum or low-level hiss. No speaker overlap occurs during the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""room ambiance and low hiss"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,vote1,,"{""heard"": ""A male voice speaks short sentences in a low-pitched, steady tone, followed immediately by another higher-pitched male voice repeating some of the phrases with varied intonation. The recording is quiet with a slightly muffled room acoustic. There is no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,vote2,,"{""heard"": ""A male voice speaks short simple phrases with a calm, deliberate tone and steady pacing. The speaker repeats some sentences with slightly different inflection or pitch variations. The audio is clear and quiet with no background interference or overlapping voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,emotional_tone,satisfied,neutral,False
+dev_037.ogg,emotional_intensity,medium,medium,True
+dev_037.ogg,background_noise_present,False,True,False
+dev_037.ogg,background_noise_severity,none,medium,False
+dev_037.ogg,audio_quality,clear,clear,True
+dev_037.ogg,speaker_overlap_present,False,False,True
+dev_037.ogg,long_silence_present,False,False,True
+dev_037.ogg,background_noise_type,,static,
+dev_037.ogg,confidence,1.0,0.4,
+dev_037.ogg,vote0,,"{""heard"": ""Multiple speaker takes are heard reading short standalone sentences in alternating turn-taking style. The voices change between calm, clear statements and exaggerated, energetic exclamations. No background noise or overlapping speech occurs throughout the audio."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,vote1,,"{""heard"": ""Multiple speaker takes turn reciting short sentences in alternating female and male voices. The voices range from calm and neutral to expressive and shouted, such as when the male speaker shouts 'It's 11 o'clock!' The recording has clean studio-like audio with no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,vote2,,"{""heard"": ""A female and a male speaker take turns reciting short sentences. Towards the end, the male speaker raises his voice significantly while shouting statements like 'The airplane is almost full!' and 'It's 11 o'clock!'. The recording is clear with no background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,emotional_tone,satisfied,neutral,False
+dev_038.ogg,emotional_intensity,medium,low,False
+dev_038.ogg,background_noise_present,False,False,True
+dev_038.ogg,background_noise_severity,none,none,True
+dev_038.ogg,audio_quality,clear,clear,True
+dev_038.ogg,speaker_overlap_present,False,False,True
+dev_038.ogg,long_silence_present,True,True,True
+dev_038.ogg,background_noise_type,,,
+dev_038.ogg,confidence,1.0,0.4,
+dev_038.ogg,vote0,,"{""heard"": ""The audio features alternating spoken phrases by a male voice and a female voice. Both speakers communicate with clear pronunciation, steady pacing, and a relaxed, calm pitch. There are no background noises or audio distortions, and the speakers do not overlap at any point."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,vote1,,"{""heard"": ""A male and female speaker take turns speaking clear, short sentences in a calm and deliberate manner. The audio is extremely clean with no audible background noise or interference. Both speakers maintain a steady, neutral pitch and pace throughout the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,vote2,,"{""heard"": ""A male and female speaker take turns reading short conversational sentences in a calm, clear tone. There are long silent pauses between the spoken lines. The recording is extremely clean with no background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,emotional_tone,frustrated,neutral,False
+dev_039.ogg,emotional_intensity,medium,low,False
+dev_039.ogg,background_noise_present,True,True,True
+dev_039.ogg,background_noise_severity,low,low,True
+dev_039.ogg,audio_quality,clear,clear,True
+dev_039.ogg,speaker_overlap_present,False,False,True
+dev_039.ogg,long_silence_present,False,False,True
+dev_039.ogg,background_noise_type,road noise,siren,
+dev_039.ogg,confidence,1.0,0.95,
+dev_039.ogg,vote0,,"{""heard"": ""Multiple male and female voices are speaking alternating phrases in a clear, calm tone. Throughout the recording, a loud emergency siren wails continuously in the background. The speech itself is composed and spoken at a normal pace without overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,vote1,,"{""heard"": ""A male and a female speaker take turns making short statements. Emergency sirens wail prominently in the background throughout the recording. The speakers maintain a steady, matter-of-fact tone and pace without overlapping."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,vote2,,"{""heard"": ""Multiple speakers take turns making short observations in a calm, matter-of-fact tone. In the background, a siren sound wails at intervals throughout the clip. The audio is clear with no speaker overlap or speech impairment."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,emotional_tone,frustrated,neutral,False
+dev_040.ogg,emotional_intensity,medium,low,False
+dev_040.ogg,background_noise_present,True,True,True
+dev_040.ogg,background_noise_severity,high,medium,False
+dev_040.ogg,audio_quality,clear,clear,True
+dev_040.ogg,speaker_overlap_present,False,False,True
+dev_040.ogg,long_silence_present,False,False,True
+dev_040.ogg,background_noise_type,appliance hum,machinery whirring,
+dev_040.ogg,confidence,1.0,0.95,
+dev_040.ogg,vote0,,"{""heard"": ""Two voices are heard taking turns making short, declarative statements. A loud mechanical whirring sound, like a vacuum cleaner or machine, runs continuously throughout the recording. The speakers maintain a steady, calm pitch and volume without any noticeable emotional inflection."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""machinery whirring"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,vote1,,"{""heard"": ""Two speakers alternate reading lines in a calm, measured manner with low emotional intensity. The overall voice tone remains neutral and deliberate throughout the recording. A loud mechanical whirring sound, like a vacuum cleaner or engine, is constantly audible in the background."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""machinery"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,vote2,,"{""heard"": ""A female voice speaks steadily, stating she is on her way to a meeting and commenting on a clean surface and an airplane. A male voice also speaks in low tones, occasionally overlapping with her sentences. A continuous, loud mechanical humming or vacuum-like noise is present throughout the background."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""mechanical hum / vacuum noise"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",

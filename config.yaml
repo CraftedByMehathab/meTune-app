@@ -1,0 +1,29 @@
+# meTune pipeline config. Every threshold lives here; its hash is stored on each batch.
+# Rationale for each value: meTune vault → DR-006 (DSP fields), DR-003 (LLM), Cost Model.
+
+sample_rate: 16000
+frame_ms: 20                 # DSP frame size
+skip_start_s: 1.0            # mask connect tone (~440 Hz) at call start
+edge_ignore_s: 2.0           # ignore silence at very start/end
+long_silence_s: 10.0         # 7.3 s gap was labeled "no long silence"
+vad_threshold: 0.5
+clip_pct_slight: 0.5         # % clipped samples → slightly_impaired
+clip_pct_severe: 3.0         # → severely_impaired
+spike_jump_db: 25.0          # energy jump in one frame = click/static
+spike_rate_static: 20.0      # spikes/min → "static"; also fills in noise when the LLM hears none
+default_vote_confidence: 0.4 # cap when every vote is the all-defaults answer (neutral, no noise, no overlap)
+
+llm_model: gemini-3.5-flash-lite      # pinned; 2.5-flash-lite closed to new keys
+llm_prompt: v2                        # v1 labels-only · v2 describe-then-label · v3 v2 + judge the voice, not the words (DR-017)
+llm_votes: 3                          # odd count → no 1–1 tone ties; measured cost below
+llm_temperatures: [0.0, 0.4, 0.7]      # one per vote (cycled), so votes aren't duplicates
+llm_thinking_level: minimal           # thinking tokens bill as output
+llm_timeout_s: 120
+llm_rpm: 300                          # request cap per process (DR-018). Paid tier since 2026-10-27; free tier = 14. 0 = none
+llm_retries: 2
+
+# USD per 1M tokens, ai.google.dev/gemini-api/docs/pricing (checked 2026-10-26)
+price_per_1m:
+  audio_in: 0.30
+  text_in: 0.30
+  text_out: 2.50

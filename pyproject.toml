@@ -1,0 +1,45 @@
+[project]
+name = "metune-app"
+version = "0.1.0"
+description = "meTune: call-audio intelligence (tone, background noise, audio health)"
+requires-python = ">=3.11,<3.13"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/pipeline", "apps/api"]
+
+[tool.uv.sources]
+metune-pipeline = { workspace = true }
+metune-api = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "metune-pipeline",
+    "metune-api",
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.8",
+]
+ser = [
+    "torch>=2.4",
+    "transformers>=4.44",
+    "torchvision",          # Qwen2.5-Omni's processor builds image + video processors even for audio-only use
+    "ipykernel",            # "meTune SER" Jupyter kernel for notebooks/03_finetuning_walkthrough.ipynb
+    "matplotlib",
+    "pandas",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["packages/pipeline/tests", "apps/api/tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+# B008: FastAPI's Depends()/File() defaults are idiomatic. BLE001: blind excepts isolate per-file failures.
+ignore = ["B008", "BLE001"]

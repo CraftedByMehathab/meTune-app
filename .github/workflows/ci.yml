@@ -1,0 +1,31 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: uv sync --frozen
+      - run: uv run ruff check packages apps/api
+      - run: uv run pytest -q
+      - name: API types are up to date
+        run: |
+          uv run python -m metune_api.export_openapi > /tmp/openapi.json
+          diff -q /tmp/openapi.json apps/client/src/lib/openapi.json
+
+  client:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: apps/client } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: apps/client/pnpm-lock.yaml }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build

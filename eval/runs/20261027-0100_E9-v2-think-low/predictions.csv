@@ -1,0 +1,481 @@
+name,field,label,pred,match
+dev_001.ogg,emotional_tone,neutral,neutral,True
+dev_001.ogg,emotional_intensity,low,low,True
+dev_001.ogg,background_noise_present,False,False,True
+dev_001.ogg,background_noise_severity,none,none,True
+dev_001.ogg,audio_quality,clear,clear,True
+dev_001.ogg,speaker_overlap_present,False,False,True
+dev_001.ogg,long_silence_present,True,True,True
+dev_001.ogg,background_noise_type,,,
+dev_001.ogg,confidence,1.0,0.4,
+dev_001.ogg,vote0,,"{""heard"": ""The customer speaks in a calm and even tone without any signs of emotional stress or frustration. There are no background noises or audio distortions present. The speech is clear and steady throughout the duration."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote1,,"{""heard"": ""The speaker informs me that we will stop in a couple of minutes. Their tone is calm and neutral throughout the message. There is no background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_001.ogg,vote2,,"{""heard"": ""The speaker has a calm and neutral voice, speaking at a moderate and steady pace without any noticeable emotional inflection. There is no background noise or interruption present during the speech, and the audio quality is clear. No speaker overlap occurs throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,emotional_tone,frustrated,neutral,False
+dev_002.ogg,emotional_intensity,medium,low,False
+dev_002.ogg,background_noise_present,True,False,False
+dev_002.ogg,background_noise_severity,low,none,False
+dev_002.ogg,audio_quality,clear,clear,True
+dev_002.ogg,speaker_overlap_present,False,False,True
+dev_002.ogg,long_silence_present,False,False,True
+dev_002.ogg,background_noise_type,keyboard typing,,
+dev_002.ogg,confidence,1.0,0.75,
+dev_002.ogg,vote0,,"{""heard"": ""The customer speaks with a steady pace and moderate volume, expressing some annoyance about timing. There are no background noises or audio artifacts present. No speaker overlap occurs during the customer's turns."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,vote1,,"{""heard"": ""The customer speaks in a calm and measured tone with a neutral emotion. There is no background noise or any kind of interference detected during the call. The audio quality is clear, and there is no speaker overlap present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_002.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with steady pacing and a medium loudness. There are no background noises or speaker overlaps. The audio quality is clear and high definition."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,emotional_tone,satisfied,neutral,False
+dev_003.ogg,emotional_intensity,low,low,True
+dev_003.ogg,background_noise_present,True,True,True
+dev_003.ogg,background_noise_severity,medium,high,False
+dev_003.ogg,audio_quality,clear,clear,True
+dev_003.ogg,speaker_overlap_present,False,False,True
+dev_003.ogg,long_silence_present,True,True,True
+dev_003.ogg,background_noise_type,dog barking,dog barking,
+dev_003.ogg,confidence,1.0,0.77,
+dev_003.ogg,vote0,,"{""heard"": ""The speaker's voice sounds calm and neutral. Throughout the audio, loud dog barking is prominently heard in the background. There is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote1,,"{""heard"": ""The customer speaks with a neutral and calm tone, talking about airplane fuel and other observations. There is distinct dog barking audible in the background throughout the recording. The audio quality is clear with no major impairments, and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_003.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with low emotional intensity. Their voice has a normal pitch and pace. There is loud dog barking in the background throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_004.ogg,emotional_tone,distressed,frustrated,False
+dev_004.ogg,emotional_intensity,medium,medium,True
+dev_004.ogg,background_noise_present,True,False,False
+dev_004.ogg,background_noise_severity,medium,none,False
+dev_004.ogg,audio_quality,clear,clear,True
+dev_004.ogg,speaker_overlap_present,True,True,True
+dev_004.ogg,long_silence_present,False,False,True
+dev_004.ogg,background_noise_type,background chatter,,
+dev_004.ogg,confidence,1.0,0.75,
+dev_004.ogg,vote0,,"{""heard"": ""The customer repeatedly asserts that it is eleven o'clock and that they will start the meeting in a couple of minutes. The voice sounds calm, with a neutral and even tone, speaking at a moderate pace. There is no background noise or overlap present in the call."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_004.ogg,vote1,,"{""heard"": ""The customer repeatedly asserts that it is eleven o'clock in a somewhat agitated and repetitive manner. There is mild background chatter and a slight overlap with another speaker. The customer's voice is raised and tense, showing clear frustration."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""chatter"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_004.ogg,vote2,,"{""heard"": ""The customer repeatedly asserts that it is 11 o'clock, speaking with a firm and slightly agitated pace. Their voice has a noticeable edge of frustration as they interrupt or talk over the other speaker. No significant background noise or audio impairment is present."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_005.ogg,emotional_tone,upset,neutral,False
+dev_005.ogg,emotional_intensity,medium,low,False
+dev_005.ogg,background_noise_present,False,False,True
+dev_005.ogg,background_noise_severity,none,none,True
+dev_005.ogg,audio_quality,clear,clear,True
+dev_005.ogg,speaker_overlap_present,True,False,False
+dev_005.ogg,long_silence_present,False,False,True
+dev_005.ogg,background_noise_type,,,
+dev_005.ogg,confidence,1.0,0.4,
+dev_005.ogg,vote0,,"{""heard"": ""The speaker has a clear, calm voice with a neutral tone and low emotional intensity. There is no background noise or speaker overlap. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote1,,"{""heard"": ""The speaker delivers a statement in a neutral tone with a calm and even delivery. There is no noticeable background noise present during the recording. The overall audio quality is clear and there are no overlapping voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_005.ogg,vote2,,"{""heard"": ""The speaker delivers a statement in a neutral tone with a moderate pace. The acoustic quality is clear with no noticeable background noise or overlapping speech."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,emotional_tone,satisfied,neutral,False
+dev_006.ogg,emotional_intensity,low,low,True
+dev_006.ogg,background_noise_present,True,False,False
+dev_006.ogg,background_noise_severity,medium,none,False
+dev_006.ogg,audio_quality,clear,clear,True
+dev_006.ogg,speaker_overlap_present,True,False,False
+dev_006.ogg,long_silence_present,False,False,True
+dev_006.ogg,background_noise_type,static,,
+dev_006.ogg,confidence,1.0,0.4,
+dev_006.ogg,vote0,,"{""heard"": ""The customer speaks with a calm and measured pace, discussing airplane capacity and wondering about a specific situation. Her voice has a neutral tone with low emotional intensity. There is no noticeable background noise present, and the audio quality is clear. No speaker overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,vote1,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace. The audio is clear with no notable background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_006.ogg,vote2,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace. There is no significant background noise present throughout the recording. The overall audio quality is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,emotional_tone,satisfied,neutral,False
+dev_007.ogg,emotional_intensity,medium,low,False
+dev_007.ogg,background_noise_present,True,True,True
+dev_007.ogg,background_noise_severity,medium,low,False
+dev_007.ogg,audio_quality,clear,clear,True
+dev_007.ogg,speaker_overlap_present,False,False,True
+dev_007.ogg,long_silence_present,True,False,False
+dev_007.ogg,background_noise_type,keyboard typing,typing,
+dev_007.ogg,confidence,1.0,0.79,
+dev_007.ogg,vote0,,"{""heard"": ""The speaker's voice is steady and calm. There is constant typing and clicking sounds throughout the audio. No background noise is present aside from the typing."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote1,,"{""heard"": ""The speaker's voice has a neutral tone and a regular pace, though they sound a bit rushed while uttering short sentences. There is typing noise in the background as the speaker makes comments."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_007.ogg,vote2,,"{""heard"": ""The speaker's voice is steady and calm. There is constant typing and clicking sounds in the background throughout the entire recording. No speaker overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing and clicking"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,emotional_tone,upset,distressed,False
+dev_008.ogg,emotional_intensity,medium,high,False
+dev_008.ogg,background_noise_present,True,False,False
+dev_008.ogg,background_noise_severity,medium,none,False
+dev_008.ogg,audio_quality,clear,clear,True
+dev_008.ogg,speaker_overlap_present,False,False,True
+dev_008.ogg,long_silence_present,False,False,True
+dev_008.ogg,background_noise_type,baby crying,,
+dev_008.ogg,confidence,1.0,0.75,
+dev_008.ogg,vote0,,"{""heard"": ""The audio features a crying baby wailing loudly throughout the duration of the recording. There are also calmer spoken sentences from a woman, though the infant's distress heavily dominates the audio. There is no other background noise present, and the speech quality is clear."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,vote1,,"{""heard"": ""The audio features a crying baby in the background throughout the entire recording, making the audio quite noisy. A female speaker speaks in a calm, neutral tone when discussing the time and alarm clocks, though her words are slightly drowned out by the crying. There is no speaker overlap as the woman speaks alone against the background crying."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_008.ogg,vote2,,"{""heard"": ""The audio features a crying baby making loud, continuous wailing sounds. There is no other noticeable speech or background noise. The audio quality is clear, and there is no speaker overlap present."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,emotional_tone,neutral,neutral,True
+dev_009.ogg,emotional_intensity,low,low,True
+dev_009.ogg,background_noise_present,True,False,False
+dev_009.ogg,background_noise_severity,high,none,False
+dev_009.ogg,audio_quality,clear,clear,True
+dev_009.ogg,speaker_overlap_present,False,False,True
+dev_009.ogg,long_silence_present,False,False,True
+dev_009.ogg,background_noise_type,static,,
+dev_009.ogg,confidence,1.0,0.4,
+dev_009.ogg,vote0,,"{""heard"": ""The customer speaks in a calm and neutral voice while informing about their location. Their speech pace is steady and measured without any signs of frustration or distress. There is no background noise or speaker overlap present throughout the audio."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,vote1,,"{""heard"": ""The customer speaks with a calm and even tone, stating they are on their way to a meeting. There is no background noise present and the audio quality is clear. No speaker overlap or emotional distress is detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_009.ogg,vote2,,"{""heard"": ""The customer speaks in a calm, neutral tone with steady pacing and a clear voice. There is no significant background noise present throughout the call. The audio quality is clear and easy to understand without any impairments. No speaker overlap or noticeable emotional shifts occur."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,emotional_tone,neutral,neutral,True
+dev_010.ogg,emotional_intensity,low,low,True
+dev_010.ogg,background_noise_present,True,False,False
+dev_010.ogg,background_noise_severity,medium,none,False
+dev_010.ogg,audio_quality,clear,clear,True
+dev_010.ogg,speaker_overlap_present,True,False,False
+dev_010.ogg,long_silence_present,False,False,True
+dev_010.ogg,background_noise_type,keyboard typing,,
+dev_010.ogg,confidence,1.0,0.4,
+dev_010.ogg,vote0,,"{""heard"": ""The customer speaks in a calm, clear voice at a moderate pace. She states that she thinks she has a doctor's appointment and is on her way to the meeting. There is no background noise and the audio quality is clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote1,,"{""heard"": ""The speaker talks in a calm and measured tone with a neutral delivery. There is no background noise or interference present throughout the audio. The speech quality is clear and there are no overlapping voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_010.ogg,vote2,,"{""heard"": ""The speaker speaks with a calm and measured pace in a neutral tone. The voice is clear with moderate volume and no background noise is present. The audio quality is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,emotional_tone,neutral,neutral,True
+dev_011.ogg,emotional_intensity,low,low,True
+dev_011.ogg,background_noise_present,True,True,True
+dev_011.ogg,background_noise_severity,medium,low,False
+dev_011.ogg,audio_quality,clear,clear,True
+dev_011.ogg,speaker_overlap_present,True,False,False
+dev_011.ogg,long_silence_present,False,False,True
+dev_011.ogg,background_noise_type,dog barking,dog barking,
+dev_011.ogg,confidence,1.0,0.95,
+dev_011.ogg,vote0,,"{""heard"": ""The speaker's voice is calm, clear, and steady, delivered at a moderate pace. There is a distinct sound of a dog barking in the background at regular intervals throughout the recording. No other background noises or speaker overlaps are detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote1,,"{""heard"": ""The speaker talks in a calm, neutral tone with steady pacing and medium loudness. There are distinct dog barking sounds audible in the background throughout the recording. The overall audio quality is clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_011.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with steady pacing and a medium loudness. There are dog barking sounds in the background at various intervals throughout the recording. The audio quality is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,emotional_tone,distressed,neutral,False
+dev_012.ogg,emotional_intensity,medium,low,False
+dev_012.ogg,background_noise_present,True,False,False
+dev_012.ogg,background_noise_severity,low,none,False
+dev_012.ogg,audio_quality,clear,clear,True
+dev_012.ogg,speaker_overlap_present,False,False,True
+dev_012.ogg,long_silence_present,False,False,True
+dev_012.ogg,background_noise_type,background chatter,,
+dev_012.ogg,confidence,1.0,0.4,
+dev_012.ogg,vote0,,"{""heard"": ""The customer speaks in a calm and measured tone, stating their appointment time and expressing a desire for a new alarm clock. There is no background noise or overlap present in the audio. The speech quality is clear and the customer sounds neutral."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,vote1,,"{""heard"": ""The speaker's voice is clear and steady with a moderate pace. There is no audible background noise present in the recording. The overall audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_012.ogg,vote2,,"{""heard"": ""The speaker's voice is calm with a normal pace and pitch. There is no background noise or overlap present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,emotional_tone,upset,neutral,False
+dev_013.ogg,emotional_intensity,medium,low,False
+dev_013.ogg,background_noise_present,False,True,False
+dev_013.ogg,background_noise_severity,none,medium,False
+dev_013.ogg,audio_quality,clear,clear,True
+dev_013.ogg,speaker_overlap_present,False,False,True
+dev_013.ogg,long_silence_present,False,False,True
+dev_013.ogg,background_noise_type,,static,
+dev_013.ogg,confidence,1.0,0.4,
+dev_013.ogg,vote0,,"{""heard"": ""The speaker's voice is calm and steady with a clear, neutral tone. They state clearly that they would like a new alarm clock without any hesitation or background noise. The audio quality is clean and clear throughout the brief utterance."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote1,,"{""heard"": ""The speaker clearly states their desire for a new alarm clock in a calm and direct manner. The voice has a steady pitch and pace with a neutral tone. There is no background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_013.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and neutral tone with a steady pace and moderate volume. There is no background noise present and no speaker overlap. The overall audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,emotional_tone,upset,neutral,False
+dev_014.ogg,emotional_intensity,low,low,True
+dev_014.ogg,background_noise_present,True,True,True
+dev_014.ogg,background_noise_severity,high,low,False
+dev_014.ogg,audio_quality,clear,clear,True
+dev_014.ogg,speaker_overlap_present,True,False,False
+dev_014.ogg,long_silence_present,False,False,True
+dev_014.ogg,background_noise_type,appliance hum,engine hum,
+dev_014.ogg,confidence,1.0,0.63,
+dev_014.ogg,vote0,,"{""heard"": ""The customer speaks with a neutral and calm tone, stating the time and commenting on an airplane. There is a noticeable sound of background noise, possibly a motor or engine humming throughout the recording. The audio quality is clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""engine hum"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote1,,"{""heard"": ""The customer speaks clearly with a normal pace and pitch. There is a loud background noise present throughout the recording, which sounds like an engine or heavy machinery. No speaker overlap is detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""engine"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_014.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even delivery. The audio includes significant background airplane noise and engine sounds. There is no speaker overlap present throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""airplane engine noise"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,emotional_tone,distressed,neutral,False
+dev_015.ogg,emotional_intensity,medium,low,False
+dev_015.ogg,background_noise_present,True,True,True
+dev_015.ogg,background_noise_severity,medium,low,False
+dev_015.ogg,audio_quality,clear,clear,True
+dev_015.ogg,speaker_overlap_present,False,False,True
+dev_015.ogg,long_silence_present,False,True,False
+dev_015.ogg,background_noise_type,appliance hum,environmental noise,
+dev_015.ogg,confidence,1.0,0.57,
+dev_015.ogg,vote0,,"{""heard"": ""The speaker's voice is calm and steady with a neutral tone. There is some low-level environmental noise in the background, but it does not interfere with the audio quality. No speaker overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""environmental noise"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,vote1,,"{""heard"": ""The speaker's voice is calm and subdued while stating a preference about tomorrow. They speak in a normal conversational tone with no background noise present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_015.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and neutral tone with a low emotional intensity. There is noticeable background road or traffic noise throughout the call. The audio quality is clear, and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""traffic"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,emotional_tone,distressed,distressed,True
+dev_016.ogg,emotional_intensity,medium,high,False
+dev_016.ogg,background_noise_present,True,True,True
+dev_016.ogg,background_noise_severity,medium,high,False
+dev_016.ogg,audio_quality,clear,clear,True
+dev_016.ogg,speaker_overlap_present,False,False,True
+dev_016.ogg,long_silence_present,False,False,True
+dev_016.ogg,background_noise_type,baby crying,baby crying,
+dev_016.ogg,confidence,1.0,0.95,
+dev_016.ogg,vote0,,"{""heard"": ""The audio features a crying baby in the background throughout the recording. A female speaker can be heard talking calmly at times, but the baby's crying is loud and continuous. The audio quality is clear despite the crying noise."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote1,,"{""heard"": ""The customer's voice is high pitched, trembling, and crying loudly throughout the call with a fast pace. The audio has some crying sounds and a baby fussing in the background. The customer sounds extremely distressed."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""crying and fussing baby"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_016.ogg,vote2,,"{""heard"": ""The speaker speaks with a high-pitched, crying baby sound in the background. The audio quality is clear, and there is no background noise other than the baby crying. The speaker sounds distressed and emotional."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_017.ogg,emotional_tone,frustrated,frustrated,True
+dev_017.ogg,emotional_intensity,medium,high,False
+dev_017.ogg,background_noise_present,True,True,True
+dev_017.ogg,background_noise_severity,high,high,True
+dev_017.ogg,audio_quality,clear,clear,True
+dev_017.ogg,speaker_overlap_present,False,True,False
+dev_017.ogg,long_silence_present,False,False,True
+dev_017.ogg,background_noise_type,background chatter,group chatter,
+dev_017.ogg,confidence,1.0,0.75,
+dev_017.ogg,vote0,,"{""heard"": ""Multiple speakers are excitedly talking over each other, repeating that it is eleven o'clock. The tone is lively and slightly playful. Background noise is not present, and audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote1,,"{""heard"": ""Multiple speakers are excitedly talking over each other in a chaotic manner, repeating the phrase \""It's 11 o'clock.\"" The background noise consists of loud group chatter and overlapping voices. The speaker's voice is raised and energetic, conveying frustration and annoyance at the situation. The audio quality is clear, but the overlap of multiple speakers creates significant interference."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""group chatter"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": true}",
+dev_017.ogg,vote2,,"{""heard"": ""Multiple speakers are talking loudly and shouting over one another in a very chaotic manner, repeating the phrase it is eleven o clock. The customer's voice is raised and sounds quite frustrated with the situation, speaking at a fast pace. There is heavy background chatter and commotion present throughout the recording."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""chatter"", ""background_noise_severity"": ""high"", ""audio_quality"": ""slightly_impaired"", ""speaker_overlap_present"": true}",
+dev_018.ogg,emotional_tone,neutral,neutral,True
+dev_018.ogg,emotional_intensity,low,low,True
+dev_018.ogg,background_noise_present,True,True,True
+dev_018.ogg,background_noise_severity,high,medium,False
+dev_018.ogg,audio_quality,clear,clear,True
+dev_018.ogg,speaker_overlap_present,False,False,True
+dev_018.ogg,long_silence_present,False,False,True
+dev_018.ogg,background_noise_type,road noise,siren,
+dev_018.ogg,confidence,1.0,0.95,
+dev_018.ogg,vote0,,"{""heard"": ""The customer speaks in a calm and even tone, stating they are on their way to a meeting. There is a frequent siren sound in the background throughout the recording. The audio is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""medium"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_018.ogg,vote1,,"{""heard"": ""The speaker announces their destination in a calm tone. The background contains a loud siren sound throughout the audio. No speech overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""siren"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_018.ogg,vote2,,"{""heard"": ""The customer speaks with a calm and even tone, stating that they are on their way to a meeting. The speech is clear and steady with no signs of distress or agitation. There are no background noises or overlapping speakers heard throughout the audio."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,emotional_tone,upset,neutral,False
+dev_019.ogg,emotional_intensity,medium,low,False
+dev_019.ogg,background_noise_present,False,False,True
+dev_019.ogg,background_noise_severity,none,none,True
+dev_019.ogg,audio_quality,clear,clear,True
+dev_019.ogg,speaker_overlap_present,True,False,False
+dev_019.ogg,long_silence_present,False,False,True
+dev_019.ogg,background_noise_type,,,
+dev_019.ogg,confidence,1.0,0.75,
+dev_019.ogg,vote0,,"{""heard"": ""The speaker talks in a calm and measured tone, informing the listener about a planned stop. The voice is clear with a normal pitch and steady pace. There is no noticeable background noise or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,vote1,,"{""heard"": ""The customer sounds slightly annoyed and impatient, speaking at a moderate pace. Her voice has a clear, firm tone. There is no background noise or speech overlap present."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_019.ogg,vote2,,"{""heard"": ""The customer speaks with a clear, calm voice at a moderate pace, making a straightforward statement about stopping in a couple of minutes. No background noise is present and the audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,emotional_tone,distressed,neutral,False
+dev_020.ogg,emotional_intensity,low,low,True
+dev_020.ogg,background_noise_present,True,True,True
+dev_020.ogg,background_noise_severity,low,medium,False
+dev_020.ogg,audio_quality,clear,clear,True
+dev_020.ogg,speaker_overlap_present,False,False,True
+dev_020.ogg,long_silence_present,False,False,True
+dev_020.ogg,background_noise_type,dog barking,static,
+dev_020.ogg,confidence,1.0,0.95,
+dev_020.ogg,vote0,,"{""heard"": ""The customer speaks with a calm and measured tone, sharing information in a neutral manner. There is a slight background rustling noise audible during part of the call. The audio quality is clear, and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""rustling"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,vote1,,"{""heard"": ""The customer speaks with a calm and measured pace, delivering their message in a clear and even tone. There is no background noise or interference present throughout the audio. The acoustic quality is pristine, and no speaker overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_020.ogg,vote2,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace and pitch. There is no background noise or interference detected throughout the recording. The audio quality is clear, and there is no speaker overlap or signs of frustration."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_021.ogg,emotional_tone,upset,frustrated,False
+dev_021.ogg,emotional_intensity,medium,medium,True
+dev_021.ogg,background_noise_present,True,True,True
+dev_021.ogg,background_noise_severity,high,low,False
+dev_021.ogg,audio_quality,clear,clear,True
+dev_021.ogg,speaker_overlap_present,True,False,False
+dev_021.ogg,long_silence_present,False,False,True
+dev_021.ogg,background_noise_type,static,static,
+dev_021.ogg,confidence,1.0,0.75,
+dev_021.ogg,vote0,,"{""heard"": ""The customer speaks in an escalating, frustrated tone, demanding a new alarm clock and pointing out it is eleven o'clock. Their voice is sharp and agitated. There is some static and faint ambient room noise in the background."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_021.ogg,vote1,,"{""heard"": ""The customer sounds increasingly frustrated and angry about the time, raising their voice and emphasizing that it is 11 o'clock. There is some background electronic static or hum, but no other significant noise. The audio quality is clear and the speaker does not overlap with the agent significantly during their main outburst."", ""emotional_tone"": ""upset"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_021.ogg,vote2,,"{""heard"": ""The customer sounds increasingly annoyed and raises their voice while stating the time. There is a slight static sound in the background. The audio quality is clear."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""medium"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_022.ogg,emotional_tone,frustrated,neutral,False
+dev_022.ogg,emotional_intensity,low,low,True
+dev_022.ogg,background_noise_present,False,False,True
+dev_022.ogg,background_noise_severity,none,none,True
+dev_022.ogg,audio_quality,clear,clear,True
+dev_022.ogg,speaker_overlap_present,False,False,True
+dev_022.ogg,long_silence_present,False,False,True
+dev_022.ogg,background_noise_type,,,
+dev_022.ogg,confidence,1.0,0.4,
+dev_022.ogg,vote0,,"{""heard"": ""The customer speaks in a neutral tone with low emotional intensity, stating the time as 11:00. The acoustic quality is clear with no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_022.ogg,vote1,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The audio is clear with no background noise present. There is no speaker overlap detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_022.ogg,vote2,,"{""heard"": ""The speaker states that it is eleven o'clock. The voice sounds calm and neutral in tone with moderate intensity. The audio quality is clear and there is no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,emotional_tone,frustrated,neutral,False
+dev_023.ogg,emotional_intensity,low,low,True
+dev_023.ogg,background_noise_present,True,False,False
+dev_023.ogg,background_noise_severity,low,none,False
+dev_023.ogg,audio_quality,clear,clear,True
+dev_023.ogg,speaker_overlap_present,True,False,False
+dev_023.ogg,long_silence_present,False,False,True
+dev_023.ogg,background_noise_type,baby crying,,
+dev_023.ogg,confidence,1.0,0.95,
+dev_023.ogg,vote0,,"{""heard"": ""The speaker's voice is clear and steady with a calm and even pace. There are no background sounds audible throughout the recording. No other speakers are present, and the audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,vote1,,"{""heard"": ""The customer speaks with a neutral tone and medium emotional intensity, stating various facts and observations. There is no background noise present and the audio quality is clear. No speaker overlap is detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_023.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and casual tone with a moderate pace. There is a baby crying in the background throughout the recording. No speaker overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,emotional_tone,upset,neutral,False
+dev_024.ogg,emotional_intensity,medium,high,False
+dev_024.ogg,background_noise_present,True,True,True
+dev_024.ogg,background_noise_severity,low,high,False
+dev_024.ogg,audio_quality,clear,clear,True
+dev_024.ogg,speaker_overlap_present,False,False,True
+dev_024.ogg,long_silence_present,False,False,True
+dev_024.ogg,background_noise_type,baby crying,baby crying,
+dev_024.ogg,confidence,1.0,0.55,
+dev_024.ogg,vote0,,"{""heard"": ""The recording features a crying baby making loud wailing sounds throughout. A male speaker is heard speaking calmly and asserting various statements such as the time being 11 o'clock. The voice of the speaker is clear, but the background baby crying is dominant and persistent."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,vote1,,"{""heard"": ""The audio features a crying baby throughout most of the recording. The crying varies in intensity and persists as the primary background sound. No other meaningful background noise or speech is audible. The overall audio quality is clear."", ""emotional_tone"": ""distressed"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_024.ogg,vote2,,"{""heard"": ""A baby is crying loudly in the background throughout most of the recording. A male voice speaks with frustration and annoyance, raising his voice as he repeats himself. The audio is clear and there is no speaker overlap."", ""emotional_tone"": ""frustrated"", ""emotional_intensity"": ""high"", ""background_noise_present"": true, ""background_noise_type"": ""baby crying"", ""background_noise_severity"": ""high"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,emotional_tone,satisfied,neutral,False
+dev_025.ogg,emotional_intensity,medium,low,False
+dev_025.ogg,background_noise_present,True,False,False
+dev_025.ogg,background_noise_severity,low,none,False
+dev_025.ogg,audio_quality,clear,clear,True
+dev_025.ogg,speaker_overlap_present,False,False,True
+dev_025.ogg,long_silence_present,False,False,True
+dev_025.ogg,background_noise_type,baby crying,,
+dev_025.ogg,confidence,1.0,0.4,
+dev_025.ogg,vote0,,"{""heard"": ""The customer speaks with a calm and even tone, delivering statements about daily occurrences and plans. There is no background noise or speech overlap detected during the utterance. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,vote1,,"{""heard"": ""The customer speaks with a neutral tone and medium emotional intensity. There is no background noise or speaker overlap. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_025.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with steady pacing and clear articulation. There are no noticeable background sounds or interference, and the audio quality is sharp and high. No overlapping voices occur during the brief statement."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,emotional_tone,neutral,neutral,True
+dev_026.ogg,emotional_intensity,low,low,True
+dev_026.ogg,background_noise_present,True,False,False
+dev_026.ogg,background_noise_severity,low,none,False
+dev_026.ogg,audio_quality,clear,clear,True
+dev_026.ogg,speaker_overlap_present,False,False,True
+dev_026.ogg,long_silence_present,False,False,True
+dev_026.ogg,background_noise_type,keyboard typing,,
+dev_026.ogg,confidence,1.0,0.95,
+dev_026.ogg,vote0,,"{""heard"": ""The speaker delivers statements in a calm and even tone. There is no background noise or speech overlap detected. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,vote1,,"{""heard"": ""The speaker talks in a calm and measured tone with steady pacing and a neutral expression. There are no background noises or audio distortions present. The speech is clear and uninterrupted by other speakers."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_026.ogg,vote2,,"{""heard"": ""The speaker talks in a calm, neutral tone with a steady pace and normal loudness. There is soft keyboard typing noise present in the background. The audio is clear and there is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""keyboard typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,emotional_tone,distressed,neutral,False
+dev_027.ogg,emotional_intensity,medium,low,False
+dev_027.ogg,background_noise_present,True,False,False
+dev_027.ogg,background_noise_severity,medium,none,False
+dev_027.ogg,audio_quality,clear,clear,True
+dev_027.ogg,speaker_overlap_present,False,False,True
+dev_027.ogg,long_silence_present,False,False,True
+dev_027.ogg,background_noise_type,keyboard typing,,
+dev_027.ogg,confidence,1.0,0.4,
+dev_027.ogg,vote0,,"{""heard"": ""The speaker has a calm and measured pace with a natural, steady tone. There are no background noises or noticeable speech overlaps. The audio is clear and of good quality throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,vote1,,"{""heard"": ""The customer speaks in a calm, neutral tone with a steady pace and moderate pitch. There is no background noise or interference detected throughout the audio. The voice quality is clear and there are no instances of speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_027.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and casual tone about the weather and their day. There are no noticeable background noises or sounds of friction. The overall delivery is clear and steady."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,emotional_tone,frustrated,neutral,False
+dev_028.ogg,emotional_intensity,low,low,True
+dev_028.ogg,background_noise_present,False,False,True
+dev_028.ogg,background_noise_severity,none,none,True
+dev_028.ogg,audio_quality,clear,clear,True
+dev_028.ogg,speaker_overlap_present,False,False,True
+dev_028.ogg,long_silence_present,False,False,True
+dev_028.ogg,background_noise_type,,,
+dev_028.ogg,confidence,1.0,0.4,
+dev_028.ogg,vote0,,"{""heard"": ""The speaker announces they are on the way to a meeting in a calm and neutral voice. The delivery is steady with no background noise and clear audio quality. There is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,vote1,,"{""heard"": ""The speaker delivers a neutral message with a calm and even tone. There is no background noise or speech overlap. The audio is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_028.ogg,vote2,,"{""heard"": ""The speaker delivers a neutral statement with a calm tone and steady pace. The speech volume is moderate and clear. There is no background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,emotional_tone,neutral,neutral,True
+dev_029.ogg,emotional_intensity,low,low,True
+dev_029.ogg,background_noise_present,True,True,True
+dev_029.ogg,background_noise_severity,medium,low,False
+dev_029.ogg,audio_quality,clear,clear,True
+dev_029.ogg,speaker_overlap_present,False,False,True
+dev_029.ogg,long_silence_present,False,False,True
+dev_029.ogg,background_noise_type,dog barking,dog barking,
+dev_029.ogg,confidence,1.0,0.95,
+dev_029.ogg,vote0,,"{""heard"": ""The speaker's voice is calm and steady, delivering sentences at a measured pace. There is an audible dog barking sound in the background throughout the recording. No speaker overlap or significant background interference other than the dog is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,vote1,,"{""heard"": ""The customer speaks with a neutral tone and a steady, calm pace. There is noticeable dog barking in the background throughout the recording. The overall audio quality is clear and there is no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""dog barking"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_029.ogg,vote2,,"{""heard"": ""The customer speaks with a neutral tone and low emotional intensity. An animal, such as a dog or cat, can be heard whining or barking faintly in the background. The audio quality is clear with no speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""animal"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,emotional_tone,upset,neutral,False
+dev_030.ogg,emotional_intensity,high,low,False
+dev_030.ogg,background_noise_present,True,True,True
+dev_030.ogg,background_noise_severity,low,medium,False
+dev_030.ogg,audio_quality,clear,clear,True
+dev_030.ogg,speaker_overlap_present,False,False,True
+dev_030.ogg,long_silence_present,False,False,True
+dev_030.ogg,background_noise_type,dog barking,static,
+dev_030.ogg,confidence,1.0,0.4,
+dev_030.ogg,vote0,,"{""heard"": ""The speaker's voice has a neutral tone with low emotional intensity. The delivery is calm and steady, with no background noise present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,vote1,,"{""heard"": ""The customer speaks with a clear, calm voice and a moderate pace. There is no background noise or overlap. The audio quality is clean."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_030.ogg,vote2,,"{""heard"": ""A female speaker calmly states that she needs a new alarm clock. Her voice has a normal pitch and steady pace without any signs of distress. There are no background noises or speaker overlaps audible in the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_031.ogg,emotional_tone,frustrated,neutral,False
+dev_031.ogg,emotional_intensity,medium,low,False
+dev_031.ogg,background_noise_present,True,False,False
+dev_031.ogg,background_noise_severity,high,none,False
+dev_031.ogg,audio_quality,clear,clear,True
+dev_031.ogg,speaker_overlap_present,True,False,False
+dev_031.ogg,long_silence_present,False,False,True
+dev_031.ogg,background_noise_type,keyboard typing,,
+dev_031.ogg,confidence,1.0,0.95,
+dev_031.ogg,vote0,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace. There is slight typing sound audible in the background at times. No major disruptions or emotional outbursts are present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""typing"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_031.ogg,vote1,,"{""heard"": ""The customer sounds calm and unhurried while speaking about an appointment time. Their voice has a normal pitch and steady pace with a neutral demeanor. There is no significant background noise or speaker overlap present during their turns."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_031.ogg,vote2,,"{""heard"": ""The customer sounds calm and direct, speaking at a moderate pace without any signs of frustration or distress. No background noise or speaker overlap is detected. The audio quality is clean and clear throughout the call."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,emotional_tone,neutral,neutral,True
+dev_032.ogg,emotional_intensity,low,low,True
+dev_032.ogg,background_noise_present,True,False,False
+dev_032.ogg,background_noise_severity,low,none,False
+dev_032.ogg,audio_quality,clear,clear,True
+dev_032.ogg,speaker_overlap_present,True,False,False
+dev_032.ogg,long_silence_present,False,False,True
+dev_032.ogg,background_noise_type,dog barking,,
+dev_032.ogg,confidence,1.0,0.4,
+dev_032.ogg,vote0,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace and pitch. There is no background noise present during the conversation, and the audio quality is clear. No speaker overlap occurs throughout the recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,vote1,,"{""heard"": ""The speaker has a calm and even tone with a neutral delivery. The pace is steady and moderate. There is no background noise or overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_032.ogg,vote2,,"{""heard"": ""The speaker delivers statements in a calm and even tone. There is no noticeable background noise or interference. The voice is clear and the overall audio quality is high without any interruptions."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,emotional_tone,satisfied,neutral,False
+dev_033.ogg,emotional_intensity,medium,low,False
+dev_033.ogg,background_noise_present,True,True,True
+dev_033.ogg,background_noise_severity,low,low,True
+dev_033.ogg,audio_quality,clear,clear,True
+dev_033.ogg,speaker_overlap_present,True,False,False
+dev_033.ogg,long_silence_present,False,False,True
+dev_033.ogg,background_noise_type,road noise,room tone,
+dev_033.ogg,confidence,1.0,0.95,
+dev_033.ogg,vote0,,"{""heard"": ""The customer speaks in a calm, clear tone stating the time is 11 o'clock. There is some low-level background noise throughout the recording, possibly from a room or electronic device. The audio quality is clear with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""room tone"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,vote1,,"{""heard"": ""The customer speaks with a neutral and calm tone, stating the time as eleven o'clock. There is some low-level static background noise audible at the beginning of the clip. The audio quality is generally clear with no significant impairments or speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_033.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and measured tone with a moderate pitch. There are no background noises or interfering sounds. The audio quality is completely clear throughout the call. No speaker overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,emotional_tone,distressed,neutral,False
+dev_034.ogg,emotional_intensity,low,low,True
+dev_034.ogg,background_noise_present,False,False,True
+dev_034.ogg,background_noise_severity,none,none,True
+dev_034.ogg,audio_quality,clear,clear,True
+dev_034.ogg,speaker_overlap_present,False,False,True
+dev_034.ogg,long_silence_present,False,False,True
+dev_034.ogg,background_noise_type,,,
+dev_034.ogg,confidence,1.0,0.4,
+dev_034.ogg,vote0,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace. There is no background noise present and the audio quality is clear. No speaker overlap occurs during the clip."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,vote1,,"{""heard"": ""The customer speaks in a calm, neutral tone with a moderate pace. There is no background noise or overlap present in the recording. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_034.ogg,vote2,,"{""heard"": ""The customer speaks in a calm, neutral tone with a steady pace and moderate volume. There is no background noise or interference present throughout the audio. The speech is clear and easily understandable with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,emotional_tone,distressed,neutral,False
+dev_035.ogg,emotional_intensity,medium,low,False
+dev_035.ogg,background_noise_present,False,False,True
+dev_035.ogg,background_noise_severity,none,none,True
+dev_035.ogg,audio_quality,clear,clear,True
+dev_035.ogg,speaker_overlap_present,False,False,True
+dev_035.ogg,long_silence_present,False,False,True
+dev_035.ogg,background_noise_type,,,
+dev_035.ogg,confidence,1.0,0.4,
+dev_035.ogg,vote0,,"{""heard"": ""The speaker delivers a straightforward reminder in a clear, neutral voice. There is no background noise or overlap. The audio quality is clean."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,vote1,,"{""heard"": ""The customer speaks with a clear, calm voice and a neutral tone. The pacing is steady, and there is no background noise or overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_035.ogg,vote2,,"{""heard"": ""The speaker delivers a reminder with a moderate pace and neutral tone. The audio is clear and free of background noise. There is no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,emotional_tone,satisfied,neutral,False
+dev_036.ogg,emotional_intensity,medium,low,False
+dev_036.ogg,background_noise_present,False,False,True
+dev_036.ogg,background_noise_severity,none,none,True
+dev_036.ogg,audio_quality,clear,clear,True
+dev_036.ogg,speaker_overlap_present,True,False,False
+dev_036.ogg,long_silence_present,False,False,True
+dev_036.ogg,background_noise_type,,,
+dev_036.ogg,confidence,1.0,0.4,
+dev_036.ogg,vote0,,"{""heard"": ""The speaker's voice is calm and measured with a neutral emotional delivery. There is no background noise present and the audio quality is clear. No speaker overlap occurs."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,vote1,,"{""heard"": ""The speaker speaks with a calm and measured pace in a neutral tone. There are no background noises or audio distortions present. The speech is clear and easy to understand with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_036.ogg,vote2,,"{""heard"": ""The speaker informs us that we will stop in a couple of minutes. Their tone is calm and neutral, spoken at a moderate pace without any background noise. The audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,emotional_tone,satisfied,neutral,False
+dev_037.ogg,emotional_intensity,medium,medium,True
+dev_037.ogg,background_noise_present,False,True,False
+dev_037.ogg,background_noise_severity,none,medium,False
+dev_037.ogg,audio_quality,clear,clear,True
+dev_037.ogg,speaker_overlap_present,False,False,True
+dev_037.ogg,long_silence_present,False,False,True
+dev_037.ogg,background_noise_type,,static,
+dev_037.ogg,confidence,1.0,0.4,
+dev_037.ogg,vote0,,"{""heard"": ""The speaker's voice is clear and steady with a neutral tone and medium intensity. They speak at a moderate pace, stating that the airplane is almost full. There is no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,vote1,,"{""heard"": ""The speaker's voice is clear and steady with a neutral tone and medium intensity. They state that the airplane is almost full. There is no background noise or speaker overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""medium"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_037.ogg,vote2,,"{""heard"": ""The speaker's voice is clear and steady with a calm and direct tone. There is no background noise or overlap present in the audio. The overall quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,emotional_tone,satisfied,neutral,False
+dev_038.ogg,emotional_intensity,medium,low,False
+dev_038.ogg,background_noise_present,False,False,True
+dev_038.ogg,background_noise_severity,none,none,True
+dev_038.ogg,audio_quality,clear,clear,True
+dev_038.ogg,speaker_overlap_present,False,False,True
+dev_038.ogg,long_silence_present,True,True,True
+dev_038.ogg,background_noise_type,,,
+dev_038.ogg,confidence,1.0,0.4,
+dev_038.ogg,vote0,,"{""heard"": ""The speaker has a clear, natural tone with a moderate pace and neutral expression. There are no background noises or speaker overlaps. The audio quality is clean."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,vote1,,"{""heard"": ""The speaker has a neutral tone with a medium pitch and speaks at a regular pace. The audio quality is clear, with no background noise present and no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_038.ogg,vote2,,"{""heard"": ""The speaker delivers a neutral statement with a calm and even tone. There is no background noise or overlap present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,emotional_tone,frustrated,neutral,False
+dev_039.ogg,emotional_intensity,medium,low,False
+dev_039.ogg,background_noise_present,True,False,False
+dev_039.ogg,background_noise_severity,low,none,False
+dev_039.ogg,audio_quality,clear,clear,True
+dev_039.ogg,speaker_overlap_present,False,False,True
+dev_039.ogg,long_silence_present,False,False,True
+dev_039.ogg,background_noise_type,road noise,,
+dev_039.ogg,confidence,1.0,0.95,
+dev_039.ogg,vote0,,"{""heard"": ""The speaker sounds calm and neutral with a steady pace and moderate volume. There is a faint sound of sirens or an alarm in the background. No speaker overlap is present."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""sirens"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,vote1,,"{""heard"": ""The speaker delivers statements in a calm and even tone with a neutral expression of facts. The audio quality is clear, and there is no background noise or speaker overlap detected throughout the entire recording."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": """", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_039.ogg,vote2,,"{""heard"": ""The customer speaks in a neutral tone with a calm and even pace. The audio quality is clear with no background noise present. There is no speaker overlap or emotional distress detected."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": false, ""background_noise_type"": ""none"", ""background_noise_severity"": ""none"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,emotional_tone,frustrated,neutral,False
+dev_040.ogg,emotional_intensity,medium,low,False
+dev_040.ogg,background_noise_present,True,True,True
+dev_040.ogg,background_noise_severity,high,low,False
+dev_040.ogg,audio_quality,clear,clear,True
+dev_040.ogg,speaker_overlap_present,False,False,True
+dev_040.ogg,long_silence_present,False,False,True
+dev_040.ogg,background_noise_type,appliance hum,room noise,
+dev_040.ogg,confidence,1.0,0.95,
+dev_040.ogg,vote0,,"{""heard"": ""The speaker talks in a calm, neutral tone with a moderate pace. There is some low-level background room noise and static present in the audio. The speech quality is clear and there are no overlapping voices."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""room noise"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,vote1,,"{""heard"": ""The customer speaks in a calm and neutral voice with moderate pace and pitch. There is some low-level background room noise present throughout the call. The overall audio quality is clear."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""room tone"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
+dev_040.ogg,vote2,,"{""heard"": ""The customer speaks in a calm and even tone. There is some static background noise present during parts of the recording. The speech is clear and easy to understand with no speaker overlap."", ""emotional_tone"": ""neutral"", ""emotional_intensity"": ""low"", ""background_noise_present"": true, ""background_noise_type"": ""static"", ""background_noise_severity"": ""low"", ""audio_quality"": ""clear"", ""speaker_overlap_present"": false}",
