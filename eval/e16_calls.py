@@ -1,4 +1,4 @@
-"""E16 step 2: score the fine-tuned 5-tone SER model on whole calls (compare with E12 on the same test calls).
+"""E16 step 2 (also E17–E19 model selection): score the fine-tuned 5-tone SER model on whole calls (compare with E12 on the same test calls).
 
 Window probabilities come from ser_features.py run with the fine-tuned model folder. Call rule (E12, 5 tones):
 duration-weighted mean over the most emotional `top` fraction of windows → neutral unless 1 − p(neutral) ≥ τ,
@@ -17,6 +17,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+import numpy as np
 from e12_fuse import labels, llm_tones, metrics
 from metune_pipeline.schema import TONES
 from sklearn.metrics import f1_score
@@ -33,59 +34,72 @@ def aggregate(windows: list[dict], top: float) -> dict[str, float]:
     return {t: sum(w["p"][t] * w["dur"] for w in ranked) / total for t in TONES}
 
 
+def ensemble(per_model: list[dict]) -> dict:
+    """Average window probabilities across models; windows come from the same VAD cut, so they align 1:1."""
+    out = {}
+    for n, wins in per_model[0].items():
+        assert all(len(m[n]) == len(wins) for m in per_model), f"window mismatch in {n}"
+        out[n] = [{**w, "p": {t: float(np.mean([m[n][i]["p"][t] for m in per_model])) for t in TONES}}
+                  for i, w in enumerate(wins)]
+    return out
+
+
 def call_tone(p: dict[str, float], tau: float) -> str:
     return "neutral" if 1 - p["neutral"] < tau else max(EMOTIONS, key=p.get)
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", required=True, help="fine-tuned model folder (as passed to ser_features.py)")
+    ap.add_argument("--model", required=True, nargs="+",
+                    help="fine-tuned model folder(s) as passed to ser_features.py; several = ensemble (mean probs)")
     ap.add_argument("--name", default="E16-calls")
+    ap.add_argument("--val-split", default="val", help="where top/τ are tuned (and models compared)")
+    ap.add_argument("--test-split", default="test", help='scored once with the val-tuned rule; "none" = val only')
     a = ap.parse_args()
-    fdir = ROOT / "ser" / a.model.replace("/", "__")
-    feats = {s: json.loads((fdir / f"{s}.json").read_text()) for s in ("val", "test")}
-    y = {s: labels(s) for s in ("val", "test")}
+    splits = [a.val_split] + ([a.test_split] if a.test_split != "none" else [])
+    feats = {s: ensemble([json.loads((ROOT / "ser" / m.replace("/", "__") / f"{s}.json").read_text())
+                          for m in a.model]) for s in splits}
+    y = {s: labels(s) for s in splits}
+    gold = {s: [y[s][n] for n in sorted(y[s])] for s in splits}
 
     def predict(split: str, top: float, tau: float) -> list[str]:
         return [call_tone(aggregate(feats[split][n], top), tau) for n in sorted(y[split])]
 
-    gold = {s: [y[s][n] for n in sorted(y[s])] for s in y}
     grid = itertools.product([1.0, 0.5, 0.3], [i / 20 for i in range(1, 20)])
     # Tie-break toward the higher τ: fewer neutral false alarms on mostly-neutral real traffic (E12 lesson).
-    top, tau = max(grid, key=lambda g: (f1_score(gold["val"], predict("val", *g), labels=TONES, average="macro",
-                                                 zero_division=0), g[1]))
+    top, tau = max(grid, key=lambda g: (f1_score(gold[a.val_split], predict(a.val_split, *g), labels=TONES,
+                                                 average="macro", zero_division=0), g[1]))
 
-    test_names = sorted(y["test"])
-    llm = llm_tones("test")
-    e12 = json.loads(Path(max(glob.glob("eval/runs/*_E12-wav2vec2-base-superb-er/summary.json"))).read_text())
-    preds = {s: predict(s, top, tau) for s in ("val", "test")}
+    preds = {s: predict(s, top, tau) for s in splits}
     out = {"name": a.name, "model": a.model, "when": datetime.now().isoformat(timespec="seconds"),
-           "tuned_on": "val (actors 1036–1045)", "params": {"top_fraction": top, "tau_emotional": tau},
-           "results": {"val": {"ser_ft": metrics(gold["val"], preds["val"])},
-                       "test": {"ser_ft": metrics(gold["test"], preds["test"]),
-                                "llm_only": metrics(gold["test"], [llm[n] for n in test_names]),
-                                "e12b_ser_only": e12["results"]["test"]["ser_only"]}}}
-    neu = [p for g, p in zip(gold["test"], preds["test"]) if g == "neutral"]
-    out["results"]["test"]["neutral_kept"] = f"{neu.count('neutral')}/{len(neu)}"
+           "tuned_on": a.val_split, "params": {"top_fraction": top, "tau_emotional": tau},
+           "results": {s: {"ser_ft": metrics(gold[s], preds[s])} for s in splits}}
+    for s in splits:
+        neu = [p for g, p in zip(gold[s], preds[s]) if g == "neutral"]
+        out["results"][s]["neutral_kept"] = f"{neu.count('neutral')}/{len(neu)}"
+    llm = {}
+    if a.test_split == "test":      # stored Gemini (T1) and E12 runs exist only for the original 40 test calls
+        llm = llm_tones("test")
+        e12 = json.loads(Path(max(glob.glob("eval/runs/*_E12-wav2vec2-base-superb-er/summary.json"))).read_text())
+        out["results"]["test"]["llm_only"] = metrics(gold["test"], [llm[n] for n in sorted(y["test"])])
+        out["results"]["test"]["e12b_ser_only"] = e12["results"]["test"]["ser_only"]
 
     run = Path("eval/runs") / f"{datetime.now():%Y%m%d-%H%M}_{a.name}"
     run.mkdir(parents=True)
     (run / "summary.json").write_text(json.dumps(out, indent=2))
     with (run / "predictions.csv").open("w", newline="") as f:
         csv.writer(f).writerows([["split", "name", "label", "ser_ft", "llm"],
-                                 *[["val", n, t, p, ""] for n, t, p in zip(sorted(y["val"]), gold["val"], preds["val"])],
-                                 *[["test", n, t, p, llm[n]] for n, t, p in zip(test_names, gold["test"], preds["test"])]])
+                                 *[[s, n, t, p, llm.get(n, "") if s == "test" else ""]
+                                   for s in splits for n, t, p in zip(sorted(y[s]), gold[s], preds[s])]])
 
-    print(f"{a.name}  params (tuned on val): top={top} tau={tau}")
+    print(f"{a.name}  params (tuned on {a.val_split}): top={top} tau={tau}")
     for s, r in out["results"].items():
-        print(f"  {s:<5} " + "  ".join(f"{k}: acc {v['accuracy']:.3f} F1 {v['macro_f1']:.3f}"
-                                       for k, v in r.items() if isinstance(v, dict)))
-    print("  test neutral kept:", out["results"]["test"]["neutral_kept"])
-    print("  test confusion (rows=true):", TONES)
-    for t, row in zip(TONES, out["results"]["test"]["ser_ft"]["confusion"]):
+        print(f"  {s:<9} " + "  ".join(f"{k}: acc {v['accuracy']:.3f} F1 {v['macro_f1']:.3f}"
+                                       for k, v in r.items() if isinstance(v, dict)) + f"  neutral kept {r['neutral_kept']}")
+    print(f"  {splits[-1]} confusion (rows=true):", TONES)
+    for t, row in zip(TONES, out["results"][splits[-1]]["ser_ft"]["confusion"]):
         print(f"    {t:<11}{row}")
     print("→", run)
-
 
 if __name__ == "__main__":
     main()

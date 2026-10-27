@@ -20,6 +20,7 @@ import json
 import random
 import subprocess
 import time
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
@@ -77,8 +78,11 @@ def add_noise(x: np.ndarray, noise: list[np.ndarray], rng: random.Random) -> np.
     return (x + n * rms(x) / (rms(n) * 10 ** (snr / 20))).astype(np.float32)
 
 
-def load_split(b: Builder, actors: range) -> list[tuple[np.ndarray, int]]:
-    items = [(f, TONES.index(TONE_OF[emo])) for (a, emo), clips in b.clips.items() if a in actors for f, _ in clips]
+def load_split(b: Builder, actors) -> list[tuple[np.ndarray, int]]:
+    """Clips of `actors`; an actor listed k times (bootstrap sample) contributes its clips k times."""
+    times = Counter(actors)
+    items = [(f, TONES.index(TONE_OF[emo])) for (a, emo), clips in b.clips.items() for f, _ in clips
+             for _ in range(times[a])]
     with ThreadPoolExecutor(8) as ex:
         audio = list(ex.map(lambda it: decode(phone(it[0]), SR), items))
     return [(x[: int(MAX_S * SR)], y) for x, (_, y) in zip(audio, items)]
@@ -135,6 +139,8 @@ def main() -> None:
     ap.add_argument("--lr", type=float, default=3e-5)
     ap.add_argument("--seed", type=int, default=13)
     ap.add_argument("--noise-p", type=float, default=0.0, help="E17: share of train clips with background noise")
+    ap.add_argument("--bootstrap", type=int, default=None,
+                    help="bagging: resample the train ACTORS with replacement (this seed); val/test actors untouched")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available()
                     else "mps" if torch.backends.mps.is_available() else "cpu")
     a = ap.parse_args()
@@ -143,7 +149,11 @@ def main() -> None:
 
     b = Builder(a.seed)
     t0 = time.perf_counter()
-    train, val = load_split(b, SPLIT["train"]), load_split(b, SPLIT["val"])
+    actors = list(SPLIT["train"])
+    if a.bootstrap is not None:     # by actor, not clip: one actor's clips are near-duplicates of each other
+        actors = random.Random(a.bootstrap).choices(actors, k=len(actors))
+        print(f"bootstrap {a.bootstrap}: {len(set(actors))}/{len(SPLIT['train'])} distinct train actors", flush=True)
+    train, val = load_split(b, actors), load_split(b, SPLIT["val"])
     noise = load_noise(b) if a.noise_p else None
     print(f"clips: train {len(train)}, val {len(val)} (phone channel, ≤{MAX_S:.0f}s) in {time.perf_counter() - t0:.0f}s",
           flush=True)

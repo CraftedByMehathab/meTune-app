@@ -1,0 +1,58 @@
+{
+  "name": "E16-ft-valbig",
+  "model": [
+    ".data/proxy/ser_ft/E16-ft/model"
+  ],
+  "when": "2026-10-27T22:53:46",
+  "tuned_on": "val_big",
+  "params": {
+    "top_fraction": 1.0,
+    "tau_emotional": 0.35
+  },
+  "results": {
+    "val_big": {
+      "ser_ft": {
+        "accuracy": 0.708,
+        "macro_f1": 0.716,
+        "confusion": [
+          [
+            16,
+            0,
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            11,
+            8,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            24,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            18,
+            2
+          ],
+          [
+            0,
+            0,
+            7,
+            1,
+            16
+          ]
+        ]
+      },
+      "neutral_kept": "16/24"
+    }
+  }
+}

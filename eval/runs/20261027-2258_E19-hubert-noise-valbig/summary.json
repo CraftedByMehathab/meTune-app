@@ -1,0 +1,58 @@
+{
+  "name": "E19-hubert-noise-valbig",
+  "model": [
+    ".data/proxy/ser_ft/E19-hubert-noise/model"
+  ],
+  "when": "2026-10-27T22:58:38",
+  "tuned_on": "val_big",
+  "params": {
+    "top_fraction": 0.3,
+    "tau_emotional": 0.9
+  },
+  "results": {
+    "val_big": {
+      "ser_ft": {
+        "accuracy": 0.583,
+        "macro_f1": 0.546,
+        "confusion": [
+          [
+            22,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            2,
+            11,
+            0,
+            11,
+            0
+          ],
+          [
+            6,
+            0,
+            5,
+            13,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            3,
+            10,
+            0,
+            3,
+            8
+          ]
+        ]
+      },
+      "neutral_kept": "22/24"
+    }
+  }
+}

@@ -30,7 +30,8 @@ def main() -> None:
     a = ap.parse_args()
     cfg = load_config()
     fe = AutoFeatureExtractor.from_pretrained(a.model)
-    model = AutoModelForAudioClassification.from_pretrained(a.model).eval()
+    dev = "cuda" if torch.cuda.is_available() else "cpu"
+    model = AutoModelForAudioClassification.from_pretrained(a.model).eval().to(dev)
     labels = [model.config.id2label[i] for i in range(model.config.num_labels)]
     print(a.model, "labels:", labels)
     torch.set_num_threads(4)
@@ -50,12 +51,12 @@ def main() -> None:
             with torch.inference_mode():
                 for s, e in wins:
                     inp = fe(x[s:e], sampling_rate=SR, return_tensors="pt")
-                    p = torch.softmax(model(**inp).logits[0], -1).tolist()
+                    p = torch.softmax(model(**inp.to(dev)).logits[0], -1).tolist()
                     rows.append({"t": round(s / SR, 2), "dur": round((e - s) / SR, 2),
                                  "p": dict(zip(labels, (round(v, 4) for v in p)))})
             cache[f.name] = rows
             print(f"  {folder.name}/{f.name}: {len(rows)} windows · {len(x) / SR:.0f} s audio · "
-                  f"{time.perf_counter() - t0:.1f} s CPU", flush=True)
+                  f"{time.perf_counter() - t0:.1f} s ", flush=True)
             out_path.write_text(json.dumps(cache))
         print("→", out_path)
 

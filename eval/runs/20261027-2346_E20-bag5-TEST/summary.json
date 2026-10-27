@@ -1,0 +1,106 @@
+{
+  "name": "E20-bag5-TEST",
+  "model": [
+    ".data/proxy/ser_ft/E20-bag1/model",
+    ".data/proxy/ser_ft/E20-bag2/model",
+    ".data/proxy/ser_ft/E20-bag3/model",
+    ".data/proxy/ser_ft/E20-bag4/model",
+    ".data/proxy/ser_ft/E20-bag5/model"
+  ],
+  "when": "2026-10-27T23:46:00",
+  "tuned_on": "val_big",
+  "params": {
+    "top_fraction": 1.0,
+    "tau_emotional": 0.3
+  },
+  "results": {
+    "val_big": {
+      "ser_ft": {
+        "accuracy": 0.883,
+        "macro_f1": 0.884,
+        "confusion": [
+          [
+            21,
+            0,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            20,
+            1,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            23,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            23,
+            0
+          ],
+          [
+            1,
+            0,
+            3,
+            1,
+            19
+          ]
+        ]
+      },
+      "neutral_kept": "21/24"
+    },
+    "test_big": {
+      "ser_ft": {
+        "accuracy": 0.675,
+        "macro_f1": 0.661,
+        "confusion": [
+          [
+            20,
+            0,
+            3,
+            0,
+            1
+          ],
+          [
+            1,
+            12,
+            3,
+            8,
+            0
+          ],
+          [
+            3,
+            0,
+            16,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            5,
+            0,
+            4,
+            6,
+            9
+          ]
+        ]
+      },
+      "neutral_kept": "20/24"
+    }
+  }
+}

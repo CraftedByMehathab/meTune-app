@@ -1,0 +1,60 @@
+{
+  "name": "ens-E16+E17b+E18-valbig",
+  "model": [
+    ".data/proxy/ser_ft/E16-ft/model",
+    ".data/proxy/ser_ft/E17b-noise16/model",
+    ".data/proxy/ser_ft/E18-hubert/model"
+  ],
+  "when": "2026-10-27T22:59:14",
+  "tuned_on": "val_big",
+  "params": {
+    "top_fraction": 0.5,
+    "tau_emotional": 0.6
+  },
+  "results": {
+    "val_big": {
+      "ser_ft": {
+        "accuracy": 0.792,
+        "macro_f1": 0.793,
+        "confusion": [
+          [
+            21,
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            15,
+            1,
+            5,
+            3
+          ],
+          [
+            1,
+            0,
+            19,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            21,
+            0
+          ],
+          [
+            1,
+            1,
+            2,
+            1,
+            19
+          ]
+        ]
+      },
+      "neutral_kept": "21/24"
+    }
+  }
+}
