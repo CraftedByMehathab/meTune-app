@@ -23,6 +23,7 @@ from pathlib import Path
 
 import numpy as np
 from metune_pipeline.decode import decode
+from metune_pipeline.vad import speech_probs
 from scipy.signal import butter, resample_poly, sosfilt
 
 SR = 16000
@@ -46,6 +47,9 @@ NOISE_OF = {
 }
 NOISE_TYPES = sorted(set(NOISE_OF.values())) + ["background chatter", "static"]
 SEVERITY_SNR = {"low": 20.0, "medium": 10.0, "high": 3.0}   # dB, speech-active RMS vs noise RMS
+# E31: overlap = both voices active at once for ≥ 0.5 s (VAD on the separate legs). The planned turn shift
+# (1.2–2.0 s) often overlaps only the clips' leading/trailing silence (~0.5 s each end).
+OVERLAP_MIN_S = 0.5
 
 
 def fetch(url: str, dst: Path) -> Path:
@@ -85,7 +89,8 @@ def loop_to(x: np.ndarray, n: int) -> np.ndarray:
 
 
 class Builder:
-    def __init__(self, seed: int):
+    def __init__(self, seed: int, overlap_p: float = 0.25, overlap_from_speech: bool = False):
+        self.overlap_p, self.overlap_from_speech = overlap_p, overlap_from_speech
         self.rng = random.Random(seed)
         self.nrng = np.random.default_rng(seed)
         meta = fetch(CREMA_META, SRC / "crema" / "summaryTable.csv")
@@ -127,7 +132,7 @@ class Builder:
         c_clips = rng.sample(self.clips[(cust, tone_emo)], min(len(self.clips[(cust, tone_emo)]), rng.randint(4, 6)))
         a_clips = rng.sample(self.clips[(agent, agent_emo)], min(len(self.clips[(agent, agent_emo)]), 4))
 
-        overlap = rng.random() < 0.25
+        overlap = rng.random() < self.overlap_p
         long_silence = rng.random() < 0.2
         turns = []                                   # (speaker, audio), agent opens
         for i in range(max(len(c_clips), len(a_clips))):
@@ -141,7 +146,12 @@ class Builder:
         segs, t = [], int(0.8 * SR)
         for i, (who, x) in enumerate(turns):
             if i == overlap_at:
-                t = max(0, t - int(rng.uniform(1.2, 2.0) * SR))   # start before the previous turn ends
+                shift = rng.uniform(1.2, 2.0)
+                if self.overlap_from_speech:      # E31: 0.8–1.6 s of real speech on both legs, not clip edges
+                    p_start, p_x, _ = segs[-1]
+                    t = max(0, p_start + speech_bounds(p_x)[1] - speech_bounds(x)[0] - int((shift - 0.4) * SR))
+                else:
+                    t = max(0, t - int(shift * SR))   # start before the previous turn ends
             if i == silence_at:
                 t += int(rng.uniform(12, 16) * SR)
             segs.append((t, x, who))
@@ -149,6 +159,7 @@ class Builder:
         legs = {"agent": np.zeros(t + SR, np.float32), "customer": np.zeros(t + SR, np.float32)}
         for s, x, who in segs:
             legs[who][s:s + len(x)] += x
+        overlap_s = both_talking_s(legs["agent"], legs["customer"])     # no RNG draws: splits stay reproducible
         # original mode: noise on the mixed call; wideband_agent: noise lives on the customer's side of the line
         speech = legs["customer"] if wideband_agent else legs["agent"] + legs["customer"]
 
@@ -169,12 +180,29 @@ class Builder:
             "emotional_intensity": "low" if tone_emo == "NEU" else intensity_of([lv for _, lv in c_clips]),
             "background_noise_present": bool(kind), "background_noise_type": kind,
             "background_noise_severity": severity, "audio_quality": "clear",
-            "speaker_overlap_present": overlap, "long_silence_present": long_silence, "confidence": 1.0,
+            "speaker_overlap_present": overlap_s >= OVERLAP_MIN_S, "long_silence_present": long_silence, "confidence": 1.0,
         }
         meta = {"customer": cust, "agent": agent, "agent_emotion": agent_emo, "crema_emotion": tone_emo,
                 "noise": kind, "snr_db": snr,
-                "customer_clips": " ".join(f for f, _ in c_clips), "duration_s": round(len(x) / SR, 1)}
+                "customer_clips": " ".join(f for f, _ in c_clips), "duration_s": round(len(x) / SR, 1),
+                "overlap_planned": overlap, "overlap_s": overlap_s}
         return x, label, meta
+
+
+def speech_bounds(x: np.ndarray) -> tuple[int, int]:
+    """First and last speech sample of a clip (Silero VAD > 0.5); the whole clip if none."""
+    p, step = speech_probs(x, SR)
+    idx = np.where(p > 0.5)[0]
+    w = int(step * SR)
+    return (int(idx[0] * w), int((idx[-1] + 1) * w)) if len(idx) else (0, len(x))
+
+
+def both_talking_s(a: np.ndarray, b: np.ndarray) -> float:
+    """Seconds where Silero VAD hears speech on both legs at once."""
+    pa, step = speech_probs(a, SR)
+    pb, _ = speech_probs(b, SR)
+    n = min(len(pa), len(pb))
+    return round(float(((pa[:n] > 0.5) & (pb[:n] > 0.5)).sum() * step), 2)
 
 
 def narrowband(x: np.ndarray) -> np.ndarray:
@@ -203,20 +231,33 @@ def write_call(x: np.ndarray, dst: Path, channel: str = "phone") -> None:
     )
 
 
-def build_split(b: Builder, name: str, actors: list[int], folds: set[int], per_tone: int, channel: str) -> None:
-    out = ROOT / (name if channel == "phone" else f"{name}_{channel}")
+def build_split(b: Builder, name: str, actors: list[int], folds: set[int], per_tone: int, channel: str,
+                relabel: bool = False, tag: str = "") -> None:
+    """relabel: replay an existing split (same seed and args) without writing audio; check every call matches the
+    saved meta, then rewrite labels.csv / meta.csv (originals kept as *_v1.csv)."""
+    out = ROOT / ((name if channel == "phone" else f"{name}_{channel}") + (f"_{tag}" if tag else ""))
     out.mkdir(parents=True, exist_ok=True)
+    old = {r["name"]: r for r in csv.DictReader((out / "meta.csv").open())} if relabel else {}
     plan = [e for e in TONE_OF for _ in range(per_tone)]
     b.rng.shuffle(plan)
     rows, metas = [], []
     for i, emo in enumerate(plan, 1):
         fname = f"{name}_{i:03d}.{'flac' if channel == 'clean' else 'ogg'}"
         x, label, meta = b.call(emo, actors, folds, wideband_agent=channel == "agent")
-        write_call(x, out / fname, channel)
+        if relabel:
+            o = old[fname]
+            assert (o["customer_clips"], o["noise"], float(o["duration_s"])) == \
+                (meta["customer_clips"], meta["noise"], meta["duration_s"]), f"replay differs at {fname}"
+        else:
+            write_call(x, out / fname, channel)
         rows.append([fname, json.dumps(label)])
         metas.append({"name": fname, **meta})
         print(f"{fname}  {label['emotional_tone']:<10} {label['emotional_intensity']:<6} noise={meta['noise'] or '-':<18} "
               f"overlap={label['speaker_overlap_present']!s:<5} silence={label['long_silence_present']!s:<5} {meta['duration_s']}s")
+    if relabel:
+        for stem in ("labels", "meta"):
+            if not (out / f"{stem}_v1.csv").exists():
+                (out / f"{stem}.csv").rename(out / f"{stem}_v1.csv")
     with (out / "labels.csv").open("w", newline="") as f:
         csv.writer(f).writerows([["name", "result_json"], *rows])
     with (out / "meta.csv").open("w", newline="") as f:
@@ -245,19 +286,25 @@ def main() -> None:
     ap.add_argument("--big", action="store_true",
                     help="build val_big (actors 1036–1045) + test_big (1046–1091) for model selection with less noise;"
                          " use with a new --seed and e.g. --per-tone 24")
+    ap.add_argument("--relabel", action="store_true",
+                    help="replay existing splits (same args + seed) and rewrite labels only, no audio (E31)")
+    ap.add_argument("--overlap-p", type=float, default=0.25, help="share of calls with a planned overlap")
+    ap.add_argument("--overlap-from-speech", action="store_true",
+                    help="place overlaps on the clips' speech, not their edges (E31; new splits only)")
+    ap.add_argument("--tag", default="", help="suffix for the split folders, e.g. ovl → val_big_agent_ovl")
     a = ap.parse_args()
-    b = Builder(a.seed)
+    b = Builder(a.seed, a.overlap_p, a.overlap_from_speech)
     prefetch(b)
     if a.val:
-        build_split(b, "val", list(range(1036, 1046)), {1, 2, 3}, a.per_tone, a.channel)
+        build_split(b, "val", list(range(1036, 1046)), {1, 2, 3}, a.per_tone, a.channel, a.relabel)
         return
     if a.big:
-        build_split(b, "val_big", list(range(1036, 1046)), {1, 2, 3}, a.per_tone, a.channel)
-        build_split(b, "test_big", list(range(1046, 1092)), {4, 5}, a.per_tone, a.channel)
+        build_split(b, "val_big", list(range(1036, 1046)), {1, 2, 3}, a.per_tone, a.channel, a.relabel, a.tag)
+        build_split(b, "test_big", list(range(1046, 1092)), {4, 5}, a.per_tone, a.channel, a.relabel, a.tag)
         return
     # Same seed → same calls in both channels: the RNG is consumed by mixing only, never by encoding.
-    build_split(b, "dev", list(range(1001, 1046)), {1, 2, 3}, a.per_tone, a.channel)
-    build_split(b, "test", list(range(1046, 1092)), {4, 5}, a.per_tone, a.channel)
+    build_split(b, "dev", list(range(1001, 1046)), {1, 2, 3}, a.per_tone, a.channel, a.relabel)
+    build_split(b, "test", list(range(1046, 1092)), {4, 5}, a.per_tone, a.channel, a.relabel)
 
 
 if __name__ == "__main__":

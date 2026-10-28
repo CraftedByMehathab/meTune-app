@@ -14,14 +14,19 @@ def majority(votes: list[dict], key: str):
 
 
 def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = False,
-         ser: dict | None = None, noise: dict | None = None) -> Result:
+         ser: dict | None = None, noise: dict | None = None, overlap: dict | None = None) -> Result:
     """`ser` (tone_source=ser): the speech-emotion model owns tone, also without any LLM votes.
-    `noise` (noise_source=ast): the sound classifier owns the noise fields, also without any LLM votes."""
+    `noise` (noise_source=ast): the sound classifier owns the noise fields, also without any LLM votes.
+    `overlap` (overlap_detector): ORed with the LLM's overlap answer; alone without LLM votes (E31)."""
     if not votes:
         out = baseline(facts, cfg, confidence=0.2 if degraded else 0.3).model_dump()
         if ser:
             out = _apply_ser(out, ser, facts, llm_emotional=False)
-        return Result(**(_apply_noise(out, noise, facts, cfg) if noise else out))
+        if noise:
+            out = _apply_noise(out, noise, facts, cfg)
+        if overlap:
+            out["speaker_overlap_present"] = overlap["present"]
+        return Result(**out)
     rules = rule_fields(facts, cfg)
     out = {k: majority(votes, k)[0] for k in LLM_MAJORITY}
     types = [v["background_noise_type"] for v in votes
@@ -32,6 +37,8 @@ def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = F
     out["audio_quality"] = "severely_impaired" if llm_q == "severely_impaired" else rules["audio_quality"]
     if noise:
         out = _apply_noise(out, noise, facts, cfg)
+    if overlap:
+        out["speaker_overlap_present"] = out["speaker_overlap_present"] or overlap["present"]
 
     # measured static wins over an LLM "no noise"; an LLM-heard noise (TV, music…) is kept as is
     if not out["background_noise_present"] and static_present(facts, cfg) and not noise:
