@@ -12,6 +12,7 @@ from .dsp import dsp_features
 from .fuse import fuse
 from .llm import LLMCall, run_votes
 from .noise import noise_facts
+from .overlap import overlap_facts
 from .schema import Result
 from .ser import ser_facts
 from .vad import vad_facts
@@ -29,6 +30,7 @@ class Analysis:
     degraded: bool = False          # LLM was configured but every vote failed → baseline used
     ser: dict | None = None         # speech-emotion model output when tone_source=ser
     noise: dict | None = None       # sound-classifier output when noise_source=ast
+    overlap: dict | None = None     # overlap-detector output when overlap_detector is on
 
     @property
     def cost_usd(self) -> float:
@@ -61,6 +63,13 @@ async def _noise(x: np.ndarray, cfg: PipelineConfig, timings: dict) -> dict:
     return out
 
 
+async def _overlap(x: np.ndarray, cfg: PipelineConfig, timings: dict) -> dict:
+    t0 = time.perf_counter()
+    out = await asyncio.to_thread(overlap_facts, x, cfg)
+    timings["overlap"] = _ms(t0)
+    return out
+
+
 async def analyze_file(path: Path, cfg: PipelineConfig, client=None) -> Analysis:
     timings = {}
     t0 = time.perf_counter()
@@ -74,6 +83,7 @@ async def analyze_file(path: Path, cfg: PipelineConfig, client=None) -> Analysis
     # runs alongside the LLM votes, so it adds no wall time when the LLM is on
     ser_task = asyncio.create_task(_ser(x, cfg, timings)) if cfg.tone_source == "ser" else None
     noise_task = asyncio.create_task(_noise(x, cfg, timings)) if cfg.noise_source == "ast" else None
+    overlap_task = asyncio.create_task(_overlap(x, cfg, timings)) if cfg.overlap_detector else None
     calls: list[LLMCall] = []
     if client is not None:
         t0 = time.perf_counter()
@@ -83,10 +93,11 @@ async def analyze_file(path: Path, cfg: PipelineConfig, client=None) -> Analysis
 
     ser = await ser_task if ser_task else None
     noise = await noise_task if noise_task else None
+    overlap = await overlap_task if overlap_task else None
     votes = [c.output for c in calls if c.output]
     degraded = client is not None and not votes
     t0 = time.perf_counter()
-    result = fuse(facts, votes, cfg, degraded=degraded, ser=ser, noise=noise)
+    result = fuse(facts, votes, cfg, degraded=degraded, ser=ser, noise=noise, overlap=overlap)
     timings["fuse"] = _ms(t0)
     return Analysis(result=result, facts=facts, duration_s=round(len(x) / cfg.sample_rate, 2),
-                    calls=calls, timings_ms=timings, degraded=degraded, ser=ser, noise=noise)
+                    calls=calls, timings_ms=timings, degraded=degraded, ser=ser, noise=noise, overlap=overlap)

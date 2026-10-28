@@ -31,6 +31,10 @@ class PipelineConfig(BaseModel):
     noise_source: Literal["llm", "ast"] = "llm"     # ast = AudioSet classifier + trained head owns noise (E25)
     noise_model: str = ".data/models/ast_audioset.int8.onnx"
 
+    overlap_detector: bool = False       # E31: pyannote overlap, ORed with the LLM's answer
+    overlap_frame_p: float = 0.4
+    overlap_min_s: float = 0.42
+
     llm_model: str = "gemini-3.5-flash-lite"
     llm_prompt: str = "v2"
     llm_votes: int = 3

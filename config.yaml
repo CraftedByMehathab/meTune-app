@@ -28,6 +28,10 @@ ser_narrowband_max: 1.0e-4            # high-band share below this = customer (t
 noise_source: ast                     # ast = AudioSet classifier + trained head owns noise (E25: test_big acc 0.88 vs 3.8 Flash 0.74); llm = Gemini
 noise_model: .data/models/ast_audioset.int8.onnx   # 92 MB, not in git: eval/export_ast_onnx.py; head: metune_pipeline/models/noise_head.json
 
+overlap_detector: true                # E31: pyannote (vendored, 6 MB) OR the LLM; test recall 0.40 → 0.68, precision 0.90
+overlap_frame_p: 0.4                  # p(two speakers) per frame; with overlap_min_s picked on val_big_agent_ovl
+overlap_min_s: 0.42
+
 llm_model: gemini-3.8-flash           # E26: best Gemini on noise/overlap/intensity; was gemini-3.5-flash-lite
 llm_prompt: v2                        # v1 labels-only · v2 describe-then-label · v3 v2 + judge the voice, not the words (DR-017)
 llm_votes: 1                          # E22: k=1 ≈ k=3 on every field; tone comes from the SER bag, so no tone ties to break

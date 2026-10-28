@@ -62,7 +62,7 @@ class Worker:
                                            self.settings.file_timeout_s)
                 s.add(ResultRow(file_id=f.id, **a.result.model_dump(),
                                 raw={"facts": a.facts, "timings_ms": a.timings_ms,
-                                     "votes": [c.output for c in a.calls], "ser": a.ser, "noise": a.noise}))
+                                     "votes": [c.output for c in a.calls], "ser": a.ser, "noise": a.noise, "overlap": a.overlap}))
                 for c in a.calls:
                     s.add(LLMCallRow(file_id=f.id, **{k: v for k, v in c.to_dict().items() if k != "output"}))
                 f.status, f.error = "done", None

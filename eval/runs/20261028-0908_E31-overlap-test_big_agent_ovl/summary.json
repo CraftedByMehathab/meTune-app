@@ -1,0 +1,62 @@
+{
+  "tune": "val_big_agent_ovl",
+  "test": "test_big_agent_ovl",
+  "when": "2026-10-28T09:08:44",
+  "pyannote_rule": {
+    "frame_p": 0.4,
+    "min_seconds": 0.42
+  },
+  "tune_scores": {
+    "pyannote": {
+      "acc": 0.767,
+      "precision": 0.818,
+      "recall": 0.551,
+      "f1": 0.659
+    },
+    "gemini": {
+      "acc": 0.717,
+      "precision": 0.742,
+      "recall": 0.469,
+      "f1": 0.575
+    },
+    "pyannote OR gemini": {
+      "acc": 0.808,
+      "precision": 0.81,
+      "recall": 0.694,
+      "f1": 0.747
+    },
+    "pyannote AND gemini": {
+      "acc": 0.675,
+      "precision": 0.727,
+      "recall": 0.327,
+      "f1": 0.451
+    }
+  },
+  "picked_on_tune": "pyannote OR gemini",
+  "test_scores": {
+    "pyannote": {
+      "acc": 0.733,
+      "precision": 0.862,
+      "recall": 0.472,
+      "f1": 0.61
+    },
+    "gemini": {
+      "acc": 0.717,
+      "precision": 0.913,
+      "recall": 0.396,
+      "f1": 0.553
+    },
+    "pyannote OR gemini": {
+      "acc": 0.825,
+      "precision": 0.9,
+      "recall": 0.679,
+      "f1": 0.774
+    },
+    "pyannote AND gemini": {
+      "acc": 0.625,
+      "precision": 0.833,
+      "recall": 0.189,
+      "f1": 0.308
+    }
+  }
+}

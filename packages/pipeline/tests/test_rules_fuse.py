@@ -165,6 +165,21 @@ def test_noise_head_and_missing_model():
         noise_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"noise_model": "/nope.onnx"}))
 
 
+def test_fuse_overlap_detector_ors_with_llm():
+    yes, no = {"present": True, "seconds": 1.2}, {"present": False, "seconds": 0.0}
+    assert fuse(FACTS, [vote()], CFG, overlap=yes).speaker_overlap_present is True
+    assert fuse(FACTS, [vote(speaker_overlap_present=True)], CFG, overlap=no).speaker_overlap_present is True
+    assert fuse(FACTS, [vote()], CFG, overlap=no).speaker_overlap_present is False
+    assert fuse(FACTS, [], CFG, overlap=yes).speaker_overlap_present is True             # also without LLM votes
+
+
+def test_overlap_detector_on_silence():
+    from metune_pipeline.overlap import overlap_facts
+
+    out = overlap_facts(np.zeros(16000 * 12, np.float32), CFG)
+    assert out == {"present": False, "seconds": 0.0}
+
+
 def test_decode_error_is_user_facing(tmp_path):
     import pytest
     from metune_pipeline.decode import DecodeError, decode
