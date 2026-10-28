@@ -15,7 +15,7 @@ from pathlib import Path
 import torch
 from metune_pipeline.config import load_config
 from metune_pipeline.decode import decode
-from metune_pipeline.ser import speech_windows  # shared with the shipped pipeline
+from metune_pipeline.ser import high_band_share, speech_windows  # shared with the shipped pipeline
 from transformers import AutoFeatureExtractor, AutoModelForAudioClassification
 
 ROOT = Path(".data/proxy")
@@ -53,6 +53,7 @@ def main() -> None:
                     inp = fe(x[s:e], sampling_rate=SR, return_tensors="pt")
                     p = torch.softmax(model(**inp.to(dev)).logits[0], -1).tolist()
                     rows.append({"t": round(s / SR, 2), "dur": round((e - s) / SR, 2),
+                                 "hi": round(high_band_share(x[s:e], SR), 6),
                                  "p": dict(zip(labels, (round(v, 4) for v in p)))})
             cache[f.name] = rows
             print(f"  {folder.name}/{f.name}: {len(rows)} windows · {len(x) / SR:.0f} s audio · "

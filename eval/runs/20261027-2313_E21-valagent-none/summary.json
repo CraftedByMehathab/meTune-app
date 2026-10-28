@@ -1,0 +1,58 @@
+{
+  "name": "E21-valagent-none",
+  "model": [
+    "bag5int8"
+  ],
+  "when": "2026-10-27T23:13:44",
+  "tuned_on": "val_big_agent",
+  "params": {
+    "top_fraction": 0.5,
+    "tau_emotional": 0.3
+  },
+  "results": {
+    "val_big_agent": {
+      "ser_ft": {
+        "accuracy": 0.425,
+        "macro_f1": 0.398,
+        "confusion": [
+          [
+            6,
+            8,
+            2,
+            7,
+            1
+          ],
+          [
+            0,
+            10,
+            0,
+            14,
+            0
+          ],
+          [
+            1,
+            2,
+            6,
+            15,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            24,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            15,
+            5
+          ]
+        ]
+      },
+      "neutral_kept": "6/24"
+    }
+  }
+}

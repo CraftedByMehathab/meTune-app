@@ -55,10 +55,15 @@ def main() -> None:
     ap.add_argument("--name", default="E16-calls")
     ap.add_argument("--val-split", default="val", help="where top/τ are tuned (and models compared)")
     ap.add_argument("--test-split", default="test", help='scored once with the val-tuned rule; "none" = val only')
+    ap.add_argument("--customer-only", type=float, default=None, metavar="MAX_HI",
+                    help="E21: keep windows with high-band share < MAX_HI (narrowband = customer); all if none")
     a = ap.parse_args()
     splits = [a.val_split] + ([a.test_split] if a.test_split != "none" else [])
     feats = {s: ensemble([json.loads((ROOT / "ser" / m.replace("/", "__") / f"{s}.json").read_text())
                           for m in a.model]) for s in splits}
+    if a.customer_only is not None:
+        feats = {s: {n: [w for w in ws if w["hi"] < a.customer_only] or ws for n, ws in fs.items()}
+                 for s, fs in feats.items()}
     y = {s: labels(s) for s in splits}
     gold = {s: [y[s][n] for n in sorted(y[s])] for s in splits}
 

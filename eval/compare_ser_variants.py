@@ -25,6 +25,8 @@ def main() -> None:
     ap.add_argument("--split", default="val_big")
     ap.add_argument("--tau", type=float, required=True)
     ap.add_argument("--top", type=float, required=True)
+    ap.add_argument("--customer-only", action="store_true", help="E21: score narrowband windows only")
+    ap.add_argument("--narrowband-max", type=float, default=1e-3, help="E21: high-band share below this = customer")
     ap.add_argument("--set", nargs="+", action="append", required=True, metavar="NAME MODEL",
                     help="a name followed by its ONNX model paths; first set is the reference")
     a = ap.parse_args()
@@ -36,7 +38,9 @@ def main() -> None:
 
     ref = None
     for name, *models in a.set:
-        cfg = load_config().model_copy(update={"ser_models": models, "ser_tau": a.tau, "ser_top_fraction": a.top})
+        cfg = load_config().model_copy(update={"ser_models": models, "ser_tau": a.tau, "ser_top_fraction": a.top,
+                                               "ser_customer_only": a.customer_only,
+                                               "ser_narrowband_max": a.narrowband_max})
         t0 = time.perf_counter()
         pred = [ser_facts(audio[n], cfg)["tone"] for n in names]
         secs = time.perf_counter() - t0

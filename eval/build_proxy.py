@@ -23,6 +23,7 @@ from pathlib import Path
 
 import numpy as np
 from metune_pipeline.decode import decode
+from scipy.signal import butter, resample_poly, sosfilt
 
 SR = 16000
 ROOT = Path(".data/proxy")
@@ -114,12 +115,17 @@ class Builder:
         x = np.concatenate([load_audio(fetch(ESC_URL.format(r["filename"]), SRC / "esc50" / r["filename"])) for r in picks])
         return loop_to(x, n)
 
-    def call(self, tone_emo: str, actors: list[int], folds: set[int]) -> tuple[np.ndarray, dict, dict]:
+    def call(self, tone_emo: str, actors: list[int], folds: set[int],
+             wideband_agent: bool = False) -> tuple[np.ndarray, dict, dict]:
+        """wideband_agent (E21): like the trial calls — agent leg wideband VoIP and upbeat in ~half the calls,
+        customer leg (+ its background noise) band-limited like a phone line. Extra RNG draws only in this mode,
+        so the original splits stay reproducible."""
         rng = self.rng
         cust = rng.choice([a for a in actors if len(self.clips[(a, tone_emo)]) >= 3])
-        agent = rng.choice([a for a in actors if a != cust and len(self.clips[(a, "NEU")]) >= 3])
+        agent_emo = "HAP" if wideband_agent and rng.random() < 0.5 else "NEU"
+        agent = rng.choice([a for a in actors if a != cust and len(self.clips[(a, agent_emo)]) >= 3])
         c_clips = rng.sample(self.clips[(cust, tone_emo)], min(len(self.clips[(cust, tone_emo)]), rng.randint(4, 6)))
-        a_clips = rng.sample(self.clips[(agent, "NEU")], min(len(self.clips[(agent, "NEU")]), 4))
+        a_clips = rng.sample(self.clips[(agent, agent_emo)], min(len(self.clips[(agent, agent_emo)]), 4))
 
         overlap = rng.random() < 0.25
         long_silence = rng.random() < 0.2
@@ -133,16 +139,18 @@ class Builder:
         silence_at = rng.randrange(2, len(turns) - 1) if long_silence else -1
 
         segs, t = [], int(0.8 * SR)
-        for i, (_, x) in enumerate(turns):
+        for i, (who, x) in enumerate(turns):
             if i == overlap_at:
                 t = max(0, t - int(rng.uniform(1.2, 2.0) * SR))   # start before the previous turn ends
             if i == silence_at:
                 t += int(rng.uniform(12, 16) * SR)
-            segs.append((t, x))
+            segs.append((t, x, who))
             t += len(x) + int(rng.uniform(0.3, 1.2) * SR)
-        speech = np.zeros(t + SR, np.float32)
-        for s, x in segs:
-            speech[s:s + len(x)] += x
+        legs = {"agent": np.zeros(t + SR, np.float32), "customer": np.zeros(t + SR, np.float32)}
+        for s, x, who in segs:
+            legs[who][s:s + len(x)] += x
+        # original mode: noise on the mixed call; wideband_agent: noise lives on the customer's side of the line
+        speech = legs["customer"] if wideband_agent else legs["agent"] + legs["customer"]
 
         kind, severity, snr = "", "none", None
         if rng.random() < 0.6:
@@ -152,6 +160,8 @@ class Builder:
             active = np.abs(speech) > 1e-3
             gain = rms(speech[active]) / (rms(n) * 10 ** (snr / 20))
             speech = speech + n * gain
+        if wideband_agent:
+            speech = narrowband(speech) + legs["agent"]
         x = speech / max(1.0, float(np.max(np.abs(speech))) / 0.9)   # headroom, never clip
 
         label = {
@@ -161,14 +171,27 @@ class Builder:
             "background_noise_severity": severity, "audio_quality": "clear",
             "speaker_overlap_present": overlap, "long_silence_present": long_silence, "confidence": 1.0,
         }
-        meta = {"customer": cust, "agent": agent, "crema_emotion": tone_emo, "noise": kind, "snr_db": snr,
+        meta = {"customer": cust, "agent": agent, "agent_emotion": agent_emo, "crema_emotion": tone_emo,
+                "noise": kind, "snr_db": snr,
                 "customer_clips": " ".join(f for f, _ in c_clips), "duration_s": round(len(x) / SR, 1)}
         return x, label, meta
 
 
+def narrowband(x: np.ndarray) -> np.ndarray:
+    """Phone-line leg: 300–3400 Hz band-pass and an 8 kHz round trip (wideband_agent calls)."""
+    y = sosfilt(butter(8, [300, 3400], btype="bandpass", fs=SR, output="sos"), x)
+    return resample_poly(resample_poly(y, 1, 2), 2, 1)[: len(x)].astype(np.float32)
+
+
 def write_call(x: np.ndarray, dst: Path, channel: str = "phone") -> None:
     """Phone channel: band-limit to 300–3400 Hz at 8 kHz, then Opus in Ogg, fake stereo (like the trial calls).
-    Clean channel (E10 control): the same mix as lossless 16 kHz mono FLAC."""
+    Clean channel (E10 control): the same mix as lossless 16 kHz mono FLAC.
+    Agent channel (E21): legs already shaped in Builder.call → wideband 16 kHz Opus, fake stereo."""
+    if channel == "agent":
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-",
+                        "-ac", "2", "-c:a", "libopus", "-b:a", "32k", str(dst)],
+                       input=x.astype(np.float32).tobytes(), check=True)
+        return
     if channel == "clean":
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", "-", str(dst)],
                        input=x.astype(np.float32).tobytes(), check=True)
@@ -187,8 +210,8 @@ def build_split(b: Builder, name: str, actors: list[int], folds: set[int], per_t
     b.rng.shuffle(plan)
     rows, metas = [], []
     for i, emo in enumerate(plan, 1):
-        fname = f"{name}_{i:03d}.{'ogg' if channel == 'phone' else 'flac'}"
-        x, label, meta = b.call(emo, actors, folds)
+        fname = f"{name}_{i:03d}.{'flac' if channel == 'clean' else 'ogg'}"
+        x, label, meta = b.call(emo, actors, folds, wideband_agent=channel == "agent")
         write_call(x, out / fname, channel)
         rows.append([fname, json.dumps(label)])
         metas.append({"name": fname, **meta})
@@ -214,8 +237,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--per-tone", type=int, default=8, help="calls per tone per split")
     ap.add_argument("--seed", type=int, default=13)
-    ap.add_argument("--channel", choices=["phone", "clean"], default="phone",
-                    help="clean = same calls without the phone channel (E10 control) → {split}_clean/")
+    ap.add_argument("--channel", choices=["phone", "clean", "agent"], default="phone",
+                    help="clean = same calls without the phone channel (E10 control) → {split}_clean/; "
+                         "agent = wideband upbeat agent + phone-line customer (E21) → {split}_agent/")
     ap.add_argument("--val", action="store_true",
                     help="build only a val split from actors 1036–1045 (held out from SER fine-tuning, E16)")
     ap.add_argument("--big", action="store_true",

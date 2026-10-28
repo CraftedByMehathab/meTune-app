@@ -10,6 +10,7 @@ from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
+from scipy.signal import stft
 
 from .config import PipelineConfig
 from .schema import TONES
@@ -43,6 +44,14 @@ def speech_windows(x: np.ndarray, threshold: float, sr: int = 16000) -> list[tup
     return out
 
 
+def high_band_share(w: np.ndarray, sr: int = 16000) -> float:
+    """Energy share 4.2–7.5 kHz of 0.3–7.5 kHz. Phone-line (customer) speech has none; the agent's VoIP leg on
+    the trial calls does (DR-005): windows split at ~1e-4 vs 1e-2.5–1e-1.5."""
+    f, _, z = stft(w, sr, nperseg=512)
+    p = (np.abs(z) ** 2).sum(1)
+    return float(p[(f > 4200) & (f < 7500)].sum() / (p[(f > 300) & (f < 7500)].sum() + 1e-12))
+
+
 @lru_cache(maxsize=8)
 def _session(path: str):
     import onnxruntime as ort
@@ -74,9 +83,13 @@ def ser_facts(x: np.ndarray, cfg: PipelineConfig) -> dict:
         raise FileNotFoundError(f"tone_source=ser but SER model(s) not found: {missing} (eval/export_ser_onnx.py)")
     sessions = [_session(str(p)) for p in paths]
     sr = cfg.sample_rate
+    cuts = speech_windows(x, cfg.vad_threshold, sr)
+    if cfg.ser_customer_only:          # E21: drop wideband (agent VoIP) windows; keep all if none are narrowband
+        narrow = [(s, e) for s, e in cuts if high_band_share(x[s:e], sr) < cfg.ser_narrowband_max]
+        cuts = narrow or cuts
     windows = [((e - s) / sr, np.mean([sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0]
                                        for sess in sessions], axis=0))
-               for s, e in speech_windows(x, cfg.vad_threshold, sr)]
+               for s, e in cuts]
     p = aggregate(windows, cfg.ser_top_fraction)
     probs = dict(zip(TONES, (round(float(v), 4) for v in p)))
     score = 1 - probs["neutral"]

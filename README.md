@@ -56,7 +56,7 @@ Upload a **ZIP** or a **folder** of audio files: wav, mp3, ogg/opus, m4a, flac o
 One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**.
 
 ## Known limitations (trial)
-- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a bag of 5 fine-tuned speech-emotion models: macro F1 **0.68** on 120 held-out proxy calls from unseen speakers (one fine-tuned model 0.56 on the same calls; Gemini alone ~0.06). It reads the voice only, was trained on acted speech (CREMA-D), and still calls ~1 in 6 neutral calls emotional; satisfied/distressed are the weakest tones. Intensity is not predicted by it (LLM's, or `medium`).
+- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a bag of 5 fine-tuned speech-emotion models: macro F1 **0.68** on 120 held-out proxy calls from unseen speakers (one fine-tuned model 0.56 on the same calls; Gemini alone ~0.06). It scores only the customer's phone-line (narrowband) speech: on calls with a wideband VoIP agent, scoring every voice let a friendly agent set the tone (F1 0.27 → 0.53 with the filter, E21). It reads the voice only, was trained on acted speech (CREMA-D); distressed and frustrated are the weakest tones. Intensity is not predicted by it (LLM's, or `medium`).
 - **Overlap:** comes from the LLM only; there is no dedicated overlap detector yet.
 - **Audio quality:** the DSP rule uses clipping only.
 - **Confidence:** vote agreement only; not calibrated (DR-009).

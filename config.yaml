@@ -21,7 +21,9 @@ ser_models:                           # E20 bag: 5 fine-tuned wav2vec2 (actor bo
   - .data/models/ser_e20_bag4.int8.onnx
   - .data/models/ser_e20_bag5.int8.onnx
 ser_top_fraction: 1.0                 # tuned on val_big for the bag: mean over all speech windows
-ser_tau: 0.3                          # neutral unless 1 - p(neutral) >= tau (val_big-tuned)
+ser_tau: 0.4                          # neutral unless 1 - p(neutral) >= tau (tuned on val_big_agent, E21)
+ser_customer_only: true               # E21: score phone-line (narrowband) windows only; the agent's VoIP leg is wideband
+ser_narrowband_max: 1.0e-4            # high-band share below this = customer (trial calls: <1e-4 vs agent 1e-2.5+)
 
 llm_model: gemini-3.5-flash-lite      # pinned; 2.5-flash-lite closed to new keys
 llm_prompt: v2                        # v1 labels-only · v2 describe-then-label · v3 v2 + judge the voice, not the words (DR-017)

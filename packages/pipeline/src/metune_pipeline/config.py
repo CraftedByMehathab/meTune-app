@@ -25,6 +25,8 @@ class PipelineConfig(BaseModel):
     ser_models: list[str] = [".data/models/ser_e16.onnx"]   # several = ensemble (mean probabilities)
     ser_top_fraction: float = 1.0
     ser_tau: float = 0.5
+    ser_customer_only: bool = False      # E21: score narrowband (phone-line) windows only
+    ser_narrowband_max: float = 1e-3     # high-band share below this = narrowband
 
     llm_model: str = "gemini-3.5-flash-lite"
     llm_prompt: str = "v2"
