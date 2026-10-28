@@ -102,6 +102,7 @@ to it: `cp .env.bak-4b2958e .env && docker compose --env-file .env up -d`.
 
 | Version | SHA | Date | What changed |
 |---|---|---|---|
+| v0.6.0 | `cb1ca29` | 2026-10-28 | Tone from Gemini (E35: MELD macro F1 0.19 → 0.38); confidence = per-tone precision on MELD dev (E36: ECE 0.044); speech-emotion bag kept for `tone_source: ser` |
 | v0.5.0 | `787136a` | 2026-10-28 | Per-tone bias on the SER bag (E33): test macro F1 0.50 → 0.61, distressed recall 0.15 → 0.44; confidence calibrator refit out-of-fold (ECE 0.119) |
 | v0.4.0 | `7d5ac03` | 2026-10-28 | Calibrated confidence = P(tone right) (E32: ECE 0.28 → 0.09, wrong at ≥ 0.9: 23 → 2 of 113); MLflow tracking (dev only) |
 | v0.3.0 | `ef76f18` | 2026-10-28 | Proxy overlap labels fixed (E31); pyannote overlap detector (vendored) ORed with Gemini: recall 0.40 → 0.68 at precision 0.90 |
