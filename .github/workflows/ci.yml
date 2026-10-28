@@ -25,6 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+        with: { package_json_file: apps/client/package.json }   # job working-directory doesn't apply to `uses`
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: apps/client/pnpm-lock.yaml }
       - run: pnpm install --frozen-lockfile
