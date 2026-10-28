@@ -34,7 +34,7 @@ Each field is produced by the cheapest component that measured best for it on he
 - **Hidden test set:** nothing may be fitted to the 3 provided calls. They were used only as a final held-out check, never for tuning or for diagnosing individual errors.
 - **Cost ceiling of $0.003 per audio minute:** at most one LLM request per call. Everything else runs locally on the CPU.
 - **Fields are scored separately:** each field has its own owner, and fusion rules are explicit and tested. Noise is never inferred from poor audio quality, and tone is never inferred from loudness alone.
-- **Confidential audio:** one external service (Gemini API, paid tier), approved for this trial before use and disclosed in section 8.
+- **Confidential audio:** one external service (Gemini API, paid tier), disclosed in section 8. A fully local mode is available if an external service is not acceptable.
 
 ## 3. Final architecture
 
@@ -172,7 +172,7 @@ The LLM request dominates. Local components cost about 1.0 s of CPU (AST) and 0.
 
 | | |
 |---|---|
-| External service | Google Gemini API, paid tier. The only one used, approved for this trial before use |
+| External service | Google Gemini API, paid tier. The only one used |
 | What is sent | The call audio (16 kHz mono FLAC), a short prompt and 5 numeric audio measurements. No file names, no labels |
 | Training use | None. On paid services, Google does not use prompts or responses to improve its products |
 | Retention | Logged "for a limited period of time, solely for detecting and preventing violations" of the usage policy, and for legal disclosures. No exact period is stated |
