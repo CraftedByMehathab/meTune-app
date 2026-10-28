@@ -87,7 +87,7 @@ Everything that changes results lives in [`config.yaml`](config.yaml):
 
 ## Limits
 Summarized from the memo:
-- **Tone on real calls is unproven.** The 3 trial calls score 0/3 on tone for every approach tried, and 3 calls cannot rank them.
+- **Tone on real calls is unproven.** No approach tried got more than 1 of 3 trial-call tones right, and 3 calls cannot rank them. Overall the trial calls score 15 of 21 fields, including noise and overlap on all 3.
 - **Weak classes:** "frustrated" and "distressed" are the weakest tones.
 - **Noise severity** is right about 6 times in 10.
 - **Cost:** calls shorter than about 30 s exceed $0.003/min.

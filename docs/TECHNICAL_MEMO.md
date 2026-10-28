@@ -26,14 +26,15 @@ Each field is produced by the cheapest component that measured best for it on he
 - **Cost:** $0.0014 per audio minute on a 2.9-minute call. A call costs about $0.001 fixed plus $0.0011 per minute, which stays under the $0.003 ceiling for calls longer than about 30 s.
 - **Latency:** 15–40 s per call on a 4-vCPU VM, dominated by the single LLM request.
 - **Data leaving the VM:** only the call audio and the prompt, sent to the Gemini API.
-- **Biggest open risk:** tone on real customer calls. The 3 trial calls score 0/3 on tone across every approach tried, and 3 calls cannot separate them. Section 9 covers what would resolve it.
+- **Trial calls (held out):** 15 of 21 fields right, including noise and overlap on all 3.
+- **Biggest open risk:** tone on real customer calls. No approach tried got more than 1 of 3 trial-call tones right, and 3 calls cannot separate them. Section 9 covers what would resolve it.
 
 ## 2. Constraints that shaped the design
 
 - **Hidden test set:** nothing may be fitted to the 3 provided calls. They were used only as a final held-out check, never for tuning or for diagnosing individual errors.
 - **Cost ceiling of $0.003 per audio minute:** at most one LLM request per call. Everything else runs locally on the CPU.
 - **Fields are scored separately:** each field has its own owner, and fusion rules are explicit and tested. Noise is never inferred from poor audio quality, and tone is never inferred from loudness alone.
-- **Confidential audio:** one external service (Gemini API, paid tier), disclosed in section 8.
+- **Confidential audio:** one external service (Gemini API, paid tier), approved for this trial before use and disclosed in section 8.
 
 ## 3. Final architecture
 
@@ -171,12 +172,12 @@ The LLM request dominates. Local components cost about 1.0 s of CPU (AST) and 0.
 
 | | |
 |---|---|
-| External service | Google Gemini API, paid tier. The only one used |
+| External service | Google Gemini API, paid tier. The only one used, approved for this trial before use |
 | What is sent | The call audio (16 kHz mono FLAC), a short prompt and 5 numeric audio measurements. No file names, no labels |
 | Training use | None. On paid services, Google does not use prompts or responses to improve its products |
 | Retention | Logged "for a limited period of time, solely for detecting and preventing violations" of the usage policy, and for legal disclosures. No exact period is stated |
 | Location | "May be stored transiently or cached in any country in which Google or its agents maintain facilities"; governed by Google's Data Processing Addendum |
-| Everything else | Runs on the VM. Uploads and results stay in its Postgres database and Docker volume. The repository contains no call audio or trial predictions |
+| Everything else | Runs on the VM. Uploads and results stay in its Postgres database and Docker volume. The repository contains no call audio, labels or trial predictions; the predictions for the 3 calls are delivered separately |
 | Evaluation data | CREMA-D, ESC-50 and MELD, used offline for evaluation only and not redistributed |
 
 Fully local operation is possible: noise, overlap, silence and quality need no API, and `tone_source: ser` gives local tone, with the accuracy trade-off shown in section 4.
@@ -185,7 +186,7 @@ Fully local operation is possible: noise, overlap, silence and quality need no A
 
 | Limit | Impact | Next step |
 |---|---|---|
-| Tone on real calls is unproven: trial 0/3 for every approach; MELD is TV dialogue, not phone calls | The main accuracy risk for the hidden set | Label 20–30 real calls, use them to choose between `llm` and `ser` and to recalibrate, and keep the 3 trial calls as the final check |
+| Tone on real calls is unproven: no approach above 1 of 3 on the trial calls; MELD is TV dialogue, not phone calls | The main accuracy risk for the hidden set | Label 20–30 real calls, use them to choose between `llm` and `ser` and to recalibrate, and keep the 3 trial calls as the final check |
 | "Frustrated" and "distressed" are weak (MELD recall 0.34 and 0.21) | Macro F1 is capped by these classes | Real-call labels; a natural-speech fine-tune (MELD train) for the speech-emotion option |
 | Severity accuracy 0.58 | Off by one level on about 4 in 10 noisy calls | Estimate severity from a measured noise-to-speech level rather than class scores |
 | Noise types outside the 7 trained ones are named by a zero-shot rule (a TV was named "keyboard typing") | The type is unscored but visible to users | Add TV and music examples to the proxy set and refit the head |
