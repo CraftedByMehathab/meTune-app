@@ -10,7 +10,7 @@ It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, a fine-tun
 
 Design notes and decisions live in the meTune Obsidian vault (DR-001 → DR-020; experiments in the Experiment Log).
 
-**Speech-emotion model:** `config.yaml` has `tone_source: ser`, which needs `.data/models/ser_e16.onnx` (379 MB, not in git). Build it with `uv run --group ser python eval/export_ser_onnx.py --model <fine-tuned model dir>` (training: `eval/ser_finetune.py`), or set `tone_source: llm` to use Gemini's tone instead.
+**Speech-emotion model:** `config.yaml` has `tone_source: ser`, which needs the 5 models listed under `ser_models` in `.data/models/` (8-bit ONNX, 5 × 122 MB, not in git). They are a bag: 5 fine-tunes of wav2vec2 on bootstrap samples of training speakers (`eval/ser_finetune.py --bootstrap i`), exported with `eval/export_ser_onnx.py`; their probabilities are averaged. Set `tone_source: llm` to use Gemini's tone instead.
 
 ## Repo layout
 ```
@@ -56,7 +56,7 @@ Upload a **ZIP** or a **folder** of audio files: wav, mp3, ogg/opus, m4a, flac o
 One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**.
 
 ## Known limitations (trial)
-- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a fine-tuned speech-emotion model: test macro F1 **0.51** on held-out proxy calls (Gemini alone 0.06). It reads the voice only, was trained on acted speech (CREMA-D), and still calls ~3/8 neutral calls emotional. Intensity is not predicted by it (LLM's, or `medium`).
+- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a bag of 5 fine-tuned speech-emotion models: macro F1 **0.68** on 120 held-out proxy calls from unseen speakers (one fine-tuned model 0.56 on the same calls; Gemini alone ~0.06). It reads the voice only, was trained on acted speech (CREMA-D), and still calls ~1 in 6 neutral calls emotional; satisfied/distressed are the weakest tones. Intensity is not predicted by it (LLM's, or `medium`).
 - **Overlap:** comes from the LLM only; there is no dedicated overlap detector yet.
 - **Audio quality:** the DSP rule uses clipping only.
 - **Confidence:** vote agreement only; not calibrated (DR-009).

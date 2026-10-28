@@ -42,10 +42,10 @@ openssl rand -hex 32   # → SESSION_SECRET
 ```
 Generate `ADMIN_PASSWORD_HASH` on your laptop with `make hash-password`, and paste it into `.env` in **single quotes**. Then set `DOMAIN`, `REGISTRY=ghcr.io/<github-user>`, `ADMIN_USER` and `GEMINI_API_KEY` (paid tier).
 
-**Speech-emotion model** (`tone_source: ser`, DR-020): the 379 MB ONNX file is not in git or the image; compose mounts `/opt/metune/models` read-only. Copy it once (and again whenever it is re-exported):
+**Speech-emotion model** (`tone_source: ser`, DR-020): the 5 ONNX files of the E20 bag (8-bit, 5 × 122 MB) are not in git or the image; compose mounts `/opt/metune/models` read-only. Copy them once (and again whenever they are re-exported):
 ```bash
 ssh deploy@<vm> mkdir -p /opt/metune/models
-scp .data/models/ser_e16.onnx deploy@<vm>:/opt/metune/models/      # from the app repo, after eval/export_ser_onnx.py
+scp .data/models/ser_e20_bag?.int8.onnx deploy@<vm>:/opt/metune/models/   # from the app repo, after eval/export_ser_onnx.py
 ```
 Without it every file fails with `SER model not found` — by design, so tone never silently falls back to the LLM's always-neutral answer.
 
