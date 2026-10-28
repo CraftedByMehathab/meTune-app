@@ -116,3 +116,23 @@ def test_ser_aggregate_and_missing_model():
     assert aggregate([], 1.0)[TONES.index("neutral")] == 1.0
     with pytest.raises(FileNotFoundError):
         ser_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"ser_models": ["/nope.onnx"]}))
+
+
+def test_high_band_share_separates_phone_line_from_voip():
+    from metune_pipeline.ser import high_band_share
+
+    t = np.arange(16000) / 16000
+    assert high_band_share(np.sin(2 * np.pi * 1000 * t).astype(np.float32)) < 1e-3     # narrowband customer
+    assert high_band_share(np.sin(2 * np.pi * 6000 * t).astype(np.float32)) > 0.5      # wideband agent
+
+
+def test_decode_error_is_user_facing(tmp_path):
+    import pytest
+    from metune_pipeline.decode import DecodeError, decode
+
+    bad = tmp_path / "broken_call.wav"
+    bad.write_bytes(np.random.default_rng(0).bytes(4000))
+    with pytest.raises(DecodeError) as err:
+        decode(bad)
+    assert "corrupt" in str(err.value) and str(tmp_path) not in str(err.value)    # no server paths in the UI
+    assert err.value.detail                                                         # ffmpeg output kept for logs

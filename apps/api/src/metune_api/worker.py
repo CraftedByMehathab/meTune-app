@@ -71,7 +71,8 @@ class Worker:
                 retry = not isinstance(e, DecodeError) and f.attempts < self.settings.max_attempts
                 f.status = "queued" if retry else "error"
                 f.error = (str(e) or type(e).__name__)[:1000]
-                log.warning("file %s (%s) failed attempt %s: %s", f.id, f.name, f.attempts, f.error)
+                log.warning("file %s (%s) failed attempt %s: %s %s", f.id, f.name, f.attempts, f.error,
+                            getattr(e, "detail", ""))
             await s.commit()
             await self._maybe_finish(s, f.batch_id)
 

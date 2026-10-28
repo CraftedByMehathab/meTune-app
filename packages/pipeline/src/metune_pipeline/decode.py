@@ -7,7 +7,12 @@ AUDIO_EXTS = {".wav", ".mp3", ".ogg", ".opus", ".m4a", ".flac", ".webm"}
 
 
 class DecodeError(Exception):
-    """Unreadable / unsupported audio. Not retryable."""
+    """Unreadable / unsupported audio. Not retryable. str() is shown to users; `detail` (ffmpeg output, server
+    paths) is for logs only."""
+
+    def __init__(self, message: str, detail: str = ""):
+        super().__init__(message)
+        self.detail = detail
 
 
 def decode(src: Path, sr: int = 16000) -> np.ndarray:
@@ -17,10 +22,11 @@ def decode(src: Path, sr: int = 16000) -> np.ndarray:
         capture_output=True, check=False,
     )
     if proc.returncode != 0:
-        raise DecodeError(proc.stderr.decode(errors="replace").strip()[-300:] or "ffmpeg failed")
+        raise DecodeError("Could not decode audio: the file is corrupt or not a supported audio format.",
+                          detail=proc.stderr.decode(errors="replace").strip()[-300:] or "ffmpeg failed")
     x = np.frombuffer(proc.stdout, dtype=np.int16).astype(np.float32) / 32768.0
     if len(x) < sr // 2:
-        raise DecodeError(f"audio too short ({len(x) / sr:.2f} s)")
+        raise DecodeError(f"Audio too short ({len(x) / sr:.2f} s); at least 0.5 s is needed.")
     return x
 
 
