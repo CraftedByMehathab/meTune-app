@@ -1,0 +1,98 @@
+{
+  "tune": "val_big",
+  "test": "test_big",
+  "n_test": 120,
+  "when": "2026-10-28T01:08:04",
+  "E23a_zero_shot": {
+    "threshold": 0.1129,
+    "tune": {
+      "acc": 0.758,
+      "precision": 0.742,
+      "recall": 0.803,
+      "f1": 0.772
+    },
+    "noise_present": {
+      "acc": 0.75,
+      "precision": 0.779,
+      "recall": 0.779,
+      "f1": 0.779
+    },
+    "type_acc_on_detected": 0.962
+  },
+  "E23b_trained": {
+    "noise_present": {
+      "acc": 0.867,
+      "precision": 0.851,
+      "recall": 0.926,
+      "f1": 0.887
+    },
+    "severity_acc": 0.525,
+    "type_acc_on_detected": 0.905
+  },
+  "E24_overlap": {
+    "frame_p": 0.3,
+    "min_seconds": 20.3,
+    "tune": {
+      "acc": 0.792,
+      "precision": 1.0,
+      "recall": 0.107,
+      "f1": 0.194
+    },
+    "overlap": {
+      "acc": 0.733,
+      "precision": 0.667,
+      "recall": 0.061,
+      "f1": 0.111
+    },
+    "false_alarms_by_noise": {
+      "-": 0,
+      "appliance hum": 0,
+      "baby crying": 0,
+      "background chatter": 1,
+      "dog barking": 0,
+      "keyboard typing": 0,
+      "road noise": 0,
+      "static": 0
+    }
+  },
+  "no_llm_baseline": {
+    "noise_present": {
+      "acc": 0.392,
+      "precision": 0.308,
+      "recall": 0.059,
+      "f1": 0.099
+    },
+    "severity_acc": 0.367,
+    "overlap": {
+      "acc": 0.725,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "cost_per_min": 0.0
+  },
+  "E26-3.8flash-k1-test_big": {
+    "noise_present": {
+      "acc": 0.742,
+      "precision": 0.836,
+      "recall": 0.676,
+      "f1": 0.748
+    },
+    "severity_acc": 0.5,
+    "overlap": {
+      "acc": 0.75,
+      "precision": 0.615,
+      "recall": 0.242,
+      "f1": 0.348
+    },
+    "cost_per_min": 0.0028
+  },
+  "E26-3.8flash-k1-test_big OR E23b": {
+    "noise_present": {
+      "acc": 0.883,
+      "precision": 0.855,
+      "recall": 0.956,
+      "f1": 0.903
+    }
+  }
+}

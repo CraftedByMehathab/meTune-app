@@ -46,8 +46,9 @@ Generate `ADMIN_PASSWORD_HASH` on your laptop with `make hash-password`, and pas
 ```bash
 ssh deploy@<vm> mkdir -p /opt/metune/models
 scp .data/models/ser_e20_bag?.int8.onnx deploy@<vm>:/opt/metune/models/   # from the app repo, after eval/export_ser_onnx.py
+scp .data/models/ast_audioset.int8.onnx deploy@<vm>:/opt/metune/models/   # noise detector (E25, 92 MB), after eval/export_ast_onnx.py
 ```
-Without it every file fails with `SER model not found` — by design, so tone never silently falls back to the LLM's always-neutral answer.
+Without them every file fails with `SER model not found` / `noise_source=ast but model not found` — by design, so tone never silently falls back to the LLM's always-neutral answer.
 
 If the GHCR packages are private, log in once: `echo <PAT with read:packages> | docker login ghcr.io -u <github-user> --password-stdin`
 
@@ -104,5 +105,5 @@ crontab -e
 |---|---|
 | VM 4 vCPU / 8 GB (DigitalOcean v5 shared) | ~$73 ($0.100/h, billed per second, no monthly cap) |
 | Domain | ~$1 |
-| Gemini (measured ~$0.0024/audio-min; tone models run locally, no API cost) | 1,000 audio-min → ~$2.40 |
+| Gemini 3.8 Flash, 1 vote (measured ~$0.0028/audio-min; tone models run locally, no API cost) | 1,000 audio-min → ~$2.80 |
 | GHCR, GitHub Actions | free tier |

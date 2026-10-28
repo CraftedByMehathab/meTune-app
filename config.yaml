@@ -25,17 +25,21 @@ ser_tau: 0.4                          # neutral unless 1 - p(neutral) >= tau (tu
 ser_customer_only: true               # E21: score phone-line (narrowband) windows only; the agent's VoIP leg is wideband
 ser_narrowband_max: 1.0e-4            # high-band share below this = customer (trial calls: <1e-4 vs agent 1e-2.5+)
 
-llm_model: gemini-3.5-flash-lite      # pinned; 2.5-flash-lite closed to new keys
+noise_source: ast                     # ast = AudioSet classifier + trained head owns noise (E25: test_big acc 0.88 vs 3.8 Flash 0.74); llm = Gemini
+noise_model: .data/models/ast_audioset.int8.onnx   # 92 MB, not in git: eval/export_ast_onnx.py; head: metune_pipeline/models/noise_head.json
+
+llm_model: gemini-3.8-flash           # E26: best Gemini on noise/overlap/intensity; was gemini-3.5-flash-lite
 llm_prompt: v2                        # v1 labels-only · v2 describe-then-label · v3 v2 + judge the voice, not the words (DR-017)
-llm_votes: 3                          # odd count → no 1–1 tone ties; measured cost below
-llm_temperatures: [0.0, 0.4, 0.7]      # one per vote (cycled), so votes aren't duplicates
-llm_thinking_level: minimal           # thinking tokens bill as output
+llm_votes: 1                          # E22: k=1 ≈ k=3 on every field; tone comes from the SER bag, so no tone ties to break
+llm_temperatures: [0.0]               # one per vote (cycled), so votes aren't duplicates
+llm_thinking_level: low               # 3.8 Flash rejects "minimal" (HTTP 400); thinking tokens bill as output
 llm_timeout_s: 120
 llm_rpm: 300                          # request cap per process (DR-018). Paid tier since 2026-10-27; free tier = 14. 0 = none
 llm_retries: 2
 
-# USD per 1M tokens, ai.google.dev/gemini-api/docs/pricing (checked 2026-10-26)
+# USD per 1M tokens, ai.google.dev/gemini-api/docs/pricing (checked 2026-10-28; 3.8 Flash price until 2026-12-31)
+# no separate audio rate listed for 3.8 Flash → billed at the input rate (assumption)
 price_per_1m:
-  audio_in: 0.30
-  text_in: 0.30
-  text_out: 2.50
+  audio_in: 0.75
+  text_in: 0.75
+  text_out: 3.75

@@ -14,11 +14,14 @@ def majority(votes: list[dict], key: str):
 
 
 def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = False,
-         ser: dict | None = None) -> Result:
-    """`ser` (tone_source=ser): the speech-emotion model owns tone, also without any LLM votes."""
+         ser: dict | None = None, noise: dict | None = None) -> Result:
+    """`ser` (tone_source=ser): the speech-emotion model owns tone, also without any LLM votes.
+    `noise` (noise_source=ast): the sound classifier owns the noise fields, also without any LLM votes."""
     if not votes:
-        base = baseline(facts, cfg, confidence=0.2 if degraded else 0.3)
-        return Result(**_apply_ser(base.model_dump(), ser, facts, llm_emotional=False)) if ser else base
+        out = baseline(facts, cfg, confidence=0.2 if degraded else 0.3).model_dump()
+        if ser:
+            out = _apply_ser(out, ser, facts, llm_emotional=False)
+        return Result(**(_apply_noise(out, noise, facts, cfg) if noise else out))
     rules = rule_fields(facts, cfg)
     out = {k: majority(votes, k)[0] for k in LLM_MAJORITY}
     types = [v["background_noise_type"] for v in votes
@@ -27,9 +30,11 @@ def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = F
     out["long_silence_present"] = rules["long_silence_present"]
     llm_q = majority(votes, "audio_quality")[0]
     out["audio_quality"] = "severely_impaired" if llm_q == "severely_impaired" else rules["audio_quality"]
+    if noise:
+        out = _apply_noise(out, noise, facts, cfg)
 
     # measured static wins over an LLM "no noise"; an LLM-heard noise (TV, music…) is kept as is
-    if not out["background_noise_present"] and static_present(facts, cfg):
+    if not out["background_noise_present"] and static_present(facts, cfg) and not noise:
         out["background_noise_present"], out["background_noise_type"] = True, "static"
         out["background_noise_severity"] = "medium"
 
@@ -63,6 +68,15 @@ def _apply_ser(out: dict, ser: dict, facts: dict, llm_emotional: bool) -> dict:
     # confidence: distance from the neutral/emotional boundary, scaled down for little speech (uncalibrated)
     certainty = max(ser["emotional_score"], 1 - ser["emotional_score"])
     out["confidence"] = round(0.35 + 0.6 * certainty * min(1.0, facts["speech_ratio"] / 0.3), 2)
+    return out
+
+
+def _apply_noise(out: dict, noise: dict, facts: dict, cfg: PipelineConfig) -> dict:
+    out = {**out, "background_noise_present": noise["present"], "background_noise_type": noise["type"],
+           "background_noise_severity": noise["severity"]}
+    # measured static still wins over a "no noise", when AST also hears clicks / static (E28)
+    if not noise["present"] and static_present(facts, cfg) and noise["static_confirmed"]:
+        out.update(background_noise_present=True, background_noise_type="static", background_noise_severity="medium")
     return out
 
 

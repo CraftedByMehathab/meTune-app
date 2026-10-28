@@ -1,0 +1,1201 @@
+name,field,label,pred,match
+test_big_001.ogg,emotional_tone,upset,upset,True
+test_big_001.ogg,emotional_intensity,medium,medium,True
+test_big_001.ogg,background_noise_present,False,False,True
+test_big_001.ogg,background_noise_severity,none,none,True
+test_big_001.ogg,audio_quality,clear,clear,True
+test_big_001.ogg,speaker_overlap_present,True,False,False
+test_big_001.ogg,long_silence_present,False,False,True
+test_big_001.ogg,background_noise_type,,,
+test_big_001.ogg,confidence,1.0,0.82,
+test_big_001.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_002.ogg,emotional_tone,satisfied,satisfied,True
+test_big_002.ogg,emotional_intensity,medium,medium,True
+test_big_002.ogg,background_noise_present,False,False,True
+test_big_002.ogg,background_noise_severity,none,none,True
+test_big_002.ogg,audio_quality,clear,clear,True
+test_big_002.ogg,speaker_overlap_present,False,False,True
+test_big_002.ogg,long_silence_present,False,False,True
+test_big_002.ogg,background_noise_type,,,
+test_big_002.ogg,confidence,1.0,0.71,
+test_big_002.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_003.ogg,emotional_tone,upset,upset,True
+test_big_003.ogg,emotional_intensity,high,medium,False
+test_big_003.ogg,background_noise_present,False,False,True
+test_big_003.ogg,background_noise_severity,none,none,True
+test_big_003.ogg,audio_quality,clear,clear,True
+test_big_003.ogg,speaker_overlap_present,False,False,True
+test_big_003.ogg,long_silence_present,False,False,True
+test_big_003.ogg,background_noise_type,,,
+test_big_003.ogg,confidence,1.0,0.69,
+test_big_003.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_004.ogg,emotional_tone,neutral,neutral,True
+test_big_004.ogg,emotional_intensity,low,medium,False
+test_big_004.ogg,background_noise_present,True,False,False
+test_big_004.ogg,background_noise_severity,medium,none,False
+test_big_004.ogg,audio_quality,clear,clear,True
+test_big_004.ogg,speaker_overlap_present,False,False,True
+test_big_004.ogg,long_silence_present,True,True,True
+test_big_004.ogg,background_noise_type,dog barking,,
+test_big_004.ogg,confidence,1.0,0.91,
+test_big_004.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_005.ogg,emotional_tone,frustrated,frustrated,True
+test_big_005.ogg,emotional_intensity,low,medium,False
+test_big_005.ogg,background_noise_present,False,False,True
+test_big_005.ogg,background_noise_severity,none,none,True
+test_big_005.ogg,audio_quality,clear,clear,True
+test_big_005.ogg,speaker_overlap_present,False,False,True
+test_big_005.ogg,long_silence_present,False,False,True
+test_big_005.ogg,background_noise_type,,,
+test_big_005.ogg,confidence,1.0,0.69,
+test_big_005.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_006.ogg,emotional_tone,upset,upset,True
+test_big_006.ogg,emotional_intensity,medium,medium,True
+test_big_006.ogg,background_noise_present,False,False,True
+test_big_006.ogg,background_noise_severity,none,none,True
+test_big_006.ogg,audio_quality,clear,clear,True
+test_big_006.ogg,speaker_overlap_present,False,False,True
+test_big_006.ogg,long_silence_present,True,True,True
+test_big_006.ogg,background_noise_type,,,
+test_big_006.ogg,confidence,1.0,0.7,
+test_big_006.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_007.ogg,emotional_tone,frustrated,neutral,False
+test_big_007.ogg,emotional_intensity,medium,medium,True
+test_big_007.ogg,background_noise_present,True,False,False
+test_big_007.ogg,background_noise_severity,high,none,False
+test_big_007.ogg,audio_quality,clear,clear,True
+test_big_007.ogg,speaker_overlap_present,False,False,True
+test_big_007.ogg,long_silence_present,False,False,True
+test_big_007.ogg,background_noise_type,static,,
+test_big_007.ogg,confidence,1.0,0.77,
+test_big_007.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_008.ogg,emotional_tone,neutral,neutral,True
+test_big_008.ogg,emotional_intensity,low,medium,False
+test_big_008.ogg,background_noise_present,False,False,True
+test_big_008.ogg,background_noise_severity,none,none,True
+test_big_008.ogg,audio_quality,clear,clear,True
+test_big_008.ogg,speaker_overlap_present,True,False,False
+test_big_008.ogg,long_silence_present,False,False,True
+test_big_008.ogg,background_noise_type,,,
+test_big_008.ogg,confidence,1.0,0.92,
+test_big_008.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_009.ogg,emotional_tone,neutral,neutral,True
+test_big_009.ogg,emotional_intensity,low,medium,False
+test_big_009.ogg,background_noise_present,True,False,False
+test_big_009.ogg,background_noise_severity,medium,none,False
+test_big_009.ogg,audio_quality,clear,clear,True
+test_big_009.ogg,speaker_overlap_present,True,False,False
+test_big_009.ogg,long_silence_present,True,True,True
+test_big_009.ogg,background_noise_type,keyboard typing,,
+test_big_009.ogg,confidence,1.0,0.84,
+test_big_009.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_010.ogg,emotional_tone,frustrated,frustrated,True
+test_big_010.ogg,emotional_intensity,low,medium,False
+test_big_010.ogg,background_noise_present,True,True,True
+test_big_010.ogg,background_noise_severity,low,medium,False
+test_big_010.ogg,audio_quality,clear,clear,True
+test_big_010.ogg,speaker_overlap_present,True,False,False
+test_big_010.ogg,long_silence_present,False,False,True
+test_big_010.ogg,background_noise_type,keyboard typing,static,
+test_big_010.ogg,confidence,1.0,0.78,
+test_big_010.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_011.ogg,emotional_tone,distressed,distressed,True
+test_big_011.ogg,emotional_intensity,high,medium,False
+test_big_011.ogg,background_noise_present,False,False,True
+test_big_011.ogg,background_noise_severity,none,none,True
+test_big_011.ogg,audio_quality,clear,clear,True
+test_big_011.ogg,speaker_overlap_present,True,False,False
+test_big_011.ogg,long_silence_present,False,False,True
+test_big_011.ogg,background_noise_type,,,
+test_big_011.ogg,confidence,1.0,0.8,
+test_big_011.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_012.ogg,emotional_tone,distressed,distressed,True
+test_big_012.ogg,emotional_intensity,low,medium,False
+test_big_012.ogg,background_noise_present,True,False,False
+test_big_012.ogg,background_noise_severity,low,none,False
+test_big_012.ogg,audio_quality,clear,clear,True
+test_big_012.ogg,speaker_overlap_present,False,False,True
+test_big_012.ogg,long_silence_present,False,False,True
+test_big_012.ogg,background_noise_type,keyboard typing,,
+test_big_012.ogg,confidence,1.0,0.76,
+test_big_012.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_013.ogg,emotional_tone,frustrated,frustrated,True
+test_big_013.ogg,emotional_intensity,medium,medium,True
+test_big_013.ogg,background_noise_present,True,False,False
+test_big_013.ogg,background_noise_severity,high,none,False
+test_big_013.ogg,audio_quality,clear,clear,True
+test_big_013.ogg,speaker_overlap_present,False,False,True
+test_big_013.ogg,long_silence_present,False,False,True
+test_big_013.ogg,background_noise_type,baby crying,,
+test_big_013.ogg,confidence,1.0,0.7,
+test_big_013.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_014.ogg,emotional_tone,neutral,neutral,True
+test_big_014.ogg,emotional_intensity,low,medium,False
+test_big_014.ogg,background_noise_present,False,True,False
+test_big_014.ogg,background_noise_severity,none,medium,False
+test_big_014.ogg,audio_quality,clear,clear,True
+test_big_014.ogg,speaker_overlap_present,False,False,True
+test_big_014.ogg,long_silence_present,False,False,True
+test_big_014.ogg,background_noise_type,,static,
+test_big_014.ogg,confidence,1.0,0.78,
+test_big_014.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_015.ogg,emotional_tone,satisfied,frustrated,False
+test_big_015.ogg,emotional_intensity,low,medium,False
+test_big_015.ogg,background_noise_present,True,False,False
+test_big_015.ogg,background_noise_severity,low,none,False
+test_big_015.ogg,audio_quality,clear,clear,True
+test_big_015.ogg,speaker_overlap_present,False,False,True
+test_big_015.ogg,long_silence_present,True,True,True
+test_big_015.ogg,background_noise_type,baby crying,,
+test_big_015.ogg,confidence,1.0,0.58,
+test_big_015.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_016.ogg,emotional_tone,distressed,neutral,False
+test_big_016.ogg,emotional_intensity,low,medium,False
+test_big_016.ogg,background_noise_present,False,False,True
+test_big_016.ogg,background_noise_severity,none,none,True
+test_big_016.ogg,audio_quality,clear,clear,True
+test_big_016.ogg,speaker_overlap_present,False,False,True
+test_big_016.ogg,long_silence_present,False,False,True
+test_big_016.ogg,background_noise_type,,,
+test_big_016.ogg,confidence,1.0,0.85,
+test_big_016.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_017.ogg,emotional_tone,neutral,neutral,True
+test_big_017.ogg,emotional_intensity,low,medium,False
+test_big_017.ogg,background_noise_present,False,False,True
+test_big_017.ogg,background_noise_severity,none,none,True
+test_big_017.ogg,audio_quality,clear,clear,True
+test_big_017.ogg,speaker_overlap_present,False,False,True
+test_big_017.ogg,long_silence_present,False,False,True
+test_big_017.ogg,background_noise_type,,,
+test_big_017.ogg,confidence,1.0,0.81,
+test_big_017.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_018.ogg,emotional_tone,neutral,neutral,True
+test_big_018.ogg,emotional_intensity,low,medium,False
+test_big_018.ogg,background_noise_present,False,False,True
+test_big_018.ogg,background_noise_severity,none,none,True
+test_big_018.ogg,audio_quality,clear,clear,True
+test_big_018.ogg,speaker_overlap_present,False,False,True
+test_big_018.ogg,long_silence_present,False,False,True
+test_big_018.ogg,background_noise_type,,,
+test_big_018.ogg,confidence,1.0,0.78,
+test_big_018.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_019.ogg,emotional_tone,frustrated,frustrated,True
+test_big_019.ogg,emotional_intensity,low,medium,False
+test_big_019.ogg,background_noise_present,False,True,False
+test_big_019.ogg,background_noise_severity,none,medium,False
+test_big_019.ogg,audio_quality,clear,clear,True
+test_big_019.ogg,speaker_overlap_present,False,False,True
+test_big_019.ogg,long_silence_present,False,False,True
+test_big_019.ogg,background_noise_type,,static,
+test_big_019.ogg,confidence,1.0,0.76,
+test_big_019.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_020.ogg,emotional_tone,neutral,frustrated,False
+test_big_020.ogg,emotional_intensity,low,medium,False
+test_big_020.ogg,background_noise_present,True,False,False
+test_big_020.ogg,background_noise_severity,high,none,False
+test_big_020.ogg,audio_quality,clear,clear,True
+test_big_020.ogg,speaker_overlap_present,False,False,True
+test_big_020.ogg,long_silence_present,False,False,True
+test_big_020.ogg,background_noise_type,dog barking,,
+test_big_020.ogg,confidence,1.0,0.7,
+test_big_020.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_021.ogg,emotional_tone,frustrated,frustrated,True
+test_big_021.ogg,emotional_intensity,medium,medium,True
+test_big_021.ogg,background_noise_present,True,False,False
+test_big_021.ogg,background_noise_severity,low,none,False
+test_big_021.ogg,audio_quality,clear,clear,True
+test_big_021.ogg,speaker_overlap_present,False,False,True
+test_big_021.ogg,long_silence_present,True,True,True
+test_big_021.ogg,background_noise_type,dog barking,,
+test_big_021.ogg,confidence,1.0,0.79,
+test_big_021.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_022.ogg,emotional_tone,upset,upset,True
+test_big_022.ogg,emotional_intensity,medium,medium,True
+test_big_022.ogg,background_noise_present,True,False,False
+test_big_022.ogg,background_noise_severity,medium,none,False
+test_big_022.ogg,audio_quality,clear,clear,True
+test_big_022.ogg,speaker_overlap_present,False,False,True
+test_big_022.ogg,long_silence_present,True,True,True
+test_big_022.ogg,background_noise_type,baby crying,,
+test_big_022.ogg,confidence,1.0,0.51,
+test_big_022.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_023.ogg,emotional_tone,satisfied,satisfied,True
+test_big_023.ogg,emotional_intensity,low,medium,False
+test_big_023.ogg,background_noise_present,False,True,False
+test_big_023.ogg,background_noise_severity,none,medium,False
+test_big_023.ogg,audio_quality,clear,clear,True
+test_big_023.ogg,speaker_overlap_present,False,False,True
+test_big_023.ogg,long_silence_present,False,False,True
+test_big_023.ogg,background_noise_type,,static,
+test_big_023.ogg,confidence,1.0,0.67,
+test_big_023.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_024.ogg,emotional_tone,satisfied,satisfied,True
+test_big_024.ogg,emotional_intensity,medium,medium,True
+test_big_024.ogg,background_noise_present,False,True,False
+test_big_024.ogg,background_noise_severity,none,medium,False
+test_big_024.ogg,audio_quality,clear,clear,True
+test_big_024.ogg,speaker_overlap_present,False,False,True
+test_big_024.ogg,long_silence_present,False,False,True
+test_big_024.ogg,background_noise_type,,static,
+test_big_024.ogg,confidence,1.0,0.74,
+test_big_024.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_025.ogg,emotional_tone,neutral,neutral,True
+test_big_025.ogg,emotional_intensity,low,medium,False
+test_big_025.ogg,background_noise_present,True,False,False
+test_big_025.ogg,background_noise_severity,low,none,False
+test_big_025.ogg,audio_quality,clear,clear,True
+test_big_025.ogg,speaker_overlap_present,False,False,True
+test_big_025.ogg,long_silence_present,False,False,True
+test_big_025.ogg,background_noise_type,baby crying,,
+test_big_025.ogg,confidence,1.0,0.92,
+test_big_025.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_026.ogg,emotional_tone,satisfied,neutral,False
+test_big_026.ogg,emotional_intensity,low,medium,False
+test_big_026.ogg,background_noise_present,True,False,False
+test_big_026.ogg,background_noise_severity,high,none,False
+test_big_026.ogg,audio_quality,clear,clear,True
+test_big_026.ogg,speaker_overlap_present,False,False,True
+test_big_026.ogg,long_silence_present,False,False,True
+test_big_026.ogg,background_noise_type,appliance hum,,
+test_big_026.ogg,confidence,1.0,0.76,
+test_big_026.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_027.ogg,emotional_tone,upset,upset,True
+test_big_027.ogg,emotional_intensity,medium,medium,True
+test_big_027.ogg,background_noise_present,False,False,True
+test_big_027.ogg,background_noise_severity,none,none,True
+test_big_027.ogg,audio_quality,clear,clear,True
+test_big_027.ogg,speaker_overlap_present,True,False,False
+test_big_027.ogg,long_silence_present,False,False,True
+test_big_027.ogg,background_noise_type,,,
+test_big_027.ogg,confidence,1.0,0.75,
+test_big_027.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_028.ogg,emotional_tone,distressed,upset,False
+test_big_028.ogg,emotional_intensity,medium,medium,True
+test_big_028.ogg,background_noise_present,True,False,False
+test_big_028.ogg,background_noise_severity,medium,none,False
+test_big_028.ogg,audio_quality,clear,clear,True
+test_big_028.ogg,speaker_overlap_present,False,False,True
+test_big_028.ogg,long_silence_present,True,False,False
+test_big_028.ogg,background_noise_type,appliance hum,,
+test_big_028.ogg,confidence,1.0,0.61,
+test_big_028.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_029.ogg,emotional_tone,distressed,frustrated,False
+test_big_029.ogg,emotional_intensity,medium,medium,True
+test_big_029.ogg,background_noise_present,True,False,False
+test_big_029.ogg,background_noise_severity,medium,none,False
+test_big_029.ogg,audio_quality,clear,clear,True
+test_big_029.ogg,speaker_overlap_present,False,False,True
+test_big_029.ogg,long_silence_present,True,False,False
+test_big_029.ogg,background_noise_type,background chatter,,
+test_big_029.ogg,confidence,1.0,0.91,
+test_big_029.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_030.ogg,emotional_tone,frustrated,upset,False
+test_big_030.ogg,emotional_intensity,medium,medium,True
+test_big_030.ogg,background_noise_present,True,False,False
+test_big_030.ogg,background_noise_severity,medium,none,False
+test_big_030.ogg,audio_quality,clear,clear,True
+test_big_030.ogg,speaker_overlap_present,False,False,True
+test_big_030.ogg,long_silence_present,False,False,True
+test_big_030.ogg,background_noise_type,road noise,,
+test_big_030.ogg,confidence,1.0,0.68,
+test_big_030.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_031.ogg,emotional_tone,satisfied,satisfied,True
+test_big_031.ogg,emotional_intensity,low,medium,False
+test_big_031.ogg,background_noise_present,False,False,True
+test_big_031.ogg,background_noise_severity,none,none,True
+test_big_031.ogg,audio_quality,clear,clear,True
+test_big_031.ogg,speaker_overlap_present,True,False,False
+test_big_031.ogg,long_silence_present,False,False,True
+test_big_031.ogg,background_noise_type,,,
+test_big_031.ogg,confidence,1.0,0.68,
+test_big_031.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_032.ogg,emotional_tone,frustrated,frustrated,True
+test_big_032.ogg,emotional_intensity,low,medium,False
+test_big_032.ogg,background_noise_present,True,False,False
+test_big_032.ogg,background_noise_severity,high,none,False
+test_big_032.ogg,audio_quality,clear,clear,True
+test_big_032.ogg,speaker_overlap_present,False,False,True
+test_big_032.ogg,long_silence_present,False,False,True
+test_big_032.ogg,background_noise_type,static,,
+test_big_032.ogg,confidence,1.0,0.68,
+test_big_032.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_033.ogg,emotional_tone,upset,upset,True
+test_big_033.ogg,emotional_intensity,medium,medium,True
+test_big_033.ogg,background_noise_present,False,False,True
+test_big_033.ogg,background_noise_severity,none,none,True
+test_big_033.ogg,audio_quality,clear,clear,True
+test_big_033.ogg,speaker_overlap_present,True,False,False
+test_big_033.ogg,long_silence_present,False,False,True
+test_big_033.ogg,background_noise_type,,,
+test_big_033.ogg,confidence,1.0,0.73,
+test_big_033.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_034.ogg,emotional_tone,frustrated,neutral,False
+test_big_034.ogg,emotional_intensity,medium,medium,True
+test_big_034.ogg,background_noise_present,True,False,False
+test_big_034.ogg,background_noise_severity,low,none,False
+test_big_034.ogg,audio_quality,clear,clear,True
+test_big_034.ogg,speaker_overlap_present,False,False,True
+test_big_034.ogg,long_silence_present,False,False,True
+test_big_034.ogg,background_noise_type,baby crying,,
+test_big_034.ogg,confidence,1.0,0.85,
+test_big_034.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_035.ogg,emotional_tone,distressed,distressed,True
+test_big_035.ogg,emotional_intensity,medium,medium,True
+test_big_035.ogg,background_noise_present,False,False,True
+test_big_035.ogg,background_noise_severity,none,none,True
+test_big_035.ogg,audio_quality,clear,clear,True
+test_big_035.ogg,speaker_overlap_present,False,False,True
+test_big_035.ogg,long_silence_present,True,True,True
+test_big_035.ogg,background_noise_type,,,
+test_big_035.ogg,confidence,1.0,0.59,
+test_big_035.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_036.ogg,emotional_tone,satisfied,upset,False
+test_big_036.ogg,emotional_intensity,medium,medium,True
+test_big_036.ogg,background_noise_present,True,False,False
+test_big_036.ogg,background_noise_severity,high,none,False
+test_big_036.ogg,audio_quality,clear,clear,True
+test_big_036.ogg,speaker_overlap_present,False,False,True
+test_big_036.ogg,long_silence_present,False,False,True
+test_big_036.ogg,background_noise_type,background chatter,,
+test_big_036.ogg,confidence,1.0,0.93,
+test_big_036.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_037.ogg,emotional_tone,satisfied,upset,False
+test_big_037.ogg,emotional_intensity,medium,medium,True
+test_big_037.ogg,background_noise_present,True,True,True
+test_big_037.ogg,background_noise_severity,high,medium,False
+test_big_037.ogg,audio_quality,clear,clear,True
+test_big_037.ogg,speaker_overlap_present,False,False,True
+test_big_037.ogg,long_silence_present,False,False,True
+test_big_037.ogg,background_noise_type,keyboard typing,static,
+test_big_037.ogg,confidence,1.0,0.78,
+test_big_037.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_038.ogg,emotional_tone,satisfied,satisfied,True
+test_big_038.ogg,emotional_intensity,medium,medium,True
+test_big_038.ogg,background_noise_present,True,False,False
+test_big_038.ogg,background_noise_severity,high,none,False
+test_big_038.ogg,audio_quality,clear,clear,True
+test_big_038.ogg,speaker_overlap_present,False,False,True
+test_big_038.ogg,long_silence_present,False,False,True
+test_big_038.ogg,background_noise_type,appliance hum,,
+test_big_038.ogg,confidence,1.0,0.66,
+test_big_038.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_039.ogg,emotional_tone,frustrated,frustrated,True
+test_big_039.ogg,emotional_intensity,low,medium,False
+test_big_039.ogg,background_noise_present,False,False,True
+test_big_039.ogg,background_noise_severity,none,none,True
+test_big_039.ogg,audio_quality,clear,clear,True
+test_big_039.ogg,speaker_overlap_present,True,False,False
+test_big_039.ogg,long_silence_present,False,False,True
+test_big_039.ogg,background_noise_type,,,
+test_big_039.ogg,confidence,1.0,0.7,
+test_big_039.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_040.ogg,emotional_tone,upset,upset,True
+test_big_040.ogg,emotional_intensity,high,medium,False
+test_big_040.ogg,background_noise_present,False,True,False
+test_big_040.ogg,background_noise_severity,none,medium,False
+test_big_040.ogg,audio_quality,clear,clear,True
+test_big_040.ogg,speaker_overlap_present,True,False,False
+test_big_040.ogg,long_silence_present,False,False,True
+test_big_040.ogg,background_noise_type,,static,
+test_big_040.ogg,confidence,1.0,0.74,
+test_big_040.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_041.ogg,emotional_tone,frustrated,frustrated,True
+test_big_041.ogg,emotional_intensity,low,medium,False
+test_big_041.ogg,background_noise_present,False,False,True
+test_big_041.ogg,background_noise_severity,none,none,True
+test_big_041.ogg,audio_quality,clear,clear,True
+test_big_041.ogg,speaker_overlap_present,False,False,True
+test_big_041.ogg,long_silence_present,False,False,True
+test_big_041.ogg,background_noise_type,,,
+test_big_041.ogg,confidence,1.0,0.68,
+test_big_041.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_042.ogg,emotional_tone,neutral,neutral,True
+test_big_042.ogg,emotional_intensity,low,medium,False
+test_big_042.ogg,background_noise_present,True,True,True
+test_big_042.ogg,background_noise_severity,high,medium,False
+test_big_042.ogg,audio_quality,clear,clear,True
+test_big_042.ogg,speaker_overlap_present,False,False,True
+test_big_042.ogg,long_silence_present,False,False,True
+test_big_042.ogg,background_noise_type,keyboard typing,static,
+test_big_042.ogg,confidence,1.0,0.92,
+test_big_042.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_043.ogg,emotional_tone,distressed,distressed,True
+test_big_043.ogg,emotional_intensity,medium,medium,True
+test_big_043.ogg,background_noise_present,True,False,False
+test_big_043.ogg,background_noise_severity,high,none,False
+test_big_043.ogg,audio_quality,clear,clear,True
+test_big_043.ogg,speaker_overlap_present,True,False,False
+test_big_043.ogg,long_silence_present,False,False,True
+test_big_043.ogg,background_noise_type,dog barking,,
+test_big_043.ogg,confidence,1.0,0.86,
+test_big_043.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_044.ogg,emotional_tone,upset,upset,True
+test_big_044.ogg,emotional_intensity,high,medium,False
+test_big_044.ogg,background_noise_present,False,False,True
+test_big_044.ogg,background_noise_severity,none,none,True
+test_big_044.ogg,audio_quality,clear,clear,True
+test_big_044.ogg,speaker_overlap_present,False,False,True
+test_big_044.ogg,long_silence_present,False,False,True
+test_big_044.ogg,background_noise_type,,,
+test_big_044.ogg,confidence,1.0,0.69,
+test_big_044.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_045.ogg,emotional_tone,neutral,neutral,True
+test_big_045.ogg,emotional_intensity,low,medium,False
+test_big_045.ogg,background_noise_present,False,False,True
+test_big_045.ogg,background_noise_severity,none,none,True
+test_big_045.ogg,audio_quality,clear,clear,True
+test_big_045.ogg,speaker_overlap_present,True,False,False
+test_big_045.ogg,long_silence_present,False,False,True
+test_big_045.ogg,background_noise_type,,,
+test_big_045.ogg,confidence,1.0,0.9,
+test_big_045.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_046.ogg,emotional_tone,upset,upset,True
+test_big_046.ogg,emotional_intensity,low,medium,False
+test_big_046.ogg,background_noise_present,False,True,False
+test_big_046.ogg,background_noise_severity,none,medium,False
+test_big_046.ogg,audio_quality,clear,clear,True
+test_big_046.ogg,speaker_overlap_present,False,False,True
+test_big_046.ogg,long_silence_present,False,False,True
+test_big_046.ogg,background_noise_type,,static,
+test_big_046.ogg,confidence,1.0,0.68,
+test_big_046.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_047.ogg,emotional_tone,upset,upset,True
+test_big_047.ogg,emotional_intensity,medium,medium,True
+test_big_047.ogg,background_noise_present,True,False,False
+test_big_047.ogg,background_noise_severity,low,none,False
+test_big_047.ogg,audio_quality,clear,clear,True
+test_big_047.ogg,speaker_overlap_present,False,False,True
+test_big_047.ogg,long_silence_present,False,False,True
+test_big_047.ogg,background_noise_type,dog barking,,
+test_big_047.ogg,confidence,1.0,0.79,
+test_big_047.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_048.ogg,emotional_tone,distressed,upset,False
+test_big_048.ogg,emotional_intensity,medium,medium,True
+test_big_048.ogg,background_noise_present,True,False,False
+test_big_048.ogg,background_noise_severity,medium,none,False
+test_big_048.ogg,audio_quality,clear,clear,True
+test_big_048.ogg,speaker_overlap_present,False,False,True
+test_big_048.ogg,long_silence_present,False,False,True
+test_big_048.ogg,background_noise_type,road noise,,
+test_big_048.ogg,confidence,1.0,0.65,
+test_big_048.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_049.ogg,emotional_tone,satisfied,satisfied,True
+test_big_049.ogg,emotional_intensity,low,medium,False
+test_big_049.ogg,background_noise_present,True,False,False
+test_big_049.ogg,background_noise_severity,high,none,False
+test_big_049.ogg,audio_quality,clear,clear,True
+test_big_049.ogg,speaker_overlap_present,False,False,True
+test_big_049.ogg,long_silence_present,False,False,True
+test_big_049.ogg,background_noise_type,baby crying,,
+test_big_049.ogg,confidence,1.0,0.83,
+test_big_049.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_050.ogg,emotional_tone,frustrated,neutral,False
+test_big_050.ogg,emotional_intensity,medium,medium,True
+test_big_050.ogg,background_noise_present,False,False,True
+test_big_050.ogg,background_noise_severity,none,none,True
+test_big_050.ogg,audio_quality,clear,clear,True
+test_big_050.ogg,speaker_overlap_present,True,False,False
+test_big_050.ogg,long_silence_present,False,False,True
+test_big_050.ogg,background_noise_type,,,
+test_big_050.ogg,confidence,1.0,0.73,
+test_big_050.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_051.ogg,emotional_tone,frustrated,frustrated,True
+test_big_051.ogg,emotional_intensity,medium,medium,True
+test_big_051.ogg,background_noise_present,True,False,False
+test_big_051.ogg,background_noise_severity,medium,none,False
+test_big_051.ogg,audio_quality,clear,clear,True
+test_big_051.ogg,speaker_overlap_present,False,False,True
+test_big_051.ogg,long_silence_present,False,False,True
+test_big_051.ogg,background_noise_type,static,,
+test_big_051.ogg,confidence,1.0,0.74,
+test_big_051.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_052.ogg,emotional_tone,satisfied,neutral,False
+test_big_052.ogg,emotional_intensity,medium,medium,True
+test_big_052.ogg,background_noise_present,False,False,True
+test_big_052.ogg,background_noise_severity,none,none,True
+test_big_052.ogg,audio_quality,clear,clear,True
+test_big_052.ogg,speaker_overlap_present,False,False,True
+test_big_052.ogg,long_silence_present,False,False,True
+test_big_052.ogg,background_noise_type,,,
+test_big_052.ogg,confidence,1.0,0.76,
+test_big_052.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_053.ogg,emotional_tone,neutral,frustrated,False
+test_big_053.ogg,emotional_intensity,low,medium,False
+test_big_053.ogg,background_noise_present,True,False,False
+test_big_053.ogg,background_noise_severity,high,none,False
+test_big_053.ogg,audio_quality,clear,clear,True
+test_big_053.ogg,speaker_overlap_present,True,False,False
+test_big_053.ogg,long_silence_present,False,False,True
+test_big_053.ogg,background_noise_type,background chatter,,
+test_big_053.ogg,confidence,1.0,0.87,
+test_big_053.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_054.ogg,emotional_tone,neutral,neutral,True
+test_big_054.ogg,emotional_intensity,low,medium,False
+test_big_054.ogg,background_noise_present,True,False,False
+test_big_054.ogg,background_noise_severity,low,none,False
+test_big_054.ogg,audio_quality,clear,clear,True
+test_big_054.ogg,speaker_overlap_present,False,False,True
+test_big_054.ogg,long_silence_present,False,False,True
+test_big_054.ogg,background_noise_type,baby crying,,
+test_big_054.ogg,confidence,1.0,0.92,
+test_big_054.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_055.ogg,emotional_tone,upset,upset,True
+test_big_055.ogg,emotional_intensity,medium,medium,True
+test_big_055.ogg,background_noise_present,True,False,False
+test_big_055.ogg,background_noise_severity,medium,none,False
+test_big_055.ogg,audio_quality,clear,clear,True
+test_big_055.ogg,speaker_overlap_present,False,False,True
+test_big_055.ogg,long_silence_present,False,False,True
+test_big_055.ogg,background_noise_type,static,,
+test_big_055.ogg,confidence,1.0,0.77,
+test_big_055.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_056.ogg,emotional_tone,neutral,neutral,True
+test_big_056.ogg,emotional_intensity,low,medium,False
+test_big_056.ogg,background_noise_present,True,True,True
+test_big_056.ogg,background_noise_severity,medium,medium,True
+test_big_056.ogg,audio_quality,clear,clear,True
+test_big_056.ogg,speaker_overlap_present,True,False,False
+test_big_056.ogg,long_silence_present,True,False,False
+test_big_056.ogg,background_noise_type,dog barking,static,
+test_big_056.ogg,confidence,1.0,0.89,
+test_big_056.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_057.ogg,emotional_tone,upset,upset,True
+test_big_057.ogg,emotional_intensity,medium,medium,True
+test_big_057.ogg,background_noise_present,True,False,False
+test_big_057.ogg,background_noise_severity,medium,none,False
+test_big_057.ogg,audio_quality,clear,clear,True
+test_big_057.ogg,speaker_overlap_present,True,False,False
+test_big_057.ogg,long_silence_present,False,False,True
+test_big_057.ogg,background_noise_type,background chatter,,
+test_big_057.ogg,confidence,1.0,0.95,
+test_big_057.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_058.ogg,emotional_tone,upset,upset,True
+test_big_058.ogg,emotional_intensity,medium,medium,True
+test_big_058.ogg,background_noise_present,False,False,True
+test_big_058.ogg,background_noise_severity,none,none,True
+test_big_058.ogg,audio_quality,clear,clear,True
+test_big_058.ogg,speaker_overlap_present,True,False,False
+test_big_058.ogg,long_silence_present,True,True,True
+test_big_058.ogg,background_noise_type,,,
+test_big_058.ogg,confidence,1.0,0.79,
+test_big_058.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_059.ogg,emotional_tone,satisfied,upset,False
+test_big_059.ogg,emotional_intensity,medium,medium,True
+test_big_059.ogg,background_noise_present,False,False,True
+test_big_059.ogg,background_noise_severity,none,none,True
+test_big_059.ogg,audio_quality,clear,clear,True
+test_big_059.ogg,speaker_overlap_present,False,False,True
+test_big_059.ogg,long_silence_present,True,True,True
+test_big_059.ogg,background_noise_type,,,
+test_big_059.ogg,confidence,1.0,0.63,
+test_big_059.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_060.ogg,emotional_tone,satisfied,upset,False
+test_big_060.ogg,emotional_intensity,low,medium,False
+test_big_060.ogg,background_noise_present,True,False,False
+test_big_060.ogg,background_noise_severity,low,none,False
+test_big_060.ogg,audio_quality,clear,clear,True
+test_big_060.ogg,speaker_overlap_present,False,False,True
+test_big_060.ogg,long_silence_present,True,True,True
+test_big_060.ogg,background_noise_type,dog barking,,
+test_big_060.ogg,confidence,1.0,0.84,
+test_big_060.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_061.ogg,emotional_tone,frustrated,frustrated,True
+test_big_061.ogg,emotional_intensity,medium,medium,True
+test_big_061.ogg,background_noise_present,True,False,False
+test_big_061.ogg,background_noise_severity,low,none,False
+test_big_061.ogg,audio_quality,clear,clear,True
+test_big_061.ogg,speaker_overlap_present,False,False,True
+test_big_061.ogg,long_silence_present,False,False,True
+test_big_061.ogg,background_noise_type,road noise,,
+test_big_061.ogg,confidence,1.0,0.7,
+test_big_061.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_062.ogg,emotional_tone,neutral,neutral,True
+test_big_062.ogg,emotional_intensity,low,medium,False
+test_big_062.ogg,background_noise_present,False,False,True
+test_big_062.ogg,background_noise_severity,none,none,True
+test_big_062.ogg,audio_quality,clear,clear,True
+test_big_062.ogg,speaker_overlap_present,False,False,True
+test_big_062.ogg,long_silence_present,False,False,True
+test_big_062.ogg,background_noise_type,,,
+test_big_062.ogg,confidence,1.0,0.88,
+test_big_062.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_063.ogg,emotional_tone,upset,upset,True
+test_big_063.ogg,emotional_intensity,medium,medium,True
+test_big_063.ogg,background_noise_present,True,False,False
+test_big_063.ogg,background_noise_severity,high,none,False
+test_big_063.ogg,audio_quality,clear,clear,True
+test_big_063.ogg,speaker_overlap_present,False,False,True
+test_big_063.ogg,long_silence_present,False,False,True
+test_big_063.ogg,background_noise_type,baby crying,,
+test_big_063.ogg,confidence,1.0,0.72,
+test_big_063.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_064.ogg,emotional_tone,upset,upset,True
+test_big_064.ogg,emotional_intensity,medium,medium,True
+test_big_064.ogg,background_noise_present,True,False,False
+test_big_064.ogg,background_noise_severity,medium,none,False
+test_big_064.ogg,audio_quality,clear,clear,True
+test_big_064.ogg,speaker_overlap_present,True,False,False
+test_big_064.ogg,long_silence_present,False,False,True
+test_big_064.ogg,background_noise_type,appliance hum,,
+test_big_064.ogg,confidence,1.0,0.79,
+test_big_064.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_065.ogg,emotional_tone,frustrated,frustrated,True
+test_big_065.ogg,emotional_intensity,low,medium,False
+test_big_065.ogg,background_noise_present,True,False,False
+test_big_065.ogg,background_noise_severity,medium,none,False
+test_big_065.ogg,audio_quality,clear,clear,True
+test_big_065.ogg,speaker_overlap_present,False,False,True
+test_big_065.ogg,long_silence_present,True,True,True
+test_big_065.ogg,background_noise_type,appliance hum,,
+test_big_065.ogg,confidence,1.0,0.63,
+test_big_065.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_066.ogg,emotional_tone,frustrated,upset,False
+test_big_066.ogg,emotional_intensity,low,medium,False
+test_big_066.ogg,background_noise_present,True,False,False
+test_big_066.ogg,background_noise_severity,low,none,False
+test_big_066.ogg,audio_quality,clear,clear,True
+test_big_066.ogg,speaker_overlap_present,False,False,True
+test_big_066.ogg,long_silence_present,False,False,True
+test_big_066.ogg,background_noise_type,baby crying,,
+test_big_066.ogg,confidence,1.0,0.74,
+test_big_066.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_067.ogg,emotional_tone,distressed,frustrated,False
+test_big_067.ogg,emotional_intensity,medium,medium,True
+test_big_067.ogg,background_noise_present,True,False,False
+test_big_067.ogg,background_noise_severity,medium,none,False
+test_big_067.ogg,audio_quality,clear,clear,True
+test_big_067.ogg,speaker_overlap_present,False,False,True
+test_big_067.ogg,long_silence_present,False,False,True
+test_big_067.ogg,background_noise_type,background chatter,,
+test_big_067.ogg,confidence,1.0,0.94,
+test_big_067.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_068.ogg,emotional_tone,distressed,upset,False
+test_big_068.ogg,emotional_intensity,medium,medium,True
+test_big_068.ogg,background_noise_present,False,False,True
+test_big_068.ogg,background_noise_severity,none,none,True
+test_big_068.ogg,audio_quality,clear,clear,True
+test_big_068.ogg,speaker_overlap_present,True,False,False
+test_big_068.ogg,long_silence_present,False,False,True
+test_big_068.ogg,background_noise_type,,,
+test_big_068.ogg,confidence,1.0,0.71,
+test_big_068.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_069.ogg,emotional_tone,satisfied,neutral,False
+test_big_069.ogg,emotional_intensity,medium,medium,True
+test_big_069.ogg,background_noise_present,False,False,True
+test_big_069.ogg,background_noise_severity,none,none,True
+test_big_069.ogg,audio_quality,clear,clear,True
+test_big_069.ogg,speaker_overlap_present,False,False,True
+test_big_069.ogg,long_silence_present,False,False,True
+test_big_069.ogg,background_noise_type,,,
+test_big_069.ogg,confidence,1.0,0.76,
+test_big_069.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_070.ogg,emotional_tone,distressed,neutral,False
+test_big_070.ogg,emotional_intensity,medium,medium,True
+test_big_070.ogg,background_noise_present,True,False,False
+test_big_070.ogg,background_noise_severity,high,none,False
+test_big_070.ogg,audio_quality,clear,clear,True
+test_big_070.ogg,speaker_overlap_present,True,False,False
+test_big_070.ogg,long_silence_present,False,False,True
+test_big_070.ogg,background_noise_type,appliance hum,,
+test_big_070.ogg,confidence,1.0,0.78,
+test_big_070.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_071.ogg,emotional_tone,distressed,neutral,False
+test_big_071.ogg,emotional_intensity,medium,medium,True
+test_big_071.ogg,background_noise_present,True,False,False
+test_big_071.ogg,background_noise_severity,low,none,False
+test_big_071.ogg,audio_quality,clear,clear,True
+test_big_071.ogg,speaker_overlap_present,False,False,True
+test_big_071.ogg,long_silence_present,True,True,True
+test_big_071.ogg,background_noise_type,static,,
+test_big_071.ogg,confidence,1.0,0.72,
+test_big_071.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_072.ogg,emotional_tone,frustrated,frustrated,True
+test_big_072.ogg,emotional_intensity,medium,medium,True
+test_big_072.ogg,background_noise_present,True,False,False
+test_big_072.ogg,background_noise_severity,medium,none,False
+test_big_072.ogg,audio_quality,clear,clear,True
+test_big_072.ogg,speaker_overlap_present,False,False,True
+test_big_072.ogg,long_silence_present,False,False,True
+test_big_072.ogg,background_noise_type,background chatter,,
+test_big_072.ogg,confidence,1.0,0.93,
+test_big_072.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_073.ogg,emotional_tone,distressed,distressed,True
+test_big_073.ogg,emotional_intensity,medium,medium,True
+test_big_073.ogg,background_noise_present,True,False,False
+test_big_073.ogg,background_noise_severity,medium,none,False
+test_big_073.ogg,audio_quality,clear,clear,True
+test_big_073.ogg,speaker_overlap_present,False,False,True
+test_big_073.ogg,long_silence_present,False,False,True
+test_big_073.ogg,background_noise_type,dog barking,,
+test_big_073.ogg,confidence,1.0,0.68,
+test_big_073.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_074.ogg,emotional_tone,frustrated,frustrated,True
+test_big_074.ogg,emotional_intensity,medium,medium,True
+test_big_074.ogg,background_noise_present,True,False,False
+test_big_074.ogg,background_noise_severity,medium,none,False
+test_big_074.ogg,audio_quality,clear,clear,True
+test_big_074.ogg,speaker_overlap_present,False,False,True
+test_big_074.ogg,long_silence_present,False,False,True
+test_big_074.ogg,background_noise_type,baby crying,,
+test_big_074.ogg,confidence,1.0,0.67,
+test_big_074.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_075.ogg,emotional_tone,satisfied,upset,False
+test_big_075.ogg,emotional_intensity,medium,medium,True
+test_big_075.ogg,background_noise_present,False,False,True
+test_big_075.ogg,background_noise_severity,none,none,True
+test_big_075.ogg,audio_quality,clear,clear,True
+test_big_075.ogg,speaker_overlap_present,True,False,False
+test_big_075.ogg,long_silence_present,False,False,True
+test_big_075.ogg,background_noise_type,,,
+test_big_075.ogg,confidence,1.0,0.79,
+test_big_075.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_076.ogg,emotional_tone,distressed,upset,False
+test_big_076.ogg,emotional_intensity,low,medium,False
+test_big_076.ogg,background_noise_present,False,False,True
+test_big_076.ogg,background_noise_severity,none,none,True
+test_big_076.ogg,audio_quality,clear,clear,True
+test_big_076.ogg,speaker_overlap_present,True,False,False
+test_big_076.ogg,long_silence_present,True,True,True
+test_big_076.ogg,background_noise_type,,,
+test_big_076.ogg,confidence,1.0,0.69,
+test_big_076.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_077.ogg,emotional_tone,neutral,neutral,True
+test_big_077.ogg,emotional_intensity,low,medium,False
+test_big_077.ogg,background_noise_present,False,False,True
+test_big_077.ogg,background_noise_severity,none,none,True
+test_big_077.ogg,audio_quality,clear,clear,True
+test_big_077.ogg,speaker_overlap_present,False,False,True
+test_big_077.ogg,long_silence_present,True,True,True
+test_big_077.ogg,background_noise_type,,,
+test_big_077.ogg,confidence,1.0,0.78,
+test_big_077.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_078.ogg,emotional_tone,upset,neutral,False
+test_big_078.ogg,emotional_intensity,medium,medium,True
+test_big_078.ogg,background_noise_present,True,False,False
+test_big_078.ogg,background_noise_severity,low,none,False
+test_big_078.ogg,audio_quality,clear,clear,True
+test_big_078.ogg,speaker_overlap_present,True,False,False
+test_big_078.ogg,long_silence_present,True,True,True
+test_big_078.ogg,background_noise_type,appliance hum,,
+test_big_078.ogg,confidence,1.0,0.65,
+test_big_078.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_079.ogg,emotional_tone,distressed,distressed,True
+test_big_079.ogg,emotional_intensity,medium,medium,True
+test_big_079.ogg,background_noise_present,False,False,True
+test_big_079.ogg,background_noise_severity,none,none,True
+test_big_079.ogg,audio_quality,clear,clear,True
+test_big_079.ogg,speaker_overlap_present,True,False,False
+test_big_079.ogg,long_silence_present,True,True,True
+test_big_079.ogg,background_noise_type,,,
+test_big_079.ogg,confidence,1.0,0.65,
+test_big_079.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_080.ogg,emotional_tone,upset,upset,True
+test_big_080.ogg,emotional_intensity,high,medium,False
+test_big_080.ogg,background_noise_present,True,False,False
+test_big_080.ogg,background_noise_severity,medium,none,False
+test_big_080.ogg,audio_quality,clear,clear,True
+test_big_080.ogg,speaker_overlap_present,True,False,False
+test_big_080.ogg,long_silence_present,True,True,True
+test_big_080.ogg,background_noise_type,appliance hum,,
+test_big_080.ogg,confidence,1.0,0.51,
+test_big_080.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_081.ogg,emotional_tone,distressed,neutral,False
+test_big_081.ogg,emotional_intensity,low,medium,False
+test_big_081.ogg,background_noise_present,True,False,False
+test_big_081.ogg,background_noise_severity,medium,none,False
+test_big_081.ogg,audio_quality,clear,clear,True
+test_big_081.ogg,speaker_overlap_present,False,False,True
+test_big_081.ogg,long_silence_present,False,False,True
+test_big_081.ogg,background_noise_type,road noise,,
+test_big_081.ogg,confidence,1.0,0.75,
+test_big_081.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_082.ogg,emotional_tone,distressed,frustrated,False
+test_big_082.ogg,emotional_intensity,low,medium,False
+test_big_082.ogg,background_noise_present,True,False,False
+test_big_082.ogg,background_noise_severity,medium,none,False
+test_big_082.ogg,audio_quality,clear,clear,True
+test_big_082.ogg,speaker_overlap_present,False,False,True
+test_big_082.ogg,long_silence_present,False,False,True
+test_big_082.ogg,background_noise_type,road noise,,
+test_big_082.ogg,confidence,1.0,0.67,
+test_big_082.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_083.ogg,emotional_tone,satisfied,satisfied,True
+test_big_083.ogg,emotional_intensity,medium,medium,True
+test_big_083.ogg,background_noise_present,False,False,True
+test_big_083.ogg,background_noise_severity,none,none,True
+test_big_083.ogg,audio_quality,clear,clear,True
+test_big_083.ogg,speaker_overlap_present,False,False,True
+test_big_083.ogg,long_silence_present,False,False,True
+test_big_083.ogg,background_noise_type,,,
+test_big_083.ogg,confidence,1.0,0.66,
+test_big_083.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_084.ogg,emotional_tone,upset,upset,True
+test_big_084.ogg,emotional_intensity,low,medium,False
+test_big_084.ogg,background_noise_present,True,False,False
+test_big_084.ogg,background_noise_severity,medium,none,False
+test_big_084.ogg,audio_quality,clear,clear,True
+test_big_084.ogg,speaker_overlap_present,False,False,True
+test_big_084.ogg,long_silence_present,False,False,True
+test_big_084.ogg,background_noise_type,background chatter,,
+test_big_084.ogg,confidence,1.0,0.79,
+test_big_084.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_085.ogg,emotional_tone,neutral,neutral,True
+test_big_085.ogg,emotional_intensity,low,medium,False
+test_big_085.ogg,background_noise_present,False,False,True
+test_big_085.ogg,background_noise_severity,none,none,True
+test_big_085.ogg,audio_quality,clear,clear,True
+test_big_085.ogg,speaker_overlap_present,True,False,False
+test_big_085.ogg,long_silence_present,True,True,True
+test_big_085.ogg,background_noise_type,,,
+test_big_085.ogg,confidence,1.0,0.88,
+test_big_085.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_086.ogg,emotional_tone,neutral,neutral,True
+test_big_086.ogg,emotional_intensity,low,medium,False
+test_big_086.ogg,background_noise_present,False,False,True
+test_big_086.ogg,background_noise_severity,none,none,True
+test_big_086.ogg,audio_quality,clear,clear,True
+test_big_086.ogg,speaker_overlap_present,True,False,False
+test_big_086.ogg,long_silence_present,False,False,True
+test_big_086.ogg,background_noise_type,,,
+test_big_086.ogg,confidence,1.0,0.84,
+test_big_086.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_087.ogg,emotional_tone,neutral,distressed,False
+test_big_087.ogg,emotional_intensity,low,medium,False
+test_big_087.ogg,background_noise_present,False,True,False
+test_big_087.ogg,background_noise_severity,none,medium,False
+test_big_087.ogg,audio_quality,clear,clear,True
+test_big_087.ogg,speaker_overlap_present,False,False,True
+test_big_087.ogg,long_silence_present,False,False,True
+test_big_087.ogg,background_noise_type,,static,
+test_big_087.ogg,confidence,1.0,0.69,
+test_big_087.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_088.ogg,emotional_tone,distressed,distressed,True
+test_big_088.ogg,emotional_intensity,medium,medium,True
+test_big_088.ogg,background_noise_present,False,False,True
+test_big_088.ogg,background_noise_severity,none,none,True
+test_big_088.ogg,audio_quality,clear,clear,True
+test_big_088.ogg,speaker_overlap_present,False,False,True
+test_big_088.ogg,long_silence_present,False,False,True
+test_big_088.ogg,background_noise_type,,,
+test_big_088.ogg,confidence,1.0,0.69,
+test_big_088.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_089.ogg,emotional_tone,frustrated,neutral,False
+test_big_089.ogg,emotional_intensity,medium,medium,True
+test_big_089.ogg,background_noise_present,True,False,False
+test_big_089.ogg,background_noise_severity,low,none,False
+test_big_089.ogg,audio_quality,clear,clear,True
+test_big_089.ogg,speaker_overlap_present,False,False,True
+test_big_089.ogg,long_silence_present,True,True,True
+test_big_089.ogg,background_noise_type,static,,
+test_big_089.ogg,confidence,1.0,0.7,
+test_big_089.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_090.ogg,emotional_tone,distressed,neutral,False
+test_big_090.ogg,emotional_intensity,medium,medium,True
+test_big_090.ogg,background_noise_present,False,False,True
+test_big_090.ogg,background_noise_severity,none,none,True
+test_big_090.ogg,audio_quality,clear,clear,True
+test_big_090.ogg,speaker_overlap_present,False,False,True
+test_big_090.ogg,long_silence_present,False,False,True
+test_big_090.ogg,background_noise_type,,,
+test_big_090.ogg,confidence,1.0,0.74,
+test_big_090.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_091.ogg,emotional_tone,distressed,neutral,False
+test_big_091.ogg,emotional_intensity,low,medium,False
+test_big_091.ogg,background_noise_present,False,False,True
+test_big_091.ogg,background_noise_severity,none,none,True
+test_big_091.ogg,audio_quality,clear,clear,True
+test_big_091.ogg,speaker_overlap_present,False,False,True
+test_big_091.ogg,long_silence_present,False,False,True
+test_big_091.ogg,background_noise_type,,,
+test_big_091.ogg,confidence,1.0,0.72,
+test_big_091.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_092.ogg,emotional_tone,upset,upset,True
+test_big_092.ogg,emotional_intensity,medium,medium,True
+test_big_092.ogg,background_noise_present,False,False,True
+test_big_092.ogg,background_noise_severity,none,none,True
+test_big_092.ogg,audio_quality,clear,clear,True
+test_big_092.ogg,speaker_overlap_present,False,False,True
+test_big_092.ogg,long_silence_present,False,False,True
+test_big_092.ogg,background_noise_type,,,
+test_big_092.ogg,confidence,1.0,0.69,
+test_big_092.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_093.ogg,emotional_tone,distressed,neutral,False
+test_big_093.ogg,emotional_intensity,low,medium,False
+test_big_093.ogg,background_noise_present,True,False,False
+test_big_093.ogg,background_noise_severity,medium,none,False
+test_big_093.ogg,audio_quality,clear,clear,True
+test_big_093.ogg,speaker_overlap_present,False,False,True
+test_big_093.ogg,long_silence_present,False,False,True
+test_big_093.ogg,background_noise_type,baby crying,,
+test_big_093.ogg,confidence,1.0,0.77,
+test_big_093.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_094.ogg,emotional_tone,neutral,neutral,True
+test_big_094.ogg,emotional_intensity,low,medium,False
+test_big_094.ogg,background_noise_present,False,False,True
+test_big_094.ogg,background_noise_severity,none,none,True
+test_big_094.ogg,audio_quality,clear,clear,True
+test_big_094.ogg,speaker_overlap_present,False,False,True
+test_big_094.ogg,long_silence_present,False,False,True
+test_big_094.ogg,background_noise_type,,,
+test_big_094.ogg,confidence,1.0,0.91,
+test_big_094.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_095.ogg,emotional_tone,neutral,neutral,True
+test_big_095.ogg,emotional_intensity,low,medium,False
+test_big_095.ogg,background_noise_present,True,False,False
+test_big_095.ogg,background_noise_severity,low,none,False
+test_big_095.ogg,audio_quality,clear,clear,True
+test_big_095.ogg,speaker_overlap_present,False,False,True
+test_big_095.ogg,long_silence_present,False,False,True
+test_big_095.ogg,background_noise_type,appliance hum,,
+test_big_095.ogg,confidence,1.0,0.94,
+test_big_095.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_096.ogg,emotional_tone,satisfied,satisfied,True
+test_big_096.ogg,emotional_intensity,medium,medium,True
+test_big_096.ogg,background_noise_present,True,False,False
+test_big_096.ogg,background_noise_severity,medium,none,False
+test_big_096.ogg,audio_quality,clear,clear,True
+test_big_096.ogg,speaker_overlap_present,True,False,False
+test_big_096.ogg,long_silence_present,True,True,True
+test_big_096.ogg,background_noise_type,dog barking,,
+test_big_096.ogg,confidence,1.0,0.57,
+test_big_096.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_097.ogg,emotional_tone,neutral,neutral,True
+test_big_097.ogg,emotional_intensity,low,medium,False
+test_big_097.ogg,background_noise_present,True,False,False
+test_big_097.ogg,background_noise_severity,high,none,False
+test_big_097.ogg,audio_quality,clear,clear,True
+test_big_097.ogg,speaker_overlap_present,False,False,True
+test_big_097.ogg,long_silence_present,False,False,True
+test_big_097.ogg,background_noise_type,baby crying,,
+test_big_097.ogg,confidence,1.0,0.8,
+test_big_097.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_098.ogg,emotional_tone,upset,upset,True
+test_big_098.ogg,emotional_intensity,medium,medium,True
+test_big_098.ogg,background_noise_present,True,False,False
+test_big_098.ogg,background_noise_severity,medium,none,False
+test_big_098.ogg,audio_quality,clear,clear,True
+test_big_098.ogg,speaker_overlap_present,False,False,True
+test_big_098.ogg,long_silence_present,True,True,True
+test_big_098.ogg,background_noise_type,appliance hum,,
+test_big_098.ogg,confidence,1.0,0.63,
+test_big_098.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_099.ogg,emotional_tone,satisfied,upset,False
+test_big_099.ogg,emotional_intensity,medium,medium,True
+test_big_099.ogg,background_noise_present,True,False,False
+test_big_099.ogg,background_noise_severity,low,none,False
+test_big_099.ogg,audio_quality,clear,clear,True
+test_big_099.ogg,speaker_overlap_present,False,False,True
+test_big_099.ogg,long_silence_present,False,False,True
+test_big_099.ogg,background_noise_type,static,,
+test_big_099.ogg,confidence,1.0,0.68,
+test_big_099.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_100.ogg,emotional_tone,upset,upset,True
+test_big_100.ogg,emotional_intensity,high,medium,False
+test_big_100.ogg,background_noise_present,False,True,False
+test_big_100.ogg,background_noise_severity,none,medium,False
+test_big_100.ogg,audio_quality,clear,clear,True
+test_big_100.ogg,speaker_overlap_present,False,False,True
+test_big_100.ogg,long_silence_present,False,False,True
+test_big_100.ogg,background_noise_type,,static,
+test_big_100.ogg,confidence,1.0,0.84,
+test_big_100.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_101.ogg,emotional_tone,upset,upset,True
+test_big_101.ogg,emotional_intensity,medium,medium,True
+test_big_101.ogg,background_noise_present,True,False,False
+test_big_101.ogg,background_noise_severity,high,none,False
+test_big_101.ogg,audio_quality,clear,clear,True
+test_big_101.ogg,speaker_overlap_present,False,False,True
+test_big_101.ogg,long_silence_present,True,True,True
+test_big_101.ogg,background_noise_type,road noise,,
+test_big_101.ogg,confidence,1.0,0.76,
+test_big_101.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_102.ogg,emotional_tone,frustrated,frustrated,True
+test_big_102.ogg,emotional_intensity,medium,medium,True
+test_big_102.ogg,background_noise_present,True,False,False
+test_big_102.ogg,background_noise_severity,low,none,False
+test_big_102.ogg,audio_quality,clear,clear,True
+test_big_102.ogg,speaker_overlap_present,False,False,True
+test_big_102.ogg,long_silence_present,False,False,True
+test_big_102.ogg,background_noise_type,baby crying,,
+test_big_102.ogg,confidence,1.0,0.75,
+test_big_102.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_103.ogg,emotional_tone,frustrated,upset,False
+test_big_103.ogg,emotional_intensity,low,medium,False
+test_big_103.ogg,background_noise_present,False,False,True
+test_big_103.ogg,background_noise_severity,none,none,True
+test_big_103.ogg,audio_quality,clear,clear,True
+test_big_103.ogg,speaker_overlap_present,False,False,True
+test_big_103.ogg,long_silence_present,False,False,True
+test_big_103.ogg,background_noise_type,,,
+test_big_103.ogg,confidence,1.0,0.83,
+test_big_103.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_104.ogg,emotional_tone,frustrated,frustrated,True
+test_big_104.ogg,emotional_intensity,medium,medium,True
+test_big_104.ogg,background_noise_present,False,False,True
+test_big_104.ogg,background_noise_severity,none,none,True
+test_big_104.ogg,audio_quality,clear,clear,True
+test_big_104.ogg,speaker_overlap_present,False,False,True
+test_big_104.ogg,long_silence_present,True,True,True
+test_big_104.ogg,background_noise_type,,,
+test_big_104.ogg,confidence,1.0,0.74,
+test_big_104.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_105.ogg,emotional_tone,distressed,upset,False
+test_big_105.ogg,emotional_intensity,medium,medium,True
+test_big_105.ogg,background_noise_present,True,False,False
+test_big_105.ogg,background_noise_severity,medium,none,False
+test_big_105.ogg,audio_quality,clear,clear,True
+test_big_105.ogg,speaker_overlap_present,False,False,True
+test_big_105.ogg,long_silence_present,False,False,True
+test_big_105.ogg,background_noise_type,road noise,,
+test_big_105.ogg,confidence,1.0,0.71,
+test_big_105.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_106.ogg,emotional_tone,distressed,distressed,True
+test_big_106.ogg,emotional_intensity,medium,medium,True
+test_big_106.ogg,background_noise_present,True,False,False
+test_big_106.ogg,background_noise_severity,medium,none,False
+test_big_106.ogg,audio_quality,clear,clear,True
+test_big_106.ogg,speaker_overlap_present,False,False,True
+test_big_106.ogg,long_silence_present,False,False,True
+test_big_106.ogg,background_noise_type,road noise,,
+test_big_106.ogg,confidence,1.0,0.68,
+test_big_106.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_107.ogg,emotional_tone,frustrated,frustrated,True
+test_big_107.ogg,emotional_intensity,medium,medium,True
+test_big_107.ogg,background_noise_present,False,False,True
+test_big_107.ogg,background_noise_severity,none,none,True
+test_big_107.ogg,audio_quality,clear,clear,True
+test_big_107.ogg,speaker_overlap_present,True,False,False
+test_big_107.ogg,long_silence_present,False,False,True
+test_big_107.ogg,background_noise_type,,,
+test_big_107.ogg,confidence,1.0,0.71,
+test_big_107.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_108.ogg,emotional_tone,satisfied,satisfied,True
+test_big_108.ogg,emotional_intensity,medium,medium,True
+test_big_108.ogg,background_noise_present,False,False,True
+test_big_108.ogg,background_noise_severity,none,none,True
+test_big_108.ogg,audio_quality,clear,clear,True
+test_big_108.ogg,speaker_overlap_present,True,False,False
+test_big_108.ogg,long_silence_present,True,True,True
+test_big_108.ogg,background_noise_type,,,
+test_big_108.ogg,confidence,1.0,0.68,
+test_big_108.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_109.ogg,emotional_tone,distressed,neutral,False
+test_big_109.ogg,emotional_intensity,medium,medium,True
+test_big_109.ogg,background_noise_present,False,False,True
+test_big_109.ogg,background_noise_severity,none,none,True
+test_big_109.ogg,audio_quality,clear,clear,True
+test_big_109.ogg,speaker_overlap_present,True,False,False
+test_big_109.ogg,long_silence_present,True,True,True
+test_big_109.ogg,background_noise_type,,,
+test_big_109.ogg,confidence,1.0,0.68,
+test_big_109.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_110.ogg,emotional_tone,satisfied,satisfied,True
+test_big_110.ogg,emotional_intensity,medium,medium,True
+test_big_110.ogg,background_noise_present,True,False,False
+test_big_110.ogg,background_noise_severity,medium,none,False
+test_big_110.ogg,audio_quality,clear,clear,True
+test_big_110.ogg,speaker_overlap_present,False,False,True
+test_big_110.ogg,long_silence_present,False,False,True
+test_big_110.ogg,background_noise_type,appliance hum,,
+test_big_110.ogg,confidence,1.0,0.84,
+test_big_110.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_111.ogg,emotional_tone,neutral,neutral,True
+test_big_111.ogg,emotional_intensity,low,medium,False
+test_big_111.ogg,background_noise_present,True,False,False
+test_big_111.ogg,background_noise_severity,high,none,False
+test_big_111.ogg,audio_quality,clear,clear,True
+test_big_111.ogg,speaker_overlap_present,False,False,True
+test_big_111.ogg,long_silence_present,False,False,True
+test_big_111.ogg,background_noise_type,baby crying,,
+test_big_111.ogg,confidence,1.0,0.8,
+test_big_111.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_112.ogg,emotional_tone,satisfied,upset,False
+test_big_112.ogg,emotional_intensity,medium,medium,True
+test_big_112.ogg,background_noise_present,True,False,False
+test_big_112.ogg,background_noise_severity,low,none,False
+test_big_112.ogg,audio_quality,clear,clear,True
+test_big_112.ogg,speaker_overlap_present,False,False,True
+test_big_112.ogg,long_silence_present,False,False,True
+test_big_112.ogg,background_noise_type,road noise,,
+test_big_112.ogg,confidence,1.0,0.67,
+test_big_112.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_113.ogg,emotional_tone,neutral,frustrated,False
+test_big_113.ogg,emotional_intensity,low,medium,False
+test_big_113.ogg,background_noise_present,True,False,False
+test_big_113.ogg,background_noise_severity,medium,none,False
+test_big_113.ogg,audio_quality,clear,clear,True
+test_big_113.ogg,speaker_overlap_present,True,False,False
+test_big_113.ogg,long_silence_present,False,False,True
+test_big_113.ogg,background_noise_type,appliance hum,,
+test_big_113.ogg,confidence,1.0,0.67,
+test_big_113.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_114.ogg,emotional_tone,satisfied,satisfied,True
+test_big_114.ogg,emotional_intensity,medium,medium,True
+test_big_114.ogg,background_noise_present,True,False,False
+test_big_114.ogg,background_noise_severity,low,none,False
+test_big_114.ogg,audio_quality,clear,clear,True
+test_big_114.ogg,speaker_overlap_present,True,False,False
+test_big_114.ogg,long_silence_present,False,False,True
+test_big_114.ogg,background_noise_type,baby crying,,
+test_big_114.ogg,confidence,1.0,0.81,
+test_big_114.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_115.ogg,emotional_tone,frustrated,frustrated,True
+test_big_115.ogg,emotional_intensity,medium,medium,True
+test_big_115.ogg,background_noise_present,True,False,False
+test_big_115.ogg,background_noise_severity,low,none,False
+test_big_115.ogg,audio_quality,clear,clear,True
+test_big_115.ogg,speaker_overlap_present,False,False,True
+test_big_115.ogg,long_silence_present,True,True,True
+test_big_115.ogg,background_noise_type,static,,
+test_big_115.ogg,confidence,1.0,0.57,
+test_big_115.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_116.ogg,emotional_tone,upset,upset,True
+test_big_116.ogg,emotional_intensity,medium,medium,True
+test_big_116.ogg,background_noise_present,True,False,False
+test_big_116.ogg,background_noise_severity,low,none,False
+test_big_116.ogg,audio_quality,clear,clear,True
+test_big_116.ogg,speaker_overlap_present,False,False,True
+test_big_116.ogg,long_silence_present,False,False,True
+test_big_116.ogg,background_noise_type,keyboard typing,,
+test_big_116.ogg,confidence,1.0,0.68,
+test_big_116.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_117.ogg,emotional_tone,satisfied,satisfied,True
+test_big_117.ogg,emotional_intensity,medium,medium,True
+test_big_117.ogg,background_noise_present,True,False,False
+test_big_117.ogg,background_noise_severity,medium,none,False
+test_big_117.ogg,audio_quality,clear,clear,True
+test_big_117.ogg,speaker_overlap_present,False,False,True
+test_big_117.ogg,long_silence_present,False,False,True
+test_big_117.ogg,background_noise_type,appliance hum,,
+test_big_117.ogg,confidence,1.0,0.66,
+test_big_117.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_118.ogg,emotional_tone,upset,upset,True
+test_big_118.ogg,emotional_intensity,medium,medium,True
+test_big_118.ogg,background_noise_present,False,True,False
+test_big_118.ogg,background_noise_severity,none,medium,False
+test_big_118.ogg,audio_quality,clear,clear,True
+test_big_118.ogg,speaker_overlap_present,False,False,True
+test_big_118.ogg,long_silence_present,False,False,True
+test_big_118.ogg,background_noise_type,,static,
+test_big_118.ogg,confidence,1.0,0.66,
+test_big_118.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_119.ogg,emotional_tone,neutral,neutral,True
+test_big_119.ogg,emotional_intensity,low,medium,False
+test_big_119.ogg,background_noise_present,False,False,True
+test_big_119.ogg,background_noise_severity,none,none,True
+test_big_119.ogg,audio_quality,clear,clear,True
+test_big_119.ogg,speaker_overlap_present,False,False,True
+test_big_119.ogg,long_silence_present,True,True,True
+test_big_119.ogg,background_noise_type,,,
+test_big_119.ogg,confidence,1.0,0.79,
+test_big_119.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",
+test_big_120.ogg,emotional_tone,satisfied,upset,False
+test_big_120.ogg,emotional_intensity,medium,medium,True
+test_big_120.ogg,background_noise_present,True,False,False
+test_big_120.ogg,background_noise_severity,low,none,False
+test_big_120.ogg,audio_quality,clear,clear,True
+test_big_120.ogg,speaker_overlap_present,False,False,True
+test_big_120.ogg,long_silence_present,False,False,True
+test_big_120.ogg,background_noise_type,keyboard typing,,
+test_big_120.ogg,confidence,1.0,0.67,
+test_big_120.ogg,vote0,,"{""error"": ""400: Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.""}",

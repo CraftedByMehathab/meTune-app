@@ -126,6 +126,45 @@ def test_high_band_share_separates_phone_line_from_voip():
     assert high_band_share(np.sin(2 * np.pi * 6000 * t).astype(np.float32)) > 0.5      # wideband agent
 
 
+def noise(kind="dog barking", severity="high", static_confirmed=True):
+    return {"present": bool(kind), "type": kind, "severity": severity if kind else "none",
+            "static_confirmed": static_confirmed}
+
+
+def test_fuse_noise_detector_owns_noise_fields():
+    heard_tv = vote(background_noise_present=True, background_noise_type="TV", background_noise_severity="low")
+    r = fuse(FACTS, [heard_tv], CFG, noise=noise())
+    assert (r.background_noise_present, r.background_noise_type, r.background_noise_severity) == \
+        (True, "dog barking", "high")
+    r = fuse(FACTS, [heard_tv], CFG, noise=noise(""))
+    assert (r.background_noise_present, r.background_noise_type, r.background_noise_severity) == (False, "", "none")
+    r = fuse(FACTS, [], CFG, noise=noise("baby crying", "low"))          # also without LLM votes
+    assert (r.background_noise_type, r.background_noise_severity) == ("baby crying", "low")
+
+
+def test_fuse_noise_detector_measured_static_still_wins():
+    spiky = {**FACTS, "spikes_per_min": 30}
+    for votes in ([vote()], []):
+        r = fuse(spiky, votes, CFG, noise=noise(""))
+        assert (r.background_noise_present, r.background_noise_type) == (True, "static")
+        # word onsets also raise the click rate: without AST hearing clicks / static, no static (E28)
+        assert fuse(spiky, votes, CFG, noise=noise("", static_confirmed=False)).background_noise_present is False
+
+
+def test_noise_head_and_missing_model():
+    import pytest
+    from metune_pipeline.noise import EXTRA, GROUPS, classify, head, noise_facts
+
+    assert head()["groups"] == list(GROUPS)                          # head was fit on these groups, in order
+    quiet = np.full((3, 527), 1e-3, np.float32)
+    assert classify(quiet, 20.0, -90.0)["present"] is False             # digital silence
+    tv = quiet.copy()
+    tv[[0, 2], EXTRA["TV / music"][1]] = 0.99                          # Television, whole call + gaps
+    assert classify(tv, 20.0)["type"] == "TV / music"
+    with pytest.raises(FileNotFoundError):
+        noise_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"noise_model": "/nope.onnx"}))
+
+
 def test_decode_error_is_user_facing(tmp_path):
     import pytest
     from metune_pipeline.decode import DecodeError, decode

@@ -1,0 +1,121 @@
+name,noise_label,noise_type,severity,E23a,E23b,E23b_severity,E23_type,overlap_label,overlap_s,E24
+test_big_001.ogg,False,,none,False,False,none,keyboard typing,True,0.0,False
+test_big_002.ogg,False,,none,True,False,none,keyboard typing,False,0.44,False
+test_big_003.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_004.ogg,True,dog barking,medium,True,True,low,dog barking,False,4.86,False
+test_big_005.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_006.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_007.ogg,True,static,high,False,True,medium,static,False,0.42,False
+test_big_008.ogg,False,,none,False,False,none,keyboard typing,True,0.44,False
+test_big_009.ogg,True,keyboard typing,medium,True,True,medium,keyboard typing,True,0.0,False
+test_big_010.ogg,True,keyboard typing,low,True,True,medium,keyboard typing,True,0.0,False
+test_big_011.ogg,False,,none,False,False,none,baby crying,True,1.27,False
+test_big_012.ogg,True,keyboard typing,low,True,True,low,keyboard typing,False,0.0,False
+test_big_013.ogg,True,baby crying,high,True,True,medium,baby crying,False,3.95,False
+test_big_014.ogg,False,,none,True,True,medium,keyboard typing,False,0.0,False
+test_big_015.ogg,True,baby crying,low,True,True,high,baby crying,False,0.25,False
+test_big_016.ogg,False,,none,False,False,none,static,False,0.0,False
+test_big_017.ogg,False,,none,False,False,none,static,False,0.0,False
+test_big_018.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_019.ogg,False,,none,True,True,low,road noise,False,0.57,False
+test_big_020.ogg,True,dog barking,high,True,True,medium,dog barking,False,0.54,False
+test_big_021.ogg,True,dog barking,low,True,True,low,dog barking,False,2.24,False
+test_big_022.ogg,True,baby crying,medium,True,True,medium,baby crying,False,4.4,False
+test_big_023.ogg,False,,none,True,True,medium,keyboard typing,False,0.0,False
+test_big_024.ogg,False,,none,True,True,medium,static,False,1.0,False
+test_big_025.ogg,True,baby crying,low,True,True,medium,baby crying,False,0.0,False
+test_big_026.ogg,True,appliance hum,high,False,True,medium,road noise,False,0.0,False
+test_big_027.ogg,False,,none,False,False,none,keyboard typing,True,0.73,False
+test_big_028.ogg,True,appliance hum,medium,True,False,none,road noise,False,0.0,False
+test_big_029.ogg,True,background chatter,medium,False,True,low,background chatter,False,38.32,True
+test_big_030.ogg,True,road noise,medium,True,True,high,road noise,False,0.0,False
+test_big_031.ogg,False,,none,False,False,none,keyboard typing,True,0.0,False
+test_big_032.ogg,True,static,high,True,True,medium,static,False,0.0,False
+test_big_033.ogg,False,,none,True,False,none,keyboard typing,True,0.0,False
+test_big_034.ogg,True,baby crying,low,True,True,low,baby crying,False,0.0,False
+test_big_035.ogg,False,,none,False,False,none,dog barking,False,0.0,False
+test_big_036.ogg,True,background chatter,high,False,True,low,background chatter,False,12.94,False
+test_big_037.ogg,True,keyboard typing,high,True,True,low,keyboard typing,False,0.0,False
+test_big_038.ogg,True,appliance hum,high,True,True,low,appliance hum,False,0.0,False
+test_big_039.ogg,False,,none,False,False,none,static,True,0.0,False
+test_big_040.ogg,False,,none,True,True,medium,keyboard typing,True,0.0,False
+test_big_041.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_042.ogg,True,keyboard typing,high,True,True,low,keyboard typing,False,0.0,False
+test_big_043.ogg,True,dog barking,high,True,True,medium,dog barking,True,2.46,False
+test_big_044.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_045.ogg,False,,none,False,False,none,appliance hum,True,0.0,False
+test_big_046.ogg,False,,none,True,True,medium,keyboard typing,False,0.0,False
+test_big_047.ogg,True,dog barking,low,True,True,medium,dog barking,False,2.68,False
+test_big_048.ogg,True,road noise,medium,True,True,medium,road noise,False,0.0,False
+test_big_049.ogg,True,baby crying,high,True,True,high,baby crying,False,4.19,False
+test_big_050.ogg,False,,none,False,False,none,keyboard typing,True,0.15,False
+test_big_051.ogg,True,static,medium,False,True,high,keyboard typing,False,0.32,False
+test_big_052.ogg,False,,none,True,False,none,keyboard typing,False,0.51,False
+test_big_053.ogg,True,background chatter,high,False,True,medium,background chatter,True,25.75,True
+test_big_054.ogg,True,baby crying,low,True,True,high,baby crying,False,0.27,False
+test_big_055.ogg,True,static,medium,True,True,low,static,False,0.0,False
+test_big_056.ogg,True,dog barking,medium,True,True,medium,dog barking,True,1.32,False
+test_big_057.ogg,True,background chatter,medium,False,True,medium,background chatter,True,22.28,True
+test_big_058.ogg,False,,none,False,False,none,road noise,True,2.24,False
+test_big_059.ogg,False,,none,False,False,none,dog barking,False,0.15,False
+test_big_060.ogg,True,dog barking,low,True,True,medium,dog barking,False,1.38,False
+test_big_061.ogg,True,road noise,low,True,True,low,road noise,False,0.0,False
+test_big_062.ogg,False,,none,False,False,none,static,False,0.0,False
+test_big_063.ogg,True,baby crying,high,True,True,medium,baby crying,False,7.19,False
+test_big_064.ogg,True,appliance hum,medium,True,True,low,appliance hum,True,0.1,False
+test_big_065.ogg,True,appliance hum,medium,True,True,low,appliance hum,False,1.18,False
+test_big_066.ogg,True,baby crying,low,True,True,medium,baby crying,False,0.41,False
+test_big_067.ogg,True,background chatter,medium,False,True,medium,background chatter,False,13.77,False
+test_big_068.ogg,False,,none,False,True,low,baby crying,True,0.0,False
+test_big_069.ogg,False,,none,False,False,none,static,False,0.34,False
+test_big_070.ogg,True,appliance hum,high,False,True,low,static,True,1.92,False
+test_big_071.ogg,True,static,low,False,True,low,keyboard typing,False,0.0,False
+test_big_072.ogg,True,background chatter,medium,True,True,high,background chatter,False,19.91,False
+test_big_073.ogg,True,dog barking,medium,True,True,medium,dog barking,False,6.29,False
+test_big_074.ogg,True,baby crying,medium,True,True,medium,baby crying,False,6.55,False
+test_big_075.ogg,False,,none,False,False,none,keyboard typing,True,2.67,False
+test_big_076.ogg,False,,none,False,False,none,static,True,0.69,False
+test_big_077.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_078.ogg,True,appliance hum,low,True,True,low,appliance hum,True,0.0,False
+test_big_079.ogg,False,,none,True,False,none,dog barking,True,2.7,False
+test_big_080.ogg,True,appliance hum,medium,False,True,high,appliance hum,True,0.0,False
+test_big_081.ogg,True,road noise,medium,True,True,medium,road noise,False,0.0,False
+test_big_082.ogg,True,road noise,medium,True,True,low,road noise,False,0.0,False
+test_big_083.ogg,False,,none,False,False,none,keyboard typing,False,0.73,False
+test_big_084.ogg,True,background chatter,medium,False,True,low,background chatter,False,18.5,False
+test_big_085.ogg,False,,none,False,False,none,road noise,True,0.0,False
+test_big_086.ogg,False,,none,False,False,none,dog barking,True,0.54,False
+test_big_087.ogg,False,,none,True,True,medium,keyboard typing,False,0.0,False
+test_big_088.ogg,False,,none,False,False,none,baby crying,False,0.93,False
+test_big_089.ogg,True,static,low,True,False,none,keyboard typing,False,0.0,False
+test_big_090.ogg,False,,none,False,True,low,baby crying,False,0.0,False
+test_big_091.ogg,False,,none,False,False,none,dog barking,False,0.24,False
+test_big_092.ogg,False,,none,False,False,none,keyboard typing,False,0.0,False
+test_big_093.ogg,True,baby crying,medium,True,False,none,baby crying,False,0.22,False
+test_big_094.ogg,False,,none,True,False,none,keyboard typing,False,0.0,False
+test_big_095.ogg,True,appliance hum,low,True,True,low,appliance hum,False,0.25,False
+test_big_096.ogg,True,dog barking,medium,True,True,medium,dog barking,True,1.91,False
+test_big_097.ogg,True,baby crying,high,True,True,low,baby crying,False,2.53,False
+test_big_098.ogg,True,appliance hum,medium,True,True,medium,appliance hum,False,1.62,False
+test_big_099.ogg,True,static,low,False,True,high,keyboard typing,False,0.0,False
+test_big_100.ogg,False,,none,True,True,medium,keyboard typing,False,0.93,False
+test_big_101.ogg,True,road noise,high,True,True,high,road noise,False,1.16,False
+test_big_102.ogg,True,baby crying,low,True,True,medium,baby crying,False,0.29,False
+test_big_103.ogg,False,,none,False,False,none,keyboard typing,False,1.22,False
+test_big_104.ogg,False,,none,False,False,none,dog barking,False,0.59,False
+test_big_105.ogg,True,road noise,medium,True,True,low,road noise,False,0.0,False
+test_big_106.ogg,True,road noise,medium,True,True,high,road noise,False,0.0,False
+test_big_107.ogg,False,,none,False,False,none,appliance hum,True,0.0,False
+test_big_108.ogg,False,,none,False,False,none,road noise,True,0.0,False
+test_big_109.ogg,False,,none,False,False,none,road noise,True,0.0,False
+test_big_110.ogg,True,appliance hum,medium,True,False,none,appliance hum,False,0.98,False
+test_big_111.ogg,True,baby crying,high,True,True,medium,baby crying,False,2.35,False
+test_big_112.ogg,True,road noise,low,True,True,low,road noise,False,0.0,False
+test_big_113.ogg,True,appliance hum,medium,False,True,low,appliance hum,True,1.27,False
+test_big_114.ogg,True,baby crying,low,True,True,medium,baby crying,True,0.0,False
+test_big_115.ogg,True,static,low,False,True,low,keyboard typing,False,0.0,False
+test_big_116.ogg,True,keyboard typing,low,True,False,none,keyboard typing,False,0.41,False
+test_big_117.ogg,True,appliance hum,medium,True,True,high,appliance hum,False,0.0,False
+test_big_118.ogg,False,,none,True,True,medium,appliance hum,False,0.0,False
+test_big_119.ogg,False,,none,True,False,none,dog barking,False,0.0,False
+test_big_120.ogg,True,keyboard typing,low,True,True,medium,keyboard typing,False,0.0,False

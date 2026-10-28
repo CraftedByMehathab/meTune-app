@@ -35,7 +35,7 @@ services:
       COOKIE_SECURE: "true"
     volumes:
       - uploads:/data/uploads
-      - ./models:/app/.data/models:ro    # ser_e20_bag*.int8.onnx (5 × 122 MB, not in git/image) → config ser_models
+      - ./models:/app/.data/models:ro    # ser_e20_bag*.int8.onnx (5 × 122 MB) + ast_audioset.int8.onnx (92 MB), not in git/image
     depends_on:
       db: { condition: service_healthy }
     mem_limit: 5g      # 5 SER models + files in flight; 2g thrashed on the first hosted batch (needs an 8 GB VM)

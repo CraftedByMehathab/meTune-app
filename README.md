@@ -6,7 +6,7 @@ meTune analyzes call audio and returns, for each clip:
 - **background noise**: whether it's present, its type and its severity
 - **audio quality**, **speaker overlap** and **long silence**
 
-It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, a fine-tuned speech-emotion model (wav2vec2, ONNX, runs locally on CPU) for tone, and an audio LLM (Gemini Flash-Lite) for noise and overlap. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.0024** on the trial calls (the speech-emotion model adds no API cost).
+It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, a fine-tuned speech-emotion model (wav2vec2, ONNX, runs locally on CPU) for tone, and an AudioSet sound classifier (AST, ONNX, local) for background noise, and an audio LLM (Gemini 3.8 Flash, one vote) for overlap and intensity. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.0028** on the proxy test calls (E26) (the speech-emotion model adds no API cost).
 
 Design notes and decisions live in the meTune Obsidian vault (DR-001 → DR-020; experiments in the Experiment Log).
 

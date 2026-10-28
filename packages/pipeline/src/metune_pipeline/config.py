@@ -28,6 +28,9 @@ class PipelineConfig(BaseModel):
     ser_customer_only: bool = False      # E21: score narrowband (phone-line) windows only
     ser_narrowband_max: float = 1e-3     # high-band share below this = narrowband
 
+    noise_source: Literal["llm", "ast"] = "llm"     # ast = AudioSet classifier + trained head owns noise (E25)
+    noise_model: str = ".data/models/ast_audioset.int8.onnx"
+
     llm_model: str = "gemini-3.5-flash-lite"
     llm_prompt: str = "v2"
     llm_votes: int = 3

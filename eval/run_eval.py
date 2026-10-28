@@ -43,14 +43,15 @@ async def main() -> None:
     ap.add_argument("--name", required=True, help="experiment id, e.g. E7-v2")
     ap.add_argument("--set", action="append", default=[], metavar="KEY=VALUE", help="config override")
     ap.add_argument("--concurrency", type=int, default=6)
+    ap.add_argument("--no-llm", action="store_true", help="no API calls: local models + DSP baseline only")
     a = ap.parse_args()
 
     overrides = {k: yaml.safe_load(v) for k, v in (s.split("=", 1) for s in a.set)}
     cfg = load_config().model_copy(update=overrides)
     folder = ROOT / a.split if (ROOT / a.split).exists() else Path(a.split)
     labels = {r["name"]: json.loads(r["result_json"]) for r in csv.DictReader((folder / "labels.csv").open())}
-    client = make_client()
-    assert client, "GEMINI_API_KEY not set: run with --env-file .env"
+    client = None if a.no_llm else make_client()
+    assert client or a.no_llm, "GEMINI_API_KEY not set: run with --env-file .env"
 
     sem = asyncio.Semaphore(a.concurrency)
     finished = 0
@@ -78,7 +79,7 @@ async def main() -> None:
     conf_right = [p["confidence"] for t, p in pairs if p["emotional_tone"] == t["emotional_tone"]]
     conf_wrong = [p["confidence"] for t, p in pairs if p["emotional_tone"] != t["emotional_tone"]]
     summary = {
-        "name": a.name, "split": a.split, "n": len(pairs), "when": datetime.now().isoformat(timespec="seconds"),
+        "name": a.name, "split": a.split, "n": len(pairs), "no_llm": a.no_llm, "when": datetime.now().isoformat(timespec="seconds"),
         "config_hash": config_hash(cfg), "overrides": overrides, "config": cfg.model_dump(),
         "accuracy": {f: metrics["per_field"][f]["accuracy"] for f in SCORED_FIELDS},
         "macro_f1": {f: metrics["per_field"][f]["macro_f1"] for f in SCORED_FIELDS},
