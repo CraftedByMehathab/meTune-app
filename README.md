@@ -53,7 +53,7 @@ Upload a **ZIP** or a **folder** of audio files: wav, mp3, ogg/opus, m4a, flac o
 - **Failure isolation:** each file is a separate job, retried up to 3 times. Decode errors are not retried. One bad file never stops the batch.
 
 ## Deploy
-One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**.
+One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**. Releases: push a `v*` tag, see **[deploy/RELEASE.md](deploy/RELEASE.md)**.
 
 ## Known limitations (trial)
 - **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a bag of 5 fine-tuned speech-emotion models: macro F1 **0.68** on 120 held-out proxy calls from unseen speakers (one fine-tuned model 0.56 on the same calls; Gemini alone ~0.06). It scores only the customer's phone-line (narrowband) speech: on calls with a wideband VoIP agent, scoring every voice let a friendly agent set the tone (F1 0.27 → 0.53 with the filter, E21). It reads the voice only, was trained on acted speech (CREMA-D); distressed and frustrated are the weakest tones. Intensity is not predicted by it (LLM's, or `medium`).

@@ -53,6 +53,8 @@ Without them every file fails with `SER model not found` / `noise_source=ast but
 `REGISTRY=ghcr.io/<github-user, lowercase>` in `.env`. New GHCR packages are **private** even for a public repo: after the first build, set `metune-api` and `metune-client` to public (GitHub → Packages → package → Package settings → Change visibility), or log the VM in once: `echo <PAT with read:packages> | docker login ghcr.io -u <github-user> --password-stdin`. A failed pull leaves the running stack and `.env` untouched.
 
 ## 4. First deploy
+Every later release: **[RELEASE.md](RELEASE.md)** (checklist, tag, verify, roll back).
+
 Push a tag (`git tag v0.1.0 && git push --tags`) or run the **deploy** workflow manually. GitHub Actions builds both images, pushes them to GHCR as `:<git-sha>`, then SSHes in and runs `/opt/metune/deploy.sh <sha>`.
 
 Repository secrets: `VM_HOST`, `VM_USER=deploy`, `VM_SSH_KEY` (a dedicated deploy key, added to `~deploy/.ssh/authorized_keys`).
