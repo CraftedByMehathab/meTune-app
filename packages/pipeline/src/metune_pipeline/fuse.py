@@ -1,6 +1,7 @@
 """Combine LLM votes with DSP rules into one schema-valid Result."""
 from collections import Counter
 
+from .confidence import calibrated
 from .config import PipelineConfig
 from .rules import baseline, rule_fields, static_present
 from .schema import Result
@@ -72,9 +73,8 @@ def _apply_ser(out: dict, ser: dict, facts: dict, llm_emotional: bool) -> dict:
     # that would contradict the tone (LLM heard neutral → its "low"); then the most common label, medium.
     if ser["tone"] != "neutral" and not llm_emotional:
         out["emotional_intensity"] = "medium"
-    # confidence: distance from the neutral/emotional boundary, scaled down for little speech (uncalibrated)
-    certainty = max(ser["emotional_score"], 1 - ser["emotional_score"])
-    out["confidence"] = round(0.35 + 0.6 * certainty * min(1.0, facts["speech_ratio"] / 0.3), 2)
+    # confidence = P(tone is right), calibrated on proxy calls (DR-009, E32)
+    out["confidence"] = calibrated(ser, facts["speech_ratio"])
     return out
 
 
