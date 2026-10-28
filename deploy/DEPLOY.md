@@ -50,7 +50,7 @@ scp .data/models/ast_audioset.int8.onnx deploy@<vm>:/opt/metune/models/   # nois
 ```
 Without them every file fails with `SER model not found` / `noise_source=ast but model not found` — by design, so tone never silently falls back to the LLM's always-neutral answer.
 
-If the GHCR packages are private, log in once: `echo <PAT with read:packages> | docker login ghcr.io -u <github-user> --password-stdin`
+`REGISTRY=ghcr.io/<github-user, lowercase>` in `.env`. New GHCR packages are **private** even for a public repo: after the first build, set `metune-api` and `metune-client` to public (GitHub → Packages → package → Package settings → Change visibility), or log the VM in once: `echo <PAT with read:packages> | docker login ghcr.io -u <github-user> --password-stdin`. A failed pull leaves the running stack and `.env` untouched.
 
 ## 4. First deploy
 Push a tag (`git tag v0.1.0 && git push --tags`) or run the **deploy** workflow manually. GitHub Actions builds both images, pushes them to GHCR as `:<git-sha>`, then SSHes in and runs `/opt/metune/deploy.sh <sha>`.

@@ -5,9 +5,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 TAG="${1:?usage: deploy.sh <image-tag>}"
+# pull first: a failed pull (e.g. private GHCR package) must not leave .env pointing at missing images
+IMAGE_TAG="$TAG" docker compose --env-file .env pull api client
 sed -i.bak "s/^IMAGE_TAG=.*/IMAGE_TAG=$TAG/" .env
-
-docker compose --env-file .env pull
 docker compose --env-file .env up -d --remove-orphans
 docker image prune -f >/dev/null
 

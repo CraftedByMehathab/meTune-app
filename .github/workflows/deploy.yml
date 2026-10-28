@@ -18,7 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: tag
-        run: echo "tag=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "tag=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "owner=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_OUTPUT"   # image names must be lowercase
       - uses: docker/login-action@v3
         with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
       - uses: docker/setup-buildx-action@v3
@@ -28,14 +30,14 @@ jobs:
           file: apps/api/Dockerfile
           build-args: GIT_SHA=${{ steps.tag.outputs.tag }}
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/metune-api:${{ steps.tag.outputs.tag }}
+          tags: ghcr.io/${{ steps.tag.outputs.owner }}/metune-api:${{ steps.tag.outputs.tag }}
           cache-from: type=gha,scope=api
           cache-to: type=gha,mode=max,scope=api
       - uses: docker/build-push-action@v6
         with:
           context: apps/client
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/metune-client:${{ steps.tag.outputs.tag }}
+          tags: ghcr.io/${{ steps.tag.outputs.owner }}/metune-client:${{ steps.tag.outputs.tag }}
           cache-from: type=gha,scope=client
           cache-to: type=gha,mode=max,scope=client
 
