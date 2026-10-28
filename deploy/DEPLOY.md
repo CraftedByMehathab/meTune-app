@@ -18,12 +18,12 @@ Internet ──443──▶ caddy ──/api/*──▶ api (FastAPI + worker + 
 ## 1. Provision the VM
 | Item | Value |
 |---|---|
-| Size | **2 vCPU / 4 GB RAM / 40 GB disk** (e.g. Hetzner CX22, DigitalOcean 4 GB) |
+| Size | **4 vCPU / 8 GB RAM / 30+ GB disk** (trial host: DigitalOcean v5 shared `s5-4vcpu-8gb-30gb`, ATL1) |
 | OS | Ubuntu 24.04 LTS |
 | Access | Your SSH public key at creation (no password) |
 | DNS | `A` record `metune.<your-domain>` → VM IP (before first start, so Caddy can get a certificate) |
 
-Why this size: peak use is about 2–2.5 GB (api at 4–8 files in flight + Postgres + OS). Do not use the 1 GB tier.
+Why this size: tone runs 5 speech-emotion models on the CPU (~3.5–4.5 s per call) and the API needs up to ~3.5 GB with several files in flight (compose `mem_limit: 5g`). On a 4 GB VM, set `mem_limit: 3g` and `WORKER_CONCURRENCY=2`.
 
 ## 2. Bootstrap (once, as root)
 ```bash
@@ -56,7 +56,7 @@ Push a tag (`git tag v0.1.0 && git push --tags`) or run the **deploy** workflow 
 
 Repository secrets: `VM_HOST`, `VM_USER=deploy`, `VM_SSH_KEY` (a dedicated deploy key, added to `~deploy/.ssh/authorized_keys`).
 
-Manual alternative: `./deploy.sh <sha>` on the VM. Avoid `--build` on the VM, since builds use more than 2 GB RAM.
+Manual alternative: `./deploy.sh <sha>` on the VM. Without GHCR (first trial deploy): clone the repo to `/opt/metune/src`, `docker build` both images there as `metune/metune-{api,client}:<sha>`, set `REGISTRY=metune` and `IMAGE_TAG=<sha>` in `.env`, then `docker compose --env-file .env up -d` (needs ~3 GB free RAM for the build).
 
 ### Verify
 ```bash
@@ -102,7 +102,7 @@ crontab -e
 ## 8. Cost (trial)
 | Item | Monthly |
 |---|---|
-| VM 2 vCPU / 4 GB | ~$5–24 depending on provider |
+| VM 4 vCPU / 8 GB (DigitalOcean v5 shared) | ~$73 ($0.100/h, billed per second, no monthly cap) |
 | Domain | ~$1 |
-| Gemini (measured $0.00135/audio-min) | 1,000 audio-min → ~$1.35 |
+| Gemini (measured ~$0.0024/audio-min; tone models run locally, no API cost) | 1,000 audio-min → ~$2.40 |
 | GHCR, GitHub Actions | free tier |

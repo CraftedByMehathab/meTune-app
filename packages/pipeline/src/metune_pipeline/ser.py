@@ -49,6 +49,9 @@ def _session(path: str):
 
     opts = ort.SessionOptions()
     opts.intra_op_num_threads = 2
+    # the arena keeps the largest buffer per model forever; with 5 models × variable-length windows × several
+    # files in flight it pushed the API past 2 GB on the first hosted batch. Off: same speed, ~20% less RAM.
+    opts.enable_cpu_mem_arena = False
     return ort.InferenceSession(path, sess_options=opts, providers=["CPUExecutionProvider"])
 
 
