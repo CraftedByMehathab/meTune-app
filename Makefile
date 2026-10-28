@@ -33,7 +33,8 @@ types:           ## regenerate client API types from FastAPI's OpenAPI
 	cd apps/client && pnpm types
 
 hash-password:   ## print an argon2 hash for ADMIN_PASSWORD_HASH
-	@uv run python -c "import getpass; from pwdlib import PasswordHash; print(PasswordHash.recommended().hash(getpass.getpass('Password: ')))"
+	@uv run python -c "import getpass, sys; from pwdlib import PasswordHash; p = getpass.getpass('Password: '); \
+	  p == getpass.getpass('Repeat:   ') or sys.exit('Passwords differ, nothing printed.'); print(PasswordHash.recommended().hash(p))"
 
 run:             ## CLI on a folder: make run DIR=path/to/audio
 	uv run --env-file .env metune run $(DIR) --out results.csv
