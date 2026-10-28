@@ -126,6 +126,8 @@ def fit(a) -> None:
     (out / "summary.json").write_text(json.dumps(res, indent=2))
     print(json.dumps(res, indent=1))
     print("→", out, "·", HEAD)
+    from track import log_run
+    log_run(out)
 
 
 if __name__ == "__main__":
