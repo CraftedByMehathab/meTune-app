@@ -26,3 +26,6 @@ results*.csv
 
 .DS_Store
 *.tsbuildinfo
+
+# confidential trial calls: never commit labels, predictions or model descriptions of them
+eval/runs/*trial*/

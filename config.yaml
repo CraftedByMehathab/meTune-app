@@ -14,7 +14,7 @@ spike_rate_static: 20.0      # spikes/min → "static"; also fills in noise when
 default_vote_confidence: 0.4 # cap when every vote is the all-defaults answer (neutral, no noise, no overlap)
 
 tone_source: ser                      # ser = fine-tuned speech-emotion model owns tone (DR-020, E16); llm = Gemini votes
-ser_model_path: .data/models/ser_e16.onnx   # 379 MB, not in git: eval/export_ser_onnx.py
+ser_models: [.data/models/ser_e16.onnx]     # 379 MB each, not in git: eval/export_ser_onnx.py; several = ensemble
 ser_top_fraction: 1.0                 # tuned on val calls (E16): mean over all speech windows
 ser_tau: 0.5                          # neutral unless 1 - p(neutral) >= tau (val-tuned; test F1 0.507)
 

@@ -35,7 +35,7 @@ services:
       COOKIE_SECURE: "true"
     volumes:
       - uploads:/data/uploads
-      - ./models:/app/.data/models:ro    # ser_e16.onnx (379 MB, not in git/image) → config ser_model_path
+      - ./models:/app/.data/models:ro    # ser_e16.onnx (379 MB, not in git/image) → config ser_models
     depends_on:
       db: { condition: service_healthy }
     mem_limit: 2g

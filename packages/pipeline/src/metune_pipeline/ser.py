@@ -43,7 +43,7 @@ def speech_windows(x: np.ndarray, threshold: float, sr: int = 16000) -> list[tup
     return out
 
 
-@lru_cache(maxsize=2)
+@lru_cache(maxsize=8)
 def _session(path: str):
     import onnxruntime as ort
 
@@ -63,16 +63,20 @@ def aggregate(windows: list[tuple[float, np.ndarray]], top: float) -> np.ndarray
 
 
 def ser_facts(x: np.ndarray, cfg: PipelineConfig) -> dict:
-    path = Path(cfg.ser_model_path)
-    if not path.exists():
+    """Several models (E20 bag) = mean of their window probabilities, as in eval/e16_calls.py."""
+    paths = [Path(m) for m in cfg.ser_models]
+    missing = [str(p) for p in paths if not p.exists()]
+    if missing:
         # fail loudly: a silent fallback to the LLM tone is the always-neutral behaviour this replaces
-        raise FileNotFoundError(f"tone_source=ser but SER model not found: {path} (eval/export_ser_onnx.py)")
-    sess = _session(str(path))
+        raise FileNotFoundError(f"tone_source=ser but SER model(s) not found: {missing} (eval/export_ser_onnx.py)")
+    sessions = [_session(str(p)) for p in paths]
     sr = cfg.sample_rate
-    windows = [((e - s) / sr, sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0])
+    windows = [((e - s) / sr, np.mean([sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0]
+                                       for sess in sessions], axis=0))
                for s, e in speech_windows(x, cfg.vad_threshold, sr)]
     p = aggregate(windows, cfg.ser_top_fraction)
     probs = dict(zip(TONES, (round(float(v), 4) for v in p)))
     score = 1 - probs["neutral"]
     tone = "neutral" if score < cfg.ser_tau else max(EMOTIONS, key=probs.get)
-    return {"tone": tone, "emotional_score": round(score, 3), "probs": probs, "windows": len(windows)}
+    return {"tone": tone, "emotional_score": round(score, 3), "probs": probs, "windows": len(windows),
+            "models": len(sessions)}

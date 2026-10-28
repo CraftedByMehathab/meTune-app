@@ -22,7 +22,7 @@ class PipelineConfig(BaseModel):
     default_vote_confidence: float = 0.4
 
     tone_source: Literal["llm", "ser"] = "llm"
-    ser_model_path: str = ".data/models/ser_e16.onnx"
+    ser_models: list[str] = [".data/models/ser_e16.onnx"]   # several = ensemble (mean probabilities)
     ser_top_fraction: float = 1.0
     ser_tau: float = 0.5
 

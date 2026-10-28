@@ -115,4 +115,4 @@ def test_ser_aggregate_and_missing_model():
     assert aggregate([(3.0, calm), (1.0, angry)], 0.5)[TONES.index("upset")] == 1.0    # most emotional half
     assert aggregate([], 1.0)[TONES.index("neutral")] == 1.0
     with pytest.raises(FileNotFoundError):
-        ser_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"ser_model_path": "/nope.onnx"}))
+        ser_facts(np.zeros(16000, np.float32), CFG.model_copy(update={"ser_models": ["/nope.onnx"]}))
