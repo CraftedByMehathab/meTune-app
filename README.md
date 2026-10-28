@@ -6,11 +6,11 @@ meTune analyzes call audio and returns, for each clip:
 - **background noise**: whether it's present, its type and its severity
 - **audio quality**, **speaker overlap** and **long silence**
 
-It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, a fine-tuned speech-emotion model (wav2vec2, ONNX, runs locally on CPU) for tone, and an AudioSet sound classifier (AST, ONNX, local) for background noise, and an audio LLM (Gemini 3.8 Flash, one vote) for overlap and intensity. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.0028** on the proxy test calls (E26) (the speech-emotion model adds no API cost).
+It uses a hybrid pipeline: DSP rules + VAD for the measurable fields, an audio LLM (Gemini 3.8 Flash, one vote) for tone, intensity and overlap, an AudioSet sound classifier (AST, ONNX, local) for background noise, and a speaker-overlap detector (pyannote, ONNX, local) ORed with the LLM. Target cost is ≤ $0.003 per audio minute; measured cost is **$0.0028** on the proxy test calls (E26).
 
 Design notes and decisions live in the meTune Obsidian vault (DR-001 → DR-020; experiments in the Experiment Log).
 
-**Speech-emotion model:** `config.yaml` has `tone_source: ser`, which needs the 5 models listed under `ser_models` in `.data/models/` (8-bit ONNX, 5 × 122 MB, not in git). They are a bag: 5 fine-tunes of wav2vec2 on bootstrap samples of training speakers (`eval/ser_finetune.py --bootstrap i`), exported with `eval/export_ser_onnx.py`; their probabilities are averaged. Set `tone_source: llm` to use Gemini's tone instead.
+**Speech-emotion model (optional):** tone comes from Gemini (`tone_source: llm`, E35). `tone_source: ser` switches to the speech-emotion bag, which needs the 5 models listed under `ser_models` in `.data/models/` (8-bit ONNX, 5 × 122 MB, not in git). They are a bag: 5 fine-tunes of wav2vec2 on bootstrap samples of training speakers (`eval/ser_finetune.py --bootstrap i`), exported with `eval/export_ser_onnx.py`; their probabilities are averaged. It wins on acted speech (CREMA-D proxy) but not on natural conversation (MELD, E34–E35).
 
 ## Repo layout
 ```
@@ -31,7 +31,7 @@ cp .env.example .env
 make hash-password          # paste into ADMIN_PASSWORD_HASH (single quotes); add GEMINI_API_KEY
 make dev                    # Postgres in Docker + api :8000 + client :5173
 ```
-Open http://localhost:5173, log in, and upload a ZIP or folder. Without `GEMINI_API_KEY`, tone still comes from the speech-emotion model; noise and overlap fall back to the DSP baseline.
+Open http://localhost:5173, log in, and upload a ZIP or folder. Without `GEMINI_API_KEY`, tone falls back to neutral (or the speech-emotion model with `tone_source: ser`); noise and overlap still come from the local detectors.
 
 ## CLI (no web app)
 ```bash
@@ -57,7 +57,7 @@ Upload a **ZIP** or a **folder** of audio files: wav, mp3, ogg/opus, m4a, flac o
 One VM (2 vCPU / 4 GB) running Docker Compose behind Caddy (auto TLS). See **[deploy/DEPLOY.md](deploy/DEPLOY.md)**. Releases: push a `v*` tag, see **[deploy/RELEASE.md](deploy/RELEASE.md)**.
 
 ## Known limitations (trial)
-- **Tone:** audio LLMs (Gemini, Qwen) hear voice-only emotion as neutral (E6–E15), so tone comes from a bag of 5 fine-tuned speech-emotion models: macro F1 **0.68** on 120 held-out proxy calls from unseen speakers (one fine-tuned model 0.56 on the same calls; Gemini alone ~0.06). It scores only the customer's phone-line (narrowband) speech: on calls with a wideband VoIP agent, scoring every voice let a friendly agent set the tone (F1 0.27 → 0.53 with the filter, E21). It reads the voice only, was trained on acted speech (CREMA-D); distressed and frustrated are the weakest tones. Intensity is not predicted by it (LLM's, or `medium`).
+- **Tone:** from Gemini, which hears words and voice. On natural conversation (MELD test, 1,617 lines) macro F1 **0.38**, accuracy 0.56; the speech-emotion bag, trained on acted CREMA-D, scores 0.19 there although it wins on the acted proxy set (E34–E35). Weakest: frustrated (Gemini's pick right ~10%) and distressed. MELD is TV dialogue, not phone calls. Confidence = how often Gemini's pick of that tone was right on MELD dev (test ECE 0.044, E36).
 - **Overlap:** pyannote segmentation-3.0 (vendored ONNX) OR the LLM (E31): recall 0.68, precision 0.90 on proxy calls with real overlaps; 1 in 3 overlaps still missed.
 - **Audio quality:** the DSP rule uses clipping only.
 - **Confidence:** vote agreement only; not calibrated (DR-009).

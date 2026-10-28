@@ -1,0 +1,1 @@
+{"kind": "per_tone", "table": {"neutral": 0.732, "satisfied": 0.519, "frustrated": 0.129, "upset": 0.79, "distressed": 0.471}, "experiment": "E36", "fit_on": "MELD dev", "shrink_m": 10.0, "target": "tone correct"}

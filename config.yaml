@@ -13,7 +13,7 @@ spike_jump_db: 25.0          # energy jump in one frame = click/static
 spike_rate_static: 20.0      # spikes/min → "static"; also fills in noise when the LLM hears none
 default_vote_confidence: 0.4 # cap when every vote is the all-defaults answer (neutral, no noise, no overlap)
 
-tone_source: ser                      # ser = speech-emotion models own tone (DR-020); llm = Gemini votes
+tone_source: llm                      # E35: Gemini reads tone from words + voice; on MELD (natural speech) macro F1 0.38 vs SER bag 0.19. ser = speech-emotion models (DR-020; win on acted CREMA-D only)
 ser_models:                           # E20 bag: 5 fine-tuned wav2vec2 (actor bootstrap), 8-bit ONNX, mean of probs
   - .data/models/ser_e20_bag1.int8.onnx   # 122 MB each, not in git: eval/export_ser_onnx.py
   - .data/models/ser_e20_bag2.int8.onnx
@@ -41,6 +41,7 @@ llm_thinking_level: low               # 3.8 Flash rejects "minimal" (HTTP 400); 
 llm_timeout_s: 120
 llm_rpm: 300                          # request cap per process (DR-018). Paid tier since 2026-10-27; free tier = 14. 0 = none
 llm_retries: 2
+llm_confidence: true                  # E36: confidence = how often Gemini's tone was right on MELD dev (test ECE 0.044)
 
 # USD per 1M tokens, ai.google.dev/gemini-api/docs/pricing (checked 2026-10-28; 3.8 Flash price until 2026-12-31)
 # no separate audio rate listed for 3.8 Flash → billed at the input rate (assumption)

@@ -1,7 +1,7 @@
 """Combine LLM votes with DSP rules into one schema-valid Result."""
 from collections import Counter
 
-from .confidence import calibrated
+from .confidence import calibrated, llm_calibrated
 from .config import PipelineConfig
 from .rules import baseline, rule_fields, static_present
 from .schema import Result
@@ -62,6 +62,8 @@ def fuse(facts: dict, votes: list[dict], cfg: PipelineConfig, degraded: bool = F
     # votes that all fall back to the defaults agree trivially; that agreement is not evidence
     if all(_is_default(v) for v in votes):
         out["confidence"] = min(out["confidence"], cfg.default_vote_confidence)
+    if cfg.llm_confidence and not ser:
+        out["confidence"] = llm_calibrated(out["emotional_tone"])
     if ser:
         out = _apply_ser(out, ser, facts, llm_emotional=out["emotional_tone"] != "neutral")
     return Result(**out)

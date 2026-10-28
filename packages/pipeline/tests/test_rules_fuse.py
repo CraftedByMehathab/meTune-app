@@ -191,6 +191,16 @@ def test_overlap_detector_on_silence():
     assert out == {"present": False, "seconds": 0.0}
 
 
+def test_llm_tone_confidence_from_table():
+    from metune_pipeline.confidence import llm_head
+
+    cfg = CFG.model_copy(update={"llm_confidence": True})
+    table = llm_head()["table"]
+    assert fuse(FACTS, [vote()], cfg).confidence == table["upset"]
+    assert fuse(FACTS, [vote(emotional_tone="frustrated")], cfg).confidence == table["frustrated"]
+    assert fuse(FACTS, [vote()], cfg, ser=ser("satisfied")).emotional_tone == "satisfied"   # ser path untouched
+
+
 def test_decode_error_is_user_facing(tmp_path):
     import pytest
     from metune_pipeline.decode import DecodeError, decode

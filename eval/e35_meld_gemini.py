@@ -3,6 +3,7 @@ which made audio LLMs look useless for tone (E6–E15); MELD's emotion is in wor
 
     uv run --env-file .env python eval/e35_meld_gemini.py votes --split dev     (then --split test)
     uv run python eval/e35_meld_gemini.py score
+    uv run python eval/e35_meld_gemini.py calibrate          # E36: confidence table for Gemini's tone
 
 Same prompt / model / thinking as the app (config.yaml), 1 vote per clip; SER probabilities from E34's cache.
 Fusion: tone = argmax log p_SER + shipped bias + g · [Gemini said k], g picked on MELD dev; test scored once.
@@ -98,10 +99,51 @@ def score(_) -> None:
     log_run(out)
 
 
+def calibrate(_, m: float = 10.0) -> None:
+    """Confidence for Gemini's tone = how often its pick was right on MELD dev, per predicted tone, shrunk toward
+    its overall dev accuracy with weight m (rarely predicted tones would otherwise get 0 or 1). Scored on MELD test."""
+    from importlib import resources
+
+    from metune_pipeline.schema import TONES
+
+    def load(split):
+        f = json.loads((OUT / f"{split}_features.json").read_text())
+        g = json.loads((OUT / f"{split}_gemini.json").read_text())
+        names = [n for n in f if g.get(n, {}).get("tone")]
+        return np.array([f[n]["label"] for n in names]), np.array([g[n]["tone"] for n in names])
+
+    y, G = load("dev")
+    overall = float((y == G).mean())
+    table = {t: round(float(((G == t) & (y == t)).sum() + m * overall) / float((G == t).sum() + m), 3) for t in TONES}
+    yt, Gt = load("test")
+    conf, right = np.array([table[x] for x in Gt]), (yt == Gt).astype(float)
+    idx = np.minimum((conf * 10).astype(int), 9)
+    ece = float(sum(abs(conf[idx == i].mean() - right[idx == i].mean()) * (idx == i).mean()
+                    for i in range(10) if (idx == i).any()))
+    test_prec = {t: (round(float(right[Gt == t].mean()), 3), int((Gt == t).sum())) for t in TONES}
+    head = {"kind": "per_tone", "table": table, "experiment": "E36", "fit_on": "MELD dev", "shrink_m": m,
+            "target": "tone correct"}
+    path = Path(str(resources.files("metune_pipeline") / "models" / "confidence_llm.json"))
+    path.write_text(json.dumps(head))
+    res = {"table_from_dev": table, "dev_overall_acc": round(overall, 3),
+           "test": {"ece": round(ece, 3), "mean_conf": round(float(conf.mean()), 3),
+                    "accuracy": round(float(right.mean()), 3), "precision_by_predicted_tone (value, n)": test_prec,
+                    "wrong_at_0.9+": f"{int(((conf >= 0.9) & (right == 0)).sum())}/{int((right == 0).sum())}"},
+           "when": datetime.now().isoformat(timespec="seconds")}
+    out = RUNS / f"{datetime.now():%Y%m%d-%H%M}_E36-llm-confidence"
+    out.mkdir(parents=True)
+    (out / "summary.json").write_text(json.dumps(res, indent=2))
+    print(json.dumps(res, indent=1))
+    print("→", out, "·", path)
+    from track import log_run
+    log_run(out)
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("votes").add_argument("--split", choices=["dev", "test"], required=True)
     sub.add_parser("score")
+    sub.add_parser("calibrate")
     a = ap.parse_args()
-    asyncio.run(votes(a.split)) if a.cmd == "votes" else score(a)
+    {"votes": lambda: asyncio.run(votes(a.split)), "score": lambda: score(a), "calibrate": lambda: calibrate(a)}[a.cmd]()

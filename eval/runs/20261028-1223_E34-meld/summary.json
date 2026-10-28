@@ -1,0 +1,219 @@
+{
+  "n_dev": 655,
+  "n_test": 1618,
+  "test_class_counts": {
+    "neutral": 934,
+    "satisfied": 294,
+    "frustrated": 62,
+    "upset": 281,
+    "distressed": 47
+  },
+  "bias_refit_on_meld_dev": {
+    "neutral": 0.0,
+    "satisfied": 2.0,
+    "frustrated": 0.0,
+    "upset": -1.2,
+    "distressed": 0.0
+  },
+  "test": {
+    "always neutral": {
+      "macro_f1": 0.146,
+      "accuracy": 0.577,
+      "recall": {
+        "neutral": 1.0,
+        "satisfied": 0.0,
+        "frustrated": 0.0,
+        "upset": 0.0,
+        "distressed": 0.0
+      },
+      "confusion (rows=true N S F U D)": [
+        [
+          934,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          294,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          62,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          281,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          47,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "tau rule (v0.4.0)": {
+      "macro_f1": 0.177,
+      "accuracy": 0.25,
+      "recall": {
+        "neutral": 0.158,
+        "satisfied": 0.214,
+        "frustrated": 0.0,
+        "upset": 0.662,
+        "distressed": 0.17
+      },
+      "confusion (rows=true N S F U D)": [
+        [
+          148,
+          186,
+          53,
+          481,
+          66
+        ],
+        [
+          60,
+          63,
+          10,
+          135,
+          26
+        ],
+        [
+          8,
+          4,
+          0,
+          47,
+          3
+        ],
+        [
+          63,
+          28,
+          1,
+          186,
+          3
+        ],
+        [
+          12,
+          3,
+          2,
+          22,
+          8
+        ]
+      ]
+    },
+    "shipped bias (v0.5.0, CREMA-D tuned)": {
+      "macro_f1": 0.188,
+      "accuracy": 0.234,
+      "recall": {
+        "neutral": 0.163,
+        "satisfied": 0.388,
+        "frustrated": 0.048,
+        "upset": 0.338,
+        "distressed": 0.319
+      },
+      "confusion (rows=true N S F U D)": [
+        [
+          152,
+          353,
+          89,
+          158,
+          182
+        ],
+        [
+          60,
+          114,
+          20,
+          53,
+          47
+        ],
+        [
+          8,
+          27,
+          3,
+          14,
+          10
+        ],
+        [
+          63,
+          86,
+          7,
+          95,
+          30
+        ],
+        [
+          12,
+          13,
+          1,
+          6,
+          15
+        ]
+      ]
+    },
+    "bias refit on MELD dev": {
+      "macro_f1": 0.179,
+      "accuracy": 0.261,
+      "recall": {
+        "neutral": 0.17,
+        "satisfied": 0.602,
+        "frustrated": 0.0,
+        "upset": 0.302,
+        "distressed": 0.043
+      },
+      "confusion (rows=true N S F U D)": [
+        [
+          159,
+          614,
+          25,
+          117,
+          19
+        ],
+        [
+          62,
+          177,
+          4,
+          44,
+          7
+        ],
+        [
+          8,
+          38,
+          0,
+          14,
+          2
+        ],
+        [
+          63,
+          129,
+          2,
+          85,
+          2
+        ],
+        [
+          12,
+          29,
+          1,
+          3,
+          2
+        ]
+      ]
+    }
+  },
+  "confidence_v0.5.0_on_test": {
+    "ece": 0.688,
+    "mean_conf": 0.922,
+    "accuracy": 0.234,
+    "wrong_at_0.9+": "921/1239"
+  },
+  "when": "2026-10-28T12:23:18"
+}
