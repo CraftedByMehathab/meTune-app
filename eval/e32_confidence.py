@@ -21,16 +21,11 @@ from metune_pipeline.analyze import local_facts
 from metune_pipeline.config import load_config
 from metune_pipeline.decode import decode
 from metune_pipeline.schema import TONES
-from metune_pipeline.ser import EMOTIONS, _session, aggregate, high_band_share, speech_windows
+from metune_pipeline.ser import _session, aggregate, decide, high_band_share, speech_windows
 
 ROOT, CACHE, RUNS = Path(".data/proxy"), Path(".data/proxy/e32_cache"), Path("eval/runs")
 HEAD = Path(str(resources.files("metune_pipeline") / "models" / "confidence_head.json"))
-FEATS = ["p_pred", "margin", "agree", "log_windows", "speech_ratio"]
-
-
-def decide(p: np.ndarray, tau: float) -> str:
-    score = 1 - p[TONES.index("neutral")]
-    return "neutral" if score < tau else max(EMOTIONS, key=lambda t: p[TONES.index(t)])
+FEATS = ["p_pred", "margin", "log_windows", "speech_ratio"]   # E33 refit: "agree" dropped (weight −0.04 in E32)
 
 
 def call_signals(x: np.ndarray, cfg) -> dict:
@@ -43,8 +38,9 @@ def call_signals(x: np.ndarray, cfg) -> dict:
                     for s, e in cuts]) if cuts else np.zeros((0, len(sessions), len(TONES)))
     durs = [(e - s) / cfg.sample_rate for s, e in cuts]
     bag = aggregate(list(zip(durs, per.mean(1))) if len(cuts) else [], cfg.ser_top_fraction)
-    tone = decide(bag, cfg.ser_tau)
-    own = [decide(aggregate(list(zip(durs, per[:, m])) if len(cuts) else [], cfg.ser_top_fraction), cfg.ser_tau)
+    tone = decide(bag, cfg.ser_tau, cfg.ser_bias)
+    own = [decide(aggregate(list(zip(durs, per[:, m])) if len(cuts) else [], cfg.ser_top_fraction), cfg.ser_tau,
+                  cfg.ser_bias)
            for m in range(len(sessions))]
     facts = local_facts(x, cfg)
     s = 1 - bag[TONES.index("neutral")]
@@ -68,8 +64,27 @@ def features(split: str) -> None:
     (CACHE / f"{split}.json").write_text(json.dumps(out))
 
 
-def load(splits: list[str]) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def oof_rows(splits: list[str]) -> list[dict]:
+    """Tune rows with the tone the E33 bias would give WITHOUT having seen the call: biases fit on the other 4 folds
+    (the shipped bias was fit on these calls, so in-sample "right" rates are optimistic and the calibrator learned
+    to be over-confident). p_pred is the bag probability of that tone; margin does not depend on the bias."""
+    from e33_tone_bias import CACHE as BAG, fit_bias, predict
+    from sklearn.model_selection import StratifiedKFold
+
     rows = [r for s in splits for r in json.loads((CACHE / f"{s}.json").read_text()).values()]
+    bags = [r for s in splits for r in json.loads((BAG / f"{s}.json").read_text()).values()]
+    P, y = np.array([b["probs"] for b in bags]), np.array([b["label"] for b in bags])
+    assert all(r["label"] == lab for r, lab in zip(rows, y)), "e32 / e33 caches out of order"
+    tone = np.empty(len(y), object)
+    for tr, te in StratifiedKFold(5, shuffle=True, random_state=0).split(P, y):
+        tone[te] = predict(P[te], fit_bias(P[tr], y[tr]))
+    for r, p, t in zip(rows, P, tone):
+        r["p_pred"], r["right"] = float(p[TONES.index(t)]), bool(t == r["label"])
+    return rows
+
+
+def load(splits: list[str], oof: bool = False) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    rows = oof_rows(splits) if oof else [r for s in splits for r in json.loads((CACHE / f"{s}.json").read_text()).values()]
     return (np.array([[r[f] for f in FEATS] for r in rows]), np.array([r["raw"] for r in rows]),
             np.array([r["right"] for r in rows], float))
 
@@ -97,7 +112,7 @@ def fit(a) -> None:
     from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
 
-    X, raw, y = load(a.tune)
+    X, raw, y = load(a.tune, oof=bool(load_config().ser_bias))
     Xt, rawt, yt = load(a.test)
     make = {"isotonic": lambda: IsotonicRegression(y_min=0.01, y_max=0.99, out_of_bounds="clip"),
             "logistic": lambda: make_pipeline(StandardScaler(), LogisticRegression(C=1.0))}

@@ -24,6 +24,7 @@ ser_top_fraction: 1.0                 # tuned on val_big for the bag: mean over 
 ser_tau: 0.4                          # neutral unless 1 - p(neutral) >= tau (tuned on val_big_agent, E21)
 ser_customer_only: true               # E21: score phone-line (narrowband) windows only; the agent's VoIP leg is wideband
 ser_narrowband_max: 1.0e-4            # high-band share below this = customer (trial calls: <1e-4 vs agent 1e-2.5+)
+ser_bias: {neutral: 0.0, satisfied: 1.1, frustrated: 1.0, upset: -1.1, distressed: 1.7}   # E33: replaces ser_tau; test macro F1 0.50 → 0.61
 
 noise_source: ast                     # ast = AudioSet classifier + trained head owns noise (E25: test_big acc 0.88 vs 3.8 Flash 0.74); llm = Gemini
 noise_model: .data/models/ast_audioset.int8.onnx   # 92 MB, not in git: eval/export_ast_onnx.py; head: metune_pipeline/models/noise_head.json

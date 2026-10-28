@@ -1,0 +1,77 @@
+{
+  "tune": [
+    "val_big_agent",
+    "val_big_agent_ovl"
+  ],
+  "test": {
+    "current": {
+      "ece": 0.201,
+      "brier": 0.254,
+      "mean_conf": 0.809,
+      "accuracy": 0.613,
+      "conf_when_right": 0.84,
+      "conf_when_wrong": 0.761,
+      "wrong_at_0.9+": "17/93",
+      "flagged_<0.5": "1 (1.00 right)"
+    },
+    "isotonic": {
+      "ece": 0.136,
+      "brier": 0.236,
+      "mean_conf": 0.718,
+      "accuracy": 0.613,
+      "conf_when_right": 0.75,
+      "conf_when_wrong": 0.667,
+      "wrong_at_0.9+": "0/93",
+      "flagged_<0.5": "36 (0.39 right)"
+    },
+    "logistic": {
+      "ece": 0.145,
+      "brier": 0.229,
+      "mean_conf": 0.745,
+      "accuracy": 0.613,
+      "conf_when_right": 0.793,
+      "conf_when_wrong": 0.668,
+      "wrong_at_0.9+": "12/93",
+      "flagged_<0.5": "33 (0.36 right)"
+    }
+  },
+  "n_tune": 240,
+  "n_test": 240,
+  "picked_on_tune_cv": "logistic",
+  "tune_cv": {
+    "current": {
+      "log_loss": 0.558,
+      "ece": 0.09,
+      "brier": 0.178,
+      "mean_conf": 0.837,
+      "accuracy": 0.75,
+      "conf_when_right": 0.858,
+      "conf_when_wrong": 0.774,
+      "wrong_at_0.9+": "17/60",
+      "flagged_<0.5": "2 (0.00 right)"
+    },
+    "isotonic": {
+      "log_loss": 0.575,
+      "ece": 0.056,
+      "brier": 0.184,
+      "mean_conf": 0.753,
+      "accuracy": 0.75,
+      "conf_when_right": 0.772,
+      "conf_when_wrong": 0.696,
+      "wrong_at_0.9+": "5/60",
+      "flagged_<0.5": "20 (0.55 right)"
+    },
+    "logistic": {
+      "log_loss": 0.549,
+      "ece": 0.072,
+      "brier": 0.175,
+      "mean_conf": 0.757,
+      "accuracy": 0.75,
+      "conf_when_right": 0.785,
+      "conf_when_wrong": 0.674,
+      "wrong_at_0.9+": "9/60",
+      "flagged_<0.5": "26 (0.54 right)"
+    }
+  },
+  "when": "2026-10-28T11:16:23"
+}

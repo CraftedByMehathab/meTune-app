@@ -27,6 +27,7 @@ class PipelineConfig(BaseModel):
     ser_tau: float = 0.5
     ser_customer_only: bool = False      # E21: score narrowband (phone-line) windows only
     ser_narrowband_max: float = 1e-3     # high-band share below this = narrowband
+    ser_bias: dict[str, float] | None = None   # E33: tone = argmax log p + bias (replaces the ser_tau rule when set)
 
     noise_source: Literal["llm", "ast"] = "llm"     # ast = AudioSet classifier + trained head owns noise (E25)
     noise_model: str = ".data/models/ast_audioset.int8.onnx"
