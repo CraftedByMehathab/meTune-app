@@ -102,6 +102,7 @@ to it: `cp .env.bak-4b2958e .env && docker compose --env-file .env up -d`.
 
 | Version | SHA | Date | What changed |
 |---|---|---|---|
+| v0.4.0 | `7d5ac03` | 2026-10-28 | Calibrated confidence = P(tone right) (E32: ECE 0.28 → 0.09, wrong at ≥ 0.9: 23 → 2 of 113); MLflow tracking (dev only) |
 | v0.3.0 | `ef76f18` | 2026-10-28 | Proxy overlap labels fixed (E31); pyannote overlap detector (vendored) ORed with Gemini: recall 0.40 → 0.68 at precision 0.90 |
 | v0.2.0 | `7254332` | 2026-10-28 | Gemini 3.8 Flash, 1 vote; local AST noise detector (E25, E28: test_big noise acc 0.74 → 0.95); first CI/CD deploy via GHCR |
 | — | `4b2958e` | 2026-10-28 | E21 customer-only tone; built on the VM (pre-CI/CD) |
