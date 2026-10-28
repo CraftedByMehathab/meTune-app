@@ -44,6 +44,7 @@ class PipelineConfig(BaseModel):
     llm_timeout_s: float = 120
     llm_rpm: int = 0
     llm_retries: int = 2
+    llm_confidence: bool = False         # E36: confidence = MELD-dev precision of the LLM's tone (tone_source=llm)
     price_per_1m: dict[str, float] = {"audio_in": 0.30, "text_in": 0.30, "text_out": 2.50}
 
 

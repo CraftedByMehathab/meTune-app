@@ -14,6 +14,17 @@ def head() -> dict:
     return json.loads((resources.files("metune_pipeline") / "models" / "confidence_head.json").read_text())
 
 
+@lru_cache(maxsize=1)
+def llm_head() -> dict:
+    return json.loads((resources.files("metune_pipeline") / "models" / "confidence_llm.json").read_text())
+
+
+def llm_calibrated(tone: str) -> float:
+    """tone_source=llm (E36): how often the LLM's pick of this tone was right on MELD dev (natural speech), shrunk
+    toward its overall accuracy. Test ECE 0.044."""
+    return llm_head()["table"][tone]
+
+
 def raw_confidence(ser: dict, speech_ratio: float) -> float:
     """The pre-E32 formula: distance from the neutral/emotional boundary, scaled down for little speech."""
     s = ser["emotional_score"]
