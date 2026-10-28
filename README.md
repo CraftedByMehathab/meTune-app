@@ -44,6 +44,7 @@ uv run metune run <folder> --no-llm    # no API calls: speech-emotion tone + DSP
 |---|---|
 | `make test` | pytest (pipeline + api) and client typecheck |
 | `make types` | regenerate client types from FastAPI OpenAPI (CI fails if stale) |
+| `make mlflow-ui` | compare eval runs in MLflow (local only); `uv run --group track python eval/track.py backfill` imports `eval/runs/` |
 | `make up` / `make down` / `make logs` | full production stack locally (needs `deploy/.env`) |
 
 ## Batch input

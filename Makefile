@@ -39,6 +39,9 @@ hash-password:   ## print an argon2 hash for ADMIN_PASSWORD_HASH
 run:             ## CLI on a folder: make run DIR=path/to/audio
 	uv run --env-file .env metune run $(DIR) --out results.csv
 
+mlflow-ui:       ## compare eval runs in MLflow (local; backfill: uv run --group track python eval/track.py backfill)
+	MLFLOW_DISABLE_AGENT_HINT=1 uv run --group track mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
+
 up:              ## build + run the full production stack locally (needs deploy/.env)
 	$(COMPOSE_PROD) up -d --build
 
@@ -48,4 +51,4 @@ down:            ## stop the production stack
 logs:            ## follow production stack logs
 	$(COMPOSE_PROD) logs -f --tail=100
 
-.PHONY: help setup db api client dev test lint types hash-password run up down logs
+.PHONY: help setup db api client dev test lint types hash-password run mlflow-ui up down logs

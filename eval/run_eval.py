@@ -116,6 +116,8 @@ async def main() -> None:
     for lbl, row in zip(summary["tone_confusion"]["labels"], summary["tone_confusion"]["matrix"]):
         print(f"  {lbl:<11}{row}")
     print("→", out)
+    from track import log_run
+    log_run(out)
 
 
 if __name__ == "__main__":

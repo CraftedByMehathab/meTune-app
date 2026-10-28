@@ -286,6 +286,8 @@ def score(a) -> None:
             w.writerow([r["name"], y, ty, sv, pa, pb, sb, typ(r), yo, round(ovl_seconds(r, p_ov), 2), po])
     print(json.dumps(res, indent=1, default=float))
     print("→", out)
+    from track import log_run
+    log_run(out)
 
 
 if __name__ == "__main__":
