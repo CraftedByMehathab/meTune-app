@@ -29,3 +29,8 @@ results*.csv
 
 # confidential trial calls: never commit labels, predictions or model descriptions of them
 eval/runs/*trial*/
+
+# MLflow tracking (local only; eval/runs/ is the source of truth)
+mlflow.db
+mlartifacts/
+mlruns/

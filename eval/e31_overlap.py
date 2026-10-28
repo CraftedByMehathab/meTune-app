@@ -77,6 +77,8 @@ def score(a) -> None:
     (out / "summary.json").write_text(json.dumps(res, indent=2, default=float))
     print(json.dumps(res, indent=1, default=float))
     print("→", out)
+    from track import log_run
+    log_run(out)
 
 
 if __name__ == "__main__":

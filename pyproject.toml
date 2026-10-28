@@ -32,6 +32,9 @@ ser = [
     "pandas",
     "onnx",                 # export_ser_onnx.py (export + int8 quantization); runtime needs onnxruntime only
 ]
+track = [
+    "mlflow>=3",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["packages/pipeline/tests", "apps/api/tests"]
