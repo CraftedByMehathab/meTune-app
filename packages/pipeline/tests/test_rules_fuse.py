@@ -84,7 +84,9 @@ def test_dsp_counts_spikes():
 
 
 def ser(tone="upset", score=0.9):
-    return {"tone": tone, "emotional_score": score, "probs": {}, "windows": 5}
+    p_pred = score if tone != "neutral" else 1 - score
+    return {"tone": tone, "emotional_score": score, "probs": {}, "windows": 5, "agree": 1.0,
+            "p_pred": p_pred, "margin": abs(2 * p_pred - 1)}
 
 
 def test_fuse_ser_owns_tone_and_fixes_contradicting_intensity():
@@ -129,6 +131,15 @@ def test_high_band_share_separates_phone_line_from_voip():
 def noise(kind="dog barking", severity="high", static_confirmed=True):
     return {"present": bool(kind), "type": kind, "severity": severity if kind else "none",
             "static_confirmed": static_confirmed}
+
+
+def test_calibrated_confidence_is_a_probability():
+    from metune_pipeline.confidence import calibrated, head
+
+    assert head()["target"] == "tone correct"
+    sure, unsure = calibrated(ser("upset", 0.98), 0.6), calibrated(ser("upset", 0.52), 0.6)
+    assert 0 <= unsure < sure <= 1
+    assert calibrated(ser("upset", 0.98), 0.02) < sure                 # little speech → less sure
 
 
 def test_fuse_noise_detector_owns_noise_fields():

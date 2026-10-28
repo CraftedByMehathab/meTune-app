@@ -87,12 +87,23 @@ def ser_facts(x: np.ndarray, cfg: PipelineConfig) -> dict:
     if cfg.ser_customer_only:          # E21: drop wideband (agent VoIP) windows; keep all if none are narrowband
         narrow = [(s, e) for s, e in cuts if high_band_share(x[s:e], sr) < cfg.ser_narrowband_max]
         cuts = narrow or cuts
-    windows = [((e - s) / sr, np.mean([sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0]
-                                       for sess in sessions], axis=0))
-               for s, e in cuts]
-    p = aggregate(windows, cfg.ser_top_fraction)
+    per = [[sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0] for sess in sessions] for s, e in cuts]
+    durs = [(e - s) / sr for s, e in cuts]
+    p = aggregate([(d, np.mean(w, axis=0)) for d, w in zip(durs, per)], cfg.ser_top_fraction)
+    tone = decide(p, cfg.ser_tau)
+    # E32 confidence signals: how many models give the same tone on their own, top-2 margin
+    own = [decide(aggregate([(d, w[m]) for d, w in zip(durs, per)], cfg.ser_top_fraction), cfg.ser_tau)
+           for m in range(len(sessions))]
     probs = dict(zip(TONES, (round(float(v), 4) for v in p)))
-    score = 1 - probs["neutral"]
-    tone = "neutral" if score < cfg.ser_tau else max(EMOTIONS, key=probs.get)
-    return {"tone": tone, "emotional_score": round(score, 3), "probs": probs, "windows": len(windows),
-            "models": len(sessions)}
+    score = 1 - float(p[TONES.index("neutral")])
+    top2 = np.sort(p)[-2:]
+    return {"tone": tone, "emotional_score": round(score, 3), "probs": probs, "windows": len(cuts),
+            "models": len(sessions), "agree": sum(o == tone for o in own) / len(own),
+            "margin": round(float(top2[1] - top2[0]), 4),
+            "p_pred": round(float(p[TONES.index(tone)]) if tone != "neutral" else 1 - score, 4)}
+
+
+def decide(p: np.ndarray, tau: float) -> str:
+    """Neutral unless 1 − p(neutral) ≥ τ, else the strongest non-neutral tone."""
+    score = 1 - p[TONES.index("neutral")]
+    return "neutral" if score < tau else max(EMOTIONS, key=lambda t: p[TONES.index(t)])
