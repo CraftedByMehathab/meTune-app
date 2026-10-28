@@ -90,9 +90,9 @@ def ser_facts(x: np.ndarray, cfg: PipelineConfig) -> dict:
     per = [[sess.run(None, {"wav": x[None, s:e].astype(np.float32)})[0][0] for sess in sessions] for s, e in cuts]
     durs = [(e - s) / sr for s, e in cuts]
     p = aggregate([(d, np.mean(w, axis=0)) for d, w in zip(durs, per)], cfg.ser_top_fraction)
-    tone = decide(p, cfg.ser_tau)
+    tone = decide(p, cfg.ser_tau, cfg.ser_bias)
     # E32 confidence signals: how many models give the same tone on their own, top-2 margin
-    own = [decide(aggregate([(d, w[m]) for d, w in zip(durs, per)], cfg.ser_top_fraction), cfg.ser_tau)
+    own = [decide(aggregate([(d, w[m]) for d, w in zip(durs, per)], cfg.ser_top_fraction), cfg.ser_tau, cfg.ser_bias)
            for m in range(len(sessions))]
     probs = dict(zip(TONES, (round(float(v), 4) for v in p)))
     score = 1 - float(p[TONES.index("neutral")])
@@ -103,7 +103,10 @@ def ser_facts(x: np.ndarray, cfg: PipelineConfig) -> dict:
             "p_pred": round(float(p[TONES.index(tone)]) if tone != "neutral" else 1 - score, 4)}
 
 
-def decide(p: np.ndarray, tau: float) -> str:
-    """Neutral unless 1 − p(neutral) ≥ τ, else the strongest non-neutral tone."""
+def decide(p: np.ndarray, tau: float, bias: dict[str, float] | None = None) -> str:
+    """With `bias` (E33): argmax of log p + per-tone bias. Without: neutral unless 1 − p(neutral) ≥ τ, else the
+    strongest non-neutral tone."""
+    if bias:
+        return TONES[int(np.argmax(np.log(np.clip(p, 1e-6, 1)) + np.array([bias[t] for t in TONES])))]
     score = 1 - p[TONES.index("neutral")]
     return "neutral" if score < tau else max(EMOTIONS, key=lambda t: p[TONES.index(t)])
