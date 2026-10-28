@@ -15,6 +15,8 @@ the VM (`IMAGE_TAG` in `/opt/metune/.env`) and what the dashboard shows.
 
 ## 1. Before tagging
 
+Changes reach `main` only through a pull request (CI runs on the PR and again on `main`); tag after the merge.
+
 - [ ] **CI is green on `main`** for the commit you will tag: `gh run list --branch main --limit 1`
 - [ ] **New or re-exported model files are on the VM.** Models are not in git or the image; the API mounts
       `/opt/metune/models` read-only. A missing file fails every call ("model not found"), by design. Copy it
@@ -100,5 +102,6 @@ to it: `cp .env.bak-4b2958e .env && docker compose --env-file .env up -d`.
 
 | Version | SHA | Date | What changed |
 |---|---|---|---|
+| v0.3.0 | `ef76f18` | 2026-10-28 | Proxy overlap labels fixed (E31); pyannote overlap detector (vendored) ORed with Gemini: recall 0.40 → 0.68 at precision 0.90 |
 | v0.2.0 | `7254332` | 2026-10-28 | Gemini 3.8 Flash, 1 vote; local AST noise detector (E25, E28: test_big noise acc 0.74 → 0.95); first CI/CD deploy via GHCR |
 | — | `4b2958e` | 2026-10-28 | E21 customer-only tone; built on the VM (pre-CI/CD) |
